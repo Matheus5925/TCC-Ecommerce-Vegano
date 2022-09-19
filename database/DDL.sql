@@ -23,13 +23,16 @@ create table tb_endereco_usuario(
 
 create table tb_categoria(
 	id_categoria int primary key auto_increment,
-    ds_categoria varchar(50),
+    ds_categoria varchar(50)
+);
+
+create table tb_parte_corpo(
+	id_parte_corpo int primary key auto_increment,
     ds_parte_corpo varchar(50)
 );
 
 create table tb_produto(
 	id_produto int primary key auto_increment,
-    id_categoria int,
     nm_produto varchar(100),
     ds_produto varchar(5000),
     nr_valor decimal(10,2),
@@ -37,8 +40,7 @@ create table tb_produto(
     dt_validade date,
     nr_volume	decimal(15,3),
     ds_linha	varchar(50),
-    img_produto varchar(5000),
-    foreign key (id_categoria) references tb_categoria (id_categoria)
+    img_produto varchar(5000)
 );
 
 create table tb_ofertas(
@@ -101,4 +103,24 @@ create table tb_compra_itens(
     nr_quantidade int,
     foreign key (id_compra) references tb_compra (id_compra),
 	foreign key (id_produto) references tb_produto (id_produto)
+);
+
+create table tb_adm(
+	id_adm int primary key auto_increment,
+    nm_adm varchar(100) not null,
+    ds_email varchar(100) not null,
+    ds_cpf  varchar(14) not null ,
+	dt_nascimento date,
+    ds_telefone varchar(14),
+    ds_senha	varchar(50) not null
+);
+
+create table tb_produto_categoria(
+	id_produto_categoria int primary key auto_increment,
+    id_produto 			int,
+    id_categoria		int,
+    id_parte_corpo		int,
+    foreign key (id_produto) references tb_produto (id_produto),
+    foreign key (id_categoria) references tb_categoria (id_categoria),
+    foreign key (id_parte_corpo) references tb_parte_corpo (id_parte_corpo)
 );
