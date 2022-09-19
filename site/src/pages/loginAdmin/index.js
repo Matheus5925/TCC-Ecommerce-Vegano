@@ -14,10 +14,8 @@ export default function AdminLogin() {
          </h1>
          <div className='Formulario'>
          <label className='Titulo-Caixa-Texto'> E-MAIL:</label>
-            <input className='Caixa-Texto' type= "text" />
-            
+            <input className='Caixa-Texto' type= "text" />  
          </div>
-
          <div className='Formulario'>
          <label className='Titulo-Caixa-Texto'> SENHA:</label>
             <input className='Caixa-Texto' type= "text" />

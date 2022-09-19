@@ -12,8 +12,7 @@ return(
         <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
         <input className='Caixa-Texto' type = "text"/>
        </div>
-       <label className='Titulo-Caixa-Texto-Linha'>Linha do Produto </label>
-       <input className='Caixa-Texto-Linha' type= "text"/>
+    
     </main>
 )
     
