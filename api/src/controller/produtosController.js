@@ -1,9 +1,9 @@
 import { Router } from "express";
-import {BuscarCategoria, BuscarParteCorpo, CadastroProduto} from '../repository/produtoRepository.js';
+import {AlterarImagem, BuscarCategoria, BuscarParteCorpo, CadastroProduto} from '../repository/produtoRepository.js';
 import multer from 'multer';
 
 const server = Router();
-const upload = multer({dest: ''});
+const upload = multer({dest: 'storage/capaProduto'});
 
 server.get('/categoria', async (req, resp) =>{
     try {
@@ -16,7 +16,7 @@ server.get('/categoria', async (req, resp) =>{
     }
 });
 
-server.get('/parteCorpo', async (req, resp) =>{
+server.get('/parteCorpo',async (req, resp) =>{
     try {
         const resposta = await BuscarParteCorpo();
         resp.send(resposta);
@@ -60,5 +60,22 @@ server.post('/produto', async (req, resp) =>{
         })
     }
 })
+
+server.put('/produto/:id/imagem',upload.single('produtoCapa'), async (req, resp) =>{
+    try {
+        const { id } = req.params;
+        const imagem = req.file.path;
+
+        const resposta = await AlterarImagem(imagem, id);
+        if(resposta !== 1)
+            throw new Error('A imagem não pode ser salva')
+
+        resp.status(204).send();
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+    };
+});
 
 export default server;

@@ -41,8 +41,8 @@ export async function CadastroProduto(infoProduto) {
 export async function AlterarImagem(imagem, id) {
     const comando = `
             update tb_produto
-            set img_produto = ?
-        where id_produto = ?`;
+            set img_produto     = ?
+        where id_produto        = ?`;
     const [linhas] = await (await con).query(comando, [imagem, id]);
     return linhas.affectedRows;
 }

@@ -5,8 +5,7 @@ import './index.css';
 import Rotas from './routes';
 =======
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import AdminLogin from './pages/loginAdmin';
-import CadastrarProdutos from './pages/CadastrarProdutos';
+
 >>>>>>> 2270dfb04b347ab39a5ba6c48c817b5f7cb1fc70
 
 
