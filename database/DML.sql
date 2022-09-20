@@ -94,13 +94,14 @@ select
  from tb_parte_corpo;
 
 -- (03) Cadastro de produto informações
-insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha, img_produto)
-	values('Creme para Mãos Orgânico Lavanda', 'Creme para mãos ótimo para hidratar assim como deixar aquele cheirinho maravilhoso ', 75.00,'Urtekram', '2029-06-05', 75, 'Profissional', 'adsdaddasd');
-
+insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha)
+	values('Axepscia', 'Sabonete para pele acnosa', 25.00,'Axepscia', '2029-06-05', 75, 'Uso diário');
+    
 -- (04) alterar imagem
 update tb_produto
 	set img_produto = '/storage/filme/asdfasdf.jp'
 where id_produto = 5;
+	
     
 -- (05) Login ADM 
 select id_adm 	as	 id,
@@ -109,3 +110,8 @@ select id_adm 	as	 id,
 from tb_adm
 where ds_email = 'matheus@gmail.com' and
 		ds_senha = 'matheus15';
+        
+select * from tb_produto;
+
+delete from tb_produto 
+	where id_produto = 9;

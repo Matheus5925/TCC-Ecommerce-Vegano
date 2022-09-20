@@ -32,7 +32,7 @@ server.post('/produto', async (req, resp) =>{
         const infoProdutos = req.body;
          
         if(!infoProdutos.nome)
-        throw new Error("Nome não informado");
+            throw new Error("Nome não informado");
 
         if(!infoProdutos.descricao)
             throw new Error("A descrição do produto não foi informada");
