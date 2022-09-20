@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import AdminLogin from './pages/loginAdmin/index.js'
-import CadastrarProdutos  from './pages/CadastrarProdutos/index.js';
+import AdminLogin from './pages/loginAdmin'
+import CadastrarProdutos  from './pages/CadastrarProdutos';
 
 const Rotas = () =>{
     <BrowserRouter>
