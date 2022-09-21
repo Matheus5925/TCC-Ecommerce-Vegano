@@ -116,5 +116,15 @@
    .Cadastro:link, .Cadastro:visited{ //link: configuração de link // VISITED: quando já visitei o sit( tenho a opição de mudar a cor..)
        text-decoration: none;
       color: #000;
-   }  
+   }
+
+   .erro{
+    color: red;
+    font-size: 15px;
+   }
+
+   .Botao-2:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+   }
 }

@@ -12,7 +12,7 @@ server.post('/login/admin', async (req, resp) => {
         resp.send(resposta)
 
     } catch (err) {
-        resp.status(400).send({
+        resp.status(401).send({
             erro: err.message
         })
     }
