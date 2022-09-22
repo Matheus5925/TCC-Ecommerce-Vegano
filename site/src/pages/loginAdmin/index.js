@@ -1,7 +1,8 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import { LogiAdm } from '../../api/admAPI.js';
 import storage  from 'local-storage';
 import { useNavigate } from 'react-router-dom';
+import LoadingBar from 'react-top-loading-bar';
 import './index.scss';
 
 
@@ -9,8 +10,10 @@ export default function AdminLogin() {
    const [email, setEmail ] = useState('');
    const [senha, setSenha] = useState('');
    const [erro, setErro] = useState('');
+   const [carregamento, setCarregamento] = useState(false);
 
    const navigate = useNavigate();
+   const ref = useRef();
 
    useEffect(()=>{
         if(storage('admin-logado'))
@@ -18,12 +21,20 @@ export default function AdminLogin() {
    }, [])
 
    const Login = async _ =>{
+      ref.current.continuousStart();
+      setCarregamento(true);
+
       try {
          const r = await LogiAdm(email, senha);
          storage('admin-logado', r);
+        setTimeout(() =>{
          navigate('/cadastrarprodutos');
+        }, 3000)
 
       } catch (err) {
+         ref.current.complete();
+         setCarregamento(false);
+
          if(err.response.status === 401)
             setErro(err.response.data.erro)
       }
@@ -32,6 +43,7 @@ export default function AdminLogin() {
 
     return(
         <main className='Page-admLogin'>
+         <LoadingBar color='#f11946' ref={ref}/>
 
             <div className='ImgFundo'>
                <div className='Fundo-Login'>
