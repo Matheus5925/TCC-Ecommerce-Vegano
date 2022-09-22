@@ -13,14 +13,14 @@ export default function AdminLogin() {
    const navigate = useNavigate();
 
    useEffect(()=>{
-        if(storage('usuario-logado'))
+        if(storage('admin-logado'))
             navigate('/');
    }, [])
 
-   const Login = async () =>{
+   const Login = async _ =>{
       try {
          const r = await LogiAdm(email, senha);
-         storage('usuario-logado', r);
+         storage('admin-logado', r);
          navigate('/cadastrarprodutos');
 
       } catch (err) {
@@ -51,7 +51,6 @@ export default function AdminLogin() {
                   <div className='Botoes'>
                      <button onClick={Login}  className='Botao-2'> ENTRAR</button>
                   </div> 
-
                      <a className='Cadastro' href="" >Novo Usuario? Cadastre-se </a>
                </div>
             </div>
