@@ -6,12 +6,13 @@ import CadastrarProdutos  from './pages/CadastrarProdutos';
 
 const Rotas = () =>{
     return(
-    <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<AdminLogin/>}></Route>
-            <Route path='/cadastrarprodutos' element={<CadastrarProdutos/>}/> 
-        </Routes>
-    </BrowserRouter>
+        <BrowserRouter>
+            <Routes>
+                {/* <Route path='/' element={<AdminLogin />}></Route> */}
+                <Route path='/' element={<CadastrarProdutos />}></Route> 
+            </Routes>
+                
+        </BrowserRouter>
     );
 };
 
