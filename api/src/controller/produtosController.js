@@ -30,6 +30,7 @@ server.get('/parteCorpo',async (req, resp) =>{
 server.post('/produto', async (req, resp) =>{
     try {
         const infoProdutos = req.body;
+        const date = new Date();
          
         if(!infoProdutos.nome)
             throw new Error("Nome não informado");
@@ -39,6 +40,8 @@ server.post('/produto', async (req, resp) =>{
             
         if(!infoProdutos.valor)
             throw new Error("Valor do produto não informado");
+        if(infoProdutos.valor <= 0)
+            throw new Error("Valor abaixo de 0 informe um valor");
             
         if(!infoProdutos.fabricante)
             throw new Error("Fabricante do produto precisa ser informado");
