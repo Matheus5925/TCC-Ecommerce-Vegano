@@ -149,13 +149,14 @@
     
     button {
         border: none;
-        width: 171px;
-        height: 50px;
+        width: 10em;
+        height: 40px;
         background: #D8C8B9;
         border-radius: 50px;
-        
     }
+
     button:hover{
         cursor: pointer;
+        transform: scale(1.2);
     }
 }

@@ -3,7 +3,7 @@ import express from "express";
 import cors from 'cors';
 import controllerAdm from './controller/controllerAdm.js'
 import produtosController from './controller/produtosController.js';
-
+import categoriaController  from './controller/categoriaController.js';
 const server = express();
 
 
@@ -12,6 +12,7 @@ server.use(cors());
 server.use(express.json());
 server.use(controllerAdm);
 server.use(produtosController);
+server.use(categoriaController)
 
 
 server.use('/storage/capaProduto', express.static('storage/capaProduto'));

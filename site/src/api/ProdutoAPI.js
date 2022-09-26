@@ -17,3 +17,8 @@ export const BuscarParteCorpo = async _ =>{
 
     return r.data
 }
+
+export const CadastrarProduto = async (idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume, linha) =>{
+    const r = await api.post('/produto',{ idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume, linha});
+    return r.data
+}

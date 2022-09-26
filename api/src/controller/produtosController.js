@@ -1,36 +1,20 @@
 import { Router } from "express";
-import {AlterarImagem, BuscarCategoria, BuscarParteCorpo, CadastroProduto} from '../repository/produtoRepository.js';
+import {AlterarImagem, CadastroProduto} from '../repository/produtoRepository.js';
+import {BuscarCategoriaId, BuscarParteCorpoId} from '../repository/categoriaRepository.js'
 import multer from 'multer';
 
 const server = Router();
 const upload = multer({dest: 'storage/capaProduto'});
 
-server.get('/categoria', async (req, resp) =>{
-    try {
-        const resposta = await BuscarCategoria();
-        resp.send(resposta);
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-});
-
-server.get('/parteCorpo',async (req, resp) =>{
-    try {
-        const resposta = await BuscarParteCorpo();
-        resp.send(resposta);
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-});
-
 server.post('/produto', async (req, resp) =>{
     try {
         const infoProdutos = req.body;
-        const date = new Date();
+        
+        if(!infoProdutos.idCategoria)
+            throw new Error("Adicione uma categoria para continuar");
+
+        if(!infoProdutos.idParteCorpo)
+            throw new Error("Nome não informado")
          
         if(!infoProdutos.nome)
             throw new Error("Nome não informado");
@@ -55,8 +39,8 @@ server.post('/produto', async (req, resp) =>{
         if(!infoProdutos.linha)
             throw new Error("Linha do produto não informada");
 
-        const resposta = await CadastroProduto(infoProdutos);
-        resp.send(resposta);
+        await CadastroProduto(infoProdutos);
+        resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message

@@ -1,5 +1,5 @@
-import { BuscaCategoria, BuscarParteCorpo } from '../../api/ProdutoAPI.js'
-
+import { BuscaCategoria, BuscarParteCorpo, CadastrarProduto } from '../../api/ProdutoAPI.js'
+import { toast }  from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 
@@ -9,7 +9,7 @@ export default function CadastrarProdutos() {
     const [produto, setProduto] = useState('');
     const [linha, setLinha] = useState('');
     const [fabricante, setFabricante] = useState('');
-    const [data, setData] = useState(Date);
+    const [data, setData] = useState('');
     const [volume, setVolume] = useState(0);
     const [quantidade, setQuantidade] = useState(0);
     const [valor, setValor ] = useState(0);
@@ -35,6 +35,18 @@ export default function CadastrarProdutos() {
     const ParteDoCorpo = async _ =>{
         const r = await BuscarParteCorpo();
         setParteCorpo(r);
+    }
+
+    const Salvar = async () =>{
+        try {
+            let preco = Number(valor.repleace(',', '.'));
+
+            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume, linha);
+            toast.dark('Produto cadastrado com sucesso!');
+            
+        } catch (err) {
+            toast.error(err.response.data.erro)
+        }
     }
 
     useEffect(() =>{
@@ -101,15 +113,15 @@ export default function CadastrarProdutos() {
 
                                     <div className="label">
                                         <label className='Titulo-Caixa-Texto'> Categoria </label>
-                                        <select>
+                                        <select value={idCategoria} onChange={e => setIdCategoria(e.target.value)}>
                                             <option value="Selecione uma opção">Selecione</option>
-                                            {categoria.map(item => <option value={item.id}> {item.categoria}</option>)}
+                                            {categoria.map(item =><option value={item.id}> {item.categoria}</option>)}
                                         </select>
                                     </div>
 
                                     <div className="label">
                                         <label className='Titulo-Caixa-Texto'> Parte do corpo </label>
-                                        <select>
+                                        <select value={idParteCorpo} onChange={e => setIdParteCorpo(e.target.value)}>
                                             <option value="Selecione uma opção">Selecione</option>
                                             {parteCorpo.map(item => <option value={item.id}>{item.parteCorpo}</option>)} 
                                             
@@ -118,10 +130,7 @@ export default function CadastrarProdutos() {
 
                                 </div>
                             </div>
-
-                           
                         </div>
-
                     </div>
 
                     <div className="pg-lado">
@@ -137,15 +146,13 @@ export default function CadastrarProdutos() {
                         </form>
 
                         <label className='Titulo-Caixa-Texto'>Adicione uma descrição </label>
-                        <textarea id="descricao" name="descricao" rows="13" cols="55" />
+                        <textarea value={descricao} onChange={e => setDescricao(e.target.value)} id="descricao" name="descricao" rows="13" cols="55" />
 
                         <div className='botao'>
                             <button>Voltar</button>
-                            <button>Salvar</button>
+                            <button onClick={Salvar}>Salvar</button>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </main>
