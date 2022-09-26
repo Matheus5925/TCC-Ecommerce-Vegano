@@ -8,22 +8,6 @@ export default function LadinPage() {
     return(
        <div className='Principal'>
             <div className='ImgFundo'>
-                <div className='Linha-1'>
-                  <div className='laterais'></div>
-                <div className='Nomes'>
-                    <p className='titulo'>Home</p>
-                    <p className='titulo'>Quem Somos</p>
-                    <p className='titulo'>Produtos</p>
-                    <p className='titulo'>Ofertas</p>
-                    <p className='titulo'>Entrar</p>
-                 </div>
-                 <div className='laterais'>
-                 <img src={IconeUsuario} alt='logo' /> 
-                 <img src={Carrinho} alt='logo' /> 
-
-
-                 </div>
-                 </div>
                   
                </div>
                <div className='Segunda-Parte'>
@@ -36,62 +20,64 @@ export default function LadinPage() {
                     <div className='img1'>
                       <div className='Paragrafo-1'>
                       <div className='Paragrafo'>
-                        <p>A adesão aos cosméticos veganos cresce conforme aumenta a conscientização sobre o consumo e, principalmente, sobre os impactos ambientais do estilo de vida moderno.
-O objetivo do veganismo é reduzir os impactos ambientais da sociedade e promover o bem-estar animal, principalmente por meio de mudanças no consumo.
-Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.</p>
-</div>
-     </div>
-          </div>
-               </div>
-                  <div className='Container1-2'>
-                    <p>Ofertas do Dia</p>
-                    <div className='Containers'>
-                  <div className='Container1'>
-                  <div className='Container1-img'/>
+                        A adesão aos cosméticos veganos cresce conforme aumenta a conscientização sobre o consumo e, principalmente, sobre os impactos ambientais do estilo de vida moderno.
+                        <br/>
+                        O objetivo do veganismo é reduzir os impactos ambientais da sociedade e promover o bem-estar animal, principalmente por meio de mudanças no consumo.
+                        <br/>
+                        Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
+             </div>
                   </div>
-                  <div className='Container2'></div>
-                  <div className='Container3'></div>
-                  </div>
-                  </div>
-                  </div>
-
-                      <div className='Container1-3'>
-                        <div className='Marcas'>
-                          <div className='Marcas1'>
-
-                          </div>
                         </div>
-                      </div>
-                      <div className='Depoimentos'>
-                        <div className='Titulo-Depoimentos'>
-                          <p>Depoimentos de Clientes</p>
-                          <div className='Linha2'>
-                          <hr/>
-                          </div>
+                            </div>
+                                <div className='Container1-2'>
+                                  <p>Ofertas do Dia</p>
+                                  <div className='Containers'>
+                                <div className='Container1'>
+                                <div className='Container1-img'/>
+                                </div>
+                                <div className='Container2'></div>
+                                <div className='Container3'></div>
+                                </div>
+                                </div>
+                                </div>
 
-                         < div className='Imagens'>
-                          <div className='Imagen1'></div>
-                          <div className='Imagen2'></div>
-                         </div>
-                         </div>
+                                    <div className='Container1-3'>
+                                      <div className='Marcas'>
+                                        <div className='Marcas1'>
 
-                         <div className='Rodape'>
-                          <div className='Container-Rodape'>
-                            <div className='Dentro-do-Container'>
-                          <img src={LogoTipo} alt='logo' /> </div>
-                          <div className='Menu'>
-                            <h2>Menu</h2>
-                          </div>
-                          
-                          </div>
-                         </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div className='Depoimentos'>
+                                      <div className='Titulo-Depoimentos'>
+                                        <p>Depoimentos de Clientes</p>
+                                        <div className='Linha2'>
+                                        <hr/>
+                                        </div>
+
+                                      < div className='Imagens'>
+                                        <div className='Imagen1'></div>
+                                        <div className='Imagen2'></div>
+                                      </div>
+                                      </div>
+
+                                      <div className='Rodape'>
+                                        <div className='Container-Rodape'>
+                                          <div className='Dentro-do-Container'>
+                                        <img src={LogoTipo} alt='logo' /> </div>
+                                        <div className='Menu'>
+                                          <h2>Menu</h2>
+                                        </div>
+                                        
+                                        </div>
+                                      </div>
 
 
-                        </div>
-                      
-                     
-                </div>
-               </div>
+                                      </div>
+                                    
+                                  
+                              </div>
+                            </div>
                  
                  
     )

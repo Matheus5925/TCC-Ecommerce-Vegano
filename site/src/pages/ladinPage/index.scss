@@ -13,48 +13,13 @@
         background-image: url('../../assets/images/image1.png');
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
+        height: 85vh;
         display: flex;
         flex-direction: column;
         align-items: center;
             
         }
          
-         .Nomes{ 
-          display: flex;
-          flex-direction: row;
-          width: 60%;
-          justify-content: space-between;
-          margin: 20px 0px;  
-          font-size: x-large;
-             
-         }
-
-         .invisivel{
-           opacity: 100%; 
-          }
-
-        .laterais{
-          width: 20%;
-          display: flex;
-          align-items: center;
-          padding: 10px;
-          justify-content: center;
-        }
-
-         .titulo{
-            width: 10vw;
-            text-align: center;
-          }
-
-         .Linha-1{
-            width: 95vw;
-            border-bottom: #000000aa solid 2px;
-            display: flex;
-            justify-content: space-between;
-
-
-         }
 
        .Caixa-Texto{
         display: flex;
@@ -89,7 +54,7 @@
        }
 
        .Titulo{
-        margin: 37px;
+        margin-top: 3em;
         text-align: center;
         font-size:x-large;
 
@@ -102,7 +67,7 @@
       flex-direction: column;
       background-color: #99D89F;
       margin: 50px;
-      height: 90vh;
+      height: 65vh;
       font-family: 'Roboto', sans-serif;
     
       
@@ -127,9 +92,9 @@
        .Paragrafo{
          font-size: large;
          font-family: 'PinyonScript-Regular.ttf';
-         margin: 50px 100px 600px 600px;
-         height: 70vh;
-         width: 70vh;
+         margin: 30px 10px 60px 610px;
+         width: 40vh;
+         text-align:left;
 
          
        }
