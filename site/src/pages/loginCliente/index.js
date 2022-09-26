@@ -13,7 +13,7 @@ export default function LoginCliente() {
                          <input className='Caixa-Texto1' type = "text"/>
                         <div className='Formulario2'>
                         <label className='Titulo-Caixa-Texto2'>SENHA</label>
-                        <input className='Caixa-Texto2' text = "password"/>
+                        <input className='Caixa-Texto2' text = ""/>
                         <div className='Botao'>
                         <button className='Botao1'>ENTRAR</button>
                         </div>
