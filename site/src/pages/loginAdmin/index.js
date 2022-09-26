@@ -58,12 +58,12 @@ export default function AdminLogin() {
                      <div className='Formulario'>
                      <label className='Titulo-Caixa-Texto'> SENHA:</label>
                         <input value={senha} onChange={e => setSenha(e.target.value)} className='Caixa-Texto' type= "password" />
-                        <hr className='Linha' />
+                        
                   </div>
                   <div className='Botoes'>
                      <button onClick={Login}  className='Botao-2'> ENTRAR</button>
                   </div> 
-                     <a className='Cadastro' href="" >Novo Usuario? Cadastre-se </a>
+                     
                </div>
             </div>
         
