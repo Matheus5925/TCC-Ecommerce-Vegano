@@ -1,0 +1,125 @@
+
+.Principal{
+
+
+
+.imgFundo{
+  background-image: url('../../assets/images/img2.png');
+   background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+
+ .Fundo-Cliente{
+  background-color:rgba($color: #D0CACE, $alpha: 0.7);
+  width: 80vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:80vh;
+ }
+
+ .Titulo-Principal{
+   font-family:Arial;
+       font-weight: bold;
+       text-align: center;
+       margin-left: 50px;
+       margin-right: 1em;
+       min-width: none;
+       margin: 5em;
+       margin-bottom: 30px;
+ }
+
+ .Formulario1{
+   display: flex;
+   flex-direction: column;
+   margin: 10px 0px;
+ }
+
+ .Titulo-Caixa-Texto1{
+   font-family: arial;
+   align-self: flex-start;
+   flex-direction: row;
+   margin-top: 1px;
+   font-size:medium;
+   margin: 4px;
+ }
+
+   .Caixa-Texto1{
+      background-color: #fff;
+      border-radius: 100px;
+      border-style: none;
+      width: 60vh;
+      padding: 10px;
+      margin-bottom: 0.5em;
+      
+      }
+      
+      .Caixa-Texto:focus{
+         outline-width: 0px; 
+         background-color: #ffff;
+   
+      }
+
+      .Formulario2{
+      display: flex;
+      flex-direction: column;
+      margin: 10px 0px;
+      }
+
+      .Titulo-Caixa-Texto2{
+         font-family: arial;
+         align-self: flex-start;
+         flex-direction: row;
+         margin-top: 1px;
+         font-size:medium;
+         margin: 4px;
+      }
+      
+
+      .Caixa-Texto2{
+         background-color: #fff;
+      border-radius: 100px;
+      border-style: none;
+      width: 60vh;
+      padding: 10px;
+      margin-bottom: 0.5em;
+      }
+      
+      .Caixa-Texto:focus{
+         outline-width: 0px; 
+         background-color: #ffff;
+   
+      }
+
+      .Botao{
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         margin: 15px;
+         align-items: center;
+         height: 50px;
+      }
+
+      .Botao1{
+        align-items: center;
+        border-radius: 50px;
+        margin-bottom:0.5em ;
+        border-radius: 50px;
+        border-style: none;
+        padding: 2px;
+        height: 40px ;
+        width: 140px;
+
+      }
+ }   
+   
+ 
+ 
+        
+     
