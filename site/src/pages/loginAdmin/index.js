@@ -15,6 +15,10 @@ export default function AdminLogin() {
    const navigate = useNavigate();
    const ref = useRef();
 
+   useEffect(() =>{
+      storage.remove('admin-logado')
+   }, []);
+   
    useEffect(()=>{
         if(storage('admin-logado'))
             navigate('/');

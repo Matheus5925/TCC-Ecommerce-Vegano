@@ -24,8 +24,9 @@ server.post('/produto', async (req, resp) =>{
             
         if(!infoProdutos.valor)
             throw new Error("Valor do produto não informado");
+            
         if(infoProdutos.valor <= 0)
-            throw new Error("Valor abaixo de 0 informe um valor");
+            throw new Error("Valor abaixo de 0 informe um valor positivo");
             
         if(!infoProdutos.fabricante)
             throw new Error("Fabricante do produto precisa ser informado");
@@ -39,8 +40,9 @@ server.post('/produto', async (req, resp) =>{
         if(!infoProdutos.linha)
             throw new Error("Linha do produto não informada");
 
-        await CadastroProduto(infoProdutos);
-        resp.status(204).send();
+        const r = await CadastroProduto(infoProdutos);
+        resp.send(r);
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message

@@ -1,5 +1,5 @@
 import { BuscaCategoria, BuscarParteCorpo, CadastrarProduto } from '../../api/ProdutoAPI.js'
-import { toast }  from 'react-toastify'
+import { toast,ToastContainer }  from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 
@@ -15,17 +15,25 @@ export default function CadastrarProdutos() {
     const [valor, setValor ] = useState(0);
     const [descricao, setDescricao] = useState('');
     const [image, setImage] = useState('');
-    const [enderecoImg, setEnderecoImagem] = useState('');
-    const [status, setStatus] = useState({
-        type: '',
-        mensagem: ''
-    });
+  
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
 
     const [idParteCorpo, setIdParteCorpo] = useState();
     const [parteCorpo, setParteCorpo] = useState([]);
 
+    const NovoProduto = _ =>{
+        setProduto('');
+        setLinha('');
+        setFabricante('');
+        setData('');
+        setVolume(0);
+        setQuantidade(0);
+        setValor(0);
+        setDescricao('');
+        setCategoria([]);
+        setIdParteCorpo([])
+    }
     
     const Categoria = async () =>{
         const r = await BuscaCategoria();
@@ -39,15 +47,18 @@ export default function CadastrarProdutos() {
 
     const Salvar = async () =>{
         try {
-            let preco = Number(valor.repleace(',', '.'));
+            let preco = Number(valor.repl(',', '.'));
 
-            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume, linha);
-            toast.dark('Produto cadastrado com sucesso!');
+            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, valor, fabricante, data, volume ,quantidade, linha);
+            toast.success('Produto cadastrado com sucesso!');
+            NovoProduto();
             
         } catch (err) {
             toast.error(err.response.data.erro)
-        }
-    }
+        };
+    };
+
+   
 
     useEffect(() =>{
         Categoria();
@@ -66,7 +77,7 @@ export default function CadastrarProdutos() {
 
     return (
         <main className='Page-cadastro'>
-
+            <ToastContainer />
             <Cabecalho />
             <div className='principal'>
                 <div className='titulo'>
@@ -115,7 +126,7 @@ export default function CadastrarProdutos() {
                                         <label className='Titulo-Caixa-Texto'> Categoria </label>
                                         <select value={idCategoria} onChange={e => setIdCategoria(e.target.value)}>
                                             <option value="Selecione uma opção">Selecione</option>
-                                            {categoria.map(item =><option value={item.id}> {item.categoria}</option>)}
+                                            {categoria.map(item =><option key={item.id} value={item.id}> {item.categoria}</option>)}
                                         </select>
                                     </div>
 
