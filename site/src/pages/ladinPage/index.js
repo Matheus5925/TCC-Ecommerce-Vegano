@@ -1,14 +1,13 @@
 import LogoTipo from '../../assets/images/logo.png'
-import IconeUsuario from '../../assets/images/icone-usuario.png'
-import Carrinho from '../../assets/images/carrinho.png'
-import './index.scss'
 
+import './index.scss'
+import Cabecalho1 from '../../components/cabecalho-principal'
 
 export default function LadinPage() {
     return(
        <div className='Principal'>
-            <div className='ImgFundo'>
-                  
+            <div className='ImgFundo'> 
+            <Cabecalho1 className='text'/>
                </div>
                <div className='Segunda-Parte'>
                 <div className='Titulo'>

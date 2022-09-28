@@ -33,14 +33,18 @@ create table tb_parte_corpo(
 
 create table tb_produto(
 	id_produto int primary key auto_increment,
+    id_categoria int,
+    id_parte_corpo int,
     nm_produto varchar(100),
     ds_produto varchar(5000),
     nr_valor decimal(10,2),
     ds_fabricante varchar(50),
-    dt_validade date,
+    dt_validade datetime,
     nr_volume	decimal(15,3),
     ds_linha	varchar(50),
-    img_produto varchar(5000)
+    img_produto varchar(5000),
+    foreign key (id_categoria) references tb_categoria (id_categoria),
+    foreign key (id_parte_corpo) references tb_parte_corpo (id_parte_corpo)
 );
 
 create table tb_ofertas(
@@ -113,14 +117,4 @@ create table tb_adm(
 	dt_nascimento date,
     ds_telefone varchar(14),
     ds_senha	varchar(50) not null
-);
-
-create table tb_produto_categoria(
-	id_produto_categoria int primary key auto_increment,
-    id_produto 			int,
-    id_categoria		int,
-    id_parte_corpo		int,
-    foreign key (id_produto) references tb_produto (id_produto),
-    foreign key (id_categoria) references tb_categoria (id_categoria),
-    foreign key (id_parte_corpo) references tb_parte_corpo (id_parte_corpo)
 );
