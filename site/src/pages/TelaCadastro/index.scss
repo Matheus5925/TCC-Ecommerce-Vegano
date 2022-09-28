@@ -1,0 +1,123 @@
+
+.Principal{
+ 
+
+    .Container-Principal{
+       text-align:center;
+       margin: 300px 70px 200px 70px;
+       align-items: center;
+    }
+     .Fundo-Cadastro-Img{
+     background-image: url('../../assets/images/image\ 12.png');
+      background-repeat: no-repeat;
+     background-size: cover;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ 
+         
+        }
+ 
+        .Fundo-Cadastro{
+         background-color:rgba($color: #D9D9D9, $alpha: 0.7);
+         margin: 10px 5px 10px 5px;
+         width: 130vh;
+         display:flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         height:80vh;
+        }
+
+        
+ 
+        .Titulo-Cadastro{
+         margin: 10px;
+         display: flex;
+         flex-direction: column;
+         position: relative;
+         margin-bottom: 20em;
+         align-items: left;
+        }
+ 
+        .Primeiro-Container{
+         display: flex;
+         flex-direction:column;
+         margin: 5px 5px 5px 5px;
+         align-items: left;
+        
+        }
+ 
+        .Titulo-da-Caixa1{
+        text-align:left;
+        
+         }
+ 
+         .Caixa1{
+             display: flex;
+             flex-direction: row;
+             align-items: right;
+             background-color: #fff;
+             border-radius: 100px;
+             border-style: none;
+             margin: 1px;
+             width: 90vh;
+             padding: 10px;
+             margin-bottom: 0.5em;
+         }
+         .Caixa-Texto:focus{
+             outline-width: 0px; 
+             background-color: #ffff;
+       
+          }
+ 
+          .Segundo-Container{
+            display: flex;
+            flex-direction: row;
+          }
+
+          .Titulo-da-Caixa1{
+            display: flex;
+            flex-direction: column;
+          }
+ 
+          .Caixa2{
+            display: flex;
+             flex-direction: row;
+             align-items: right;
+             background-color: #fff;
+             border-radius: 100px;
+             border-style: none;
+             margin: 1px;
+             width: 30vh;
+             padding: 10px;
+             margin-bottom: 0.5em; 
+          }
+
+          .Terceiro-Container{
+            display: flex;
+            flex-direction: row;
+          }
+
+          .Titulo-da-Caixa3{
+            display: flex;
+            flex-direction: column;
+          }
+
+          .Caixa3{
+            display: flex;
+            flex-direction: row;
+            align-items: right;
+            background-color: #fff;
+            border-radius: 100px;
+            border-style: none;
+            margin: 1px;
+            width: 30vh;
+            padding: 10px;
+            margin-bottom: 0.5em;  
+          }
+ 
+ }
+ 
+ 
