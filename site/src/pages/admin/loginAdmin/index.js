@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from 'react';
-import { LogiAdm } from '../../api/admAPI.js';
+import { LogiAdm } from '../../../api/admAPI.js';
 import storage  from 'local-storage';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar';

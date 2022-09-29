@@ -1,7 +1,7 @@
 import './index.scss';
-import {CardsSistems}  from '../../components/CardsSistem/index.js';
+import {CardsSistems}  from '../../../components/CardsSistem/index.js';
 import { useEffect, useState } from 'react';
-import Cabecalho from '../../components/cabecalho';
+import Cabecalho from '../../../components/cabecalho';
 
 export const PageSelection = () =>{
 

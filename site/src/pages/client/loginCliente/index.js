@@ -1,4 +1,4 @@
-import { LoginUsuario } from '../../api/UsuarioAPI.js';
+import { LoginUsuario } from '../../../api/UsuarioAPI.js';
 import {useState, useEffect, useRef } from 'react'
 import storage from 'local-storage';
 import LoadingBar from 'react-top-loading-bar';

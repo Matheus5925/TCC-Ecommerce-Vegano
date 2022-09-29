@@ -1,9 +1,9 @@
-import { BuscaCategoria, BuscarParteCorpo, CadastrarProduto } from '../../api/ProdutoAPI.js'
+import { BuscaCategoria, BuscarParteCorpo, CadastrarProduto } from '../../../api/ProdutoAPI.js'
 import { toast,ToastContainer }  from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 
-import Cabecalho from '../../components/cabecalho'
+import Cabecalho from '../../../components/cabecalho'
 
 export default function CadastrarProdutos() {
     const [produto, setProduto] = useState('');
