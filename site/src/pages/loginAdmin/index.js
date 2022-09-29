@@ -32,7 +32,7 @@ export default function AdminLogin() {
          const r = await LogiAdm(email, senha);
          storage('admin-logado', r);
         setTimeout(() =>{
-         navigate('/cadastrarprodutos');
+         navigate('/paginaselecao');
         }, 3000)
 
       } catch (err) {

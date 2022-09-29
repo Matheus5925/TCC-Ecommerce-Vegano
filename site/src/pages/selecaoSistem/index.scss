@@ -1,0 +1,31 @@
+.pagina-selecao{
+    display: flex;
+    flex-direction: column;
+    
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 1.5em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    .secao-cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3em;
+        width: 52em;
+    }
+
+    .cards{
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
