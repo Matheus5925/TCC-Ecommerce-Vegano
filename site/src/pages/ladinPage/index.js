@@ -1,9 +1,23 @@
 import LogoTipo from '../../assets/images/logo.png'
-
+import {useEffect} from 'react';
+import storage from 'local-storage';
+import {useNavigate} from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 
 export default function LadinPage() {
+
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        if(!storage('usuario-logado')){
+            navigate('/logincliente')
+        }
+        else{
+          const UsuarioLogado = storage('usuario-logado');
+      }
+    }, []);
+
     return(
        <div className='Principal'>
             <div className='ImgFundo'> 

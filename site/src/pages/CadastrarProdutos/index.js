@@ -10,9 +10,9 @@ export default function CadastrarProdutos() {
     const [linha, setLinha] = useState('');
     const [fabricante, setFabricante] = useState('');
     const [data, setData] = useState('');
-    const [volume, setVolume] = useState(0);
+    const [volume, setVolume] = useState('');
     const [quantidade, setQuantidade] = useState(0);
-    const [valor, setValor ] = useState(0);
+    const [valor, setValor ] = useState();
     const [descricao, setDescricao] = useState('');
     const [image, setImage] = useState('');
   
@@ -29,7 +29,7 @@ export default function CadastrarProdutos() {
         setData('');
         setVolume(0);
         setQuantidade(0);
-        setValor(0);
+        setValor('');
         setDescricao('');
         setCategoria([]);
         setIdParteCorpo([])
@@ -47,9 +47,9 @@ export default function CadastrarProdutos() {
 
     const Salvar = async () =>{
         try {
-            let preco = Number(valor.repl(',', '.'));
+            let preco = Number(valor.replace(',', '.'));
 
-            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, valor, fabricante, data, volume ,quantidade, linha);
+            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume ,quantidade, linha);
             toast.success('Produto cadastrado com sucesso!');
             NovoProduto();
             
@@ -90,13 +90,13 @@ export default function CadastrarProdutos() {
                         <div className='pag-toda'>
 
                             <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
-                            <input value={produto.trimStart()} onChange={e => setProduto(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='Mascará de....' value={produto.trimStart()} onChange={e => setProduto(e.target.value)} className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Linha do produto</label>
-                            <input  value={linha.trimStart()} onChange={e => setLinha(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='vegana, natural...'  value={linha.trimStart()} onChange={e => setLinha(e.target.value)} className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Fabricante</label>
-                            <input  value={fabricante.trimStart()} onChange={e => setFabricante(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='Gaya, Avon...'  value={fabricante.trimStart()} onChange={e => setFabricante(e.target.value)} className='Caixa-Texto' type="text" />
 
 
                             <div className='section-inputs2'>
@@ -107,7 +107,7 @@ export default function CadastrarProdutos() {
                                     </div>
                                     <div className='label'>
                                         <label className='Titulo-Caixa-Texto'> Volume </label>
-                                        <input value={volume} onChange={e => setVolume(e.target.value)} className='caixa-menor number' type="number" />
+                                        <input placeholder='50g, 250ml...' value={volume} onChange={e => setVolume(e.target.value)} className='caixa-menor number' type="number" />
                                 </div>
                                 </div>
                                 <div className='qtd-valor' >
@@ -117,7 +117,7 @@ export default function CadastrarProdutos() {
                                     </div>
                                     <div className='label'>
                                         <label className='Titulo-Caixa-Texto'> Valor </label>
-                                        <input value={valor} onChange={e => setValor(e.target.value)} className='caixa-menor number' type="number" min="0" pattern="^\d*(\.\d{0,2})?$" />
+                                        <input placeholder='$00,00' value={valor} onChange={e => setValor(e.target.value)} className='caixa-menor number' type="number" min="0" pattern="^\d*(\.\d{0,2})?$" />
                                     </div>
                                 </div>
                                 <div className='categ-parte'>

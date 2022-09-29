@@ -10,7 +10,7 @@ server.post('/login/usuario', async (req,resp) =>{
         const resposta = await LoginUsuario(email,senha);
         if(!resposta)
             throw new Error('E-mail ou senha inválido')
-
+        resp.send(resposta);
     } catch (err) {
         resp.status(401).send({
             erro: err.message

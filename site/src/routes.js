@@ -16,7 +16,6 @@ const Rotas = () =>{
                 <Route path='/cadastrarprodutos' element={<CadastrarProdutos />}></Route> 
                 <Route path='/cadastrousuario' element={<TelaCadastro />}></Route>
             </Routes>
-                
         </BrowserRouter>
     );
 };
