@@ -4,6 +4,7 @@ import storage from 'local-storage';
 import {useNavigate} from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
+import Rodape from '../../components/rodape'
 
 export default function LadinPage() {
 
@@ -61,36 +62,24 @@ export default function LadinPage() {
                                         </div>
                                       </div>
                                     </div>
-                                    <div className='Depoimentos'>
-                                      <div className='Titulo-Depoimentos'>
-                                        <p>Depoimentos de Clientes</p>
-                                        <div className='Linha2'>
-                                        <hr/>
+                                     <div className='Depoimentos'>
+                                        <div className='Titulo-Depoimentos'>
+                                          <p>Depoimentos de Clientes</p>
+                                          <div className='Linha2'>
+                                          <hr/>
+                                          </div>
+
+                                        < div className='Imagens'>
+                                          <div className='Imagen1'></div>
+                                          <div className='Imagen2'></div>
                                         </div>
-
-                                      < div className='Imagens'>
-                                        <div className='Imagen1'></div>
-                                        <div className='Imagen2'></div>
-                                      </div>
+                                       </div>
                                       </div>
 
-                                      <div className='Rodape'>
-                                        <div className='Container-Rodape'>
-                                          <div className='Dentro-do-Container'>
-                                        <img src={LogoTipo} alt='logo' /> </div>
-                                        <div className='Menu'>
-                                          <h2>Menu</h2>
-                                        </div>
-                                        
-                                        </div>
-                                      </div>
+                                      </div> 
+        </div>
+                                            
 
-
-                                      </div>
-                                    
-                                  
-                              </div>
-                            </div>
                  
                  
     )

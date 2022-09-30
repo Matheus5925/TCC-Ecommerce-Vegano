@@ -34,14 +34,14 @@ export default function TelaCadastro() {
                      </div>
                   </div> 
 
-                  <div className=''>
+                  <div className='box'>
                         <label className='Titulo-da-Caixa1'>Email</label>
                         <input className='Caixa1' type="text" />
                         <label className='Titulo-da-Caixa1'>Senha</label>
                         <input className='Caixa1' type="text" />
                   </div> 
 
-                  <button> Cadastrar </button>  
+                  <button className='botao'> Cadastrar </button>  
 
              </section>
             </div>              
