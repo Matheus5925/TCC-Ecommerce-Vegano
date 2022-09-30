@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+import HistoricoCompras from './pages/admin/historicoCompras';
 import LadinPage from './pages/home';
 import LoginCliente from './pages/client/loginCliente';
 import AdminLogin from './pages/admin/loginAdmin';
@@ -12,11 +13,12 @@ const Rotas = () =>{
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<AdminLogin />}></Route>
-                <Route path='/lading' element={<LadinPage />}></Route>
+                <Route path='/landing' element={<LadinPage />}></Route>
                 <Route path='/logincliente' element={<LoginCliente/>}></Route>
                 <Route path='/cadastrarprodutos' element={<CadastrarProdutos />}></Route> 
                 <Route path='/cadastrousuario' element={<TelaCadastro />}></Route>
                 <Route path='/paginaselecao' element={<PageSelection/>} />
+                <Route path='/historicocompras'element={<HistoricoCompras/>}/>
             </Routes>
         </BrowserRouter>
     );
