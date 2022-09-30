@@ -1,10 +1,11 @@
 
 
-
 import './index.scss'
 
 import Cabecalho from '../../../components/cabecalho'
 import ComprasHistorico from '../../../components/ComprasHistorico'
+
+
 export default function HistoricoCompras() {
     return(
         <div className='Page-Historico-Compras'>

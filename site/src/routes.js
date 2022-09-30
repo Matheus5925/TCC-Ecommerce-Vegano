@@ -1,5 +1,7 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+import PedidosPendents from './pages/admin/pedidospendents'
+import Estoque from './pages/admin/estoque';
 import HistoricoCompras from './pages/admin/historicoCompras';
 import LadinPage from './pages/home';
 import LoginCliente from './pages/client/loginCliente';
@@ -19,6 +21,8 @@ const Rotas = () =>{
                 <Route path='/cadastrousuario' element={<TelaCadastro />}></Route>
                 <Route path='/paginaselecao' element={<PageSelection/>} />
                 <Route path='/historicocompras'element={<HistoricoCompras/>}/>
+                <Route path='/estoque' element={<Estoque/>}/>
+                <Route path='/pedidospedents' element={<PedidosPendents/>}/>
             </Routes>
         </BrowserRouter>
     );

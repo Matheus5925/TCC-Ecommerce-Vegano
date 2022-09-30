@@ -8,7 +8,6 @@ export default function() {
             <div className='componentes'>
                 <div className='Primeira-Faixa'>
                     <div className='Primeiro-Historico'> 
-
                         <div className='Nome'>
                         <p>HELLOISE LUZ</p>  
                             <div className='Status'>
