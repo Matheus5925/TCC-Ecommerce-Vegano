@@ -1,10 +1,12 @@
 import './index.scss';
 import {CardsSistems}  from '../../../components/CardsSistem/index.js';
+import storage from 'local-storage';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Cabecalho from '../../../components/cabecalho';
 
 export const PageSelection = () =>{
-
+    
     
     const conteudoCard = [
         {
