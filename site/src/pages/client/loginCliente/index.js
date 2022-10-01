@@ -61,8 +61,24 @@ export default function LoginCliente() {
                         <label className='Titulo-Caixa-Texto2'>SENHA</label>
                         <input value={senha} onChange={e => setSenha(e.target.value)} className='Caixa-Texto2' type='password'/>
                     </div>
+                    <div className='botoes'>
+                    <div className='Botao2'>
+                        <button className='Botao2' onClick={LoginCliente}>CRIAR CONTA</button>
+                    </div>
                     <div className='Botao'>
                         <button className='Botao1' onClick={LoginCliente}>ENTRAR</button>
+                    </div>
+                    </div>
+                    <div> Novo usuário? cadastre-se
+
+
+
+
+
+
+
+
+                        
                     </div>
                 </div>
             </div>

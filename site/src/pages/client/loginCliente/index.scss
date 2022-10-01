@@ -2,7 +2,7 @@
 .Principal{
 
    .imgFundo{
-      background-image: url('../../../assets/images/img2.png');
+      background-image: url('../../../assets/images/image\ 12.png');
       background-repeat: no-repeat;
       background-size: cover;
       height: 100vh;
@@ -106,9 +106,30 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            margin: 15px;
+            margin: 3em;
             align-items: center;
             height: 50px;
+         }
+
+        .botoes{
+         display: flex;
+         flex-direction: row;
+         align-items:center;
+        }
+
+        .Botao2{
+         align-items: center;
+         border-radius: 50px;
+         margin-bottom:0.5em ;
+         border-radius: 50px;
+         border-style: none;
+         padding: 2px;
+         height: 40px ;
+         width: 140px;
+         }
+         .Botao2:hover{
+            cursor: pointer;
+            transform: scale(1.2);
          }
 
          .Botao1{
