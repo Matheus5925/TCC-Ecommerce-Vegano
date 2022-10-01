@@ -1,4 +1,4 @@
-import { BuscaCategoria, BuscarParteCorpo, CadastrarProduto } from '../../../api/ProdutoAPI.js'
+import { BuscaCategoria, buscarImagem, BuscarParteCorpo, CadastrarProduto, EnviarImagem } from '../../../api/ProdutoAPI.js'
 import { toast,ToastContainer }  from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
@@ -14,7 +14,8 @@ export default function CadastrarProdutos() {
     const [quantidade, setQuantidade] = useState(0);
     const [valor, setValor ] = useState();
     const [descricao, setDescricao] = useState('');
-    const [image, setImage] = useState('');
+    const [imagem, setImagem] = useState();
+    const [id,setId] = useState(0);
   
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
@@ -32,7 +33,8 @@ export default function CadastrarProdutos() {
         setValor('');
         setDescricao('');
         setCategoria([]);
-        setIdParteCorpo([])
+        setIdParteCorpo([]);
+        setImagem();
     }
     
     const Categoria = async () =>{
@@ -50,6 +52,10 @@ export default function CadastrarProdutos() {
             let preco = Number(valor.replace(',', '.'));
 
             const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume ,quantidade, linha);
+            await EnviarImagem(r.id, imagem);
+            setId(r.id);
+            console.log(r.id + 'Errooooooo');
+
             toast.success('Produto cadastrado com sucesso!');
             NovoProduto();
             
@@ -64,16 +70,29 @@ export default function CadastrarProdutos() {
         Categoria();
         ParteDoCorpo();
     }, []);
+
+    const escolherImagem = () =>{
+        document.getElementById('imagemProduto').click();
+    }
+
+    const MostrarImagem = () =>{
+        if(typeof (imagem) === 'object'){
+            return URL.createObjectURL(imagem);
+        }
+        else{
+            return buscarImagem(imagem);
+        }
+    }
    
 
-    const uploadImage = async e => {
+    // const uploadImage = async e => {
 
-        e.preventDefault();
+    //     e.preventDefault();
 
-        const formData = new FormData();
-        formData.append('image', image);
+    //     const formData = new FormData();
+    //     formData.append('image', image);
 
-    }
+    // }
 
     return (
         <main className='Page-cadastro'>
@@ -107,7 +126,7 @@ export default function CadastrarProdutos() {
                                     </div>
                                     <div className='label'>
                                         <label className='Titulo-Caixa-Texto'> Volume </label>
-                                        <input placeholder='50g, 250ml...' value={volume} onChange={e => setVolume(e.target.value)} className='caixa-menor number' type="number" />
+                                        <input placeholder='50g, 250ml...' value={volume} onChange={e => setVolume(e.target.value)} className='caixa-menor number' type="text" />
                                 </div>
                                 </div>
                                 <div className='qtd-valor' >
@@ -145,16 +164,20 @@ export default function CadastrarProdutos() {
                     </div>
 
                     <div className="pg-lado">
-                        <form onSubmit={uploadImage}>
+                        <div onClick={escolherImagem}>
                             <label className='Titulo-Caixa-Texto'>Adicione uma foto</label>
                             {
-                                image ?
-                                    <img src={window.URL.createObjectURL(image)} alt="imagem" width="250px" height="250px" /> :
-                                    <img src="./neblina.png" alt="imagem" width="250px" height="250px" />
+                                !imagem &&
+                                <img src="./neblina.png" alt="imagem" width="250px" height="250px" />
+                            }
+                            
+                            {
+                                imagem &&
+                                    <img src={MostrarImagem()} alt="imagem" width="250px" height="250px" />
                             }
                             <br />
-                            <input type='file' name='image' onChange={e => setImage(e.target.files[0])} />
-                        </form>
+                            <input type='file' id='imagemProduto' onChange={e => setImagem(e.target.files[0])} />
+                        </div>
 
                         <label className='Titulo-Caixa-Texto'>Adicione uma descrição </label>
                         <textarea value={descricao} onChange={e => setDescricao(e.target.value)} id="descricao" name="descricao" rows="13" cols="55" />

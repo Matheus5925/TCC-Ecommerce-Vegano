@@ -17,4 +17,4 @@ const con = mysql.createConnection({
 })
 
 export { con };
-console.log('BD conectado')
+console.log('BD conectado');

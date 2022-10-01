@@ -22,3 +22,22 @@ export const CadastrarProduto = async (idCategoria, idParteCorpo, nome, descrica
     const r = await api.post('/produto',{ idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume,quantidade, linha});
     return r.data
 }
+
+
+export const EnviarImagem = async (id, imagem) =>{
+    const formData = new FormData();
+    formData.append('produtoCapa', imagem);
+
+    const r = await api.put(`/produto/${id}/imagem`, formData, {
+        headers:{
+            "Content-Type": "multipart/form-data"
+        }
+    })
+
+    return r.status;
+}
+
+export const buscarImagem = (imagem) => {
+    return `${api.getUri()}/${imagem}`
+    // http://localhost:5000/storage/capasFilmes/7506e3c244b59684e73fddb4d7cbcf80
+}
