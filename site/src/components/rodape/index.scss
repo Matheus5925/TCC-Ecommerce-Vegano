@@ -2,7 +2,7 @@
     .rodape{
     display: flex;
     flex-direction: column;
-    padding: 8em;
+    padding: 7em;
     background-color: #d8c8b9;
 
     }
@@ -10,12 +10,13 @@
     .box1{
        display: flex;
        flex-direction: row;
-       margin-top: 1em;
+       margin-top: -4em;
+       margin-left: 2em;
 
     }
 
     .box1 img{
-        width: 15em;
+        width: 19em;
         margin-bottom: 3em;
     }
 
@@ -27,7 +28,29 @@
     .box-2 h1 {
         color: #636363;
         font-family: 'Poppins', sans-serif;
+        margin-bottom: 1em;
+    }
+
+    .box-2 img{
+        width: 2em;
+        margin-bottom: 10px;
+        margin-right: 1em;
+    }
+
+    .box-2 p {
+        display: flex;
+        flex-direction: row;
+        margin: 1em;
+        font-family: 'Poppins';
+    }
+
+    .linha{
+        color: #000;
+
     }
 
     .text{
+        font-family: 'Poppins', sans-serif;
+        margin-left: 2em;
+        margin-top: 1em;
     }
