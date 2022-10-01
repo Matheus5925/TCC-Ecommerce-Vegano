@@ -3,7 +3,7 @@ import { toast,ToastContainer }  from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 
-import Cabecalho from '../../../components/cabecalho'
+import CabecalhoAdmin from '../../../components/cabecalho-admin/index.js';
 
 export default function CadastrarProdutos() {
     const [produto, setProduto] = useState('');
@@ -97,7 +97,7 @@ export default function CadastrarProdutos() {
     return (
         <main className='Page-cadastro'>
             <ToastContainer />
-            <Cabecalho />
+            <CabecalhoAdmin />
             <div className='principal'>
                 <div className='titulo'>
                     <p>ADICIONAR UM PRODUTO</p>

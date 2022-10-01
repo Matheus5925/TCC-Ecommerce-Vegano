@@ -1,0 +1,97 @@
+
+.Faixa-Principal{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    gap: .2em;
+
+    .ajuste-tela{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding-right: 1em;
+        z-index: 5;
+        position: relative;
+    }
+
+   .cabecalho{
+        background-color:#D8C8B9;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+
+   }
+    .Dados-Usuario{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .Dados-Usuario:hover{
+        cursor: pointer;
+    }
+
+    .tela-click-cabecalho{
+        border: 0.5px solid rgb(36, 35, 35) ;
+        height: 8em;
+        width: 18em;
+        -webkit-box-shadow: 1px 13px 54px -18px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 13px 54px -18px rgba(0,0,0,0.75);
+        box-shadow: 1px 13px 54px -18px rgba(0,0,0,0.75);
+       
+    }
+
+    .user-name-email{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-right: 8px;
+        
+    }
+
+    .user-name-email > p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .usuario{
+        height: 50%;
+    }
+    .sair{
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid black;
+    }
+
+    .botao{
+        background-color:#D8C8B9;
+        border-radius: 5em;
+        height: 1.8em;
+        width: 5em;
+        border: none;
+    }
+
+    .botao:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    .email{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        color: rgb(93, 93, 93);
+        padding-left: 36px;
+    }
+
+    .icon-user{
+        height: 30px;
+        width: auto;
+    }
+}

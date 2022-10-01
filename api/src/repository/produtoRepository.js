@@ -20,3 +20,31 @@ export async function AlterarImagem(imagem, id) {
     const [linhas] = await (await con).query(comando, [imagem, id]);
     return linhas.affectedRows;
 }
+
+export async function BuscarEstoque() {
+    const comando = `select id_produto as id,
+                            nm_produto as nome,
+                            ds_fabricante as fabricante,
+                            nr_valor as preco,
+                            nr_quantidade as quantidade
+                        from tb_produto`;
+    const [linhas] = await (await con).query(comando);
+    return linhas
+};
+
+export async function AlterarProduto(id, infoProdutos) {
+    const comando = `update tb_produto
+                    set nm_produto = ?,
+                        ds_produto  = ?,
+                        nr_valor = ?,
+                        ds_fabricante = ?,
+                        dt_validade = ?,
+                        nr_quantidade = ?,
+                        nr_volume = ?,
+                        id_categoria = ?,
+                        id_parte_corpo = ?,
+                        ds_linha = ?
+                where id_produto = ?`;
+    const [linhas] = await (await con).query(comando,[infoProdutos.nome ,infoProdutos.descricao ,infoProdutos.valor ,infoProdutos.fabricante ,infoProdutos.validade ,infoProdutos.quantidade , infoProdutos.volume ,infoProdutos.idCategoria,infoProdutos.idParteCorpo,  infoProdutos.linhas, id]);
+    return linhas.affectedRows; 
+}

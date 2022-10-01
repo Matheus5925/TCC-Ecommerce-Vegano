@@ -2,14 +2,14 @@
 
 import './index.scss'
 
-import Cabecalho from '../../../components/cabecalho'
+import CabecalhoAdmin from '../../../components/cabecalho-admin'
 import ComprasHistorico from '../../../components/ComprasHistorico'
 
 
 export default function HistoricoCompras() {
     return(
         <div className='Page-Historico-Compras'>
-            <Cabecalho/>
+            <CabecalhoAdmin/>
             <div className='Titulo'>
             <h1>Histórico de Compras</h1>
              <ComprasHistorico/>

@@ -41,3 +41,9 @@ export const buscarImagem = (imagem) => {
     return `${api.getUri()}/${imagem}`
     // http://localhost:5000/storage/capasFilmes/7506e3c244b59684e73fddb4d7cbcf80
 }
+
+export const ListarEstoque = async () =>{
+    const r = await api.get('/stoque');
+
+    return r.data;
+}
