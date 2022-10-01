@@ -4,7 +4,7 @@ import storage from 'local-storage';
 import {useNavigate} from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
-import Rodape from '../../components/rodape'
+import Rodape from '../../components/Rodape'
 
 export default function LadinPage() {
 
@@ -39,7 +39,7 @@ export default function LadinPage() {
                         O objetivo do veganismo é reduzir os impactos ambientais da sociedade e promover o bem-estar animal, principalmente por meio de mudanças no consumo.
                         <br/>
                         Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
-             </div>
+                    </div>
                   </div>
                         </div>
                             </div>
@@ -76,7 +76,10 @@ export default function LadinPage() {
                                        </div>
                                       </div>
 
-                                      </div> 
+                                      < Rodape/>
+                        </div>
+
+                        
         </div>
                                             
 
