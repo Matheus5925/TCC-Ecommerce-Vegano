@@ -1,11 +1,11 @@
 
-import Cabecalho from '../../../components/cabecalho'
+import CabecalhoAdmin from "../../../components/cabecalho-admin"
 
 export default function Pedidospendentes() { 
 return(
  
     <div className='Page-Pendente'>
-    <Cabecalho/>
+    <CabecalhoAdmin/>
     <div className='Container-Faixa'>
     <div className='Faixa-Pesquisa'>
         <div className='Nome-de-Cliente'>
