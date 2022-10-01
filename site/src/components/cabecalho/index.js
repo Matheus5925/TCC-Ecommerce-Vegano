@@ -27,7 +27,7 @@ export default function Cabecalho() {
 
     return(
       <main className='Faixa-Principal'>
-        <img src={LogoTipo} alt='logo' /> 
+        <img src={LogoTipo} alt='logo'/> 
         <div onClick={SairClick}  className='Dados-Usuario'>
          <h1 className='Nome-Usuario'>{funcionario.split(' ')[0]} </h1>
          <img src={IconeUsuario} alt= 'Icone'/>

@@ -2,6 +2,7 @@
 import Carrinho from '../../assets/images/carrinho.png'
 import iconeUsuario from '../../assets/images/icone-usuario.png'
 
+import './index.scss'
 
 function Cabecalho1() {
     return (
