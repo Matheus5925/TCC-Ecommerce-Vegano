@@ -24,15 +24,23 @@
 
     .Primeiro-Botao{
       display: flex;
-      flex-direction: center;
-      align-items: center;
-      width: 50px;
-      height: 5vh;
-      margin: 10px;
-      border-radius: 40px;
-      margin: top 50px;
+      flex-direction: row-reverse;
 
     }
+
+    .Voltar{
+        border-radius: 20vh;
+        background-color: #D8C8B9;
+        margin: 80vh 5vh ;
+        height: 7vh;
+        width: 15vh;
+    }
+
+    .Voltar:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+   }
+
 
 
    

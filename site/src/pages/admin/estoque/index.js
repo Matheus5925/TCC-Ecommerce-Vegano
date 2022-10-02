@@ -1,10 +1,10 @@
 
 import './index.scss';
-import CardStoque from '../../../components/card-stoque';
 import { ListarEstoque } from '../../../api/ProdutoAPI.js';
 
+import ConponentsEstoque from '../../../components/componentEstoque';
+import FaixaPrincipal from '../../../components/faixaPrincipal';
 import CabecalhoAdmin from '../../../components/cabecalho-admin'
-import iconeUsuario  from '../../../assets/images/icone-usuario.png'
 import { useEffect, useState } from 'react';
 
 export default function Estoque() {
@@ -22,14 +22,10 @@ export default function Estoque() {
     return(
         <div className='Principal-Estoque'>
             <CabecalhoAdmin/>
-            {}
-            {/* <div className='Estoques'>
-                <div className='Primeiro-Estoque'>
-                    <input className='Estoque1' ></input>
-                </div>
-            </div> */}
+            <FaixaPrincipal/>
+            <ConponentsEstoque/>
             <div className='Primeiro-Botao'>
-                <button>Voltar</button>
+                <button className='Voltar'>Voltar</button>
             </div>
             
         </div> 
