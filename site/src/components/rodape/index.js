@@ -7,6 +7,7 @@ import LogoTipo from '../../assets/images/logo-2.jpeg'
 import Whats from '../../assets/images/whats.jpeg'
 import Insta from '../../assets/images/insta.jpeg'
 import Email from '../../assets/images/email.jpeg'
+import Cartoes from '../../assets/images/cartoes.jpeg'
 
 export default function Rodape(){
 
@@ -30,7 +31,9 @@ export default function Rodape(){
                              </div>
                              <div className='linha'> <hr></hr> </div>
 
-                             <div className='text'> formas de pagamentos </div>
+                             <div className='text'> formas de pagamentos 
+                             <img src={Cartoes} alt= "logo-cartoes"/>
+                             </div>
         </footer>
     )
 }
