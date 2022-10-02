@@ -1,16 +1,33 @@
 
 
-.Principal-Conponents{
+.Estoque{
     
+.Estoque-Admin{
+    display: flex;
+    flex-direction: row;
+}
 
-    .Estoque{
-        display: flex;
-        flex-direction: row;
-         
-    }
+.Bloco1{
+    background-image: url('../../assets/images/image\ 5.png');
+    background-repeat: no-repeat;
+    margin: 5vh;
+    height: 60vh;
+    width: 30vh;
+    
+}
 
-   .Primeiro{
-    margin: 100vh;
-   }
+.Bloco2{
+    background-image: url('../../assets/images/image44.png');
+    background-repeat: no-repeat;
+    align-items: center;
+    margin: 5vh;
+    height: 60vh;
+    width: 30vh; 
+}
+   
+
+  
+
+   
    
 }

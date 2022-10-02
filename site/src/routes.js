@@ -1,5 +1,6 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+import TelaProdutos from './pages/client/telaProdutos';
 import PedidosPendents from './pages/admin/pedidospendents'
 import Estoque from './pages/admin/estoque';
 import HistoricoCompras from './pages/admin/historicoCompras';
@@ -23,6 +24,7 @@ const Rotas = () =>{
                 <Route path='/historicocompras'element={<HistoricoCompras/>}/>
                 <Route path='/estoque' element={<Estoque/>}/>
                 <Route path='/pedidospedents' element={<PedidosPendents/>}/>
+                <Route path='/telaprodutos' element={<TelaProdutos/>}/>
             </Routes>
         </BrowserRouter>
     );

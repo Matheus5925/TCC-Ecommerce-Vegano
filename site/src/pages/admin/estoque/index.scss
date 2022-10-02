@@ -2,25 +2,6 @@
 
 .Principal-Estoque{
 
-    .Estoques{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-    }
-
-    .Primeiro-Estoque{
-       display: flex;
-       flex-direction: row;
-    }
-
-    .Estoque1{
-        margin: 20px;
-       height: 70vh;
-       background-image: url('../../../assets/images/image\ 5.png');
-       background-repeat: no-repeat;
-     
-    }
 
     .Primeiro-Botao{
       display: flex;
@@ -31,7 +12,7 @@
     .Voltar{
         border-radius: 20vh;
         background-color: #D8C8B9;
-        margin: 80vh 5vh ;
+        margin: 0vh 5vh ;
         height: 7vh;
         width: 15vh;
     }
