@@ -4,7 +4,7 @@ import storage from 'local-storage';
 import {useNavigate} from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
-import Rodape from '../../components/rodape';
+import Rodape from '../../components/Rodape/index'
 
 export default function LadinPage() {
 
