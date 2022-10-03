@@ -43,7 +43,7 @@ export const buscarImagem = (imagem) => {
 }
 
 export const ListarEstoque = async () => {
-    const r = await api.get('/stoque');
+    const r = await api.get('/estoque');
 
     return r.data;
 };

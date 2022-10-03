@@ -30,7 +30,7 @@ export async function BuscarEstoque() {
                             nr_quantidade as quantidade
                         from tb_produto`;
     const [linhas] = await (await con).query(comando);
-    return linhas
+    return linhas;
 };
 
 export async function AlterarProduto(id, infoProdutos) {
