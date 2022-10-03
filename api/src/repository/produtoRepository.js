@@ -60,4 +60,13 @@ export async function BuscaEstoqueNome(nome) {
                         where nm_produto like ?`;
     const [linhas] = await (await con).query(comando, [`${nome}%`]);
     return linhas;
+};
+
+
+export async function MudarQuantidade(quantidade, id) {
+    const comando = `update tb_produto set
+                            nr_quantidade = ?
+                        where id_produto = ?`;
+    const [linhas] = await (await con).query(comando, [quantidade, id]);
+    return linhas.affectedRows;
 }

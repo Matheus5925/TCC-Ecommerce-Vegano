@@ -53,3 +53,8 @@ export const ListarEstoqueNome = async (nome) =>{
 
     return r.data;
 };
+
+export const MudarQuantidadeEstoque = async (quantidade, id)=>{
+    const r = await api.put(`/alterar/quantidade/${id}`, {quantidade});
+    return r.data;
+}
