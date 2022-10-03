@@ -23,7 +23,13 @@ export default function LadinPage() {
     <div className='Principal'>
       <div className='ImgFundo'>
         <Cabecalho1 className='text' />
+        <div className='escrita'>
+        <p className='texts'> Bem-vindo a nossa loja</p>
+        <input className='bloco'type="text" value={"o que vc procura?"}></input>
+        </div>
+       
       </div>
+      
       <div className='Segunda-Parte'>
         <div className='Titulo'>
           <p>Cosméticos Naturais: descubra sobre nossos Produtos veganos!</p>

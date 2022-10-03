@@ -7,14 +7,19 @@ import './index.scss'
 function Cabecalho1() {
     return (
         <header className='texts'>
-            <h1> Home </h1>
-            <h1> Quem somos </h1>
-            <h1> Produtos </h1>
-            <h1> Ofertas</h1>
-            <div className='icones'>
-                <img src={Carrinho} alt='icone' />
-                <img src={iconeUsuario} alt='icone' />
-            </div>
+            
+                <p> Home </p>
+                <p> Quem somos </p>
+                <p> Produtos </p>
+                <p> Ofertas</p>
+                <p> Entrar</p>
+
+                <div className='icones'>
+                    <img src={Carrinho} alt='icone' />
+                    <img src={iconeUsuario} alt='icone' />
+                </div>
+            
+           
         </header>
     )
 }
