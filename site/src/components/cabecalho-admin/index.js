@@ -56,5 +56,5 @@ export default function CabecalhoAdmin() {
                         <button onClick={SairClick} className='Botao'> Sair </button>
                     </section>
             </div>}
-        </main>
+      </main>
 )}

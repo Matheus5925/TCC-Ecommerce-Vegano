@@ -18,7 +18,9 @@ export default function Estoque() {
     }
 
     const ProdutosEstoque = async () => {
-        const r = await ListarEstoque()
+        const r = await ListarEstoque();
+
+        setCard(r);
     }
 
     useEffect(()=>{

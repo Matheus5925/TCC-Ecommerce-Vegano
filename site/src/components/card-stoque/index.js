@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './index.scss';
 
 
 const CardEstoque = props => {
     const [quantidade, setQuantidade] = useState(0);
+
+    
 
     return (
         <div className='card-stoque'>
@@ -19,7 +21,7 @@ const CardEstoque = props => {
                 <label>QTD:</label>
                 <div className='input-quantidade'>
                     <p>+</p>
-                    <input type="number" value={quantidade} onChange={e => setQuantidade(e.target.value)} />
+                    <input type="number" value={quantidade} onChange={e => setQuantidade(e.target.value)}/>
                     <p>-</p>
                 </div>
             </div>
