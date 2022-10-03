@@ -36,25 +36,25 @@ export default function CabecalhoAdmin() {
     }
 
   return (
-    <main className='Faixa-Principal'>
-      <header className='cabecalho'>
-        <img src={LogoTipo} alt='logo' />
-        <div onClick={aparecerTela} className='Dados-Usuario'>
-          <h1 className='Nome-Usuario'>{nome.split(' ')[0]} </h1>
-          <img src={IconeUsuario} alt='Icone' />
-        </div>
-      </header>
-       {aparecer === true && <div className='tela-click-cabecalho'>
-                  <section className='usuario'>
-                      <div className='user-name-email'>
-                          <img className='icon-user' src={IconeUsuario} alt="" />
-                          <p>{nome}</p>
-                      </div>
-                      <p className='email'>{email}</p>
-                  </section>
-                  <section className='sair'>
-                      <button onClick={SairClick} className='Botao'> Sair </button>
-                  </section>
-          </div>}
-      </main>
-)
+      <main className='Faixa-Principal'>
+        <header className='cabecalho'>
+            <img src={LogoTipo} alt='logo' />
+            <div onClick={aparecerTela} className='Dados-Usuario'>
+              <h1 className='Nome-Usuario'>{nome.split(' ')[0]} </h1>
+              <img src={IconeUsuario} alt='Icone' />
+            </div>
+        </header>
+        {aparecer === true && <div className='tela-click-cabecalho'>
+                    <section className='usuario'>
+                        <div className='user-name-email'>
+                            <img className='icon-user' src={IconeUsuario} alt="" />
+                            <p>{nome}</p>
+                        </div>
+                        <p className='email'>{email}</p>
+                    </section>
+                    <section className='sair'>
+                        <button onClick={SairClick} className='Botao'> Sair </button>
+                    </section>
+            </div>}
+        </main>
+)}

@@ -1,10 +1,6 @@
 import { Router } from "express";
-<<<<<<< HEAD
-import {AlterarImagem, AlterarProduto, BuscarEstoque, CadastroProduto, BuscaEstoqueNome} from '../repository/produtoRepository.js';
-=======
+
 import { AlterarImagem, AlterarProduto, BuscarEstoque, CadastroProduto } from '../repository/produtoRepository.js';
-import { BuscarCategoriaId, BuscarParteCorpoId } from '../repository/categoriaRepository.js'
->>>>>>> 54d512c294f87692d5cca2b6495197def47b02b0
 import multer from 'multer';
 
 const server = Router();
