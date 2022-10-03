@@ -1,10 +1,15 @@
 .card-stoque {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid #000000;
     height: 15em;
     width: 13em;
+
+    .card-stoque:hover{
+        cursor: pointer;
+    }
 
     .img-produto {
         height: 100px;
@@ -52,8 +57,26 @@
         width: 6em;
     }
 
+    .delet-edit{
+        display: flex;
+        flex-direction: row;
+        gap: .7em;
+        justify-content: flex-end;
+        padding: .18em;
+        width: 90%;
+    }
+
     .input-quantidade>p {
         cursor: pointer;
+    }
+
+    .lixeira-lapis{
+        height: 23px;
+    }
+
+    .lixeira-lapis:hover{
+        cursor: pointer;
+        transform: scale(1.2);
     }
 
     input[type=number]::-webkit-inner-spin-button {

@@ -1,6 +1,7 @@
 
 import './index.scss';
 import { ListarEstoque, ListarEstoqueNome } from '../../../api/ProdutoAPI.js';
+import Lupa from '../../../assets/images/procurar.png';
 
 
 import CabecalhoAdmin from '../../../components/cabecalho-admin';
@@ -35,25 +36,30 @@ export default function Estoque() {
 
     return(
         <div className='Principal-Estoque'>
+            <CabecalhoAdmin/>
             <div className='Principal-Faixa'>
-            <div className='Faixa'>
-                <div className='Caixa-de-pesquisa'>
-                    <input value={nome} onChange={e => setNome(e.target.value)} className='Pesquisa' type ="text"/>
-                    <select className='Status' type ="text" />
+                <div className='Faixa'>
+                    <div className='Caixa-de-pesquisa'>
+                        <div className='busca-nome'>
+                            <input value={nome} onChange={e => setNome(e.target.value)} className='Pesquisa' type ="text" placeholder='Nome do produto...'/>
+                            <img className='img-lupa' src={Lupa} alt="" />
+                        </div> 
+                        <select className='Status' type ="text" >
+                            <option value="">Selecione a Marca</option>
+                        </select>
                     </div>
                 </div>
             </div>
-            {card.map(item => <CardEstoque
-                key={item.id}
-                fabricante={item.fabricante}
-                image={item.imagem}
-                nome={item.nome}
-                value={item.preco}
-            />)}
-            <div className='Primeiro-Botao'>
-                <button className='Voltar'>Voltar</button>
-            </div>
-
+            <section  className='cards-estoque'>
+                {card.map(item => <CardEstoque
+                        key={item.id}
+                        id={item.id}
+                        fabricante={item.fabricante}
+                        image={item.imagem}
+                        nome={item.nome}
+                        value={item.preco}
+                />)}
+            </section>
         </div>
     )
 }
