@@ -7,8 +7,11 @@ export default function SegundoCabecalhoPrincipal() {
         <div className='Segundo-Principal'>
             <div className='Segunda-Faixa'>
             <div className='Paginas'>
-            <a>Cabelo Rosto Corpo Perfumes Corpo e Banho</a>
-            <div className='Imagem'></div>
+            <p>Cabelo</p>
+            <p>Rosto</p>
+            <p>Corpo</p>
+            <p>Perfumes</p>
+            <p> Corpo e Banho</p>
             </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ export async function BuscarEstoque() {
                             nr_quantidade as quantidade
                         from tb_produto`;
     const [linhas] = await (await con).query(comando);
-    return linhas
+    return linhas;
 };
 
 export async function AlterarProduto(id, infoProdutos) {
@@ -60,4 +60,13 @@ export async function BuscaEstoqueNome(nome) {
                         where nm_produto like ?`;
     const [linhas] = await (await con).query(comando, [`${nome}%`]);
     return linhas;
+};
+
+
+export async function MudarQuantidade(quantidade, id) {
+    const comando = `update tb_produto set
+                            nr_quantidade = ?
+                        where id_produto = ?`;
+    const [linhas] = await (await con).query(comando, [quantidade, id]);
+    return linhas.affectedRows;
 }

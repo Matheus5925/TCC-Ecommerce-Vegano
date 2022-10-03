@@ -43,7 +43,7 @@ export const buscarImagem = (imagem) => {
 }
 
 export const ListarEstoque = async () => {
-    const r = await api.get('/stoque');
+    const r = await api.get('/estoque');
 
     return r.data;
 };
@@ -53,3 +53,8 @@ export const ListarEstoqueNome = async (nome) =>{
 
     return r.data;
 };
+
+export const MudarQuantidadeEstoque = async (quantidade, id)=>{
+    const r = await api.put(`/alterar/quantidade/${id}`, {quantidade});
+    return r.data;
+}
