@@ -1,5 +1,6 @@
 .Principal-Estoque {
 
+<<<<<<< HEAD
     .Estoques {
         display: flex;
         flex-direction: row;
@@ -17,6 +18,15 @@
         height: 70vh;
         background-image: url('../../../assets/images/image\ 5.png');
         background-repeat: no-repeat;
+=======
+
+.Principal-Estoque{
+
+
+    .Primeiro-Botao{
+      display: flex;
+      flex-direction: row-reverse;
+>>>>>>> 94de82c89601eff091ddd8f4ed74ab84497feef5
 
     }
 
@@ -29,7 +39,11 @@
     .Voltar {
         border-radius: 20vh;
         background-color: #D8C8B9;
+<<<<<<< HEAD
         margin: 80vh 5vh;
+=======
+        margin: 0vh 5vh ;
+>>>>>>> 94de82c89601eff091ddd8f4ed74ab84497feef5
         height: 7vh;
         width: 15vh;
     }
