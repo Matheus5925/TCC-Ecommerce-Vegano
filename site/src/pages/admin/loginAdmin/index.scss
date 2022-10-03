@@ -1,132 +1,133 @@
-.Page-admLogin{
-    
+.Page-admLogin {
 
-.ImgFundo{
-    background-image: url('../../../assets/images/img2.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-   }
-   
-   .Titulo-Principal {
-       font-family:Arial;
-       font-weight: bold;
-       text-align: center;
-       margin-left: 50px;
-       margin-right: 1em;
-       min-width: none;
-       margin-bottom: 30px;
-   }
-   
-   .Fundo-Login{
-   background-color:rgba($color: #D0CACE, $alpha: 0.7);
-   width: 80vh;
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   height:80vh;
-   
-   }
-   
-   .Formulario{
-   display: flex;
-   flex-direction: column;
-   margin: 10px 0px;
-   
-   }
-   
-   .Caixa-Texto{
-   background-color: #fff;
-   border-radius: 100px;
-   border-style: none;
-   width: 60vh;
-   padding: 10px;
-   margin-bottom: 0.5em;
-   
-   
-   }
-   
-   .Caixa-Texto1:focus{
-      outline-width: 0px; 
-      background-color: #ffff;
-       }
-   
-   .Titulo-Caixa-Texto{
-   font-family: arial;
-   align-self: flex-start;
-   flex-direction: row;
-   margin-top: 1px;
-   font-size:medium;
-   margin: 4px;
-   
-   }
-   
-   .Botoes{
-       display: flex;
-       flex-direction: row;
-       justify-content: space-between;
-       height: 50px;
-       
-   }
-   
-   .Linha{
-       margin: 10px;
-   
-   }
-   
-   
-   .Botao-1{
-       font-family: arial;
-       border-radius: 50px;
-       border-style: none;
-       width: 150px;
-       height: 40px;
-       padding: 10px;
-       margin-bottom: 0.5em;
-       background-color: #fff;
-       margin: 5px;
-   }
-   
-   .Botao-2{
-       font-family: arial;
-       border-radius: 50px;
-       border-style: none;
-       width: 150px;
-       padding: 10px;
-       height: 40px;
-       margin-bottom:0.5em ;
-       background-color: #fff;
-       margin: 5px;
-       
-   }
-   
-   .Cadastro {
-       font-family: arial;
-       margin-top: 10px;
-       margin: 10px;
-   
-   
-   }
-   
-   .Cadastro:link, .Cadastro:visited{ //link: configuração de link // VISITED: quando já visitei o sit( tenho a opição de mudar a cor..)
-       text-decoration: none;
-      color: #000;
-   }
 
-   .erro{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    color: red;
-    font-size: 15px;
-   }
+    .ImgFundo {
+        background-image: url('../../../assets/images/img2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-   .Botao-2:hover{
+    .Titulo-Principal {
+        font-family: Arial;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 50px;
+        margin-right: 1em;
+        min-width: none;
+        margin-bottom: 30px;
+    }
+
+    .Fundo-Login {
+        background-color: rgba($color: #D0CACE, $alpha: 0.7);
+        width: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+
+    }
+
+    .Formulario {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px;
+
+    }
+
+    .Caixa-Texto {
+        background-color: #fff;
+        border-radius: 100px;
+        border-style: none;
+        width: 60vh;
+        padding: 10px;
+        margin-bottom: 0.5em;
+
+
+    }
+
+    .Caixa-Texto1:focus {
+        outline-width: 0px;
+        background-color: #ffff;
+    }
+
+    .Titulo-Caixa-Texto {
+        font-family: arial;
+        align-self: flex-start;
+        flex-direction: row;
+        margin-top: 1px;
+        font-size: medium;
+        margin: 4px;
+
+    }
+
+    .Botoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 50px;
+
+    }
+
+    .Linha {
+        margin: 10px;
+
+    }
+
+
+    .Botao-1 {
+        font-family: arial;
+        border-radius: 50px;
+        border-style: none;
+        width: 150px;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 0.5em;
+        background-color: #fff;
+        margin: 5px;
+    }
+
+    .Botao-2 {
+        font-family: arial;
+        border-radius: 50px;
+        border-style: none;
+        width: 150px;
+        padding: 10px;
+        height: 40px;
+        margin-bottom: 0.5em;
+        background-color: #fff;
+        margin: 5px;
+
+    }
+
+    .Cadastro {
+        font-family: arial;
+        margin-top: 10px;
+        margin: 10px;
+
+
+    }
+
+    .Cadastro:link,
+    .Cadastro:visited {
+        //link: configuração de link // VISITED: quando já visitei o sit( tenho a opição de mudar a cor..)
+        text-decoration: none;
+        color: #000;
+    }
+
+    .erro {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        color: red;
+        font-size: 15px;
+    }
+
+    .Botao-2:hover {
         cursor: pointer;
         transform: scale(1.2);
-   }
+    }
 }

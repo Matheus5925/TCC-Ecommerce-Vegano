@@ -27,13 +27,19 @@ export default function Estoque() {
         setTimeout(()=>{
             FiltroNome()
         },1000)
-    },[nome]);
+    },[nome])};
 
-    useEffect(() =>{
+
+    const ProdutosEstoque = async () => {
+        const r = await ListarEstoque()
+
+    }
+
+    useEffect(() => {
         ProdutosEstoque();
     },[]);
 
-    return(
+    return (
         <div className='Principal-Estoque'>
             <CabecalhoAdmin/>
             <div className='Principal-Faixa'>
@@ -51,10 +57,13 @@ export default function Estoque() {
                 nome={item.nome}
                 value={item.preco}
             />)}
+            <CabecalhoAdmin />
+            <FaixaPrincipal />
+            <ConponentsEstoque />
             <div className='Primeiro-Botao'>
                 <button className='Voltar'>Voltar</button>
             </div>
-            
-        </div> 
+
+        </div>
     )
 }

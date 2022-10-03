@@ -1,39 +1,38 @@
+.Principal-Historico-Compras {
 
-.Principal-Historico-Compras{
-
-    .Components{
-       display: flex;
-       flex-direction:row; 
-    }
-
-    .Primeira-Faixa{
-        background-color:#D9D9D9;
-        margin: 15px;
-        height:  5vh;
-        width: 200vh;
-    }
-
-    .Primeiro-Historico{
+    .Components {
         display: flex;
         flex-direction: row;
     }
 
-    .Nome{
+    .Primeira-Faixa {
+        background-color: #D9D9D9;
+        margin: 15px;
+        height: 5vh;
+        width: 200vh;
+    }
+
+    .Primeiro-Historico {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Nome {
         align-items: center;
         margin: 2vh;
     }
 
-   .Primeiro-Status{
-    display: flex;
-    flex-direction: row-reverse;
-    background-color: #D8C8B9;
-    margin: 15px;
-    
+    .Primeiro-Status {
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: #D8C8B9;
+        margin: 15px;
 
-   }
 
-   .Status{
-align-items: center;
-    
-   }
+    }
+
+    .Status {
+        align-items: center;
+
+    }
 }

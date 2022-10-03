@@ -7,17 +7,13 @@ import ComprasHistorico from '../../../components/ComprasHistorico'
 
 
 export default function HistoricoCompras() {
-    return(
+    return (
         <div className='Page-Historico-Compras'>
-            <CabecalhoAdmin/>
+            <CabecalhoAdmin />
             <div className='Titulo'>
-            <h1>Histórico de Compras</h1>
-             <ComprasHistorico/>
+                <h1>Histórico de Compras</h1>
+                <ComprasHistorico />
             </div>
-            
-
-
-
         </div>
     )
 }
