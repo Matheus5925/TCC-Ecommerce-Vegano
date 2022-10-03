@@ -9,6 +9,7 @@ export default function TelaProdutos() {
         <div className='Produtos'>
           <CabecalhoProdutos/>
           <SegundoCabecalhoPrincipal/>
+          
         </div>
     )
 }

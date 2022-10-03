@@ -5,26 +5,24 @@
     .Segunda-Faixa{
         display: flex;
         flex-direction: row;
-        background-color:#EDE6E0;
+        background-color:#ecd9c9;
         height:  8vh;
         width: 220vh;
         font-size: 30px;
     }
 
     .Paginas{
-      
-        align-items:round($number: 0);
-        margin: 5vh 5vh 5vh 2vh ;
-        word-spacing: 20vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 3em;
+        
     }
 
-    .Imagem{
-        background-image: url('../../../assets/images/image\ 41.png');
-        align-items: center;
-        justify-content: center;
-        background-repeat: no-repeat;
-        height: 400vh;
-        width:500vh;
+    .Paginas p{
+        margin-left: 3em;
     }
+
+
 
 }

@@ -24,6 +24,7 @@ const Rotas = () => {
                 <Route path='/historicocompras' element={<HistoricoCompras />} />
                 <Route path='/estoque' element={<Estoque />} />
                 <Route path='/pedidospedents' element={<PedidosPendents />} />
+                <Route path='/telaprodutos' element={<TelaProdutos/>}></Route>
             </Routes>
         </BrowserRouter>
     );
