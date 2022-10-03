@@ -31,7 +31,7 @@ export default function LoginCliente() {
             const resposta = await LoginUsuario(email, senha);
             storage('usuario-logado', resposta);
             setTimeout(() => {
-                navigate('/lading');
+                navigate('/landing');
             }, 3000);
 
         } catch (err) {

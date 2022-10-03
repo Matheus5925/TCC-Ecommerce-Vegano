@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './index.scss';
 
 
-const CardStoque = props => {
+const CardEstoque = props => {
     const [quantidade, setQuantidade] = useState(0);
 
     return (
