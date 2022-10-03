@@ -25,6 +25,7 @@ export async function BuscarEstoque() {
     const comando = `select id_produto as id,
                             nm_produto as nome,
                             ds_fabricante as fabricante,
+                            img_produto as imagem,
                             nr_valor as preco,
                             nr_quantidade as quantidade
                         from tb_produto`;
@@ -47,4 +48,16 @@ export async function AlterarProduto(id, infoProdutos) {
                 where id_produto = ?`;
     const [linhas] = await (await con).query(comando,[infoProdutos.nome ,infoProdutos.descricao ,infoProdutos.valor ,infoProdutos.fabricante ,infoProdutos.validade ,infoProdutos.quantidade , infoProdutos.volume ,infoProdutos.idCategoria,infoProdutos.idParteCorpo,  infoProdutos.linhas, id]);
     return linhas.affectedRows; 
+}
+
+export async function BuscaEstoqueNome(nome) {
+    const comando = `select id_produto as id,
+                            nm_produto as nome,
+                            ds_fabricante as fabricante,
+                            nr_valor as preco,
+                            nr_quantidade as quantidade
+                        from tb_produto 
+                        where nm_produto like ?`;
+    const [linhas] = await (await con).query(comando, [`${nome}%`]);
+    return linhas;
 }

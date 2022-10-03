@@ -1,6 +1,5 @@
 import { Router } from "express";
-import {AlterarImagem, AlterarProduto, BuscarEstoque, CadastroProduto} from '../repository/produtoRepository.js';
-import {BuscarCategoriaId, BuscarParteCorpoId} from '../repository/categoriaRepository.js'
+import {AlterarImagem, AlterarProduto, BuscarEstoque, CadastroProduto, BuscaEstoqueNome} from '../repository/produtoRepository.js';
 import multer from 'multer';
 
 const server = Router();
@@ -83,7 +82,7 @@ server.get('/estoque', async (req,resp)=>{
 
 server.put('/produtos/:id', async (req, resp) =>{
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const infoProdutos = req.body;
        
 
@@ -126,6 +125,19 @@ server.put('/produtos/:id', async (req, resp) =>{
         resp.status(204).send();
     }
         
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
+
+server.get('/busca/estoque/', async (req,resp) =>{
+    try {
+        const { nome } = req.query;
+
+        const r = await BuscaEstoqueNome(nome);
+        resp.send(r);
     } catch (err) {
         resp.status(400).send({
             erro: err.message

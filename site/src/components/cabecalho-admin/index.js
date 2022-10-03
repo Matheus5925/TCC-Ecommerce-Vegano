@@ -11,6 +11,7 @@ export default function CabecalhoAdmin() {
     const [nome, setNome] = useState('');
     const [email, setEmail]= useState('');
     const [aparecer, setAparecer] = useState(false);
+    
     const SairClick = _ =>{
         storage.remove('admin-logado');
         navigate('/')
@@ -53,11 +54,9 @@ export default function CabecalhoAdmin() {
                       <p className='email'>{email}</p>
                   </section>
                   <section className='sair'>
-                      <button onClick={SairClick} className='botao'> Sair </button>
+                      <button onClick={SairClick} className='Botao'> Sair </button>
                   </section>
           </div>}
-
-        
       </main>
     )
 }

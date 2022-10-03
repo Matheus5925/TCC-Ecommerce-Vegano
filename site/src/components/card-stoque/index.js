@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import './index.scss';
 
-const CardStoque = props =>{
+const CardEstoque = props =>{
     const [quantidade, setQuantidade] = useState(0);
 
     return(
         <div className='card-stoque'>
-            <h1>{props.title}</h1>
+            <h1>{props.fabricante}</h1>
             <div className='imagem-card'>
                 <img className='img-produto' src={props.image} alt="" />
             </div>
             <div className='nome-valor'>
-                <p className='nome-produto'>{props.name}</p>
+                <p className='nome-produto'>{props.nome}</p>
                 <p className='valor'>{props.value}</p>
             </div>
             <div className='quantidade'>
@@ -26,4 +26,4 @@ const CardStoque = props =>{
     );
 }
 
-export default CardStoque;
+export default CardEstoque;
