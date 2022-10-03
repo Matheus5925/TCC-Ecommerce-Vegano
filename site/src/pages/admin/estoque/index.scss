@@ -1,47 +1,45 @@
+.Principal-Estoque {
 
-
-.Principal-Estoque{
-
-    .Estoques{
+    .Estoques {
         display: flex;
         flex-direction: row;
         align-items: center;
 
     }
 
-    .Primeiro-Estoque{
-       display: flex;
-       flex-direction: row;
+    .Primeiro-Estoque {
+        display: flex;
+        flex-direction: row;
     }
 
-    .Estoque1{
+    .Estoque1 {
         margin: 20px;
-       height: 70vh;
-       background-image: url('../../../assets/images/image\ 5.png');
-       background-repeat: no-repeat;
-     
-    }
-
-    .Primeiro-Botao{
-      display: flex;
-      flex-direction: row-reverse;
+        height: 70vh;
+        background-image: url('../../../assets/images/image\ 5.png');
+        background-repeat: no-repeat;
 
     }
 
-    .Voltar{
+    .Primeiro-Botao {
+        display: flex;
+        flex-direction: row-reverse;
+
+    }
+
+    .Voltar {
         border-radius: 20vh;
         background-color: #D8C8B9;
-        margin: 80vh 5vh ;
+        margin: 80vh 5vh;
         height: 7vh;
         width: 15vh;
     }
 
-    .Voltar:hover{
+    .Voltar:hover {
         cursor: pointer;
         transform: scale(1.2);
-   }
+    }
 
 
 
-   
+
 }

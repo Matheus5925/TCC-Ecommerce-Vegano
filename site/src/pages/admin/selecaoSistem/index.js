@@ -1,13 +1,13 @@
 import './index.scss';
-import {CardsSistems}  from '../../../components/CardsSistem/index.js';
+import { CardsSistems } from '../../../components/CardsSistem/index.js';
 import storage from 'local-storage';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CabecalhoAdmin from '../../../components/cabecalho-admin';
 
-export const PageSelection = () =>{
-    
-    
+export const PageSelection = () => {
+
+
     const conteudoCard = [
         {
             id: 1,
@@ -19,38 +19,38 @@ export const PageSelection = () =>{
             id: 2,
             nome: "Ver Pedidos",
             link: "/pedidospedents",
-            image:"image/image 33.png"
+            image: "image/image 33.png"
         },
         {
             id: 3,
             nome: "Depoimentos",
             link: "/",
-            image:"image/image 33.png"
+            image: "image/image 33.png"
         },
         {
             id: 4,
             nome: "Estoque",
             link: "/estoque",
-            image:"image/image 33.png"
+            image: "image/image 33.png"
         },
         {
             id: 5,
             nome: "Adicionar Ofertas",
             link: "/",
-            image:"image/image 33.png"
+            image: "image/image 33.png"
         },
         {
             id: 6,
             nome: "Histórico de compras",
             link: "/historicocompras",
-            image:"./image/image33.png"
+            image: "./image/image33.png"
         }
     ]
-    
 
-    return(
+
+    return (
         <main className='pagina-selecao'>
-            <CabecalhoAdmin/>
+            <CabecalhoAdmin />
             <h1>Menu de adiministrador</h1>
             <section className='cards'>
                 <div className='secao-cards'>

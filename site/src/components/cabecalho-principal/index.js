@@ -12,8 +12,8 @@ function Cabecalho1() {
             <h1> Produtos </h1>
             <h1> Ofertas</h1>
             <div className='icones'>
-            <img src={Carrinho} alt='icone'/>
-            <img src={iconeUsuario} alt='icone'/>
+                <img src={Carrinho} alt='icone' />
+                <img src={iconeUsuario} alt='icone' />
             </div>
         </header>
     )

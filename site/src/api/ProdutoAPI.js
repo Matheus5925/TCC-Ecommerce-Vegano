@@ -1,35 +1,35 @@
 import axios from 'axios';
-import {API_URL} from './config.js'
+import { API_URL } from './config.js'
 
 const api = axios.create({
     baseURL: API_URL
 });
 
 
-export const BuscaCategoria = async _ =>{
+export const BuscaCategoria = async _ => {
     const r = await api.get('/categoria');
 
     return r.data;
 }
 
-export const BuscarParteCorpo = async _ =>{
+export const BuscarParteCorpo = async _ => {
     const r = await api.get('/parteCorpo');
 
     return r.data
 }
 
-export const CadastrarProduto = async (idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume,quantidade, linha) =>{
-    const r = await api.post('/produto',{ idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume,quantidade, linha});
+export const CadastrarProduto = async (idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume, quantidade, linha) => {
+    const r = await api.post('/produto', { idCategoria, idParteCorpo, nome, descricao, valor, fabricante, validade, volume, quantidade, linha });
     return r.data
 }
 
 
-export const EnviarImagem = async (id, imagem) =>{
+export const EnviarImagem = async (id, imagem) => {
     const formData = new FormData();
     formData.append('produtoCapa', imagem);
 
     const r = await api.put(`/produto/${id}/imagem`, formData, {
-        headers:{
+        headers: {
             "Content-Type": "multipart/form-data"
         }
     })
@@ -42,7 +42,7 @@ export const buscarImagem = (imagem) => {
     // http://localhost:5000/storage/capasFilmes/7506e3c244b59684e73fddb4d7cbcf80
 }
 
-export const ListarEstoque = async () =>{
+export const ListarEstoque = async () => {
     const r = await api.get('/stoque');
 
     return r.data;

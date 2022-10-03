@@ -1,4 +1,4 @@
-.card-stoque{
+.card-stoque {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,35 +6,36 @@
     height: 15em;
     width: 13em;
 
-    .img-produto{
+    .img-produto {
         height: 100px;
         width: 150px;
     }
 
-    .nome-produto{
+    .nome-produto {
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .valor{
+    .valor {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
     }
 
-    .quantidade{
+    .quantidade {
         display: flex;
         flex-direction: row;
         gap: 1em;
         align-items: center;
     }
 
-    .input-quantidade > input{
+    .input-quantidade>input {
         width: 30px;
         text-align: center;
         text-decoration: none;
         border: none;
-        background:transparent ;
+        background: transparent;
     }
-    .input-quantidade{
+
+    .input-quantidade {
         gap: 5px;
         display: flex;
         flex-direction: row;
@@ -46,7 +47,7 @@
         width: 6em;
     }
 
-    .input-quantidade > p{
+    .input-quantidade>p {
         cursor: pointer;
     }
 

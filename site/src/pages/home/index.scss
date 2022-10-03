@@ -1,244 +1,238 @@
+.Principal {
 
-.Principal{
-
-    @import url('https://fonts.googleapis.com/css2?family=Roboto1:wght@100&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto3:wght@100;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto2:wght@100;400;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-
-
-       .ImgFundo{
-        background-image: url('../../assets/images/image1.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 85vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-            
-        }
-
-        .text{
-          display:flex;
-          flex-direction: row;
-        }
-         
-
-       .Caixa-Texto{
-        display: flex;
-        flex-direction: column;
-        align-items:center;
-       }
-
-       .Caixa-Texto1{
-        align-items: center;
-        border-radius: 50px;
-        margin-bottom:0.5em ;
-        border-radius: 50px;
-        border-style: none;
-        padding: 2px;
-        height: 40px ;
-        width: 140px;
-       }
-         
-
-       .Segunda-Parte{
-        background-color: #ffff;
-       }
-        
-       .Segunda-Parte{
-        display: flex;
-        flex-direction: column;
-       }
+  @import url('https://fonts.googleapis.com/css2?family=Roboto1:wght@100&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto3:wght@100;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto2:wght@100;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
 
 
-       .Linha2{  
-         margin-top: 50px;
-       }
+  .ImgFundo {
+    background-image: url('../../assets/images/image1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-       .Titulo{
-        margin-top: 3em;
+  }
 
-
-
-        
-        text-align: center;
-        font-size:x-large;
-
-       
-       }
-
-       .Container{
-      font-family:'Roboto', sans-serif;
-      display: flex;
-      flex-direction: column;
-      background-color: #99D89F;
-      margin: 50px;
-      height: 65vh;
-      font-family: 'Roboto', sans-serif;
-    
-      
-         
-       }
-
-       .img1{
-         align-items:center ;
-        background-image: url('../../assets/images/img4.png');
-        background-repeat: no-repeat;
-        margin: 70px;
-         height: 70vh;  
-
-       }
-
-       .Paragrafo-1{
-         display: flex;
-         flex-direction: row;
-         justify-content:left;
-       }
-
-       .Paragrafo{
-         font-size: large;
-         font-family: 'PinyonScript-Regular.ttf';
-         margin: 30px 10px 60px 610px;
-         width: 40vh;
-         text-align:left;
-
-         
-       }
-
-       .Container1-2{
-         margin: 20px;
-         font-size:x-large;
-         display: flex;
-         flex-direction: column;
-         background-color:#ffff;
-         height:90vh;
-         
-       
-       }
-
-       .Containers{
-         display: flex;
-         flex-direction: row;
-       }
-
-       .Container1{
-         justify-content: center ;
-         background-repeat: no-repeat;
-        background-color: #99D89F;
-        margin: 70px;
-        height: 70vh;
-        width: 300px;
-       }
-      
-        
-
-       
-
-      
-
-       .Container2{
-         background-color: #99D89F;
-         margin: 70px;
-         height: 70vh;
-         width: 300px;
-          
-        }
-
-        .Container3{
-         background-color: #99D89F;
-         margin: 70px;
-         height: 70vh;
-         width: 300px;
-          
-        }
-
-        .Container1-3{
-         display: flex;
-         flex-direction: row;
-         background-color:#D9D9D9;
-         height: 20vh;
-        }
-
-        .Marcas{
-         background-repeat: no-repeat;
-         margin: 20px;
-         font-size:x-large;
-         display: flex;
-         flex-direction: column;
-         height:90vh;
-         width: 300em;
-        }
-
-        .Depoimentos{
-         display: flex;
-         flex-direction:column;
-        }
-
-        .Titulo-Depoimentos{
-         text-align: center;
-         margin: 30px;
-         font-size:x-large;
-         background-color:#ffff;
-         height:90vh;
-
-        }
-
-        .Linha2{
-         margin-top: 50px;
-        }
-
-        .Imagens{
-         display: flex;
-         flex-direction: column;
-        }
-
-        .Imagen1{
-       background-image: url('../../assets/images/image\ 5.png'); 
-       background-repeat: no-repeat; 
-
-        }
+  .text {
+    display: flex;
+    flex-direction: row;
+  }
 
 
-        .Dentro-do-Container{
-          display: flex;
-          flex-direction: row;
-          margin: 50px 50px 100px 100px;
-        }
+  .Caixa-Texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-        .img{
-          margin: 100px;
-        }
-
-        .Menu{
-          display: flex;
-        flex-direction: row;   
-         position: relative;
-         align-items: center;
-         
-        
-          
-
-        }
+  .Caixa-Texto1 {
+    align-items: center;
+    border-radius: 50px;
+    margin-bottom: 0.5em;
+    border-radius: 50px;
+    border-style: none;
+    padding: 2px;
+    height: 40px;
+    width: 140px;
+  }
 
 
-        
+  .Segunda-Parte {
+    background-color: #ffff;
+  }
 
-       
-        
-        
-
-        
-        
-      
-       
+  .Segunda-Parte {
+    display: flex;
+    flex-direction: column;
+  }
 
 
-         
+  .Linha2 {
+    margin-top: 50px;
+  }
+
+  .Titulo {
+    margin-top: 3em;
 
 
-        
+
+
+    text-align: center;
+    font-size: x-large;
+
+
+  }
+
+  .Container {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #99D89F;
+    margin: 50px;
+    height: 65vh;
+    font-family: 'Roboto', sans-serif;
+
+
+
+  }
+
+  .img1 {
+    align-items: center;
+    background-image: url('../../assets/images/img4.png');
+    background-repeat: no-repeat;
+    margin: 70px;
+    height: 70vh;
+
+  }
+
+  .Paragrafo-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .Paragrafo {
+    font-size: large;
+    font-family: 'PinyonScript-Regular.ttf';
+    margin: 30px 10px 60px 610px;
+    width: 40vh;
+    text-align: left;
+
+
+  }
+
+  .Container1-2 {
+    margin: 20px;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffff;
+    height: 90vh;
+
+
+  }
+
+  .Containers {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .Container1 {
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-color: #99D89F;
+    margin: 70px;
+    height: 70vh;
+    width: 300px;
+  }
+
+
+
+
+
+
+
+  .Container2 {
+    background-color: #99D89F;
+    margin: 70px;
+    height: 70vh;
+    width: 300px;
+
+  }
+
+  .Container3 {
+    background-color: #99D89F;
+    margin: 70px;
+    height: 70vh;
+    width: 300px;
+
+  }
+
+  .Container1-3 {
+    display: flex;
+    flex-direction: row;
+    background-color: #D9D9D9;
+    height: 20vh;
+  }
+
+  .Marcas {
+    background-repeat: no-repeat;
+    margin: 20px;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 300em;
+  }
+
+  .Depoimentos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Titulo-Depoimentos {
+    text-align: center;
+    margin: 30px;
+    font-size: x-large;
+    background-color: #ffff;
+    height: 90vh;
+
+  }
+
+  .Linha2 {
+    margin-top: 50px;
+  }
+
+  .Imagens {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Imagen1 {
+    background-image: url('../../assets/images/image\ 5.png');
+    background-repeat: no-repeat;
+
+  }
+
+
+  .Dentro-do-Container {
+    display: flex;
+    flex-direction: row;
+    margin: 50px 50px 100px 100px;
+  }
+
+  .img {
+    margin: 100px;
+  }
+
+  .Menu {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
-

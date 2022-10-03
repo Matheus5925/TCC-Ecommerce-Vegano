@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './index.scss';
 
-const CardStoque = props =>{
+const CardStoque = props => {
     const [quantidade, setQuantidade] = useState(0);
 
-    return(
+    return (
         <div className='card-stoque'>
             <h1>{props.title}</h1>
             <div className='imagem-card'>

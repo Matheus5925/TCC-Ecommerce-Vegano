@@ -1,5 +1,5 @@
 import { BuscaCategoria, buscarImagem, BuscarParteCorpo, CadastrarProduto, EnviarImagem } from '../../../api/ProdutoAPI.js'
-import { toast,ToastContainer }  from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 
@@ -12,18 +12,18 @@ export default function CadastrarProdutos() {
     const [data, setData] = useState('');
     const [volume, setVolume] = useState('');
     const [quantidade, setQuantidade] = useState(0);
-    const [valor, setValor ] = useState();
+    const [valor, setValor] = useState();
     const [descricao, setDescricao] = useState('');
     const [imagem, setImagem] = useState();
-    const [id,setId] = useState(0);
-  
+    const [id, setId] = useState(0);
+
     const [idCategoria, setIdCategoria] = useState();
     const [categoria, setCategoria] = useState([]);
 
     const [idParteCorpo, setIdParteCorpo] = useState();
     const [parteCorpo, setParteCorpo] = useState([]);
 
-    const NovoProduto = _ =>{
+    const NovoProduto = _ => {
         setProduto('');
         setLinha('');
         setFabricante('');
@@ -36,54 +36,54 @@ export default function CadastrarProdutos() {
         setIdParteCorpo([]);
         setImagem();
     }
-    
-    const Categoria = async () =>{
+
+    const Categoria = async () => {
         const r = await BuscaCategoria();
         setCategoria(r);
     }
 
-    const ParteDoCorpo = async _ =>{
+    const ParteDoCorpo = async _ => {
         const r = await BuscarParteCorpo();
         setParteCorpo(r);
     }
 
-    const Salvar = async () =>{
+    const Salvar = async () => {
         try {
             let preco = Number(valor.replace(',', '.'));
 
-            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume ,quantidade, linha);
+            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume, quantidade, linha);
             await EnviarImagem(r.id, imagem);
             setId(r.id);
             console.log(r.id + 'Errooooooo');
 
             toast.success('Produto cadastrado com sucesso!');
             NovoProduto();
-            
+
         } catch (err) {
             toast.error(err.response.data.erro)
         };
     };
 
-   
 
-    useEffect(() =>{
+
+    useEffect(() => {
         Categoria();
         ParteDoCorpo();
     }, []);
 
-    const escolherImagem = () =>{
+    const escolherImagem = () => {
         document.getElementById('imagemProduto').click();
     }
 
-    const MostrarImagem = () =>{
-        if(typeof (imagem) === 'object'){
+    const MostrarImagem = () => {
+        if (typeof (imagem) === 'object') {
             return URL.createObjectURL(imagem);
         }
-        else{
+        else {
             return buscarImagem(imagem);
         }
     }
-   
+
 
     // const uploadImage = async e => {
 
@@ -112,10 +112,10 @@ export default function CadastrarProdutos() {
                             <input placeholder='Mascará de....' value={produto.trimStart()} onChange={e => setProduto(e.target.value)} className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Linha do produto</label>
-                            <input placeholder='vegana, natural...'  value={linha.trimStart()} onChange={e => setLinha(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='vegana, natural...' value={linha.trimStart()} onChange={e => setLinha(e.target.value)} className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Fabricante</label>
-                            <input placeholder='Gaya, Avon...'  value={fabricante.trimStart()} onChange={e => setFabricante(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='Gaya, Avon...' value={fabricante.trimStart()} onChange={e => setFabricante(e.target.value)} className='Caixa-Texto' type="text" />
 
 
                             <div className='section-inputs2'>
@@ -127,7 +127,7 @@ export default function CadastrarProdutos() {
                                     <div className='label'>
                                         <label className='Titulo-Caixa-Texto'> Volume </label>
                                         <input placeholder='50g, 250ml...' value={volume} onChange={e => setVolume(e.target.value)} className='caixa-menor number' type="text" />
-                                </div>
+                                    </div>
                                 </div>
                                 <div className='qtd-valor' >
                                     <div className='label'>
@@ -145,7 +145,7 @@ export default function CadastrarProdutos() {
                                         <label className='Titulo-Caixa-Texto'> Categoria </label>
                                         <select value={idCategoria} onChange={e => setIdCategoria(e.target.value)}>
                                             <option value="Selecione uma opção">Selecione</option>
-                                            {categoria.map(item =><option key={item.id} value={item.id}> {item.categoria}</option>)}
+                                            {categoria.map(item => <option key={item.id} value={item.id}> {item.categoria}</option>)}
                                         </select>
                                     </div>
 
@@ -153,8 +153,8 @@ export default function CadastrarProdutos() {
                                         <label className='Titulo-Caixa-Texto'> Parte do corpo </label>
                                         <select value={idParteCorpo} onChange={e => setIdParteCorpo(e.target.value)}>
                                             <option value="Selecione uma opção">Selecione</option>
-                                            {parteCorpo.map(item => <option value={item.id}>{item.parteCorpo}</option>)} 
-                                            
+                                            {parteCorpo.map(item => <option value={item.id}>{item.parteCorpo}</option>)}
+
                                         </select>
                                     </div>
 
@@ -170,10 +170,10 @@ export default function CadastrarProdutos() {
                                 !imagem &&
                                 <img src="./neblina.png" alt="imagem" width="250px" height="250px" />
                             }
-                            
+
                             {
                                 imagem &&
-                                    <img src={MostrarImagem()} alt="imagem" width="250px" height="250px" />
+                                <img src={MostrarImagem()} alt="imagem" width="250px" height="250px" />
                             }
                             <br />
                             <input type='file' id='imagemProduto' onChange={e => setImagem(e.target.files[0])} />

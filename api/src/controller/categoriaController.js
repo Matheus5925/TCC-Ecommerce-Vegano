@@ -5,7 +5,7 @@ const server = Router();
 
 import { BuscarCategoria, BuscarParteCorpo, } from "../repository/categoriaRepository.js";
 
-server.get('/categoria', async (req, resp) =>{
+server.get('/categoria', async (req, resp) => {
     try {
         const resposta = await BuscarCategoria();
         resp.send(resposta);
@@ -16,8 +16,7 @@ server.get('/categoria', async (req, resp) =>{
     }
 });
 
-
-server.get('/parteCorpo',async (req, resp) =>{
+server.get('/parteCorpo', async (req, resp) => {
     try {
         const resposta = await BuscarParteCorpo();
         resp.send(resposta);

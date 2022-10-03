@@ -1,4 +1,4 @@
-import {con} from './connection.js';
+import { con } from './connection.js';
 
 export async function LoginAdm(email, senha) {
     const comando = `select id_adm 	as	 id,

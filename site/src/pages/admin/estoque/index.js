@@ -10,24 +10,24 @@ import { useEffect, useState } from 'react';
 export default function Estoque() {
     const [card, setCard] = useState([]);
 
-    const ProdutosEstoque = async () =>{
+    const ProdutosEstoque = async () => {
         const r = await ListarEstoque()
-        
+
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         ProdutosEstoque();
     })
 
-    return(
+    return (
         <div className='Principal-Estoque'>
-            <CabecalhoAdmin/>
-            <FaixaPrincipal/>
-            <ConponentsEstoque/>
+            <CabecalhoAdmin />
+            <FaixaPrincipal />
+            <ConponentsEstoque />
             <div className='Primeiro-Botao'>
                 <button className='Voltar'>Voltar</button>
             </div>
-            
-        </div> 
+
+        </div>
     )
 }

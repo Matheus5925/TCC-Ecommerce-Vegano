@@ -1,105 +1,106 @@
+.Principal {
 
-.Principal{
+  .Container-Principal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .Container-Principal{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-     .Fundo-Cadastro-Img{
-      background-image: url('../../../assets/images/image\ 12.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-         
-        }
- 
-        .Fundo-Cadastro{
-         background-color:rgba($color: #D9D9D9, $alpha: 0.7);
-         width: 45em auto;
-         display:flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         gap: 2em;
-         height:80vh;
-        }
+  .Fundo-Cadastro-Img {
+    background-image: url('../../../assets/images/image\ 12.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-        h1{
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 32px;
-          text-align: center;
-        }
-         .Caixa1{
-             display: flex;
-             flex-direction: row;
-             align-items: flex-start;
-             background-color: #fff;
-             border-radius: 100px;
-             border-style: none;
-             height: 2.4em;
-             width: 30em ;
-         }
+  }
 
-          .Titulo-da-Caixa1{
-            display: flex;
-            flex-direction: column;
-            padding-left: .5em;
-          }
- 
-          .Caixa2{
-            display: flex;
-            flex-direction: row;
-            background-color: #fff;
-            border-radius: 100px;
-            border-style: none;
-            height: 2.4em;
-            padding-left: 0.2em;
-            width: 14em;
-          }
+  .Fundo-Cadastro {
+    background-color: rgba($color: #D9D9D9, $alpha: 0.7);
+    width: 45em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    height: 80vh;
+  }
 
-          .data {
-            text-align: center;
-          }
-          
-        .conteiner-2{
-          display: flex;
-          flex-direction: row;
-          gap: 2em;
-        }
+  h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    text-align: center;
+  }
 
-        .botao{
-          border: none !important;
-          border-radius: 30px;
-          padding: 1em;
-          width: 10em;
-          background-color: #fff;
-        }
+  .Caixa1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: 100px;
+    border-style: none;
+    height: 2.4em;
+    width: 30em;
+  }
 
-        .botao:hover{
-          cursor: pointer;
-          transform: scale(1.2);
-        }
+  .Titulo-da-Caixa1 {
+    display: flex;
+    flex-direction: column;
+    padding-left: .5em;
+  }
 
-        .Primeiro-Container{
-          display: flex;
-          flex-direction: column;
-          gap: 1em;
-        }
+  .Caixa2 {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 100px;
+    border-style: none;
+    height: 2.4em;
+    padding-left: 0.2em;
+    width: 14em;
+  }
 
-        input{
-          outline: none;
-        }
+  .data {
+    text-align: center;
+  }
 
-      .ajuste-inputs{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 40em;
-        gap: 1em;
-      }
+  .conteiner-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+  }
+
+  .botao {
+    border: none !important;
+    border-radius: 30px;
+    padding: 1em;
+    width: 10em;
+    background-color: #fff;
+  }
+
+  .botao:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  .Primeiro-Container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  input {
+    outline: none;
+  }
+
+  .ajuste-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40em;
+    gap: 1em;
+  }
 }
