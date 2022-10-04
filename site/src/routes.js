@@ -25,6 +25,7 @@ const Rotas = () => {
                 <Route path='/estoque' element={<Estoque />} />
                 <Route path='/pedidospedents' element={<PedidosPendents />} />
                 <Route path='/telaprodutos' element={<TelaProdutos/>}></Route>
+                <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
             </Routes>
         </BrowserRouter>
     );

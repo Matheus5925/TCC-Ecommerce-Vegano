@@ -5,10 +5,18 @@ import { toast } from 'react-toastify';
 import lixeira from '../../assets/images/lixeira-estoque.png';
 import lapis from '../../assets/images/lapis-estoque.png';
 import { DeletarProduto, ListarEstoque, ListarEstoqueNome } from '../../api/ProdutoAPI.js';
+import { useNavigate } from 'react-router-dom';
 
 
 const CardEstoque = props => {
     const [quantidade, setQuantidade] = useState(0);
+
+
+    const navigate = useNavigate();
+
+    const AlterarProduto = ()=>{
+        navigate(`/cadastrarprodutos/alterar/${props.id}`);
+    }
 
     async function removerServico(id, nome) {
         confirmAlert({
@@ -38,7 +46,7 @@ const CardEstoque = props => {
         <div className='card-stoque'>
             <h1>{props.fabricante}</h1>
             <div className='delet-edit'>
-                <img className='lixeira-lapis' src={lapis} alt="" />
+                <img onClick={e => {e.stopPropagation(); AlterarProduto(props.id)}} className='lixeira-lapis' src={lapis} alt="" />
                 <img onClick={e => {e.stopPropagation(); removerServico(props.id, props.nome)}} className='lixeira-lapis' src={lixeira} alt="" />
             </div>
             <div className='imagem-card'>
