@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 import Rodape from '../../components/rodape'
+import Img5 from '../../assets/images/image 5.png'
 
 
 export default function LadinPage() {
@@ -25,8 +26,9 @@ export default function LadinPage() {
       <div className='ImgFundo'>
         <Cabecalho1 className='text' />
         <div className='escrita'>
-        <p className='t1'> Bem-vindo a nossa loja</p>
-        <input className='bloco'type="text" placeholder="o que você procura?"value=''></input>
+          <p className='t1'> Bem-vindo a <br/>
+          nossa loja</p>
+          <input className='bloco'type="text" placeholder ="o que você procura?"></input>
         </div>
        
       </div>
@@ -54,7 +56,11 @@ export default function LadinPage() {
             <p>Ofertas do Dia</p>
             <div className='Containers'>
               <div className='Container1'>
-                <div className='Container1-img' />
+               <img className='imgP1'src={Img5} alt='imagem do produto'/>
+               <p className='tit3'>KIT ROTINA DIÁRIA</p>
+               <p className='tit'>Gala vegano</p>
+               <p className='valor1'>R$240,00</p>
+               <p>R$200,00</p>
               </div>
               <div className='Container2'></div>
               <div className='Container3'></div>
@@ -77,6 +83,7 @@ export default function LadinPage() {
             </div>
 
             < div className='Imagens'>
+              <p></p>
               <div className='Imagen1'></div>
               <div className='Imagen2'></div>
             </div>

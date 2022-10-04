@@ -7,6 +7,7 @@ import Lupa from '../../../assets/images/procurar.png';
 import CabecalhoAdmin from '../../../components/cabecalho-admin';
 import CardEstoque from '../../../components/card-stoque';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Estoque() {
     const [card, setCard] = useState([]);
