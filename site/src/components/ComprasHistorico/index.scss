@@ -9,30 +9,41 @@
         background-color: #D9D9D9;
         margin: 15px;
         height: 5vh;
-        width: 200vh;
+
     }
 
     .Primeiro-Historico {
         display: flex;
         flex-direction: row;
+        justify-content: space-between
     }
 
     .Nome {
         align-items: center;
-        margin: 2vh;
+        padding: 11px 5px 20px 30px;
+        font-family: 'Poppins', sans-serif;
     }
 
     .Primeiro-Status {
         display: flex;
-        flex-direction: row-reverse;
-        background-color: #D8C8B9;
+        flex-direction: row;
         margin: 15px;
+        
+    }
+    
+    .Status {
+        background-color: #D8C8B9;
+        height: 2.9em;
+        font-family: 'Poppins', sans-serif;
 
 
     }
 
-    .Status {
-        align-items: center;
+    .finalizado{
+    }
+
+    .Status p{
+        padding: 11px 90px 20px 90px;
 
     }
 }

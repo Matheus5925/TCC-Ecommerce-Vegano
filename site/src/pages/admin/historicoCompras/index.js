@@ -12,8 +12,8 @@ export default function HistoricoCompras() {
             <CabecalhoAdmin />
             <div className='Titulo'>
                 <h1>Histórico de Compras</h1>
-                <ComprasHistorico />
             </div>
+                <ComprasHistorico />
         </div>
     )
 }

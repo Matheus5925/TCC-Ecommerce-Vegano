@@ -10,12 +10,9 @@ export default function () {
                     <div className='Primeiro-Historico'>
                         <div className='Nome'>
                             <p>HELLOISE LUZ</p>
-                            <div className='Status'>
-
-
-
-
-                            </div>
+                        </div>
+                        <div className='Status'>
+                            <p className='finalizado'>Finalizado</p>
                         </div>
                     </div>
                 </div>
