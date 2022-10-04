@@ -1,15 +1,46 @@
 import { useEffect, useState } from 'react';
 import './index.scss';
+import {confirmAlert} from 'react-confirm-alert';
+import { toast } from 'react-toastify';
+import lixeira from '../../assets/images/lixeira-estoque.png';
+import lapis from '../../assets/images/lapis-estoque.png';
+import { DeletarProduto, ListarEstoque, ListarEstoqueNome } from '../../api/ProdutoAPI.js';
 
 
 const CardEstoque = props => {
     const [quantidade, setQuantidade] = useState(0);
+
+    async function removerServico(id, nome) {
+        confirmAlert({
+            title: 'Remover Serviço',
+            message: `Deseja mesmo remover o produto ${props.nome}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        const resp = await DeletarProduto(id, nome)
+                        if (ListarEstoqueNome === '') {
+                            ListarEstoque();
+                            toast.dark('filme removido!!')
+                        }
+                    }
+                },
+                {
+                    label: 'Não'
+                }
+            ]
+        })
+    }
 
     
 
     return (
         <div className='card-stoque'>
             <h1>{props.fabricante}</h1>
+            <div className='delet-edit'>
+                <img className='lixeira-lapis' src={lapis} alt="" />
+                <img onClick={e => {e.stopPropagation(); removerServico(props.id, props.nome)}} className='lixeira-lapis' src={lixeira} alt="" />
+            </div>
             <div className='imagem-card'>
                 <img className='img-produto' src={props.image} alt="" />
             </div>

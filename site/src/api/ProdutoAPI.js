@@ -58,3 +58,9 @@ export const MudarQuantidadeEstoque = async (quantidade, id)=>{
     const r = await api.put(`/alterar/quantidade/${id}`, {quantidade});
     return r.data;
 }
+
+export const DeletarProduto = async (id) =>{
+    const r = await api.delete(`/delete/produto/${id}`);
+
+    return r.status;
+}

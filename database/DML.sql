@@ -25,21 +25,6 @@ insert into tb_usuario (nm_usuario, ds_email, ds_cpf, dt_nascimento, ds_telefone
 insert into tb_usuario (nm_usuario, ds_email, ds_cpf, dt_nascimento, ds_telefone, ds_senha)
 			value ('Felipe Neres', 'felipe@gmail.com', '689.235.791-13', '2001-07-22', '952134654', 'felipe10');
             
-insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha, img_produto)
-			values('Selagem Vegana Marroquina', 'Selagem de qualidade', 139.90,'Marroquina', '2024-12-05', 1000, 'Profissional', 'adsdaddasd');
-            
-insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha, img_produto)
-			values('Gel Creme Facil Antiacne', 'Gel para pessoas com a pele acnosa', 175.70,'Almanati', '2028-12-01', 50, 'Uso Diário', 'adsdaddasd');
-            
-insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha, img_produto)
-			values('Máscara de Argila Verde', 'Argila para pessoas com a pele óleosa',45.30,'Matrix', '2024-12-05', 250, 'Uso Diário', 'adsdaddasd');
-            
-insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha, img_produto)
-			values('Sérum Facil Natural Maria da Selva', 'Sérum para pessoas cuidadosas com sua pele', 67.90,'Cativa Natureza', '2026-12-05', 130, 'Uso Diário', 'adsdaddasd');
-            
-insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha, img_produto)
-			values('Creme para Mãos Orgânico Lavanda', 'Creme para mãos ótimo para hidratar assim como deixar aquele cheirinho maravilhoso ', 75.00,'Urtekram', '2029-06-05', 75, 'Profissional', 'adsdaddasd');
-            
 insert into tb_categoria(ds_categoria)
 			values('Perfumes');
 
@@ -75,7 +60,26 @@ insert into tb_parte_corpo(ds_parte_corpo)
             
 insert into tb_parte_corpo(ds_parte_corpo)
 			values('Pés');
+                            
+ select id_categoria         as id,
+               ds_categoria         as categoria
+          from tb_categoria
+         where id_categoria = 2;
+         
+ select id_parte_corpo         as id,
+               ds_parte_corpo as Corpo
+          from tb_parte_corpo
+         where id_parte_corpo = 2;
+					
             
+select nm_produto,
+		nr_valor,
+        ds_categoria,
+        ds_parte_corpo
+	from tb_produto
+    inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+    inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo;
+
 
 
 -- Começo API ADM
@@ -97,13 +101,23 @@ select
 insert into tb_produto(nm_produto, ds_produto, nr_valor, ds_fabricante, dt_validade, nr_volume,ds_linha)
 	values('Axepscia', 'Sabonete para pele acnosa', 25.00,'Axepscia', '2029-06-05', 75, 'Uso diário');
     
--- (04) alterar imagem
+-- (04) Consultar estoque
+select id_produto as id,
+		nm_produto as nome,
+        ds_fabricante as fabricante,
+        nr_valor as preco,
+        nr_quantidade as quantidade
+from tb_produto;
+
+
+    
+-- (05) alterar imagem
 update tb_produto
 	set img_produto = '/storage/filme/asdfasdf.jp'
 where id_produto = 5;
 	
     
--- (05) Login ADM 
+-- (06) Login ADM 
 select id_adm 	as	 id,
 		nm_adm	as	nome,
         ds_email as email
@@ -111,7 +125,41 @@ from tb_adm
 where ds_email = 'matheus@gmail.com' and
 		ds_senha = 'matheus15';
         
-select * from tb_produto;
+-- (07) alterar produto
+update tb_produto
+	set nm_produto = '212 vip man ',
+		ds_produto  = 'Perfume pika',
+        nr_valor = 150.50,
+        ds_fabricante = 'Avon',
+        dt_validade = '2030-12-01',
+        nr_quantidade = 250,
+        nr_volume = '250ml',
+        id_categoria = 1,
+        id_parte_corpo = 2
+where id_produto = 5;
 
-delete from tb_produto 
-	where id_produto = 9;
+-- (08.1) Filtrar Estoque Nome 
+select id_produto as id,
+		nm_produto as nome,
+        ds_fabricante as fabricante,
+        nr_valor as preco,
+        nr_quantidade as quantidade
+from tb_produto 
+where nm_produto like '2%';
+
+
+        
+        
+-- Endpoints usuario
+-- 01 login usuario
+select id_usuario 	as	 id,
+		nm_usuario	as	nome,
+        ds_email as email
+from tb_usuario
+where ds_email = 'julio@gmail.com' and
+		ds_senha = 'julio10';
+        
+select * from tb_adm;
+
+
+        

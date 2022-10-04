@@ -70,15 +70,6 @@ export default function LoginCliente() {
                         </div>
                     </div>
                     <div> Novo usuário? cadastre-se
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
