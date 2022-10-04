@@ -6,6 +6,7 @@ import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 import Rodape from '../../components/rodape'
 
+
 export default function LadinPage() {
 
   const navigate = useNavigate();
@@ -24,8 +25,8 @@ export default function LadinPage() {
       <div className='ImgFundo'>
         <Cabecalho1 className='text' />
         <div className='escrita'>
-        <p className='texts'> Bem-vindo a nossa loja</p>
-        <input className='bloco'type="text" value={"o que vc procura?"}></input>
+        <p className='t1'> Bem-vindo a nossa loja</p>
+        <input className='bloco'type="text" placeholder="o que você procura?"value=''></input>
         </div>
        
       </div>
