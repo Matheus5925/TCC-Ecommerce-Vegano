@@ -1,9 +1,10 @@
-import { BuscaCategoria, buscarImagem, BuscarParteCorpo, CadastrarProduto, EnviarImagem } from '../../../api/ProdutoAPI.js'
+import { AlterarProduto, BuscaCategoria, BuscarId, buscarImagem, BuscarParteCorpo, CadastrarProduto, EnviarImagem } from '../../../api/ProdutoAPI.js'
 import { toast, ToastContainer } from 'react-toastify'
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 
 import CabecalhoAdmin from '../../../components/cabecalho-admin/index.js';
+import { useParams } from 'react-router-dom';
 
 export default function CadastrarProdutos() {
     const [produto, setProduto] = useState('');
@@ -23,6 +24,8 @@ export default function CadastrarProdutos() {
     const [idParteCorpo, setIdParteCorpo] = useState();
     const [parteCorpo, setParteCorpo] = useState([]);
 
+    const {idParams} = useParams();
+
     const NovoProduto = _ => {
         setProduto('');
         setLinha('');
@@ -37,6 +40,23 @@ export default function CadastrarProdutos() {
         setImagem();
     }
 
+    const CarregarProduto = async () =>{
+        if(!idParams) return;
+
+        const r = await BuscarId(idParams);
+        setId(r.id);
+        setIdCategoria(r.categoria);
+        setIdParteCorpo(r.ParteCorpo);
+        setProduto(r.nome);
+        setLinha(r.linha);
+        setDescricao(r.descricao);
+        setValor(r.valor);
+        setFabricante(r.fabricante);
+        setData(r.validade.substr(0, 10));
+        setQuantidade(r.quantidade);
+        setVolume(r.volume);
+    }
+
     const Categoria = async () => {
         const r = await BuscaCategoria();
         setCategoria(r);
@@ -49,15 +69,26 @@ export default function CadastrarProdutos() {
 
     const Salvar = async () => {
         try {
-            let preco = Number(valor.replace(',', '.'));
+           if (id === 0) {
+                let preco = Number(valor.replace(',', '.'));
 
-            const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume, quantidade, linha);
-            await EnviarImagem(r.id, imagem);
-            setId(r.id);
-            console.log(r.id + 'Errooooooo');
+                const r = await CadastrarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume, quantidade, linha);
+                await EnviarImagem(r.id, imagem);
+                setId(r.id);
 
-            toast.success('Produto cadastrado com sucesso!');
-            NovoProduto();
+                toast.success('Produto cadastrado com sucesso!');
+                NovoProduto();
+           }
+           else{
+                let preco = Number(valor.replace(',', '.'));
+
+                const r = await AlterarProduto(idCategoria, idParteCorpo, produto, descricao, preco, fabricante, data, volume, quantidade, linha, id);
+                
+                if(typeof(imagem) === "object")
+                    await EnviarImagem(id, imagem);
+
+                toast.success('Produto alterado com sucesso!');
+           }
 
         } catch (err) {
             toast.error(err.response.data.erro)
@@ -69,6 +100,7 @@ export default function CadastrarProdutos() {
     useEffect(() => {
         Categoria();
         ParteDoCorpo();
+        CarregarProduto();
     }, []);
 
     const escolherImagem = () => {
@@ -184,7 +216,7 @@ export default function CadastrarProdutos() {
 
                         <div className='botao'>
                             <button>Voltar</button>
-                            <button onClick={Salvar}>Salvar</button>
+                            <button onClick={Salvar}>{id === 0 ? 'Salvar' : 'Alterar'}</button>
                         </div>
                     </div>
                 </div>

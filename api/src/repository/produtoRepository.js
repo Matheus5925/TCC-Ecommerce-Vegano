@@ -69,3 +69,22 @@ export async function DeletarProduto(id) {
     const [linhas] = await (await con).query(comando,[id]);
     return linhas.affectedRows;
 }
+
+export async function BuscarId(id) {
+    const comando = `select	
+                        id_produto as id,
+                        id_categoria as categoria,
+                        id_parte_corpo as ParteCorpo,
+                        nm_produto as nome,
+                        ds_linha as linha,
+                        ds_produto as descricao,
+                        nr_valor as valor,
+                        ds_fabricante as fabricante,
+                        dt_validade as validade,
+                        nr_quantidade as quantidade,
+                        nr_volume as volume
+                    from tb_produto
+                    where id_produto = ?`;
+    const [linhas] = await (await con).query(comando, [id]);
+    return linhas[0];
+}
