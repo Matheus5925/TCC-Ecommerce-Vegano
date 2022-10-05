@@ -144,9 +144,9 @@
   .Container1 {
     justify-content: center;
     background-repeat: no-repeat;
-    background-color: #99D89F;
+    background-color: #c3ecc7;
     margin: 60px;
-    height: 60vh;
+    height: 50vh;
     width: 300px;
   }
   .imgP1{
@@ -160,25 +160,76 @@
     margin-top: -40px;
     
   }
+  .tit{
+    font-size: 18px;
+    display: flex;
+  }
+
+  .valor1{
+    font-size: medium;
+    text-decoration:line-through;
+  }
+
+  .valorOferta1{
 
 
-
-
-
-
+  }
+  .Container1 p{ 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2em;
+    
+  }
 
   .Container2 {
-    background-color: #99D89F;
+    background-color: #c3ecc7;
     margin: 60px;
-    height: 60vh;
+    height: 50vh;
     width: 300px;
+  }
+  .imgP2{
+    margin: 2em 10px;
+    align-items: center;
+    width: 220px;
+    height: 200px;
+  }
+
+  .tit4{
+    font-size: 20px;
+    margin-top: -40px;
+  }
+
+  .tit1{
+    font-size: 18px;
+    display: flex;
+    margin-left: 1em;
+    justify-content: flex-start;
+    
 
   }
 
+  .valor2{
+    font-size: medium;
+    text-decoration:line-through;
+
+  }
+
+  .valorOferta2{
+
+  }
+
+  .container2 p{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 2em;
+  }
+
   .Container3 {
-    background-color: #99D89F;
+    background-color: #c3ecc7;
     margin: 60px;
-    height: 60vh;
+    height: 50vh;
     width: 300px;
 
   }

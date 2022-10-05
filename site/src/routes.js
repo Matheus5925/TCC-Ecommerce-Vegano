@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import InfoUsuario from './pages/client/infoUsuario'
 import TelaProdutos from './pages/client/telaProdutos';
 import PedidosPendents from './pages/admin/pedidospendents'
 import Estoque from './pages/admin/estoque';
@@ -26,6 +27,7 @@ const Rotas = () => {
                 <Route path='/pedidospedents' element={<PedidosPendents />} />
                 <Route path='/telaprodutos' element={<TelaProdutos/>}></Route>
                 <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
+                <Route path='/infousuario' element={<InfoUsuario/>}></Route>
             </Routes>
         </BrowserRouter>
     );

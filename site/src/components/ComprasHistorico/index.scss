@@ -15,7 +15,8 @@
     .Primeiro-Historico {
         display: flex;
         flex-direction: row;
-        justify-content: space-between
+        justify-content: space-between;
+
     }
 
     .Nome {
@@ -39,11 +40,160 @@
 
     }
 
-    .finalizado{
-    }
+    
 
     .Status p{
         padding: 11px 90px 20px 90px;
 
     }
+
+
+
+    .Segunda-Faixa{
+        background-color: #D9D9D9;
+        margin: 15px;
+        height: 5vh;
+        width: 125em;
+
+    }
+    .Segundo-Historico{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
+    }
+
+    .Nome2{
+        
+        align-items: center;
+        padding: 11px 5px 20px 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+
+    .Status2{
+        color: #000;
+        background-color: #D8C8B9;
+        height: 2.9em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .Status2 p{
+        padding: 11px 90px 20px 90px;
+
+    }
+
+    .Terceira-Faixa{
+        background-color: #D9D9D9;
+        margin: 15px;
+        height: 5vh;
+        width: 125em;
+    }
+
+    .Terceiro-Historico{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
+    }
+
+    .Nome3{
+        align-items: center;
+        padding: 11px 5px 20px 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .Status3{
+        color: #000;
+        background-color: #D8C8B9;
+        height: 2.9em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .Status3 p{
+        padding: 11px 90px 20px 90px;
+   
+    }
+
+    .Quarta-Faixa{
+        background-color: #D9D9D9;
+        margin: 15px;
+        height: 5vh;
+        width: 125em;
+    }
+
+    .Quarto-Historico{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between  
+    }
+
+    .Nome4{
+        align-items: center;
+        padding: 11px 5px 20px 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+   
+    .Status4{
+        color: #000;
+        background-color: #D8C8B9;
+        height: 2.9em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .Status4 p{
+        padding: 11px 90px 20px 90px;
+   
+    }
+
+    .Quinta-Faixa{
+        background-color: #D9D9D9;
+        margin: 15px;
+        height: 5vh;
+        width: 125em;
+    }
+
+    .Quinto-Historico{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between  
+    }
+
+    .Nome5{
+        align-items: center;
+        padding: 11px 5px 20px 30px;
+        font-family: 'Poppins', sans-serif;
+    }
+   
+    .Status5{
+        color: #000;
+        background-color: #D8C8B9;
+        height: 2.9em;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .Status5 p{
+        padding: 11px 90px 20px 90px;
+   
+    }
+
+    .Voltar{
+       display: flex;
+       flex-direction: row-reverse; 
+       align-items: center;
+       margin: 25em 0px 0px 50em;
+       
+       
+       
+    }
+
+    .Voltar button{
+    background-color: #D8C8B9;
+      border-radius: 100vh;
+      border-style: none;
+      width: 10vh;
+      height: 5vh;
+    }
+
+
+
 }

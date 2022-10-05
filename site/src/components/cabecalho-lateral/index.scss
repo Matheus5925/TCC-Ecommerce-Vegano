@@ -1,0 +1,28 @@
+
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    height: 70em;
+    background-color: #D8C8B9;
+}
+
+.text{
+    padding: 1.5em;
+}
+
+.text img{
+    width: 30px;
+}
+ 
+.text p {
+    margin-bottom: 1.5em;
+    cursor: pointer;
+}
+
+.text p:hover {
+    background-color: #D9C7C7;
+    border-radius: 1em;
+    padding: 10px;
+}
