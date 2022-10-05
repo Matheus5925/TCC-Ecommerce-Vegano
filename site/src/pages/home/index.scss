@@ -12,22 +12,24 @@
     background-image: url('../../assets/images/image1.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 85vh;
+    height: 40em;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   .text {
     display: flex;
     flex-direction: row;
   }
+  
   .escrita{
-   display: flex;
-   margin: 100em;
-   flex-direction: column;
-   margin-top: 13em;
-
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5em;
+    width: 100%;
+    align-items: center;
+    gap: .5em;
   }
 
   .t1{
@@ -38,11 +40,9 @@
     background-color: rgba($color: #fff, $alpha: 0.7);;
     border: 20px;
     border-radius: 10px;
-    margin: 3em 7em 0px 0px;
-    width: 58vh;
-    height: 75px;
-    left: 286px;
-    top: 480px;
+    height: 4em;
+    width: 19em;
+    padding-left: .9em;
   }
 
 

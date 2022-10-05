@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './index.scss'
 
 import CabecalhoAdmin from '../../../components/cabecalho-admin/index.js';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function CadastrarProdutos() {
     const [produto, setProduto] = useState('');
@@ -25,6 +25,7 @@ export default function CadastrarProdutos() {
     const [parteCorpo, setParteCorpo] = useState([]);
 
     const {idParams} = useParams();
+    const navigate = useNavigate();
 
     const NovoProduto = _ => {
         setProduto('');
@@ -48,13 +49,13 @@ export default function CadastrarProdutos() {
         setIdCategoria(r.categoria);
         setIdParteCorpo(r.ParteCorpo);
         setProduto(r.nome);
-        setLinha(r.linha);
         setDescricao(r.descricao);
         setValor(r.valor);
         setFabricante(r.fabricante);
         setData(r.validade.substr(0, 10));
         setQuantidade(r.quantidade);
         setVolume(r.volume);
+        setLinha(r.linha);
     }
 
     const Categoria = async () => {
@@ -65,6 +66,10 @@ export default function CadastrarProdutos() {
     const ParteDoCorpo = async _ => {
         const r = await BuscarParteCorpo();
         setParteCorpo(r);
+    }
+
+    const Voltar = () =>{
+        navigate('/paginaselecao')
     }
 
     const Salvar = async () => {
@@ -141,13 +146,13 @@ export default function CadastrarProdutos() {
                         <div className='pag-toda'>
 
                             <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
-                            <input placeholder='Mascará de....' value={produto.trimStart()} onChange={e => setProduto(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='Mascará de....' value={produto} onChange={e => setProduto(e.target.value)} className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Linha do produto</label>
-                            <input placeholder='vegana, natural...' value={linha.trimStart()} onChange={e => setLinha(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='vegana, natural...' value={linha} onChange={e => setLinha(e.target.value)} className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Fabricante</label>
-                            <input placeholder='Gaya, Avon...' value={fabricante.trimStart()} onChange={e => setFabricante(e.target.value)} className='Caixa-Texto' type="text" />
+                            <input placeholder='Gaya, Avon...' value={fabricante} onChange={e => setFabricante(e.target.value)} className='Caixa-Texto' type="text" />
 
 
                             <div className='section-inputs2'>
@@ -215,7 +220,7 @@ export default function CadastrarProdutos() {
                         <textarea value={descricao} onChange={e => setDescricao(e.target.value)} id="descricao" name="descricao" rows="13" cols="55" />
 
                         <div className='botao'>
-                            <button>Voltar</button>
+                            <button onClick={Voltar}>Voltar</button>
                             <button onClick={Salvar}>{id === 0 ? 'Salvar' : 'Alterar'}</button>
                         </div>
                     </div>

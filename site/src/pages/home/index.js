@@ -6,31 +6,19 @@ import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 import Rodape from '../../components/rodape'
 import Img5 from '../../assets/images/image 5.png'
+import CabecalhoUser from '../../components/cabecalho-user';
 
 
 export default function LadinPage() {
-
-  const navigate = useNavigate();
-
-    useEffect(() => {
-      if (!storage('usuario-logado')) {
-        navigate('/logincliente')
-      }
-      else {
-        const UsuarioLogado = storage('usuario-logado');
-      }
-    }, []);
-                      
   return (
     <div className='Principal'>
       <div className='ImgFundo'>
-        <Cabecalho1 className='text' />
+        <CabecalhoUser/>
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
           nossa loja</p>
-          <input className='bloco'type="text" placeholder ="o que você procura?"></input>
+          <input className='bloco'type="text" placeholder ="o que você procura?"/>
         </div>
-       
       </div>
       
       <div className='Segunda-Parte'>
