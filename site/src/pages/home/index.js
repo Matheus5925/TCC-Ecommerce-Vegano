@@ -6,6 +6,8 @@ import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 import Rodape from '../../components/rodape'
 import Img5 from '../../assets/images/image 5.png'
+import ofertas2 from '../../assets/images/oferta2.png'
+
 
 
 export default function LadinPage() {
@@ -57,12 +59,19 @@ export default function LadinPage() {
             <div className='Containers'>
               <div className='Container1'>
                <img className='imgP1'src={Img5} alt='imagem do produto'/>
-               <p className='tit3'>KIT ROTINA DIÁRIA</p>
+               <p className='tit3'>KIT ROTINA DIÁRIA</p> 
                <p className='tit'>Gala vegano</p>
                <p className='valor1'>R$240,00</p>
-               <p>R$200,00</p>
+               <p className='valorOferta1'>R$200,00</p>
               </div>
-              <div className='Container2'></div>
+              <div className='Container2'>
+              <img className='imgP2'src={ofertas2} alt='imagem do produto'/>
+               <p className='tit4'>Shampoo Natural Hidratação <br/>
+                Suave Argan</p>
+               <p className='valor2'>R$240,00</p>
+               <p className='valorOferta2'>R$200,00</p>
+              </div>
+              
               <div className='Container3'></div>
             </div>
           </div>
