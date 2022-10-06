@@ -14,9 +14,6 @@ import marca1 from '../../assets/images/marca1.png'
 import marca2 from '../../assets/images/marca2.png'
 import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
-
-
-
 import ofertas2 from '../../assets/images/oferta2.png'
 
 
