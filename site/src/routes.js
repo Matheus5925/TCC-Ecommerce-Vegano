@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import InfoUsuario from './pages/client/infoUsuario'
+import InfoUsuario from './pages/client/infoUsuario';
 import TelaProdutos from './pages/client/telaProdutos';
 import PedidosPendents from './pages/admin/pedidospendents'
 import Estoque from './pages/admin/estoque';
@@ -9,7 +9,7 @@ import LadinPage from './pages/home';
 import LoginCliente from './pages/client/loginCliente';
 import AdminLogin from './pages/admin/loginAdmin';
 import CadastrarProdutos from './pages/admin/CadastrarProdutos';
-import TelaCadastroCliente from './pages/client/TelaCadastroCliente'
+import TelaCadastroCliente from './pages/client/TelaCadastroCliente';
 import { PageSelection } from './pages/admin/selecaoSistem';
 
 const Rotas = () => {
@@ -26,8 +26,8 @@ const Rotas = () => {
                 <Route path='/estoque' element={<Estoque />} />
                 <Route path='/pedidospedents' element={<PedidosPendents />} />
                 <Route path='/telaprodutos' element={<TelaProdutos/>}></Route>
-                <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
                 <Route path='/infousuario' element={<InfoUsuario/>}></Route>
+                <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
             </Routes>
         </BrowserRouter>
     );

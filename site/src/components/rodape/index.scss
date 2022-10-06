@@ -9,7 +9,7 @@
     .box1 {
         display: flex;
         flex-direction: row;
-        margin-top: -4em;
+        justify-content: space-around;
         margin-left: 2em;
 
     }
@@ -21,14 +21,15 @@
 
     .box-2 {
         padding: 5em;
-        margin-left: 5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .box-2 h1 {
         color: #636363;
         font-family: 'Poppins', sans-serif;
-        margin-bottom: 1em;
-        margin-left: 0.5px;
+        align-items: center;
     }
 
     .box-2 img {
@@ -40,7 +41,6 @@
     .box-2 p {
         display: flex;
         flex-direction: row;
-        margin: 1em;
         font-family: 'Poppins';
     }
 
@@ -52,6 +52,8 @@
 
     .text {
         font-family: 'Poppins', sans-serif;
-        margin-left: 1em;
-        margin-top: 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 5em;
     }

@@ -1,17 +1,15 @@
 import LogoTipo from '../../assets/images/logo.png'
-import { useEffect } from 'react';
-import storage from 'local-storage';
+import { useEffect } from 'react'
+import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
-import Rodape from '../../components/rodape'
+import Rodape from '../../components/Rodape'
 import Img5 from '../../assets/images/image 5.png'
-<<<<<<< HEAD
-import CabecalhoUser from '../../components/cabecalho-user';
-=======
-import ofertas2 from '../../assets/images/oferta2.png'
 
->>>>>>> cc771c14a9c2e93d0c05a9c7bd218d6474b54ff6
+import CabecalhoUser from '../../components/cabecalho-user';
+
+import ofertas2 from '../../assets/images/oferta2.png'
 
 
 export default function LadinPage() {

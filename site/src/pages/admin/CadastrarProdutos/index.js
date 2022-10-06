@@ -114,6 +114,7 @@ export default function CadastrarProdutos() {
 
     const MostrarImagem = () => {
         if (typeof (imagem) === 'object') {
+      
             return URL.createObjectURL(imagem);
         }
         else {
