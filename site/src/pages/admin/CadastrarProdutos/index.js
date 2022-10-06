@@ -135,7 +135,7 @@ export default function CadastrarProdutos() {
         <main className='Page-cadastro'>
             <ToastContainer />
             <CabecalhoAdmin />
-            <div className='principal'>
+            <div className='Pagina-primaria'>
                 <div className='titulo'>
                     <p>ADICIONAR UM PRODUTO</p>
                 </div>
@@ -226,6 +226,8 @@ export default function CadastrarProdutos() {
                     </div>
                 </div>
             </div>
+            
+       
         </main>
     )
 }

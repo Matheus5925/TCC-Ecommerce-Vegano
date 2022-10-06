@@ -6,12 +6,9 @@ import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 import Rodape from '../../components/rodape'
 import Img5 from '../../assets/images/image 5.png'
-<<<<<<< HEAD
 import CabecalhoUser from '../../components/cabecalho-user';
-=======
-import ofertas2 from '../../assets/images/oferta2.png'
 
->>>>>>> cc771c14a9c2e93d0c05a9c7bd218d6474b54ff6
+import ofertas2 from '../../assets/images/oferta2.png'
 
 
 export default function LadinPage() {
