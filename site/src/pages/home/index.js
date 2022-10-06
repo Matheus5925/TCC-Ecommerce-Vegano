@@ -8,10 +8,6 @@ import Rodape from '../../components/Rodape'
 import Img5 from '../../assets/images/image 5.png'
 
 import CabecalhoUser from '../../components/cabecalho-user';
-
-import CabecalhoUser from '../../components/cabecalho-user';
-
-
 import ofertas3 from '../../assets/images/oferta3.png'
 import marca1 from '../../assets/images/marca1.png'
 import marca2 from '../../assets/images/marca2.png'

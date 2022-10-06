@@ -8,25 +8,35 @@
     background-color: #D8C8B9;
 }
 
-.text{
+.texto{
     padding: 1.5em;
-    height: 15em;
+    height: 5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 15em;
 }
 
-.text img{
-    width: 30px;
-    margin-top: 2px;
+.texto img{
+    
+    width: 35px;
+
+}
+
+.tex{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start ;
+    align-items: center;
 }
  
-.text p {
+.texto p {
     cursor: pointer;
+    margin-left: 5px;
 }
 
-.text p:hover {
+.tex:hover {
     background-color: #beb1a5;
     border-radius: 1em;
-    padding: 10px 20px 20px 15px;
+    padding: 10px 20px 20px 10px;
 }

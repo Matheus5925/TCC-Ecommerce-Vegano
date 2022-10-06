@@ -8,24 +8,28 @@ import IconeCasa from '../../assets/images/casa.png'
 
 export default function cabecalhoLateral() {
 
-    return (
+    return(
         <section className='principal'>
             <div>
-                <img src={LogoTipo} alt='logo' />
+               <img src={LogoTipo} alt='logo' /> 
             </div>
-            <div className='text'>
-                <di>
-                    <p><img src={iconeUsuario} alt='usuario' /> Ìnicio</p>
-                </di>
-                <div>
-                    <p><img src={IconeCasa} alt='casa' /> Endereços</p>
+            <div className='texto'>
+                <div className='tex'>
+                <img src={iconeUsuario} alt='usuario'/> 
+                <p>Ìnicio</p>
                 </div>
-                <div>
-                    <p><img src={IconeCartoes} alt='cartoes' /> Cartões</p>
+                <div className='tex'>
+                <img src={IconeCasa} alt='casa'/> 
+                <p>Endereços</p>
                 </div>
-                <div>
-                    <p><img src={IconeSacola} alt='sacola' /> Historicos de compras</p>
+                <div className='tex'>
+                <img src={IconeCartoes} alt='cartoes'/>
+                <p> Cartões</p>
                 </div>
+                <dia className='tex'>
+                <img src={IconeSacola} alt='sacola'/>
+                <p>Historicos de compras</p>
+                </dia>
             </div>
         </section>
     )
