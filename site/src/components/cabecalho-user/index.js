@@ -88,7 +88,7 @@ export default function CabecalhoUser() {
             <Link>Quem somos</Link>
             <Link to='/telaprodutos' onMouseEnter={aparecerFiltroProduto} onMouseOut={aparecerFiltroProduto}>Produto</Link>
             <Link>Ofertas</Link>
-            <Link onClick={VerificarEntrar}>Entrar</Link>
+            <a onClick={VerificarEntrar}>Entrar</a>
           </div>
           <div className='IconeUsuario'>
               <div className='carrinho'>
