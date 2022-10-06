@@ -40,13 +40,13 @@ export async function AlterarProduto(id, infoProdutos) {
                         nr_valor = ?,
                         ds_fabricante = ?,
                         dt_validade = ?,
+                        ds_linha = ?,
                         nr_quantidade = ?,
                         nr_volume = ?,
                         id_categoria = ?,
-                        id_parte_corpo = ?,
-                        ds_linha = ?
-                where id_produto = ?`;
-    const [linhas] = await (await con).query(comando,[infoProdutos.nome ,infoProdutos.descricao ,infoProdutos.valor ,infoProdutos.fabricante ,infoProdutos.validade ,infoProdutos.quantidade , infoProdutos.volume ,infoProdutos.idCategoria,infoProdutos.idParteCorpo,  infoProdutos.linhas, id]);
+                        id_parte_corpo = ?
+                    where id_produto = ?`;
+    const [linhas] = await (await con).query(comando,[infoProdutos.nome ,infoProdutos.descricao ,infoProdutos.valor ,infoProdutos.fabricante ,infoProdutos.validade,infoProdutos.linha ,infoProdutos.quantidade , infoProdutos.volume ,infoProdutos.idCategoria,infoProdutos.idParteCorpo, id]);
     return linhas.affectedRows; 
 }
 

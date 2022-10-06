@@ -6,6 +6,9 @@ import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
 import Rodape from '../../components/rodape'
 import Img5 from '../../assets/images/image 5.png'
+<<<<<<< HEAD
+import CabecalhoUser from '../../components/cabecalho-user';
+=======
 import ofertas2 from '../../assets/images/oferta2.png'
 import ofertas3 from '../../assets/images/oferta3.png'
 import marca1 from '../../assets/images/marca1.png'
@@ -13,31 +16,19 @@ import marca2 from '../../assets/images/marca2.png'
 import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
 
+>>>>>>> cc771c14a9c2e93d0c05a9c7bd218d6474b54ff6
 
 
 export default function LadinPage() {
-
-  const navigate = useNavigate();
-
-    useEffect(() => {
-      if (!storage('usuario-logado')) {
-        navigate('/logincliente')
-      }
-      else {
-        const UsuarioLogado = storage('usuario-logado');
-      }
-    }, []);
-                      
   return (
     <div className='Principal'>
       <div className='ImgFundo'>
-        <Cabecalho1 className='text' />
+        <CabecalhoUser/>
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
           nossa loja</p>
-          <input className='bloco'type="text" placeholder ="o que você procura?"></input>
+          <input className='bloco'type="text" placeholder ="o que você procura?"/>
         </div>
-       
       </div>
       
       <div className='Segunda-Parte'>
