@@ -88,3 +88,16 @@ export async function BuscarId(id) {
     const [linhas] = await (await con).query(comando, [id]);
     return linhas[0];
 }
+
+export async function MostrarProdutos() {
+    const comando = `select id_produto as id,
+                        ds_fabricante as fabricante,
+                        img_produto as imagem,
+                        nm_produto as nome,
+                        nr_volume as volume,
+                        ds_linha as linha,
+                        nr_valor as valor
+                    from tb_produto`;
+    const [linhas] = await (await con).query(comando);
+    return linhas;       
+}

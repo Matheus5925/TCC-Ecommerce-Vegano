@@ -1,0 +1,54 @@
+.Card-Produto-Usuario{
+
+    height: 15em;
+    width: 12em;
+    background: #FFFFFF;
+    border: 1px solid rgba(183, 183, 183, 0.95);
+    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3em;
+
+    .Titulo-Produto{
+        width: 100%;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .imagem-produto-cliente{
+        height: 5em;
+        width: 8em;
+    }
+
+    .nome-valor-linha{
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #808080;
+        width: 100%;
+    }
+
+    .form-valor{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+    }
+
+    .button-adicionar button{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        background: #D9D9D9;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        width: 6em;
+        height: 2em;
+    }
+
+    .button-adicionar{
+        padding-top: .5em;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}

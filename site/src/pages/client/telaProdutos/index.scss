@@ -1,2 +1,27 @@
 .Produtos-cliente{
+
+    .Cards-product{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3em;
+        justify-content: center;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+
+    .imagem-usuario-produto{
+        background-image: url(../../../assets/images/produtos-imagem.png);
+        height: 40em;
+        background-repeat: no-repeat;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .title-produtos{
+        text-align: center;
+        padding-top: 2em;
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif
+    }
 }

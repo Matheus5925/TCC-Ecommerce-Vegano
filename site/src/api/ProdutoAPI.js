@@ -71,3 +71,9 @@ export const BuscarId = async (id) =>{
 
     return r.data;
 }
+
+export const MostrarProdutos = async  () =>{
+    const r = await api.get('/produtos/usuario');
+
+    return r.data;
+};

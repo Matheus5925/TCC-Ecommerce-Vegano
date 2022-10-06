@@ -72,7 +72,10 @@ export default function CabecalhoUser() {
     setTimeout(()=>{
       if (aparecer2 === true)
         setAparecer2(false);
-    }, 4000)
+    }, 4000);
+
+    if(aparecer === true)
+      setAparecer(false);
   }
 
 
@@ -91,10 +94,8 @@ export default function CabecalhoUser() {
             <a onClick={VerificarEntrar}>Entrar</a>
           </div>
           <div className='IconeUsuario'>
-              <div className='carrinho'>
-                <img onClick={VerificarCarrinho} src={Carrinho} alt='icone'/>
-              </div>    
               <div className='usuario'> 
+              <img className='carrinho' onClick={VerificarCarrinho} src={Carrinho} alt='icone'/>
               <p>{nome.split(' ')[0]}</p>
                 <img onClick={aparecerTelaUsuario} src={iconeUsuario} alt='icone'/>
               </div>
