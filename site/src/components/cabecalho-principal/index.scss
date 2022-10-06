@@ -4,12 +4,12 @@
     align-items: center;
     margin-left: 10em;
 }
-
+.texts:hover {
+    cursor: pointer;
+}
 .texts p { 
     font-size: 1.5em;
-    margin:1em;
-    
-   
+    margin:1em;   
 }
 
 .icones {
