@@ -127,16 +127,17 @@ where ds_email = 'matheus@gmail.com' and
         
 -- (07) alterar produto
 update tb_produto
-	set nm_produto = '212 vip man ',
+	set nm_produto = '212 Rose',
 		ds_produto  = 'Perfume pika',
         nr_valor = 150.50,
         ds_fabricante = 'Avon',
         dt_validade = '2030-12-01',
+        ds_linha = 'Vegana',
         nr_quantidade = 250,
         nr_volume = '250ml',
         id_categoria = 1,
         id_parte_corpo = 2
-where id_produto = 5;
+where id_produto = 10;
 
 -- (08.1) Filtrar Estoque Nome 
 select id_produto as id,
@@ -147,7 +148,18 @@ select id_produto as id,
 from tb_produto 
 where nm_produto like '2%';
 
+-- (09) Deletar produto
+delete from tb_produto where id_produto = 3;
 
+-- (10) Card produto usuario 
+select id_produto as id,
+		ds_fabricante as frabricante,
+		img_produto as imagem,
+		nm_produto as nome,
+        nr_volume as volume,
+        ds_linha as linha,
+        nr_valor as valor
+from tb_produto;
         
         
 -- Endpoints usuario
@@ -159,7 +171,22 @@ from tb_usuario
 where ds_email = 'julio@gmail.com' and
 		ds_senha = 'julio10';
         
-select * from tb_adm;
+select * from tb_produto;
+
+select	
+                        id_produto as id,
+                        id_categoria as categoria,
+                        id_parte_corpo as ParteCorpo,
+                        nm_produto as nome,
+                        ds_linha as linha,
+                        ds_produto as descricao,
+                        nr_valor as valor,
+                        ds_fabricante as fabricante,
+                        dt_validade as validade,
+                        nr_quantidade as quantidade,
+                        nr_volume as volume
+                    from tb_produto
+                    where id_produto = 5;
 
 
         
