@@ -1,11 +1,14 @@
 import LogoTipo from '../../assets/images/logo.png'
-import { useEffect } from 'react';
-import storage from 'local-storage';
+import { useEffect } from 'react'
+import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom'
 import './index.scss'
 import Cabecalho1 from '../../components/cabecalho-principal'
-import Rodape from '../../components/rodape'
+import Rodape from '../../components/Rodape'
 import Img5 from '../../assets/images/image 5.png'
+
+import CabecalhoUser from '../../components/cabecalho-user';
+
 import CabecalhoUser from '../../components/cabecalho-user';
 
 
@@ -14,6 +17,7 @@ import marca1 from '../../assets/images/marca1.png'
 import marca2 from '../../assets/images/marca2.png'
 import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
+
 import ofertas2 from '../../assets/images/oferta2.png'
 
 

@@ -4,18 +4,27 @@
     align-items: center;
     margin-left: 10em;
 }
+
+
+.texts p {
+    font-size: 1.5em;
+    margin: 1em;
+
+
+
 .texts:hover {
     cursor: pointer;
 }
 .texts p { 
     font-size: 1.5em;
     margin:1em;   
+
 }
 
 .icones {
     display: flex;
-    width:50px;
-    height:42px;
+    width: 50px;
+    height: 42px;
     top: 34px;
     left: 1261px;
     margin-left: 10em;
