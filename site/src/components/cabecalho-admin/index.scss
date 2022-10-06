@@ -22,14 +22,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-
-
     }
 
     .Dados-Usuario {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
     }
 
     .Dados-Usuario:hover {
@@ -56,11 +55,11 @@
 
     }
 
-    .user-name-email>p {
+    .user-name-email > p {
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .usuario {
+    .Usuario {
         height: 50%;
     }
 

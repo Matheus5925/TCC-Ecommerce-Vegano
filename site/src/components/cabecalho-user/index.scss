@@ -4,6 +4,7 @@
     align-items: flex-end;
     gap: .2em;
 
+
     .tela-click-cabecalho {
         border: 0.5px solid rgb(36, 35, 35);
         height: 8em;
@@ -64,6 +65,10 @@
         width: auto;
     }
 
+    Link{
+        width: auto;
+    }
+
     .Principal{
         display: flex;
         flex-direction: row;
@@ -81,15 +86,17 @@
     .Direcionamentos{
         display: flex;
         flex-direction: row;
+        text-align: center;
         margin: 0.5em;
         padding-top: 20px;
 
     }
 
-    .Direcionamentos a {
+    .Direcionamentos  a{
         margin-left: 2em;
         font-size: 25px;
         text-decoration: none;
+        text-align: center;
         color: black !important;
     }
 
@@ -135,6 +142,22 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+    }
+
+
+    .filtro-produto{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+    }
+
+    .filtro-produto:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+        color: #ff0000;
+    }
+
+    .carrinho:hover{
+        cursor: pointer;
     }
 
 }

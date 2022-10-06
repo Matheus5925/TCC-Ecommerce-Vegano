@@ -5,10 +5,19 @@
     margin-left: 10em;
 }
 
+
 .texts p {
     font-size: 1.5em;
     margin: 1em;
 
+
+
+.texts:hover {
+    cursor: pointer;
+}
+.texts p { 
+    font-size: 1.5em;
+    margin:1em;   
 
 }
 

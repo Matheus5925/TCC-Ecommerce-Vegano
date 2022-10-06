@@ -9,6 +9,15 @@ import Img5 from '../../assets/images/image 5.png'
 
 import CabecalhoUser from '../../components/cabecalho-user';
 
+import CabecalhoUser from '../../components/cabecalho-user';
+
+
+import ofertas3 from '../../assets/images/oferta3.png'
+import marca1 from '../../assets/images/marca1.png'
+import marca2 from '../../assets/images/marca2.png'
+import marca3 from '../../assets/images/marca3.png'
+import icone from '../../assets/images/iconeDep.png'
+
 import ofertas2 from '../../assets/images/oferta2.png'
 
 
@@ -47,30 +56,36 @@ export default function LadinPage() {
             <p>Ofertas do Dia</p>
             <div className='Containers'>
               <div className='Container1'>
-               <img className='imgP1'src={Img5} alt='imagem do produto'/>
-               <p className='tit3'>KIT ROTINA DIÁRIA</p> 
-               <p className='tit'>Gala vegano</p>
-               <p className='valor1'>R$240,00</p>
-               <p className='valorOferta1'>R$200,00</p>
+                <img className='imgP1'src={Img5} alt='imagem do produto'/>
+                <p className='tit3'>KIT ROTINA DIÁRIA</p> 
+                <p className='tit'>Gala vegano</p>
+                <p className='valor1'>R$240,00</p>
+                <h1 className='valorOferta1'>R$200,00</h1>
               </div>
               <div className='Container2'>
-              <img className='imgP2'src={ofertas2} alt='imagem do produto'/>
-               <p className='tit4'>Shampoo Natural Hidratação <br/>
-                Suave Argan</p>
-               <p className='valor2'>R$240,00</p>
-               <p className='valorOferta2'>R$200,00</p>
+                <img className='imgP2'src={ofertas2} alt='imagem do produto'/>
+                <p className='tit4'>Shampoo Natural Hidratação</p>
+                <p className='tit1'>Suave Argan</p>
+                <p className='valor2'>R$100,00</p>
+                <h1 className='valorOferta2'>R$40,00</h1>
               </div>
               
-              <div className='Container3'></div>
+              <div className='Container3'>
+                <img className='imgP2'src={ofertas3} alt='imagem do produto'/>
+                <p className='tit5'>Protetor Solar Facial Natural e 
+                Vegano FPS 30</p>
+                <p className='valor2'>R$100,00</p>
+                <h1 className='valorOferta2'>R$40,00</h1>
+              </div>
             </div>
           </div>
         </div>
 
         <div className='Container1-3'>
           <div className='Marcas'>
-            <div className='Marcas1'>
-
-            </div>
+          <img className='M1'src={marca1} alt='img da logo da gaia'/>
+            <img className='M1' src={marca2} alt='img da logo principia'/>
+            <img className='M1'src={marca3} alt='img da logo almanati'/>
           </div>
         </div>
         <div className='Depoimentos'>
@@ -79,11 +94,33 @@ export default function LadinPage() {
             <div className='Linha2'>
               <hr />
             </div>
-
             < div className='Imagens'>
-              <p></p>
-              <div className='Imagen1'></div>
-              <div className='Imagen2'></div>
+             <main className='depoimentos'>
+                <img src={icone} alt=''/>
+                <h1 className='enfase'>ALEX PALLADINI</h1>
+                <p className='avaliacao'>Os cosméticos são <br/>
+                incríveis, potentes e duradouros.</p>
+             </main>
+             <main className='depoimentos'>
+                <img src={icone} alt=''/>
+                <h1 className='enfase'>HELLOISE LUZ</h1>
+                <p className='avaliacao'> Positivo <br/>
+                    Produtos incríveis, alta performance <br/>
+                    e melhor de tudo: rendem horroooores!
+                </p>
+             </main>
+             <main className='depoimentos'>
+                <img src={icone} alt=''/>
+                <h1 className='enfase'>GEORGE NAKAMURA</h1>
+                <p className='avaliacao'>
+                    Impossível descrever em 512 <br/>
+                    caracteres todo o meu amor pela <br/>
+                    cosmétique!!!!
+                </p>
+             </main>
+            </div>
+            <div className='BT'>
+                <button className='B'> mais depoimentos</button>
             </div>
           </div>
         </div>

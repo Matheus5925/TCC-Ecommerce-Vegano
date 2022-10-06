@@ -1,5 +1,5 @@
 import './index.scss'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import storage from 'local-storage';
 
@@ -14,6 +14,7 @@ export default function CabecalhoUser() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [aparecer, setAparecer] = useState(false);
+  const [aparecer2, setAparecer2] = useState(false);
 
   const SairClick = _ => {
     storage.remove('usuario-logado');
@@ -53,7 +54,7 @@ export default function CabecalhoUser() {
     }
   }
 
-  const aparecerTela = () => {
+  const aparecerTelaUsuario = () => {
     if(!storage('usuario-logado'))
       setEmail('Nenhum usuario logado');
 
@@ -61,6 +62,17 @@ export default function CabecalhoUser() {
       setAparecer(true)
     else if (aparecer === true)
       setAparecer(false);
+    if(aparecer2 === true)
+      setAparecer2(false);
+  }
+
+  const aparecerFiltroProduto = () =>{
+    if (aparecer2 === false)
+      setAparecer2(true);
+    setTimeout(()=>{
+      if (aparecer2 === true)
+        setAparecer2(false);
+    }, 4000)
   }
 
 
@@ -72,31 +84,31 @@ export default function CabecalhoUser() {
             <img src={LogoTipo} alt='logo'/>
           </div>
           <div className='Direcionamentos'>
-            <a href='/landing'>Home</a>
-            <a>Quem somos</a>
-            <a href='/telaprodutos'>Produto</a> 
-            <a>Ofertas</a>
-            <a onClick={VerificarEntrar}>Entrar</a>
+            <Link to='/landing'>Home</Link>
+            <Link>Quem somos</Link>
+            <Link to='/telaprodutos' onMouseEnter={aparecerFiltroProduto} onMouseOut={aparecerFiltroProduto}>Produto</Link>
+            <Link>Ofertas</Link>
+            <Link onClick={VerificarEntrar}>Entrar</Link>
           </div>
           <div className='IconeUsuario'>
               <div className='carrinho'>
-                <img src={Carrinho} alt='icone'/>
+                <img onClick={VerificarCarrinho} src={Carrinho} alt='icone'/>
               </div>    
               <div className='usuario'> 
               <p>{nome.split(' ')[0]}</p>
-                <img onClick={aparecerTela} src={iconeUsuario} alt='icone'/>
+                <img onClick={aparecerTelaUsuario} src={iconeUsuario} alt='icone'/>
               </div>
           </div>
         </div>
-        <div className='Segunda-Faixa'>
+        {aparecer2 === true && <div className='Segunda-Faixa'>
           <div className='Paginas'>
-            <p>Cabelo</p>
-            <p>Rosto</p>
-            <p>Corpo</p>
-            <p>Perfumes</p>
-            <p> Corpo e Banho</p>
+            <p className='filtro-produto'>Cabelo</p>
+            <p className='filtro-produto'>Rosto</p>
+            <p className='filtro-produto'>Corpo</p>
+            <p className='filtro-produto'>Perfumes</p>
+            <p className='filtro-produto'> Corpo e Banho</p>
           </div>
-        </div>
+        </div>}
       {aparecer === true && <div className='tela-click-cabecalho'>
         <section className='Usuario'>
           <div className='user-name-email'>
