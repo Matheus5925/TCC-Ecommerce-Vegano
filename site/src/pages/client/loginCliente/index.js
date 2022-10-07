@@ -69,8 +69,6 @@ export default function LoginCliente() {
                             <button className='Botao1' onClick={LoginCliente}>ENTRAR</button>
                         </div>
                     </div>
-                    <div> Novo usuário? cadastre-se
-                    </div>
                 </div>
             </div>
         </main>
