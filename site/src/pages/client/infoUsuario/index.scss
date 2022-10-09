@@ -1,32 +1,85 @@
-.ajuste {
+.box-1 {
+    margin:  0px;
+    padding: 0px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center }
+    min-height: 100vh !important;
+    min-width: 100vw !important;
+    
 
-    .box-1 {
+    .ajuste {
         display: flex;
-        flex-direction: row;
-    }
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+   }
+
+   .caixa-principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #5e5e5e;
+	    box-shadow: 5px 6px 10px rgba(50, 50, 50, 0.77);
+        width: 50em;
+        height: 40em;
+
+   }
+   .caixa-principal img {
+    margin-top: 3em;
+    width: 8rem;
+   }    
+
+   .caixa-principal hr {
+    color: rgb(36 35 35);
+    width: 30em;
+    margin-bottom: 2em;
+   }
+
+
+   .titulo{
+    font-size: 1.8em;
+    font-family: 'Poppins', sans-serif;
+    color: #D8C8B9;
+    margin-top: 2px;
+    margin-bottom: 2px;
+   }
+
 
     .caixa-1 {
         display: flex;
         flex-direction: column;
         height: 2em;
-        width: 30em;
+        width: 40em;
         text-decoration: none;
         border: none;
         border-radius: 3px;
-        background-color: #D9D9D9;
+        border: #D8C8B9 1px solid;
     }
 
     .caixa-2 {
         display: flex;
         flex-direction: column;
+        margin: 1px 15px 0px 17px;
+        
     }
-
+        
     .caixa-3{
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        padding: 2em;
+        width: 100%;
+        
+        
     }
 
+    .inpu{
+        text-decoration: none;
+        width: 18.6em;
+        height: 2em;
+        border-radius: 2px;
+        border: #D8C8B9 1px solid; 
+    }
+
+
+ }
