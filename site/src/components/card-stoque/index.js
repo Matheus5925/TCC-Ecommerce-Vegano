@@ -6,6 +6,9 @@ import lixeira from '../../assets/images/lixeira-estoque.png';
 import lapis from '../../assets/images/lapis-estoque.png';
 import { DeletarProduto, ListarEstoque, ListarEstoqueNome } from '../../api/ProdutoAPI.js';
 import { useNavigate } from 'react-router-dom';
+import { buscarImagem } from '../../api/ProdutoAPI.js';
+
+
 
 
 const CardEstoque = props => {
@@ -17,6 +20,7 @@ const CardEstoque = props => {
     const AlterarProduto = ()=>{
         navigate(`/cadastrarprodutos/alterar/${props.id}`);
     }
+
 
     async function removerServico(id, nome) {
         confirmAlert({

@@ -9,6 +9,7 @@ import CardEstoque from '../../../components/card-stoque';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Estoque() {
     const [card, setCard] = useState([]);
     const [nome, setNome] = useState('');
@@ -34,6 +35,8 @@ export default function Estoque() {
     useEffect(() => {
         ProdutosEstoque();
     },[]);
+
+   
 
     return(
         <div className='Principal-Estoque'>
@@ -64,3 +67,9 @@ export default function Estoque() {
         </div>
     )
 }
+// const MostrarImagem = () => {
+//     if (typeof (imagem) === 'object') {
+  
+//         return URL.createObjectURL(imagem);
+//     }
+// }

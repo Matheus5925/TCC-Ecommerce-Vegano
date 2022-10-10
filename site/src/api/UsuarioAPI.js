@@ -14,3 +14,9 @@ export const CadastroUsuario = async (nome, email, cpf, nascimento, telefone, se
     const r = await api.post('/usuario', { nome, email, cpf, nascimento, telefone, senha });
     return r.data
 }
+
+export const CadastroEnderecoUsuario = async (idUsuario, cep, endereco, ptReferencia, bairro, estado, cidade, nrCasa) =>{
+    const r = await api.post(`/endereco/usuario/${idUsuario}`, {cep, endereco, ptReferencia, bairro, estado, cidade, nrCasa });
+
+    return r.data;
+}

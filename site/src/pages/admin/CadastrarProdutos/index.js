@@ -122,16 +122,6 @@ export default function CadastrarProdutos() {
         }
     }
 
-
-    // const uploadImage = async e => {
-
-    //     e.preventDefault();
-
-    //     const formData = new FormData();
-    //     formData.append('image', image);
-
-    // }
-
     return (
         <main className='Page-cadastro'>
             <ToastContainer />
