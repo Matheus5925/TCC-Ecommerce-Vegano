@@ -18,18 +18,18 @@ export default function InfoUsuario() {
                     <hr/>
                     <div>
                         <label> Nome: </label>
-                        <input type="texto" className='caixa-1'/>
+                        <div className='caixa-1'/>
                     </div>
                     <div className='caixa-3'>
                         <div className='caixa-2' >
                             <label> Sobrenome: </label>
-                            <input type="texto" className='inpu'/>
+                            <div className='inpu'/>
                             <label> Telefone: </label>
-                            <input type="texto" className='inpu'/>
+                            <div className='inpu'/>
                         </div>
                         <div className='caixa-2'>
                             <label> CPF: </label>
-                            <input type="texto" className='inpu'/>
+                            <div className='inpu'/>
                             <label> Data de nacimento: </label>
                             <input type="texto" className='inpu'/>
                         </div>

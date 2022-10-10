@@ -112,10 +112,10 @@ export default function CabecalhoUser() {
         </div>}
       {aparecer === true && <div className='tela-click-cabecalho'>
         <section className='Usuario'>
-          <div className='user-name-email'>
+          <Link to='/infousuario' className='user-name-email'>
             <img className='icon-user' src={IconeUsuario} alt="" />
             <p>{nome}</p>
-          </div>
+          </Link>
           <p className='email'>{email}</p>
         </section>
         <section className='sair'>
