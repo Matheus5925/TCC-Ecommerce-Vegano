@@ -26,4 +26,18 @@ export const CadastroEnderecoUsuario = async (idUsuario ,infoEndereco) =>{
     const [resposta] = await (await con).query(comando, [idUsuario, infoEndereco.cep, infoEndereco.endereco, infoEndereco.ptReferencia, infoEndereco.bairro, infoEndereco.estado, infoEndereco.cidade, infoEndereco.nrCasa ]);
     infoEndereco.id = resposta.insertId;
     return resposta;
+};
+
+export const BuscaUsuarioId = async id =>{
+    const comando = `
+                select id_usuario as id,
+                    nm_usuario as nome,
+                    ds_email as email,
+                    ds_cpf as cpf,
+                    dt_nascimento as nascimento,
+                    ds_telefone as telefone
+            from tb_usuario
+                where id_usuario = ?`;
+    const [linhas] = await (await con).query(comando, [id]);
+    return linhas[0];
 }
