@@ -18,7 +18,7 @@ export default function CabecalhoUser() {
 
   const SairClick = _ => {
     storage.remove('usuario-logado');
-    navigate('/landing')
+    navigate('/')
   }
 
   useEffect(() => {

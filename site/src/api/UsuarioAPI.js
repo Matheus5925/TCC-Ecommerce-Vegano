@@ -20,3 +20,9 @@ export const CadastroEnderecoUsuario = async (idUsuario, cep, endereco, ptRefere
 
     return r.data;
 }
+
+export const BuscaUsuarioId = async id =>{
+    const r = await api.get(`/usuario/${id}`);
+
+    return r.data;
+}
