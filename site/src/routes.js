@@ -17,8 +17,8 @@ const Rotas = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<AdminLogin />}></Route>
-                <Route path='/landing' element={<LadinPage />}></Route>
+                <Route path='/loginAdm' element={<AdminLogin />}></Route>
+                <Route path='/' element={<LadinPage />}></Route>
                 <Route path='/logincliente' element={<LoginCliente />}></Route>
                 <Route path='/cadastrarprodutos' element={<CadastrarProdutos />}></Route>
                 <Route path='/cadastrousuario' element={<TelaCadastroCliente />}></Route>

@@ -15,6 +15,7 @@
     height: 40em;
     display: flex;
     flex-direction: column;
+    width: auto;
   }
 
   .text {
@@ -25,12 +26,13 @@
   .escrita{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding-top: 5em;
+    margin-top: 15em;
     width: 100%;
     align-items: center;
     gap: .5em;
-    position: relative;
+    position: absolute;
   }
 
   .t1{
@@ -88,44 +90,27 @@
   .Container {
     font-family: 'Roboto', sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
     background-color: #99D89F;
     margin: 50px;
-    height: 65vh;
-    font-family: 'Roboto', sans-serif;
-
-
-
+    height: 400px;
   }
 
   .img1 {
-
-    align-items: center;
-    background-image: url('../../assets/images/img4.png');
-    background-repeat: no-repeat;
-    margin: 40px;
-    height: 50vh;
+    height: 280px;
+    width: 500px;
 
   }
 
-  .Paragrafo-1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-left: 5em;
-
+  .texto-faixa-verde{
+    font-size: 16px;
+    width: 25em;
+    line-height: 20px;
+    padding-right: 1.5em;
   }
-
-  .Paragrafo {
-    font-size: 15px;
-    font-family: 'PinyonScript-Regular.ttf';
-    margin: 30px 10px 60px 610px;
-    width: 40vh;
-    text-align: left;
-
-
-  }
-
   .Container1-2 {
     margin: 20px;
     font-size: 30px;
@@ -137,12 +122,6 @@
 
   }
 
-  .Containers {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
 
   .Container1 {
     justify-content: center;
@@ -339,22 +318,4 @@
     position: relative;
     align-items: center;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

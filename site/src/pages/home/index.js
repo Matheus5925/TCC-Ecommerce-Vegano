@@ -13,7 +13,7 @@ import marca1 from '../../assets/images/marca1.png'
 import marca2 from '../../assets/images/marca2.png'
 import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
-
+import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
 
 
@@ -36,17 +36,12 @@ export default function LadinPage() {
             <hr />
           </div>
           <div className='Container'>
-            <div className='img1'>
-              <div className='Paragrafo-1'>
-                <div className='Paragrafo'>
-                  A adesão aos cosméticos veganos cresce conforme aumenta a conscientização sobre o consumo e, principalmente, sobre os impactos ambientais do estilo de vida moderno.
-                  <br />
-                  O objetivo do veganismo é reduzir os impactos ambientais da sociedade e promover o bem-estar animal, principalmente por meio de mudanças no consumo.
-                  <br />
-                  Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
-                </div>
-              </div>
-            </div>
+                <img className='img1' src={segundaFaixa} alt="" />
+              <p className='texto-faixa-verde'>
+                A adesão aos cosméticos veganos cresce conforme aumenta a conscientização sobre o consumo e, principalmente, sobre os impactos ambientais do estilo de vida moderno.
+                O objetivo do veganismo é reduzir os impactos ambientais da sociedade e promover o bem-estar animal, principalmente por meio de mudanças no consumo.
+                Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
+              </p>
           </div>
           <div className='Container1-2'>
             <p>Ofertas do Dia</p>

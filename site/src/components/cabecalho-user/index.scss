@@ -1,6 +1,5 @@
 .Faixa-Principal {
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
     gap: .2em;
     width: 100%;
@@ -14,6 +13,7 @@
         -moz-box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
         box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
         position: absolute;
+        z-index: 50;
     }
 
     .user-name-email {
@@ -23,7 +23,6 @@
         padding-right: 8px;
         text-decoration: none;
         color: #000000;
-
     }
 
     .user-name-email:hover{
