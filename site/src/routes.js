@@ -12,6 +12,7 @@ import AdminLogin from './pages/admin/loginAdmin';
 import CadastrarProdutos from './pages/admin/CadastrarProdutos';
 import TelaCadastroCliente from './pages/client/TelaCadastroCliente';
 import Carrinho from './pages/client/carrinho';
+import CadastrarCartao from './pages/client/cadastrarCartao';
 import { PageSelection } from './pages/admin/selecaoSistem';
 
 const Rotas = () => {
@@ -31,6 +32,7 @@ const Rotas = () => {
                 <Route path='/infousuario' element={<InfoUsuario/>}></Route>
                 <Route path='/cadastroindereco' element={<CadastrarIndereco/>}></Route>
                 <Route path='/carrinho' element={<Carrinho/>}></Route>
+                <Route path='/cadastrarCartao' element={<CadastrarCartao/>}></Route>
                 <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
             </Routes>
         </BrowserRouter>
