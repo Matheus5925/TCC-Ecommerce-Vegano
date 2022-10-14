@@ -13,7 +13,9 @@
         -moz-box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
         box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
         position: absolute;
-        z-index: 50;
+        top: 7.8em;
+        right: 0.5em;
+        background-color: #ffff;
     }
 
     .user-name-email {
@@ -138,6 +140,8 @@
         height: 2em;
         width: 100%;
         font-size: 30px;
+        position: absolute;
+        top: 4.2em;
     }
 
     .Paginas{

@@ -44,7 +44,7 @@ export default function CabecalhoAdmin() {
               <img src={IconeUsuario} alt='Icone' />
             </div>
         </header>
-        {aparecer === true && <div className='tela-click-cabecalho'>
+        {aparecer === true && <div className='tela-click-cabecalho-admin'>
                     <section className='Usuario'>
                         <div className='user-name-email'>
                             <img className='icon-user' src={IconeUsuario} alt="" />

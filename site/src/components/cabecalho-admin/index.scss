@@ -35,16 +35,16 @@
         cursor: pointer;
     }
 
-    .tela-click-cabecalho {
+    .tela-click-cabecalho-admin {
         border: 0.5px solid rgb(36, 35, 35);
         height: 8em;
         width: 18em;
         -webkit-box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
         -moz-box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
         box-shadow: 1px 13px 54px -18px rgba(0, 0, 0, 0.75);
-        position: relative;
-        z-index: 1;
-
+        position: absolute;
+        top: 5.3em;
+        background-color: #ffffff;
     }
 
     .user-name-email {

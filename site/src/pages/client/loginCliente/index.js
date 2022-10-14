@@ -43,6 +43,10 @@ export default function LoginCliente() {
         }
     }
 
+    const direcionarConta = _ =>{
+        navigate('/cadastrousuario')
+    }
+
 
     return (
         <main className='Principal'>
@@ -63,7 +67,7 @@ export default function LoginCliente() {
                     </div>
                     <div className='botoes'>
                         <div className='Botao2'>
-                            <button className='Botao2' onClick={LoginCliente}>CRIAR CONTA</button>
+                            <button className='Botao2' onClick={direcionarConta}>CRIAR CONTA</button>
                         </div>
                         <div className='Botao'>
                             <button className='Botao1' onClick={LoginCliente}>ENTRAR</button>

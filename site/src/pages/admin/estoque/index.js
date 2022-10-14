@@ -59,7 +59,7 @@ export default function Estoque() {
                         key={item.id}
                         id={item.id}
                         fabricante={item.fabricante}
-                        image={item.imagem}
+                        imagem={item.imagem}
                         nome={item.nome}
                         value={item.preco}
                 />)}

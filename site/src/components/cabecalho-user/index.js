@@ -7,7 +7,8 @@ import LogoTipo from '../../assets/images/logo.png'
 import IconeUsuario from '../../assets/images/icone-usuario.png'
 
 import Carrinho from '../../assets/images/carrinho.png';
-import iconeUsuario from '../../assets/images/icone-usuario.png'
+import iconeUsuario from '../../assets/images/icone-usuario.png';
+import {toast, ToastContainer} from 'react-toastify'
 
 export default function CabecalhoUser() {
   const navigate = useNavigate();
@@ -16,10 +17,12 @@ export default function CabecalhoUser() {
   const [aparecer, setAparecer] = useState(false);
   const [aparecer2, setAparecer2] = useState(false);
 
-  const SairClick = _ => {
+
+  const SairClickUser = _ => {
     storage.remove('usuario-logado');
     navigate('/')
   }
+
 
   useEffect(() => {
     if (storage('usuario-logado')) {
@@ -28,6 +31,7 @@ export default function CabecalhoUser() {
       setNome(userLogado.nome);
       setEmail(userLogado.email)
     }
+    SairClickUser();
   }, []);
 
   const VerificarEntrar = () =>{
@@ -37,8 +41,8 @@ export default function CabecalhoUser() {
     else {
       const userLogado = storage('usuario-logado');
       setNome(userLogado.nome);
-      setEmail(userLogado.email)
-      navigate('/landing');
+      setEmail(userLogado.email);
+      toast('❌ Você já está logado')
     }
   }
 
@@ -78,28 +82,29 @@ export default function CabecalhoUser() {
       setAparecer2(false);
   }
 
-  const aparecerFiltroProduto = () =>{
-    if (aparecer2 === false)
-      setAparecer2(true);
-    setTimeout(()=>{
-      if (aparecer2 === true)
-        setAparecer2(false);
-    }, 4000);
+   const aparecerFiltroProduto = () =>{
+     if (aparecer2 === false)
+       setAparecer2(true);
+     setTimeout(()=>{
+       if (aparecer2 === true)
+         setAparecer2(false);
+     }, 4000);
 
-    if(aparecer === true)
-      setAparecer(false);
-  }
+     if(aparecer === true)
+       setAparecer(false);
+   }
 
 
 
   return (
     <main className='Faixa-Principal'>
+      <ToastContainer/>
         <div className='Principal'>
           <div className='logo'>
             <img src={LogoTipo} alt='logo'/>
           </div>
           <div className='Direcionamentos'>
-            <Link to='/landing'>Home</Link>
+            <Link to='/'>Home</Link>
             <Link>Quem somos</Link>
             <Link to='/telaprodutos' onMouseEnter={aparecerFiltroProduto} onMouseOut={aparecerFiltroProduto}>Produto</Link>
             <Link>Ofertas</Link>
@@ -131,7 +136,7 @@ export default function CabecalhoUser() {
           <p className='email'>{email}</p>
         </section>
         <section className='sair'>
-          <button onClick={SairClick} className='Botao-sair'> Sair </button>
+          <button onClick={SairClickUser} className='Botao-sair'> Sair </button>
         </section>
       </div>}
     </main>

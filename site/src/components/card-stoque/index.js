@@ -7,6 +7,8 @@ import lapis from '../../assets/images/lapis-estoque.png';
 import { DeletarProduto, ListarEstoque, ListarEstoqueNome } from '../../api/ProdutoAPI.js';
 import { useNavigate } from 'react-router-dom';
 import { buscarImagem } from '../../api/ProdutoAPI.js';
+import { API_URL } from '../../api/config';
+
 
 
 
@@ -44,7 +46,12 @@ const CardEstoque = props => {
         })
     }
 
-    
+    const ExibirImagem = imagem =>{
+        if(!imagem)
+            return 'https://cdn-icons-png.flaticon.com/512/1178/1178428.png';
+        else
+            return `${API_URL}/${imagem}`;
+    }
 
     return (
         <div className='card-stoque'>
@@ -54,11 +61,11 @@ const CardEstoque = props => {
                 <img onClick={e => {e.stopPropagation(); removerServico(props.id, props.nome)}} className='lixeira-lapis' src={lixeira} alt="" />
             </div>
             <div className='imagem-card'>
-                <img className='img-produto' src={props.image} alt="" />
+                <img className='img-produto' src={ExibirImagem(props.imagem)} alt="" />
             </div>
             <div className='nome-valor'>
                 <p className='nome-produto'>{props.nome}</p>
-                <p className='valor'>{props.value}</p>
+                <p className='valor'>{props.value.replace('.', ',')}</p>
             </div>
             <div className='quantidade'>
                 <label>QTD:</label>
