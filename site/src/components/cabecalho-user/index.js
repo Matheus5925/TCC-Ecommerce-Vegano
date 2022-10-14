@@ -42,6 +42,18 @@ export default function CabecalhoUser() {
     }
   }
 
+  const VerificarInfoUser = () =>{
+    if (!storage('usuario-logado')) {
+      navigate('/logincliente');
+    }
+    else {
+      const userLogado = storage('usuario-logado');
+      setNome(userLogado.nome);
+      setEmail(userLogado.email)
+      navigate('/infousuario');
+    }
+  }
+
   const VerificarCarrinho = () =>{
     if (!storage('usuario-logado')) {
       navigate('/logincliente');
@@ -112,10 +124,10 @@ export default function CabecalhoUser() {
         </div>}
       {aparecer === true && <div className='tela-click-cabecalho'>
         <section className='Usuario'>
-          <Link to='/infousuario' className='user-name-email'>
+          <div onClick={VerificarInfoUser} className='user-name-email'>
             <img className='icon-user' src={IconeUsuario} alt="" />
             <p>{nome}</p>
-          </Link>
+          </div>
           <p className='email'>{email}</p>
         </section>
         <section className='sair'>

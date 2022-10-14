@@ -8,7 +8,7 @@ const CardProdutosUsuario = props =>{
                 <h1>{props.fabricante}</h1>
             </div>
             <div className='imagem-produto-cliente'>
-                <img src={props.imagem} alt="" />
+                <img className='imagem-produto-cliente' src={`http://localhost:5000/${props.imagem}`} alt="" />
             </div>
             <div className='nome-valor-linha'>
                 <p>{props.nome}</p>
