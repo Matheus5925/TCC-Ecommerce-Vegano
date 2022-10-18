@@ -82,7 +82,8 @@ export async function BuscarId(id) {
                         ds_fabricante as fabricante,
                         dt_validade as validade,
                         nr_quantidade as quantidade,
-                        nr_volume as volume
+                        nr_volume as volume,
+                        img_produto as imagem
                     from tb_produto
                     where id_produto = ?`;
     const [linhas] = await (await con).query(comando, [id]);

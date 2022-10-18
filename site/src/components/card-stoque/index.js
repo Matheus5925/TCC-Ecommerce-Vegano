@@ -6,12 +6,7 @@ import lixeira from '../../assets/images/lixeira-estoque.png';
 import lapis from '../../assets/images/lapis-estoque.png';
 import { DeletarProduto, ListarEstoque, ListarEstoqueNome } from '../../api/ProdutoAPI.js';
 import { useNavigate } from 'react-router-dom';
-import { buscarImagem } from '../../api/ProdutoAPI.js';
 import { API_URL } from '../../api/config';
-
-
-
-
 
 const CardEstoque = props => {
     const [quantidade, setQuantidade] = useState(0);

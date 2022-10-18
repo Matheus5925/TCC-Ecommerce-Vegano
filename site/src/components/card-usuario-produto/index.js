@@ -1,10 +1,19 @@
 import { API_URL } from '../../api/config';
 import './index.scss';
-import imagemTeste from '../../assets/images/imagem-falta-produto.png'
+import imagemTeste from '../../assets/images/imagem-falta-produto.png';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import storage from 'local-storage';
+
 
 
 const CardProdutosUsuario = props =>{
 
+    const navigate = useNavigate();
+
+    const DetalhesProdutoDirecionar = () =>{
+        navigate(`/detalhes/produto/${props.item.id}`);
+    }
 
     const ExibirImagem = imagem =>{
         if(!imagem)
@@ -13,12 +22,25 @@ const CardProdutosUsuario = props =>{
             return `${API_URL}/${imagem}`;
     }
 
+    const AdicionarCarrinho = () =>{
+        let carrinho = [];
+        if(storage('carrinho'))
+            carrinho = storage('carrinho');
+        if(!carrinho.find(item => item.id === props.item.id)){
+            carrinho.push({
+                id: props.item.id,
+                quantidade: props.item.quantidade
+            })
+        }
+    };
+
     return(
         <div className='Card-Produto-Usuario'>
-            <div className='Titulo-Produto'>
+            
+            <div onClick={DetalhesProdutoDirecionar} className='Titulo-Produto'>
                 <h1>{props.item.fabricante}</h1>
             </div>
-            <div className='imagem-produto-cliente'>
+            <div onClick={DetalhesProdutoDirecionar} className='imagem-produto-cliente'>
                 <img className='imagem-produto-cliente' src={ExibirImagem(props.item.imagem)} alt="" />
             </div>
             <div className='nome-valor-linha'>
@@ -27,7 +49,7 @@ const CardProdutosUsuario = props =>{
             </div>
                 <p className='form-valor'>{`R$ ${props.item.valor}`}</p>
                 <div className='button-adicionar'>
-                    <button>Adicionar</button>
+                    <button onClick={AdicionarCarrinho}>Adicionar</button>
                 </div>
         </div>
     )

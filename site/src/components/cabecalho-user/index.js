@@ -31,7 +31,6 @@ export default function CabecalhoUser() {
       setNome(userLogado.nome);
       setEmail(userLogado.email)
     }
-    SairClickUser();
   }, []);
 
   const VerificarEntrar = () =>{

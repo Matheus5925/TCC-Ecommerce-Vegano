@@ -12,7 +12,8 @@ export default function TelaProdutos() {
   const ListarCards = async () =>{
     const r = await MostrarProdutos();
     setCard(r);
-  }
+  };
+
 
   useEffect(()=>{
     ListarCards();

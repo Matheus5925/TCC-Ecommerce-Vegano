@@ -1,0 +1,119 @@
+.Principal-page-detalhes{
+    display: flex;
+    flex-direction: column;
+
+    .body-content{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .conteudo-principal-detalhes{
+        display: flex;
+        flex-direction: row;
+        gap: 4em;
+        margin-top: 5em;
+    }
+
+    .imagem{
+        width: 14em;
+        height: 16em;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .imagem-produto-detalhe{
+        width: 14em;
+        height: 16em;
+    }
+
+    .titulo-marca-volume{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        width: 18em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+    }
+
+    .titulo-marca-volume > h3{
+        color: #888888;
+        font-size: 23px;
+    }
+
+    .Conteudo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.5em;
+    }
+
+    button{
+        background: #D8C8B9;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        border: none;
+        color: #ffff;
+        width: 10em;
+        height: 2.4em;
+    }
+
+    .buttons-detalhes{
+        display: flex;
+        flex-direction: row;
+        gap: 3em;
+    }
+
+    .valor-detalhes > p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 60px;
+        color: #D8C8B9;
+    }
+
+    .valor-detalhes{
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 25.5em;
+    }
+
+    .data-detalhes > p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 60px;
+        color: #D8C8B9;
+    }
+
+    label{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+    }
+
+    .descricao{
+        margin-top: 4em;
+        height: 16em;
+        background-color: #F6F6F6;
+        width: 90%;
+        margin-bottom: 4em;
+    }
+
+    .title-desc{
+        padding-top: 1.5em;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    .descricao > p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        padding-left: 5em;
+    }
+}
