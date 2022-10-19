@@ -17,7 +17,7 @@
     flex-direction: column;
     width: auto;
   }
-
+  
   .text {
     display: flex;
     flex-direction: row;
@@ -97,6 +97,12 @@
     background-color: #99D89F;
     margin: 50px;
     height: 400px;
+  }
+
+  .Containers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .img1 {

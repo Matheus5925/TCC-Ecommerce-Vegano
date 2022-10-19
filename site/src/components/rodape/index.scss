@@ -1,7 +1,7 @@
     .rodape {
         display: flex;
         flex-direction: column;
-        padding: 7em;
+        padding: 3em;
         background-color: #d8c8b9;
 
     }
@@ -15,23 +15,20 @@
     }
 
     .box1 img {
-        height: 250px;
-        width: 230px;
-        left: 90px;
+        height: 130px;
+        width: 130px;
+        left: 100px;
         top: 3978px;
         border-radius: 0px;
+        justify-content: center;
+        align-self: center;
     }
 
     .box-2 {
         padding: 5em;
-
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-
-        margin-left: 2em;
-
-
+        justify-content: center;
     }
 
     .box-2 h1 {
@@ -44,8 +41,8 @@
     }
 
     .box-2 img {
-        height: 30px;
-        width: 30px;
+        height: 25px;
+        width: 25px;
         left: 825px;
         top: 4079px;
         border-radius: 0px;
@@ -76,5 +73,6 @@
 
     .text img {
         width: 20em;
+        height: 2em;
 
     }

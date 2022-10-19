@@ -15,6 +15,7 @@ import Carrinho from './pages/client/carrinho';
 import CadastrarCartao from './pages/client/cadastrarCartao';
 import { PageSelection } from './pages/admin/selecaoSistem';
 import DetalhesProduto from './pages/client/infoProdutos';
+import TelaOfertas from './pages/client/TelaOfertas';
 
 const Rotas = () => {
     return (
@@ -36,6 +37,7 @@ const Rotas = () => {
                 <Route path='/cadastrarCartao' element={<CadastrarCartao/>}></Route>
                 <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
                 <Route path='/detalhes/produto/:idParams' element={<DetalhesProduto/>} />
+                <Route path='/telaOfertas' element={<TelaOfertas/>}/>
             </Routes>
         </BrowserRouter>
     );
