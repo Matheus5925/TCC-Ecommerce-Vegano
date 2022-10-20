@@ -20,7 +20,7 @@ export default function CabecalhoUser() {
 
   const SairClickUser = _ => {
     storage.remove('usuario-logado');
-    navigate('/')
+    navigate('/');
   }
 
 
@@ -117,15 +117,11 @@ export default function CabecalhoUser() {
               </div>
           </div>
         </div>
-        {aparecer2 === true && <div className='Segunda-Faixa'>
-          <div className='Paginas'>
-            <p className='filtro-produto'>Cabelo</p>
-            <p className='filtro-produto'>Rosto</p>
-            <p className='filtro-produto'>Corpo</p>
-            <p className='filtro-produto'>Perfumes</p>
-            <p className='filtro-produto'> Corpo e Banho</p>
+        {/* {aparecer2 === true && <div className='Segunda-Faixa'>
+          <div className='Paginas'>    
+            {produtosFiltro.map(item => <p key={item.id} className='filtro-produto'> {item.categoria}</p>)}
           </div>
-        </div>}
+        </div>} */}
       {aparecer === true && <div className='tela-click-cabecalho'>
         <section className='Usuario'>
           <div onClick={VerificarInfoUser} className='user-name-email'>

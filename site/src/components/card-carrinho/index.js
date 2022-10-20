@@ -15,9 +15,9 @@ export default function CardCarrinho(props) {
 
     return(
         <div className='CARD'>
-            <img className='imagem-carrinho' src={imagemProduto} alt="produto"/>
-            <p>Selagem Vegana Marroquina 1L Tigo Cosméticos</p>
-            <p>R$ 139,90</p>
+            <img className='imagem-carrinho' src={ExibirImagem(props.item.id.imagem)} alt="produto"/>
+            <p>{`${props.item.id.nome} ${props.item.id.volume}  ${props.item.id.fabricante}`}</p>
+            <p>R$ {props.item.id.valor}</p>
             <div className='QNT'>
                 <p className='editar'>+</p>
                 <p>1</p>

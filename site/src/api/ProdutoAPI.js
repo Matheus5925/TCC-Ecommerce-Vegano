@@ -77,3 +77,10 @@ export const MostrarProdutos = async  () =>{
 
     return r.data;
 };
+
+
+export const FiltrarPorCategoria = async (nome) =>{
+    const r = await api.get(`/filtro/produto/categoria/?nome=${nome}`);
+
+    return r.data;
+};

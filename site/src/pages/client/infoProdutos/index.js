@@ -1,6 +1,6 @@
 import CabecalhoUser from '../../../components/cabecalho-user';
 import './index.scss';
-import Storage, { remove } from 'local-storage';
+import Storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { BuscarId } from '../../../api/ProdutoAPI';
 import { useParams } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { API_URL } from '../../../api/config';
 import { toast, ToastContainer } from 'react-toastify';
 
 const DetalhesProduto = props =>{
-    const [produtos, setProdutos] = useState({id: 0, nome: '', linha: '',  descricao: '', valor: '', fabricante: '', validade:'', volume:'', imagem: ''});
+    const [produtos, setProdutos] = useState({id: 0, nome: '',categoria: '', linha: '',  descricao: '', valor: '', fabricante: '', validade:'', volume:'', imagem: ''});
 
     const {idParams} = useParams();
 
@@ -74,7 +74,7 @@ const DetalhesProduto = props =>{
                             </div>
                             <div className='data-detalhes'>
                                 <label> Categoria:</label>
-                                <p>Cabelos</p>
+                                <p>{produtos.categoria}</p>
                             </div>
                         </div>
                         <div className='buttons-detalhes'>

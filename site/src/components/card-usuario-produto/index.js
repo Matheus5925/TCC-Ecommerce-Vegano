@@ -47,7 +47,7 @@ const CardProdutosUsuario = props =>{
                 <p>{props.item.nome}</p>
                 <p>{`${props.item.volume} - ${props.item.linha} `}</p>
             </div>
-                <p className='form-valor'>{`R$ ${props.item.valor}`}</p>
+                <p className='form-valor'>{`R$ ${props.item.valor.replace('.', ',')}`}</p>
                 <div className='button-adicionar'>
                     <button onClick={AdicionarCarrinho}>Adicionar</button>
                 </div>
