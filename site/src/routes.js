@@ -16,6 +16,7 @@ import CadastrarCartao from './pages/client/cadastrarCartao';
 import { PageSelection } from './pages/admin/selecaoSistem';
 import DetalhesProduto from './pages/client/infoProdutos';
 import TelaOfertas from './pages/client/TelaOfertas';
+import ConteudoCard from './components/cabecalho-lateral/cartoes';
 
 const Rotas = () => {
     return (
@@ -38,6 +39,7 @@ const Rotas = () => {
                 <Route path='/cadastrarprodutos/alterar/:idParams' element={<CadastrarProdutos/>}/>
                 <Route path='/detalhes/produto/:idParams' element={<DetalhesProduto/>} />
                 <Route path='/telaOfertas' element={<TelaOfertas/>}/>
+                <Route  path='/teste' element={<ConteudoCard/>}/>
             </Routes>
         </BrowserRouter>
     );

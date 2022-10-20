@@ -3,7 +3,7 @@
 .principal{
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
     height: 100%;
     background-color: #D8C8B9;
 
@@ -29,7 +29,7 @@
         justify-content:flex-start ;
         align-items: center;
         font-family: Arial, Helvetica, sans-serif;
-        gap: 0.5em;
+        gap: 0.3em;
         height: 3em;
         padding-left: 0.8em;
         text-decoration: none;
@@ -41,5 +41,14 @@
         background-color: #beb1a5;
         border-radius: 1em;
         cursor: pointer;
+    }
+
+    .porta-saida{
+        height: 30px;
+    }
+
+    .Saida{
+        margin-top: 17em;
+        width: 150px;
     }
 }
