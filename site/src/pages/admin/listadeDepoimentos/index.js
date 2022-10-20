@@ -19,11 +19,13 @@ Produtos incríveis, alta performance e melhor de tudo: rendem horroooores!</p>
                         <div className='bl-4'>
                             <button className='bl-5'>Publicar</button>
                         </div>
-
+         
                     </div>
 
                 </div>
                 </div>
+
+
                </div>
         </div>
     )

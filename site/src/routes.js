@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import AdicionarOfertas from './pages/admin/adicionarOfertas';
 import ListadeDepoimentos from './pages/admin/listadeDepoimentos';
 import CadastrarIndereco from './pages/client/cadastrarEndereco';
 import InfoUsuario from './pages/client/infoUsuario';
@@ -42,6 +43,7 @@ const Rotas = () => {
                 <Route path='/telaOfertas' element={<TelaOfertas/>}/>
                 <Route  path='/teste' element={<ConteudoCard/>}/>
                 <Route path='/listadedepoimentos' element={<ListadeDepoimentos/>}/>
+                <Route path='/adicionarofertas' element={<AdicionarOfertas/>}/>
             </Routes>
         </BrowserRouter>
     );
