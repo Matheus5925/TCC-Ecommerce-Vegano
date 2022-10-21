@@ -65,6 +65,11 @@
         gap: 3em;
     }
 
+    .buttons-detalhes > button:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
     .valor-detalhes > p{
         font-family: Arial, Helvetica, sans-serif;
         font-style: normal;

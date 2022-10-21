@@ -37,23 +37,25 @@ export default function Crrinho(){
         <main>
             <CabecalhoUser/>
             <div className='box-principal'>
-                <div className='titulo'>                    
-                <h1>MEU CARRINHO</h1>
-                <hr/>
-                </div>
-                <div className='cabecalho'>
-                    <div className='ajustes'>
-                    <p>Produto</p>
+               <div className='title'>
+                    <h1>Meu Carrinho</h1>
+                    <hr/>
+               </div>
+               <div className='indentificador'>
+                    <div className='indentificador-pt1'>
+                        <p>Produto</p>
                     </div>
-                    <div className='ajuste-box2'>
-                    <p>Preço</p>
-                    <p>Quantidade</p>
-                    <p>Total</p>
+                    <div className='indentificador-pt2'>
+                        <p>Preço</p>
+                        <p>Quantidade</p>
+                        <p>Total</p>
                     </div>
+               </div>
+                <div className='Cards-produtos'>
+                    {itensCarrinho.map(item =><CardCarrinho
+                        item={item}
+                    />)}
                 </div>
-                {itensCarrinho.map(item =><CardCarrinho
-                    item={item}
-                />)}
                 <div className='quadrado-1'>
                     <div>
                         <div className='posicionamentos'>

@@ -191,6 +191,7 @@ server.get('/filtro/produto/categoria/', async (req,resp) =>{
         const {nome} = req.query;
 
         const r = await FiltrarPorCategoria(nome);
+
         resp.send(r);    
     } catch (err) {
         resp.status(400).send({

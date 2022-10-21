@@ -5,6 +5,7 @@ import CabecalhoUser from '../../../components/cabecalho-user'
 import CardProdutosUsuario from '../../../components/card-usuario-produto'; 
 import { useEffect, useState } from 'react';
 import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria } from '../../../api/ProdutoAPI';
+import LupaPesquisa from '../../../assets/images/search.png'
 
 export default function TelaProdutos() {
   const [card, setCard] = useState([]);
@@ -14,7 +15,6 @@ export default function TelaProdutos() {
   const CategoriasAparecer = async _ =>{
     const r = await BuscaCategoria();
     setProdutoFiltro(r);
-    console.log(r);
   };
 
   const FiltroCategoria = async _ =>{
@@ -45,7 +45,13 @@ export default function TelaProdutos() {
 
           </section>
           <div className='Buscas-filtro'>
-              <input type="text" />
+              <div className='caixa-pesquisa-produtos'>
+                <input type="text" className='nome-produto' placeholder='Pesquisar...'/>
+                <a className='procura-botao' href="#">
+                  <img className='Lupa' src={LupaPesquisa} alt="" />
+                </a>
+              </div>
+              
               <select value={titulo} onChange={e => setTitulo(e.target.value)}>
                 <option>Selecione uma categoria </option>
                 {produtosFiltro.map(item => <option value={item.categoria} key={item.id}>{item.categoria}</option>)}
@@ -53,7 +59,7 @@ export default function TelaProdutos() {
           </div>
           <h1 className='title-produtos'>{!titulo || titulo === 'Selecione uma categoria' ? 'Produto' : `Produtos: ${titulo}`}</h1>
           <section className='Cards-product'>
-            {card.map(item => <CardProdutosUsuario item={item}/>)}
+            {card.map(item =>  <CardProdutosUsuario key={item.id} item={item} />)}
           </section>
           
         </div>
