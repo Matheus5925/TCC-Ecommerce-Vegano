@@ -77,7 +77,7 @@ export default function CadastrarIndereco() {
             <ToastContainer/>
             <div className='Fundo-Cadastro-Img'>
                 <div className='box-br'>
-                    <h2> CADASTRAR ENDEREÇO </h2>
+                    <h2> Cadastrar Endereço </h2>
                     <div className='box-ajustar'>
                         <div className='row'>
                             <div className='coluna'>
@@ -108,7 +108,7 @@ export default function CadastrarIndereco() {
                             </div>
                         </div>
                     </div>
-                    <button onClick={CadastroEndereco}>Salvar e continuar</button>
+                    <button className='but'onClick={CadastroEndereco}>Salvar e continuar</button>
                 </div>
             </div>
         </section>

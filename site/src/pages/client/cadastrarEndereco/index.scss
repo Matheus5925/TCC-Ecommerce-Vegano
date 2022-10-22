@@ -46,7 +46,7 @@
       }
 
       .box-br h2{
-        font-family: 'Poppins', sans-serif;
+        font-size: 35px;
       }
 
       .row{
@@ -65,7 +65,7 @@
         text-decoration: none;
         margin-bottom: 5px;
         height: 2.4em;
-        border-radius: 5px;
+        border-radius: 18px;
         border: #b2b0b0c4 1px solid; 
       }
 
@@ -74,7 +74,7 @@
         margin-bottom: 4px;       
         width: 19em;
         height: 2.4em;
-        border-radius: 5px;
+        border-radius: 18px;
         border: #b2b0b0c4 1px solid; 
       }
 
@@ -84,5 +84,9 @@
 
       input[type=number]::-webkit-inner-spin-button {
         -webkit-appearance: none;
+    }
+
+    .but{
+      height: 45px;
     }
 }

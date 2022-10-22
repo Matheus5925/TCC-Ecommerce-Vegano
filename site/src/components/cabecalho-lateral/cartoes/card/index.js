@@ -9,7 +9,7 @@ const CardCartao = props =>{
                 <img className='img-cartao' src={MasterCard} alt="" />
             </div>
             <div className='nome-numero-cartao'>
-                <p> Helloise Silva</p>
+                <p> Helloise Luz</p>
                 <h3>2511 1651 2233 5554</h3>
             </div>
             <div className='data-cvv'>

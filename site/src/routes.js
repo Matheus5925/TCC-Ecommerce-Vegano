@@ -19,6 +19,9 @@ import { PageSelection } from './pages/admin/selecaoSistem';
 import DetalhesProduto from './pages/client/infoProdutos';
 import TelaOfertas from './pages/client/TelaOfertas';
 import ConteudoCard from './components/cabecalho-lateral/cartoes';
+import MeusPedidos from  './pages/client/meusPedidos'
+import Depoimentos from './pages/client/depoimentos';
+import QuemSomos from './pages/client/QuemSomos';
 
 const Rotas = () => {
     return (
@@ -44,6 +47,9 @@ const Rotas = () => {
                 <Route  path='/teste' element={<ConteudoCard/>}/>
                 <Route path='/listadedepoimentos' element={<ListadeDepoimentos/>}/>
                 <Route path='/adicionarofertas' element={<AdicionarOfertas/>}/>
+                <Route path='/meusPedidos' element={<MeusPedidos/>}/>
+                <Route path='/depoimentos' element={<Depoimentos/>}/>
+                <Route path='/quemSomos' element={<QuemSomos/>}/>
             </Routes>
         </BrowserRouter>
     );
