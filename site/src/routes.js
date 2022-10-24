@@ -22,6 +22,7 @@ import ConteudoCard from './components/cabecalho-lateral/cartoes';
 import MeusPedidos from  './pages/client/meusPedidos'
 import Depoimentos from './pages/client/depoimentos';
 import QuemSomos from './pages/client/QuemSomos';
+import Pagamento from './pages/client/pagamento'
 
 const Rotas = () => {
     return (
@@ -50,6 +51,7 @@ const Rotas = () => {
                 <Route path='/meusPedidos' element={<MeusPedidos/>}/>
                 <Route path='/depoimentos' element={<Depoimentos/>}/>
                 <Route path='/quemSomos' element={<QuemSomos/>}/>
+                <Route path='/pagamento' element={<Pagamento/>}></Route>
             </Routes>
         </BrowserRouter>
     );
