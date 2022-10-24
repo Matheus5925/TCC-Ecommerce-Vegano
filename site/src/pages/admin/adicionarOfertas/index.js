@@ -9,43 +9,72 @@ export default function AdicionarOfertas() {
         <CabecalhoAdmin/>
          <h1 className='Titulo-Adicionar'> ADICIONAR OFERTAS:</h1>
    <hr className='Linha-Principal'></hr>
+     
+   <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
+                            <input placeholder='Mascará de....'  className='Caixa-Texto' type="text" />
 
-   <div className='Container-Adicionar'>
+                            <label className='Titulo-Caixa-Texto'>Linha do produto</label>
+                            <input placeholder='vegana, natural...' className='Caixa-Texto' type="text" />
 
-     <label className='Mini-Titulo'>NOME DO PRODUTO:</label>
-     <input className='Input1'></input>
+                            <div className='qtd-valor' >
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Marca </label>
+                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
 
-     <label className='Mini2'>LINHA DO PRODUTO:</label>
-     <input className='Input2'></input>
+                                    </div>
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> qtd.Produto </label>
+                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
 
- <div className='Row'>
-     <label className='Mini3'>MARCA:</label>
-     <input className='Input3'></input>
-     <label className='Mini3'>QTD. PRODUTOS:</label>
-     <input className='Input3'></input>
- </div>
+                                    </div>
+                                </div>
 
-     <div className='Row2'>
-     <label className='Mini5'>CATEGORIA:</label>
-     <input className='Input5'></input>
+                                <div className="label">
+                                        <label className='Titulo-Caixa-Texto'> Categoria </label>
+                                        <select>
+                                            <option value="Selecione uma opção">Selecione</option>
+                                            <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
 
-     <label className='Mini5'>PARTES DO CORPO:</label>
-     <input className='Input5'></input>
+                                        </select>
 
-     <label className='Mini5'>VALOR ANTIGO:</label>
-     <input className='Input5'></input>
+                                        <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Parte do Corpo </label>
+                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
+                                    </div>
 
-     <label className='Mini5'>VALOR ATUAL:</label>
-     <input className='Input5'></input>
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Valor antigo: </label>
+                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
 
-     </div>
+                                    </div>
 
-     <div className='Image'>
-    <label className='Imagem'>ADICIONE UMA FOTO</label>
-     </div>
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Valor atual: </label>
+                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
+                                        
+                                    </div>
+                                    </div>
+
+                                    <div>
+                            <label className='Titulo-Caixa-Texto'>Adicione uma foto</label>
+                            {
+                                
+                                <img src="./neblina.png" alt="imagem" width="250px" height="250px" />
+                            }
+
+                            {
+                                <img />
+                            }
+                          
+                            
+                        </div>
+
+     
+                          
+    </div>
+
+   
+
     
-     </div>
-
-       </div>
     )
 }

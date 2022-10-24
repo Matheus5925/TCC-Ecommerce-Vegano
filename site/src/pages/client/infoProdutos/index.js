@@ -1,7 +1,6 @@
 import CabecalhoUser from '../../../components/cabecalho-user';
 import './index.scss';
 import Rodape from '../../../components/rodape'
-import Storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { BuscarId } from '../../../api/ProdutoAPI';
 import { useParams } from 'react-router-dom';
@@ -71,7 +70,7 @@ const DetalhesProduto = props =>{
                             </div>
                             <div className='data-detalhes'>
                                 <label> Linha:</label>
-                                <p>{produtos.linha}</p>
+                                <p>{!produtos.linha ? 'Não informada' : produtos.linha}</p>
                             </div>
                             <div className='data-detalhes'>
                                 <label> Categoria:</label>

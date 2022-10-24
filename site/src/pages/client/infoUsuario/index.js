@@ -20,7 +20,7 @@ export default function InfoUsuario() {
             let idUsuario = storage('usuario-logado').id;
             ListarInfoUser(idUsuario);
         }
-    },[])
+    },[]);
 
     return (
         <section className='box-1'>
