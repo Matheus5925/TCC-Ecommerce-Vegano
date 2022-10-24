@@ -40,4 +40,15 @@ export const BuscaUsuarioId = async id =>{
                 where id_usuario = ?`;
     const [linhas] = await (await con).query(comando, [id]);
     return linhas[0];
+};
+
+export const ListarDepoimentos = async ()=> { 
+    const comando = `select id_depoimento as id,
+                        nm_usuario as nome,
+                        ds_comentario as comentario,
+                        ds_email as email
+                    from tb_depoimento
+                    inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario`;
+    const [linhas] = await (await con).query(comando);
+    return linhas;
 }

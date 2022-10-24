@@ -1,7 +1,4 @@
-import LogoTipo from '../../assets/images/logo.png'
-import { useEffect } from 'react'
-import storage from 'local-storage'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import './index.scss';
 import Img5 from '../../assets/images/image 5.png';
 
@@ -15,9 +12,21 @@ import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
+import { ListarDepoimentos } from '../../api/UsuarioAPI';
 
 
 export default function LadinPage() {
+  const [depoimentos, setDepoimentos] = useState([]);
+
+  const MostrarDepoimentos = async  _ =>{
+      const resposta = await ListarDepoimentos();
+      setDepoimentos(resposta);
+  }
+
+  useEffect(()=>{
+    MostrarDepoimentos();
+  },[])
+
   return (
     <div className='Principal'>
       <div className='ImgFundo'>
@@ -86,29 +95,18 @@ export default function LadinPage() {
               <hr />
             </div>
             < div className='Imagens'>
-             <main className='depoimentos'>
-                <img src={icone} alt=''/>
-                <h1 className='enfase'>ALEX PALLADINI</h1>
-                <p className='avaliacao'>Os cosméticos são <br/>
-                incríveis, potentes e duradouros.</p>
-             </main>
-             <main className='depoimentos'>
-                <img src={icone} alt=''/>
-                <h1 className='enfase'>HELLOISE LUZ</h1>
-                <p className='avaliacao'> Positivo <br/>
-                    Produtos incríveis, alta performance <br/>
-                    e melhor de tudo: rendem horroooores!
-                </p>
-             </main>
-             <main className='depoimentos'>
-                <img src={icone} alt=''/>
-                <h1 className='enfase'>GEORGE NAKAMURA</h1>
-                <p className='avaliacao'>
-                    Impossível descrever em 512 <br/>
-                    caracteres todo o meu amor pela <br/>
-                    cosmétique!!!!
-                </p>
-             </main>
+              {
+                depoimentos.map((item, quantidadeDepoimentos)=>
+                
+                quantidadeDepoimentos < 4 &&
+                 
+                   <main key={item.id} className='depoimentos'>
+                   <img src={icone} alt=''/>
+                   <h1 className='enfase'>{item.nome}</h1>
+                   <h4 className='enfase'>{item.email}</h4>
+                   <p className='avaliacao'>{item.comentario}</p>
+                </main>
+               )}
             </div>
             <div className='BT'>
                 <button className='B'> mais depoimentos</button>

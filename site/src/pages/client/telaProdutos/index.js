@@ -5,7 +5,8 @@ import CabecalhoUser from '../../../components/cabecalho-user'
 import CardProdutosUsuario from '../../../components/card-usuario-produto'; 
 import { useEffect, useState } from 'react';
 import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria } from '../../../api/ProdutoAPI';
-import LupaPesquisa from '../../../assets/images/search.png'
+import LupaPesquisa from '../../../assets/images/search.png';
+
 
 export default function TelaProdutos() {
   const [card, setCard] = useState([]);

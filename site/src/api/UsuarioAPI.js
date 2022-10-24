@@ -25,4 +25,10 @@ export const BuscaUsuarioId = async id =>{
     const r = await api.get(`/usuario/${id}`);
 
     return r.data;
+};
+
+export const ListarDepoimentos = async ()=>{
+    const r = await api.get('/depoimentos');
+
+    return r.data;
 }
