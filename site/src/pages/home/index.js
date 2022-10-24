@@ -21,7 +21,7 @@ export default function LadinPage() {
   return (
     <div className='Principal'>
       <div className='ImgFundo'>
-        <CabecalhoUser/>
+        <CabecalhoUser />
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
           nossa loja</p>

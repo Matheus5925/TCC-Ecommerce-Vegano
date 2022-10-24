@@ -19,6 +19,9 @@ export default function TelaProdutos() {
 
   const FiltroCategoria = async _ =>{
      const resposta = await FiltrarPorCategoria(titulo);
+     if(!titulo)
+        ListarCards();
+
      setCard(resposta);
   }
 
@@ -53,24 +56,23 @@ export default function TelaProdutos() {
               </div>
               
               <select value={titulo} onChange={e => setTitulo(e.target.value)}>
-                <option>Selecione uma categoria </option>
+                <option> </option>
                 {produtosFiltro.map(item => <option value={item.categoria} key={item.id}>{item.categoria}</option>)}
               </select>
           </div>
           <h1 className='title-produtos'>{!titulo || titulo === 'Selecione uma categoria' ? 'Produto' : `Produtos: ${titulo}`}</h1>
           <section className='Cards-product'>
-<<<<<<< HEAD
-            {card.map(item => <CardProdutosUsuario
+            {/* {card.map(item => <CardProdutosUsuario
               fabricante={item.fabricante}
               nome={item.nome}
               volume={item.volume}
               linha={!item.linha ? 'Não informada ' : item.linha}
               valor={item.valor}
               imagem={item.imagem}
-            />)}
-=======
+            />)} */}
+
             {card.map(item =>  <CardProdutosUsuario key={item.id} item={item} />)}
->>>>>>> 87e4d967ae24796924664ec03c798f735ba0924b
+
           </section>
           
         </div>

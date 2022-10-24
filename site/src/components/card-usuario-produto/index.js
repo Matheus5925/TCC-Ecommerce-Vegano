@@ -36,35 +36,23 @@ const CardProdutosUsuario = props =>{
 
     return(
         <div className='Card-Produto-Usuario'>
-<<<<<<< HEAD
-            <div className='Titulo-Produto'>
-                <h1>{props.fabricante}</h1>
-            </div>
-            <div className='imagem-produto-cliente'>
-                <img className='imagem-produto-cliente' src={ExibirImagem(props.imagem)} alt="" />
-=======
             
             <div onClick={DetalhesProdutoDirecionar} className='Titulo-Produto'>
                 <h1>{props.item.fabricante}</h1>
             </div>
             <div onClick={DetalhesProdutoDirecionar} className='imagem-produto-cliente'>
                 <img className='imagem-produto-cliente' src={ExibirImagem(props.item.imagem)} alt="" />
->>>>>>> 87e4d967ae24796924664ec03c798f735ba0924b
             </div>
             <div className='nome-valor-linha'>
-                <p>{props.nome}</p>
-                <p>{`${props.volume} - ${props.linha} `}</p>
+                <p>{props.item.nome}</p>
+                <p>{`${props.item.volume} - ${props.item.linha} `}</p>
             </div>
-<<<<<<< HEAD
-                <p className='form-valor'>{`R$ ${props.valor}`}</p>
-=======
                 <p className='form-valor'>{`R$ ${props.item.valor.replace('.', ',')}`}</p>
->>>>>>> 87e4d967ae24796924664ec03c798f735ba0924b
                 <div className='button-adicionar'>
                     <button onClick={AdicionarCarrinho}>Adicionar</button>
                 </div>
         </div>
-    )
+    );
 }
 
 export default CardProdutosUsuario;
