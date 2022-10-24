@@ -6,6 +6,8 @@ import IconeSacola from '../../assets/images/sacola.png'
 import IconeCartoes from '../../assets/images/cartoes.png'
 import IconeCasa from '../../assets/images/casa.png';
 
+import PortaSair from '../../assets/images/porta-saida.png'
+
 import {Link} from 'react-router-dom'
 
 export default function cabecalhoLateral() {
@@ -33,6 +35,12 @@ export default function cabecalhoLateral() {
                             <img src={IconeSacola} alt='sacola'/>
                             <p>Historicos de compras</p>
                         </Link>
+                        <div>
+                            <Link to='/' className='tex Saida'>
+                                <img className='porta-saida' src={PortaSair} alt="" />
+                                <p>Home</p>
+                            </Link>
+                        </div>
                 </div>
             </div>
         </section>

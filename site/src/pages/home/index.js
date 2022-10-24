@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import './index.scss';
 import Img5 from '../../assets/images/image 5.png';
 
-
+import Rodape from '../../components/rodape';
 import CabecalhoUser from '../../components/cabecalho-user';
 
 import ofertas3 from '../../assets/images/oferta3.png'
@@ -116,6 +116,7 @@ export default function LadinPage() {
           </div>
         </div>
       </div>
+      <Rodape/>
     </div>
   )
 }

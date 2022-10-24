@@ -2,28 +2,60 @@ import './index.scss';
 import CabecalhoUser from '../../../components/cabecalho-user';
 import CardCarrinho from '../../../components/card-carrinho';
 import Carrinho from '../../../assets/images/carrinho.png';
+import { useEffect, useState } from 'react';
+import {BuscarId} from '../../../api/ProdutoAPI.js'
+import Storage from 'local-storage';
 
 export default function Crrinho(){
+    const [itensCarrinho, setItensCarrinho] = useState([]);
+
+    const CarregarCarrinho = async _ =>{
+        const carrinho = Storage('carrinho');
+
+        if(carrinho){
+
+            let temp = [];
+
+            for(let produto of carrinho){
+                let r = await BuscarId(produto.id);
+
+                temp.push({
+                    id: r,
+                    qtd: produto.qtd
+                })
+            }
+            setItensCarrinho(temp);
+            console.log(itensCarrinho);
+        }
+    };
+
+    useEffect(()=>{
+        CarregarCarrinho()
+    }, [])
 
     return(
         <main className='Carrinho-principal'>
             <CabecalhoUser/>
             <div className='box-principal'>
-                <div className='titulo'>                    
-                <h1>MEU CARRINHO</h1>
-                <hr/>
-                </div>
-                <div className='cabecalho'>
-                    <div className='ajustes'>
-                    <p>Produto</p>
+               <div className='title'>
+                    <h1>Meu Carrinho</h1>
+                    <hr/>
+               </div>
+               <div className='indentificador'>
+                    <div className='indentificador-pt1'>
+                        <p>Produto</p>
                     </div>
-                    <div className='ajuste-box2'>
-                    <p>Preço</p>
-                    <p>Quantidade</p>
-                    <p>Total</p>
+                    <div className='indentificador-pt2'>
+                        <p>Preço</p>
+                        <p>Quantidade</p>
+                        <p>Total</p>
                     </div>
+               </div>
+                <div className='Cards-produtos'>
+                    {itensCarrinho.map(item =><CardCarrinho
+                        item={item}
+                    />)}
                 </div>
-                <CardCarrinho/>
                 <div className='quadrado-1'>
                     <div>
                         <div className='posicionamentos'>

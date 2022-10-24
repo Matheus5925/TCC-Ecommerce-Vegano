@@ -4,19 +4,39 @@ import './index.scss';
 import CabecalhoUser from '../../../components/cabecalho-user'
 import CardProdutosUsuario from '../../../components/card-usuario-produto'; 
 import { useEffect, useState } from 'react';
-import { MostrarProdutos } from '../../../api/ProdutoAPI';
+import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria } from '../../../api/ProdutoAPI';
+import LupaPesquisa from '../../../assets/images/search.png'
 
 export default function TelaProdutos() {
   const [card, setCard] = useState([]);
+  const [produtosFiltro, setProdutoFiltro] = useState([]);
+  const [titulo, setTitulo] = useState('');
+
+  const CategoriasAparecer = async _ =>{
+    const r = await BuscaCategoria();
+    setProdutoFiltro(r);
+  };
+
+  const FiltroCategoria = async _ =>{
+     const resposta = await FiltrarPorCategoria(titulo);
+     setCard(resposta);
+  }
+
+  useEffect(() =>{
+      FiltroCategoria();
+  }, [titulo]);
+
 
   const ListarCards = async () =>{
     const r = await MostrarProdutos();
     setCard(r);
-  }
+  };
+
 
   useEffect(()=>{
     ListarCards();
-  },[])
+    CategoriasAparecer();
+  },[]);
 
     return(
         <div className='Produtos-cliente'>
@@ -24,8 +44,22 @@ export default function TelaProdutos() {
           <section className='imagem-usuario-produto'>
 
           </section>
-          <h1 className='title-produtos'>Produtos</h1>
+          <div className='Buscas-filtro'>
+              <div className='caixa-pesquisa-produtos'>
+                <input type="text" className='nome-produto' placeholder='Pesquisar...'/>
+                <a className='procura-botao' href="#">
+                  <img className='Lupa' src={LupaPesquisa} alt="" />
+                </a>
+              </div>
+              
+              <select value={titulo} onChange={e => setTitulo(e.target.value)}>
+                <option>Selecione uma categoria </option>
+                {produtosFiltro.map(item => <option value={item.categoria} key={item.id}>{item.categoria}</option>)}
+              </select>
+          </div>
+          <h1 className='title-produtos'>{!titulo || titulo === 'Selecione uma categoria' ? 'Produto' : `Produtos: ${titulo}`}</h1>
           <section className='Cards-product'>
+<<<<<<< HEAD
             {card.map(item => <CardProdutosUsuario
               fabricante={item.fabricante}
               nome={item.nome}
@@ -34,6 +68,9 @@ export default function TelaProdutos() {
               valor={item.valor}
               imagem={item.imagem}
             />)}
+=======
+            {card.map(item =>  <CardProdutosUsuario key={item.id} item={item} />)}
+>>>>>>> 87e4d967ae24796924664ec03c798f735ba0924b
           </section>
           
         </div>

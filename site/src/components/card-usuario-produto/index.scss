@@ -10,6 +10,7 @@
     align-items: center;
     gap: 0.3em;
 
+
     .Titulo-Produto{
         width: 100%;
         text-align: center;
@@ -19,6 +20,14 @@
     .imagem-produto-cliente{
         height: 5.8em;
         width: 9em;
+    }
+
+    .button-adicionar > button:hover {
+        cursor: pointer;
+    }
+
+    .imagem-produto-cliente:hover{
+        cursor: pointer;
     }
 
     .nome-valor-linha{
