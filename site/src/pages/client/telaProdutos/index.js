@@ -26,7 +26,14 @@ export default function TelaProdutos() {
           </section>
           <h1 className='title-produtos'>Produtos</h1>
           <section className='Cards-product'>
-            {card.map(item => <CardProdutosUsuario item={item}/>)}
+            {card.map(item => <CardProdutosUsuario
+              fabricante={item.fabricante}
+              nome={item.nome}
+              volume={item.volume}
+              linha={!item.linha ? 'Não informada ' : item.linha}
+              valor={item.valor}
+              imagem={item.imagem}
+            />)}
           </section>
           
         </div>
