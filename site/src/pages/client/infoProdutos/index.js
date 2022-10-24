@@ -1,5 +1,6 @@
 import CabecalhoUser from '../../../components/cabecalho-user';
 import './index.scss';
+import Rodape from '../../../components/rodape'
 import Storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { BuscarId } from '../../../api/ProdutoAPI';
@@ -88,6 +89,7 @@ const DetalhesProduto = props =>{
                     <p>{produtos.descricao}</p>
                 </section>
             </div>
+            <Rodape/>
         </main>
     );
 }

@@ -36,6 +36,7 @@
         height: 20em;
         overflow-y: scroll;
         display: flex;
+        flex-direction: column;
     }
 
     ::-webkit-scrollbar-track {
