@@ -3,7 +3,8 @@ import './index.scss';
 import imagemTeste from '../../assets/images/imagem-falta-produto.png';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import storage from 'local-storage';
+import Storage from 'local-storage';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 
@@ -23,19 +24,26 @@ const CardProdutosUsuario = props =>{
     }
 
     const AdicionarCarrinho = () =>{
-        let carrinho = [];
-        if(storage('carrinho'))
-            carrinho = storage('carrinho');
-        if(!carrinho.find(item => item.id === props.item.id)){
-            carrinho.push({
-                id: props.item.id,
-                quantidade: props.item.quantidade
-            })
+        let carrinho = []
+        if(Storage('carrinho')){
+            carrinho = Storage('carrinho');
         }
-    };
+
+        if(!carrinho.find(item => item.id === props.item.id)){
+           carrinho.push({
+                id: props.item.id,
+                qtd: 1
+           })
+           Storage('carrinho', carrinho);
+        }
+            toast.success('Produto adicionado com sucesso');
+    }
+
+
 
     return(
         <div className='Card-Produto-Usuario'>
+            <ToastContainer/>
             
             <div onClick={DetalhesProdutoDirecionar} className='Titulo-Produto'>
                 <h1>{props.item.fabricante}</h1>

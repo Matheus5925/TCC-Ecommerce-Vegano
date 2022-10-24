@@ -1,5 +1,5 @@
 import { Router } from "express";
-import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario } from "../repository/repositoryUsuario.js";
+import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ListarDepoimentos } from "../repository/repositoryUsuario.js";
 import { CadastroUsuario } from "../repository/repositoryUsuario.js";
 
 
@@ -92,6 +92,19 @@ server.get('/usuario/:id', async (req, resp) =>{
     try {
         const { id } = req.params;
         const r = await BuscaUsuarioId(id);
+
+        resp.send(r);
+        
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
+
+server.get('/depoimentos', async (req,resp) =>{
+    try {
+        const r = await ListarDepoimentos();
 
         resp.send(r);
         
