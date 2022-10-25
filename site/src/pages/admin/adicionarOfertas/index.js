@@ -8,7 +8,7 @@ export default function AdicionarOfertas() {
        <div className='Adicionar-Ofertas'>
         <CabecalhoAdmin/>
          <h1 className='Titulo-Adicionar'> ADICIONAR OFERTAS:</h1>
-   <hr className='Linha-Principal'></hr>
+   <div className='Linha-Principal'>
      
    <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
                             <input placeholder='Mascará de....'  className='Caixa-Texto' type="text" />
@@ -22,44 +22,48 @@ export default function AdicionarOfertas() {
                                         <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
 
                                     </div>
-                                    <div className='label'>
-                                        <label className='Titulo-Caixa-Texto'> qtd.Produto </label>
-                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
-
-                                    </div>
+                                  
                                 </div>
 
-                                <div className="label">
+                                <div className='qtd-valor' >
+                                   
+                                   
+                                    <div className='label'>
                                         <label className='Titulo-Caixa-Texto'> Categoria </label>
-                                        <select>
-                                            <option value="Selecione uma opção">Selecione</option>
-                                            <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
-
-                                        </select>
-
-                                        <div className='label'>
-                                        <label className='Titulo-Caixa-Texto'> Parte do Corpo </label>
-                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
-                                    </div>
-
-                                    <div className='label'>
-                                        <label className='Titulo-Caixa-Texto'> Valor antigo: </label>
-                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
+                                        <input className='Caixa-Texto1' type="text" />
 
                                     </div>
 
                                     <div className='label'>
-                                        <label className='Titulo-Caixa-Texto'> Valor atual: </label>
-                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
-                                        
-                                    </div>
+                                        <label className='Titulo-Caixa-Texto'>Parte do Corpo </label>
+                                        <input className='Caixa-Texto1' type="text" />
+
                                     </div>
 
-                                    <div>
-                            <label className='Titulo-Caixa-Texto'>Adicione uma foto</label>
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Valor antigo:</label>
+                                        <input className='Caixa-Texto1' type="text" />
+
+                                    </div>
+
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Valor Atual:</label>
+                                        <input className='Caixa-Texto1' type="text" />
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+                                    <div className='Img'>
+                            <h5 className='Titulo-Img'>Adicione uma foto</h5>
                             {
                                 
-                                <img src="./neblina.png" alt="imagem" width="250px" height="250px" />
+                                <img  src="./neblina.png" alt="imagem" width="250px" height="250px" />
                             }
 
                             {
@@ -69,9 +73,16 @@ export default function AdicionarOfertas() {
                             
                         </div>
 
-     
+                        <button className='Adicionar'>ADICIONAR OFERTA</button>
+                    
+
+
+     </div>
+
+        
                           
     </div>
+
 
    
 
