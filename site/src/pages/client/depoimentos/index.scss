@@ -17,6 +17,7 @@
     margin-bottom: 2em;
     background-color: #D9D9D9;
     padding: 1em;
+    border-style: none;
 }
 
 .escrita{
@@ -53,6 +54,7 @@
     height: 8em;
     width: 96vw;
     background: #D9D9D9;
+    border-style: none;
 }
 
 .Bt{
@@ -66,4 +68,10 @@
     width: 10em;
     border-radius: 50px;
     background-color:  #D8C8B9;
+    border-style: none;
+}
+
+.botD:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
