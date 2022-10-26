@@ -140,3 +140,4 @@ export const FiltrarPorNome = async function(nome) {
     const [linhas] = await (await con).query(comando, [`${nome}%`]);
     return linhas;
 }
+

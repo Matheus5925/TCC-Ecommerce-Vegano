@@ -10,7 +10,7 @@ import Carrinho from '../../assets/images/carrinho.png';
 import iconeUsuario from '../../assets/images/icone-usuario.png';
 import {toast, ToastContainer} from 'react-toastify'
 
-export default function CabecalhoUser() {
+export default function CabecalhoUser(props) {
   const navigate = useNavigate();
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');

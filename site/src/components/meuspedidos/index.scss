@@ -1,0 +1,16 @@
+.caixinha{
+    border:1px;
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    margin: 2em;
+
+    
+
+    .itens{
+        font-size: 1em;
+    }
+
+}

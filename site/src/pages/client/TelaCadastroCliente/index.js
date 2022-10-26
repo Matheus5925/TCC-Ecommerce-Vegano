@@ -56,7 +56,7 @@ export default function TelaCadastroCliente() {
                   <div className='ajuste-inputs'>
                      <div className='Primeiro-Container'>
                         <div>
-                           <label className='Titulo-da-Caixa1'>Nome</label>
+                           <label className='Titulo-da-Caixa1'>Name</label>
                            <input value={nome} onChange={e => setNome(e.target.value)} className='Caixa1' type="text" />
                         </div>
                         <div>
@@ -86,6 +86,7 @@ export default function TelaCadastroCliente() {
                      </div>
                   </div>
                   <button onClick={SalvarUsuario} className='botao'> Cadastrar </button>
+                  <p className='name'>cadastrar endereço</p>
                </div>
             </div>
          </div>

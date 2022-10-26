@@ -2,8 +2,14 @@ import { API_URL } from '../../api/config';
 import './index.scss';
 import imagemTeste from '../../assets/images/imagem-falta-produto.png';
 import { useNavigate, useParams } from 'react-router-dom';
+<<<<<<< HEAD
 import { toast, ToastContainer } from 'react-toastify';
 import Storage from 'local-storage';
+=======
+import { useEffect } from 'react';
+import Storage from 'local-storage';
+import { toast, ToastContainer } from 'react-toastify';
+>>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
 
 
 
@@ -23,6 +29,7 @@ const CardProdutosUsuario = props =>{
     }
 
     const AdicionarCarrinho = () =>{
+<<<<<<< HEAD
         let carrinho = [];
         if(Storage('carrinho'))
             carrinho = Storage('carrinho');
@@ -35,10 +42,32 @@ const CardProdutosUsuario = props =>{
         Storage('carrinho', carrinho);
         toast.success('Adicionado com sucesso');
     };
+=======
+        let carrinho = []
+        if(Storage('carrinho')){
+            carrinho = Storage('carrinho');
+        }
+
+        if(!carrinho.find(item => item.id === props.item.id)){
+           carrinho.push({
+                id: props.item.id,
+                qtd: 1
+           })
+           Storage('carrinho', carrinho);
+        }
+            toast.success('Produto adicionado com sucesso');
+    }
+
+
+>>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
 
     return(
         <div className='Card-Produto-Usuario'>
             <ToastContainer/>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
             <div onClick={DetalhesProdutoDirecionar} className='Titulo-Produto'>
                 <h1>{props.item.fabricante}</h1>
             </div>
@@ -54,7 +83,7 @@ const CardProdutosUsuario = props =>{
                     <button onClick={AdicionarCarrinho}>Adicionar</button>
                 </div>
         </div>
-    )
+    );
 }
 
 export default CardProdutosUsuario;

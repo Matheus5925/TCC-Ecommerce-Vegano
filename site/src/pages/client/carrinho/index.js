@@ -50,7 +50,7 @@ export default function Crrinho(){
     }, [])
 
     return(
-        <main>
+        <main className='Carrinho-principal'>
             <CabecalhoUser/>
             <div className='box-principal'>
                <div className='title'>

@@ -1,10 +1,14 @@
-.box-principal{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4em;
-    
+.Carrinho-principal{
+
+
+    .box-principal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4em;
+        width: 100%;
+    }
     
     .title{
         font-family: Arial, Helvetica, sans-serif;
@@ -37,7 +41,10 @@
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
+<<<<<<< HEAD
         gap: 0.2em;
+=======
+>>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
     }
 
     ::-webkit-scrollbar-track {
@@ -143,6 +150,10 @@
         height: 3em;
     }
 
+    .ajustar-botao2:hover{
+        cursor: pointer;
+    }
+
     .ajustar-botao2{
         display: flex;
         flex-direction: row;
@@ -156,8 +167,6 @@
         font-family: Arial, Helvetica, sans-serif;
         background: #D8C8B9;
         margin-bottom: 4em;
-
-
     }
 
 }

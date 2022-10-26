@@ -8,44 +8,84 @@ export default function AdicionarOfertas() {
        <div className='Adicionar-Ofertas'>
         <CabecalhoAdmin/>
          <h1 className='Titulo-Adicionar'> ADICIONAR OFERTAS:</h1>
-   <hr className='Linha-Principal'></hr>
+   <div className='Linha-Principal'>
+     
+   <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
+                            <input placeholder='Mascará de....'  className='Caixa-Texto' type="text" />
 
-   <div className='Container-Adicionar'>
+                            <label className='Titulo-Caixa-Texto'>Linha do produto</label>
+                            <input placeholder='vegana, natural...' className='Caixa-Texto' type="text" />
 
-     <label className='Mini-Titulo'>NOME DO PRODUTO:</label>
-     <input className='Input1'></input>
+                            <div className='qtd-valor' >
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Marca </label>
+                                        <input placeholder='Gaya, Avon...'className='Caixa-Texto1' type="text" />
 
-     <label className='Mini2'>LINHA DO PRODUTO:</label>
-     <input className='Input2'></input>
+                                    </div>
+                                  
+                                </div>
 
- <div className='Row'>
-     <label className='Mini3'>MARCA:</label>
-     <input className='Input3'></input>
-     <label className='Mini3'>QTD. PRODUTOS:</label>
-     <input className='Input3'></input>
- </div>
+                                <div className='qtd-valor' >
+                                   
+                                   
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Categoria </label>
+                                        <input className='Caixa-Texto1' type="text" />
 
-     <div className='Row2'>
-     <label className='Mini5'>CATEGORIA:</label>
-     <input className='Input5'></input>
+                                    </div>
 
-     <label className='Mini5'>PARTES DO CORPO:</label>
-     <input className='Input5'></input>
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'>Parte do Corpo </label>
+                                        <input className='Caixa-Texto1' type="text" />
 
-     <label className='Mini5'>VALOR ANTIGO:</label>
-     <input className='Input5'></input>
+                                    </div>
 
-     <label className='Mini5'>VALOR ATUAL:</label>
-     <input className='Input5'></input>
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Valor antigo:</label>
+                                        <input className='Caixa-Texto1' type="text" />
+
+                                    </div>
+
+                                    <div className='label'>
+                                        <label className='Titulo-Caixa-Texto'> Valor Atual:</label>
+                                        <input className='Caixa-Texto1' type="text" />
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+
+                                    <div className='Img'>
+                            <h5 className='Titulo-Img'>Adicione uma foto</h5>
+                            {
+                                
+                                <img  src="./neblina.png" alt="imagem" width="250px" height="250px" />
+                            }
+
+                            {
+                                <img />
+                            }
+                          
+                            
+                        </div>
+
+                        <button className='Adicionar'>ADICIONAR OFERTA</button>
+                    
+
 
      </div>
 
-     <div className='Image'>
-    <label className='Imagem'>ADICIONE UMA FOTO</label>
-     </div>
+        
+                          
+    </div>
+
+
+   
+
     
-     </div>
-
-       </div>
     )
 }

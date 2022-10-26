@@ -66,7 +66,7 @@ const CardEstoque = props => {
                 <label>QTD:</label>
                 <div className='input-quantidade'>
                     <p>+</p>
-                    <input type="number" value={quantidade} onChange={e => setQuantidade(e.target.value)}/>
+                        <input type="number" value={quantidade} onChange={e => setQuantidade(e.target.value)}/>
                     <p>-</p>
                 </div>
             </div>

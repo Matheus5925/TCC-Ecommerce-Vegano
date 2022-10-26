@@ -14,23 +14,26 @@ import ofertas2 from '../../assets/images/oferta2.png'
 import { PegarDepoimento } from '../../api/UsuarioAPI.js';
 
 
-export default function LadinPage() {
-  const [depoimento, setDepoimento] = useState([]);
 
-  const ListarDepoimentosClientes =  async function (){
-    const r = await PegarDepoimento();
-    setDepoimento(r);
+import { ListarDepoimentos } from '../../api/UsuarioAPI';
+
+
+export default function LadinPage() {
+  const [depoimentos, setDepoimentos] = useState([]);
+
+  const MostrarDepoimentos = async  _ =>{
+      const resposta = await ListarDepoimentos();
+      setDepoimentos(resposta);
   }
 
   useEffect(()=>{
-    ListarDepoimentosClientes()
+    MostrarDepoimentos();
   },[])
-
 
   return (
     <div className='Principal'>
       <div className='ImgFundo'>
-        <CabecalhoUser/>
+        <CabecalhoUser />
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
           nossa loja</p>
@@ -56,9 +59,9 @@ export default function LadinPage() {
             <p>Ofertas do Dia</p>
             <div className='Containers'>
               <div className='Container1'>
-                <img className='imgP1'src={Img5} alt='imagem do produto'/>
+                <img className='imgP2'src={Img5} alt='imagem do produto'/>
                 <p className='tit3'>KIT ROTINA DIÁRIA</p> 
-                <p className='tit'>Gala vegano</p>
+                <p className='tit1'>Gala vegano</p>
                 <p className='valor1'>R$240,00</p>
                 <h1 className='valorOferta1'>R$200,00</h1>
               </div>
@@ -95,19 +98,21 @@ export default function LadinPage() {
               <hr />
             </div>
             < div className='Imagens'>
-           {depoimento.map(item =>{
-            <main className='depoimentos'>
-              <img src={icone} alt=''/>
-              <h1 className='enfase'>{item.nome}</h1>
-              <p className='avaliacao'>{item.avaliacao} <br/>
-              {item.comentario}
-              </p>
-            </main>
-           })}
-             
+              {
+                depoimentos.map((item, quantidadeDepoimentos)=>
+                
+                quantidadeDepoimentos < 4 &&
+                 
+                   <main key={item.id} className='depoimentos'>
+                   <img src={icone} alt=''/>
+                   <h1 className='enfase'>{item.nome}</h1>
+                   <h4 className='enfase'>{item.email}</h4>
+                   <p className='avaliacao'>{item.comentario}</p>
+                </main>
+               )}
             </div>
             <div className='BT'>
-                <button className='B'> mais depoimentos</button>
+                <button className='B'> Faça o seu Depoimento</button>
             </div>
           </div>
         </div>

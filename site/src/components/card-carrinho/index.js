@@ -1,6 +1,5 @@
 import './index.scss'
-import imagemProduto from '../../assets/images/image 30.png';
-import {API_URL} from '../../api/config.js'
+import {API_URL} from '../../api/config.js';
 import { useState} from 'react'
 import Storage from 'local-storage';
 

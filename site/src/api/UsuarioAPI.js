@@ -25,9 +25,15 @@ export const BuscaUsuarioId = async id =>{
     const r = await api.get(`/usuario/${id}`);
 
     return r.data;
+<<<<<<< HEAD
 }
 
 export const PegarDepoimento = async _ =>{
+=======
+};
+
+export const ListarDepoimentos = async ()=>{
+>>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
     const r = await api.get('/depoimentos');
 
     return r.data;

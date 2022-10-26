@@ -56,7 +56,7 @@
 
     .bl4{
         background-color: #D8C8B9;
-        height: 2.2em;
+        height: 3em;
         width: 30vh;
         align-items: center;
         font-family: 'Poppins', sans-serif;
@@ -90,7 +90,7 @@
 
     .bl9{
         background-color: #D8C8B9;
-        height: 2.3em;
+        height: 3em;
         width: 30vh;
         align-items: center;
         font-family: 'Poppins', sans-serif;
@@ -109,10 +109,16 @@
 
     .Botao-Voltar{
         background-color: #D8C8B9;
+        border-style: none;
         border-radius: 10vh;
         margin: 50vh 35px;
         width: 15vh;
-        height: 7vh;
+        height: 5vh;
+    }
+
+    .Botao-Voltar:hover {
+        cursor: pointer;
+        transform: scale(1.2);
     }
 
 
