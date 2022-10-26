@@ -4,23 +4,40 @@ import './index.scss';
 import CabecalhoUser from '../../../components/cabecalho-user'
 import CardProdutosUsuario from '../../../components/card-usuario-produto'; 
 import { useEffect, useState } from 'react';
-import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria } from '../../../api/ProdutoAPI';
+import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria, FiltrarProdutosNome } from '../../../api/ProdutoAPI';
 import LupaPesquisa from '../../../assets/images/search.png'
 
 export default function TelaProdutos() {
   const [card, setCard] = useState([]);
   const [produtosFiltro, setProdutoFiltro] = useState([]);
   const [titulo, setTitulo] = useState('');
+  const [nomeProduto, setNomeProduto] = useState('');
 
   const CategoriasAparecer = async _ =>{
     const r = await BuscaCategoria();
     setProdutoFiltro(r);
   };
 
+  const FiltroNomeDosProdutos = async () =>{
+    const r = await FiltrarProdutosNome(nomeProduto);
+
+    setCard(r);
+  }
+
   const FiltroCategoria = async _ =>{
      const resposta = await FiltrarPorCategoria(titulo);
+
+     if(titulo === 'Selecione uma categoria' || !titulo)
+        ListarCards();
+
      setCard(resposta);
-  }
+  };
+  
+  useEffect(()=>{
+    setTimeout(()=>{
+      FiltroNomeDosProdutos()
+    }, 1000);
+  }, [nomeProduto]);
 
   useEffect(() =>{
       FiltroCategoria();
@@ -31,6 +48,7 @@ export default function TelaProdutos() {
     const r = await MostrarProdutos();
     setCard(r);
   };
+
 
 
   useEffect(()=>{
@@ -46,14 +64,14 @@ export default function TelaProdutos() {
           </section>
           <div className='Buscas-filtro'>
               <div className='caixa-pesquisa-produtos'>
-                <input type="text" className='nome-produto' placeholder='Pesquisar...'/>
+                <input id='caixa-texto' value={nomeProduto} onChange={e => setNomeProduto(e.target.value)} type="text" className='nome-produto' placeholder='Pesquisar...'/>
                 <a className='procura-botao' href="#">
                   <img className='Lupa' src={LupaPesquisa} alt="" />
                 </a>
               </div>
               
               <select value={titulo} onChange={e => setTitulo(e.target.value)}>
-                <option>Selecione uma categoria </option>
+                <option> Selecione uma categoria </option>
                 {produtosFiltro.map(item => <option value={item.categoria} key={item.id}>{item.categoria}</option>)}
               </select>
           </div>

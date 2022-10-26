@@ -1,13 +1,9 @@
-import LogoTipo from '../../assets/images/logo.png'
-import { useEffect } from 'react'
-import storage from 'local-storage'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import './index.scss';
 import Img5 from '../../assets/images/image 5.png';
 
 import Rodape from '../../components/rodape';
 import CabecalhoUser from '../../components/cabecalho-user';
-
 import ofertas3 from '../../assets/images/oferta3.png'
 import marca1 from '../../assets/images/marca1.png'
 import marca2 from '../../assets/images/marca2.png'
@@ -15,9 +11,22 @@ import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
+import { PegarDepoimento } from '../../api/UsuarioAPI.js';
 
 
 export default function LadinPage() {
+  const [depoimento, setDepoimento] = useState([]);
+
+  const ListarDepoimentosClientes =  async function (){
+    const r = await PegarDepoimento();
+    setDepoimento(r);
+  }
+
+  useEffect(()=>{
+    ListarDepoimentosClientes()
+  },[])
+
+
   return (
     <div className='Principal'>
       <div className='ImgFundo'>
@@ -86,29 +95,16 @@ export default function LadinPage() {
               <hr />
             </div>
             < div className='Imagens'>
-             <main className='depoimentos'>
-                <img src={icone} alt=''/>
-                <h1 className='enfase'>ALEX PALLADINI</h1>
-                <p className='avaliacao'>Os cosméticos são <br/>
-                incríveis, potentes e duradouros.</p>
-             </main>
-             <main className='depoimentos'>
-                <img src={icone} alt=''/>
-                <h1 className='enfase'>HELLOISE LUZ</h1>
-                <p className='avaliacao'> Positivo <br/>
-                    Produtos incríveis, alta performance <br/>
-                    e melhor de tudo: rendem horroooores!
-                </p>
-             </main>
-             <main className='depoimentos'>
-                <img src={icone} alt=''/>
-                <h1 className='enfase'>GEORGE NAKAMURA</h1>
-                <p className='avaliacao'>
-                    Impossível descrever em 512 <br/>
-                    caracteres todo o meu amor pela <br/>
-                    cosmétique!!!!
-                </p>
-             </main>
+           {depoimento.map(item =>{
+            <main className='depoimentos'>
+              <img src={icone} alt=''/>
+              <h1 className='enfase'>{item.nome}</h1>
+              <p className='avaliacao'>{item.avaliacao} <br/>
+              {item.comentario}
+              </p>
+            </main>
+           })}
+             
             </div>
             <div className='BT'>
                 <button className='B'> mais depoimentos</button>

@@ -19,6 +19,27 @@
     .quantidade-itens{
         width: 30px;
     }
+
+    .excluir{
+        height: 20px;
+        width: 10px;
+        position: absolute;
+        left: 48em;
+    }
+
+    .excluir > button {
+        border: none;
+        background: none;
+        outline: none;
+
+        font-size: 16px;
+    }
+
+    .excluir > button:hover{
+        cursor: pointer;
+        color: #ff0000;
+        transform: scale(1.2);
+    }
     
     .editar{
         font-size: 1.5em;

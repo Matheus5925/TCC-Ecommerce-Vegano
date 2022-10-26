@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { AlterarImagem, AlterarProduto, BuscarEstoque, CadastroProduto, BuscaEstoqueNome, DeletarProduto, BuscarId, MostrarProdutos, FiltrarPorCategoria } from '../repository/produtoRepository.js';
+import { AlterarImagem, AlterarProduto, BuscarEstoque, CadastroProduto, BuscaEstoqueNome, DeletarProduto, BuscarId, MostrarProdutos, FiltrarPorCategoria, FiltrarPorNome } from '../repository/produtoRepository.js';
 import multer from 'multer';
 
 const server = Router();
@@ -188,9 +188,9 @@ server.get('/produtos/usuario', async (req, resp) =>{
 
 server.get('/filtro/produto/categoria/', async (req,resp) =>{
     try {
-        const {nome} = req.query;
+        const {categoria} = req.query;
 
-        const r = await FiltrarPorCategoria(nome);
+        const r = await FiltrarPorCategoria(categoria);
 
         resp.send(r);    
     } catch (err) {
@@ -198,6 +198,22 @@ server.get('/filtro/produto/categoria/', async (req,resp) =>{
             erro: err.message
         })
     }
-})
+});
+
+server.get('/filtro/produto/nome/', async (req,resp) =>{
+    try{
+        const {nome} = req.query;
+
+        const r = await FiltrarPorNome(nome)
+
+        resp.send(r);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
+
 
 export default server;

@@ -26,3 +26,9 @@ export const BuscaUsuarioId = async id =>{
 
     return r.data;
 }
+
+export const PegarDepoimento = async _ =>{
+    const r = await api.get('/depoimentos');
+
+    return r.data;
+}

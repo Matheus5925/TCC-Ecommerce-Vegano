@@ -72,10 +72,10 @@ export async function DeletarProduto(id) {
 
 export async function BuscarId(id) {
     const comando = `
-                    select	
+                        select	
                         id_produto as id,
                         ds_categoria as categoria,
-                        id_parte_corpo as ParteCorpo,
+                        ds_parte_corpo as ParteCorpo,
                         nm_produto as nome,
                         ds_linha as linha,
                         ds_produto as descricao,
@@ -87,6 +87,7 @@ export async function BuscarId(id) {
                         img_produto as imagem
                     from tb_produto
                     inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+                    inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo
                     where id_produto = ?`;
     const [linhas] = await (await con).query(comando, [id]);
     return linhas[0];
@@ -107,7 +108,7 @@ export async function MostrarProdutos() {
     return linhas;       
 };
 
-export async function FiltrarPorCategoria(nome) {
+export async function FiltrarPorCategoria(categoria) {
     const comando = `select id_produto as id,
                         ds_fabricante as frabricante,
                         ds_categoria as categoria,
@@ -119,6 +120,23 @@ export async function FiltrarPorCategoria(nome) {
                     from tb_produto
                     inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
                     where ds_categoria like ?`;
-    const [linhas] = await (await con).query(comando,[nome]);
+    const [linhas] = await (await con).query(comando,[categoria]);
+    return linhas;
+};
+
+
+export const FiltrarPorNome = async function(nome) {
+    const comando = `select id_produto as id,
+                        ds_fabricante as frabricante,
+                        ds_categoria as categoria,
+                        img_produto as imagem,
+                        nm_produto as nome,
+                        nr_volume as volume,
+                        ds_linha as linha,
+                        nr_valor as valor
+                    from tb_produto
+                    inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+                   where nm_produto like ?`;
+    const [linhas] = await (await con).query(comando, [`${nome}%`]);
     return linhas;
 }
