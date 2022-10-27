@@ -34,7 +34,17 @@ export async function inserirPedido(novoPedido) {
         value (?, ?, ?, ?)
     `
 
-
-
-
+    const [info] = await con.query(comando, [
+        novoPedido.idUsuario,
+        novoPedido.idEndereco,
+        novoPedido.valor,
+        novoPedido.status,
+        novoPedido.tipo
+    ]);
+    return info.insertId;
 }
+
+
+
+
+
