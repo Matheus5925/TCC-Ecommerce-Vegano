@@ -8,9 +8,11 @@ export default function AdicionarOfertas() {
        <div className='Adicionar-Ofertas'>
         <CabecalhoAdmin/>
          <h1 className='Titulo-Adicionar'> ADICIONAR OFERTAS:</h1>
+
    <div className='Linha-Principal'>
+   
      
-   <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
+       <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
                             <input placeholder='Mascará de....'  className='Caixa-Texto' type="text" />
 
                             <label className='Titulo-Caixa-Texto'>Linha do produto</label>
@@ -49,18 +51,18 @@ export default function AdicionarOfertas() {
                                     <div className='label'>
                                         <label className='Titulo-Caixa-Texto'> Valor Atual:</label>
                                         <input className='Caixa-Texto1' type="text" />
-
+                                        
                                     </div>
-
+                                 
 
                                 </div>
-
+                                
 
 
 
 
                                     <div className='Img'>
-                            <h5 className='Titulo-Img'>Adicione uma foto</h5>
+                                    <label className='Titulo-Caixa-Texto-Adicione'>Adicione uma foto</label>
                             {
                                 
                                 <img  src="./neblina.png" alt="imagem" width="250px" height="250px" />
@@ -74,17 +76,17 @@ export default function AdicionarOfertas() {
                         </div>
 
                         <button className='Adicionar'>ADICIONAR OFERTA</button>
-                    
-
-
+                        
+                        <div className='Voltar-1'>
+                       <button className='button'>Voltar</button>
+                       </div>
      </div>
 
-        
+
                           
     </div>
 
 
-   
 
     
     )
