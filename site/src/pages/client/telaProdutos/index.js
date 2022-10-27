@@ -4,14 +4,8 @@ import './index.scss';
 import CabecalhoUser from '../../../components/cabecalho-user'
 import CardProdutosUsuario from '../../../components/card-usuario-produto'; 
 import { useEffect, useState } from 'react';
-<<<<<<< HEAD
 import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria, FiltrarProdutosNome } from '../../../api/ProdutoAPI';
 import LupaPesquisa from '../../../assets/images/search.png'
-=======
-import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria } from '../../../api/ProdutoAPI';
-import LupaPesquisa from '../../../assets/images/search.png';
-
->>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
 
 export default function TelaProdutos() {
   const [card, setCard] = useState([]);
@@ -32,12 +26,10 @@ export default function TelaProdutos() {
 
   const FiltroCategoria = async _ =>{
      const resposta = await FiltrarPorCategoria(titulo);
-<<<<<<< HEAD
 
      if(titulo === 'Selecione uma categoria' || !titulo)
-=======
+
      if(!titulo)
->>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
         ListarCards();
 
      setCard(resposta);
@@ -81,11 +73,7 @@ export default function TelaProdutos() {
               </div>
               
               <select value={titulo} onChange={e => setTitulo(e.target.value)}>
-<<<<<<< HEAD
                 <option> Selecione uma categoria </option>
-=======
-                <option> </option>
->>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
                 {produtosFiltro.map(item => <option value={item.categoria} key={item.id}>{item.categoria}</option>)}
               </select>
           </div>

@@ -1,9 +1,7 @@
 import { Router } from "express";
-<<<<<<< HEAD
-import LoginUsuario, { BuscarDepoimentos, BuscaUsuarioId, CadastroEnderecoUsuario } from "../repository/repositoryUsuario.js";
-=======
+
 import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ListarDepoimentos } from "../repository/repositoryUsuario.js";
->>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
+
 import { CadastroUsuario } from "../repository/repositoryUsuario.js";
 
 
@@ -106,26 +104,16 @@ server.get('/usuario/:id', async (req, resp) =>{
     }
 });
 
-<<<<<<< HEAD
 server.get('/depoimentos', async (req,resp)=>{
     try{
-        const r = await BuscarDepoimentos();
+        const r = await ListarDepoimentos();
         
         resp.send(r);
     }catch (err) {
-=======
-server.get('/depoimentos', async (req,resp) =>{
-    try {
-        const r = await ListarDepoimentos();
-
-        resp.send(r);
-        
-    } catch (err) {
->>>>>>> b36f6eedcef771282236645eb3a112a6f0c1c7bb
         resp.status(400).send({
             erro: err.message
         })
     }
-})
+});
 
 export default server;

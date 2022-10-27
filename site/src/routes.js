@@ -18,7 +18,7 @@ import CadastrarCartao from './pages/client/cadastrarCartao';
 import { PageSelection } from './pages/admin/selecaoSistem';
 import DetalhesProduto from './pages/client/infoProdutos';
 import TelaOfertas from './pages/client/TelaOfertas';
-import ConteudoCard from './components/cabecalho-lateral/cartoes';
+import ConteudoCard from './components/infoUser/cartoes';
 import MeusPedidos from  './pages/client/meusPedidos'
 import Depoimentos from './pages/client/depoimentos';
 import QuemSomos from './pages/client/QuemSomos';

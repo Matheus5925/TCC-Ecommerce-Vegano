@@ -29,6 +29,8 @@ export default function Crrinho(){
     const CarregarCarrinho = async _ =>{
         const carrinho = Storage('carrinho');
 
+      
+
         if(carrinho){
 
             let temp = [];
@@ -43,6 +45,9 @@ export default function Crrinho(){
             }
             setItensCarrinho(temp);
         }
+
+        if(!carrinho.id.nome)
+        RemoverItem();
     };
 
     useEffect(()=>{

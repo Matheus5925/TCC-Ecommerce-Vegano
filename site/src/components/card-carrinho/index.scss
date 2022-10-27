@@ -1,12 +1,15 @@
 .CARD{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     border: 0.1px solid #7a7a7a;
     width: 77em;
     height: 5em;
     font-family: Arial, Helvetica, sans-serif;
+    *{
+        border: 1px solid greenyellow;
+    }
 
     .QNT{
         display: flex;
@@ -19,12 +22,19 @@
     .quantidade-itens{
         width: 30px;
     }
+    
+    .info-carrinho{
+        display: flex;
+        flex-direction: row;
+        gap: 7em;
+        margin-left: 5em;
+    }
 
-    .excluir{
-        height: 20px;
-        width: 10px;
-        position: absolute;
-        left: 48em;
+    .preco-excluir{
+        display: flex;
+        flex-direction: row;
+        gap: 5em;
+        justify-content: space-between;
     }
 
     .excluir > button {
