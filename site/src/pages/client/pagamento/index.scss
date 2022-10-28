@@ -1,44 +1,86 @@
 .Principal-Pagamento{
 
+ 
+  .pagamento{
+    display: flex;
+    flex-direction: row;
+    padding: 1em 2em 1em 2em;
+    
+  }
 
-   .Linha{
+  .sub-pag{
+    display: flex;
+    flex-direction: column;
+    margin-right: 3em;
+
+  }
+
+
+
+  .Linha{
       margin: 3vh;
       width: 200vh;
-       }
-   
- .Container-Row{
-box-sizing: border-box;
-position: absolute;
-width: 506px;
-height: 499px;
-left: 58px;
-top: 324px;
-border: 1px solid rgba(0, 0, 0, 0.24);
-filter: blur(2px);
-margin: -7vh;
+  }
+  
+  .card{
+      border-style: solid;
+      color: #000;
+      height: 20em;
+      width: 30em;
+  }
+  
+  .part-baixo{
+  
+  }
+  
+    .bloco{
+      width: 10em;
+      height: 3em;
+      background-color: #000;
+    }
+  
+    .F{
+      margin-top: 2em;
+      width: 15em;
+      height: 2.5em;
+      background-color: bisque;
+    
+    
+    }
+
+    .R{
+      display: flex;
+      flex-direction: column;
+      border-style: solid;
+      color: #000;
+      width:35em;
+      height: 17em;
+      margin-top: 3.1em;
+    }
+
+    .CX-R img{
+      height: 3.5em;
+      width: 3.5em;
+    }
+
+
+
+    .CX-R{
+      display: flex;
+      justify-content: space-around;
+      align-self: center;
+      border-style: solid;
+      color: aqua;
+      height: 4em;
+      width: 32em;
+    }
+
+    .cards{
+      display: flex;
+      flex-direction: row;
+    }
+  
  }
 
- .Container-1{
-box-sizing: border-box;
-position: absolute;
-width: 420px;
-height: 98px;
-left: 83px;
-top: 377px;
-background: #FFFFFF;
-border: 1px solid rgba(0, 0, 0, 0.24);
-margin: -20em -40px;
- }
 
- .Container-2{
-   box-sizing: border-box;
-   position: absolute;
-   width: 420px;
-   height: 98px;
-   left: 83px;
-   top: 377px;
-   background: #FFFFFF;
-   border: 1px solid rgba(0, 0, 0, 0.24);
-   margin: -15em -10vh; 
- }
-}
+
