@@ -1,6 +1,6 @@
 import './index.scss';
 import {useState, useEffect} from 'react';
-import storage from 'local-storage';
+import Storage from 'local-storage';
 import { CadastroEnderecoUsuario } from '../../../api/UsuarioAPI';
 import {toast, ToastContainer } from 'react-toastify';
 import {confirmAlert} from 'react-confirm-alert';
@@ -19,12 +19,11 @@ export default function CadastrarIndereco() {
     const navigate = useNavigate();
 
     useEffect(() =>{
-        if(storage('usuario-logado')){
-            const UsuarioLogado = storage('usuario-logado');
-            
+        if(Storage('usuario-logado')){
+            const UsuarioLogado = Storage('usuario-logado');
             setUsuario({id:UsuarioLogado.id, nome:UsuarioLogado.nome});
         }
-    });
+    },[]);
 
     const CadastroEndereco = async _ =>{
         try {
@@ -82,7 +81,7 @@ export default function CadastrarIndereco() {
                         <div className='row'>
                             <div className='coluna'>
                                 <label> CEP: </label>
-                                <input value={cep} onChange={e => setCep(e.target.value)} type='number' className='inpu'/>
+                                <input value={cep} onChange={e => setCep(e.target.value)} type='number' className='inpu' />
                                 
                                 <label> Endereço: </label>
                                 <input value={endereco} onChange={e => setEndereco(e.target.value)} type='text' className='inpu'/>    

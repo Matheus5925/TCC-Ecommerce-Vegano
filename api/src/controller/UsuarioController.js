@@ -47,7 +47,7 @@ server.post('/usuario', async (req, resp) => {
     }
 });
 
-server.post('   ', async (req,resp) =>{
+server.post('/endereco/usuario/:idUsuario', async (req,resp) =>{
     try {
         const idUsuario = req.params.idUsuario;
         const infoEndereco = req.body;
