@@ -8,6 +8,7 @@ export async function listarEndereco(idUsuario) {
         nr_casa					casa
 	    from tb_endereco_usuario
     where id_usuario = ?;   
+    
     `
     const [registros] = await con.query(comando, [idUsuario]);
     return registros[0] 
@@ -23,7 +24,7 @@ export async function salvarEndereco(idusuario ,cep ,endereco ,casa , referencia
     return info.insertId;
 }
 
-export async function inserirPedido(novoPedido) {
+export async function inserirPedido(novaCompra) {
     const comando = `
     insert into tb_compra(
         id_usuario, 
@@ -35,15 +36,26 @@ export async function inserirPedido(novoPedido) {
     `
 
     const [info] = await con.query(comando, [
-        novoPedido.idUsuario,
-        novoPedido.idEndereco,
-        novoPedido.valor,
-        novoPedido.status,
-        novoPedido.tipo
+        novaCompra.idUsuario,
+        novaCompra.idEndereco,
+        novaCompra.valor,
+        novaCompra.status,
+        novaCompra.tipo 
     ]);
     return info.insertId;
 }
 
+export async function pagamento(novoPagamento) {
+    const comando = `
+    insert into  tb_compra_itens(
+        id_compra,
+        id_produto,
+        nr_quantidade,
+        vl_produto
+    )
+        value (?,?,?,?)
+    `
+}
 
 
 
