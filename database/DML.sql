@@ -79,6 +79,17 @@ select nm_produto,
 	from tb_produto
     inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
     inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo;
+    
+select  id_endereco_usuario		id,
+		ds_cep					cep,
+        ds_endereco				endereco,
+        nr_casa					casa,
+        ds_pt_referencia		referencia
+	from tb_endereco_usuario
+where id_usuario = 1;
+
+insert into tb_endereco_usuario (id_usuario, ds_cep, ds_endereco, nr_casa, ds_pt_referencia)
+						value (1, '13245-123', 'Rua Manuel Canalhes', '51', 'apartamento');
 
 
 
@@ -250,6 +261,7 @@ select 	id_depoimento,
         ds_comentario 
 from tb_depoimento
 inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario;
+
 
 -- (06) Mandar depoimentos
 insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario)

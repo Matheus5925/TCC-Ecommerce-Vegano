@@ -42,6 +42,7 @@ export const BuscaUsuarioId = async id =>{
     return linhas[0];
 };
 
+
 export async function listarEndereco(idUsuario) {
     const comando = `
                 select id_usuario as iduser,

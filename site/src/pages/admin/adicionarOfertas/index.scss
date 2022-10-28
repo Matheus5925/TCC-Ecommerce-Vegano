@@ -1,7 +1,7 @@
 
 .Adicionar-Ofertas{
-   align-items: center;
-   justify-content: center;
+   
+   
    
 
     .Titulo-Adicionar{
@@ -14,24 +14,23 @@
 
         position: absolute;
         width: 1328px;
-        height: 689px;
+        height: 680px;
         left: 42px;
         top: 217px;
-
         background: #FFFFFF;
         border: 1px solid #000000;
-        margin-top: -2em;
+        margin-top: -4em;
     }
-        
-    
+
 
    .Titulo-Caixa-Texto{
-    
     font-family: arial;
         display: flex;
         flex-direction: column;
         margin: 10px 10px 10px 0;
         padding-top: 5px;
+
+
    }
 
    .Caixa-Texto {
@@ -64,17 +63,10 @@
     display: flex;
     flex-direction: row-reverse;
     margin-top: -13em;
-  
-    
 
 }
 
-.Titulo-Img{
-  display: flex;
-  flex-direction: column;
-  margin-top: -2vh;
-  margin-right: 10vh;
-}
+
 
 .Adicionar{
     background-color: #D8C8B9;
@@ -92,5 +84,32 @@
     transform: scale(1.2);
 }
 
+
+.label{
+    
+}
+
+.Titulo-Caixa-Texto-Adicione{
+align-items: center;
+margin-top: -3em;
+margin: 10vh 5vh;
+
+}
+
+.Voltar-1{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-left: 100em;
+}
+
+.button{
+    background-color: #D8C8B9;
+    border-radius: 10vh;
+   width: 130vh;
+   height: 5vh;
+    border-style: none;
+    margin-top: 10em;
+    margin-left: 40em;
+}
 
 }
