@@ -153,14 +153,66 @@ delete from tb_produto where id_produto = 3;
 
 -- (10) Card produto usuario 
 select id_produto as id,
-		ds_fabricante as frabricante,
+        ds_categoria as categoria,
+		ds_fabricante as fabricante,
 		img_produto as imagem,
 		nm_produto as nome,
         nr_volume as volume,
         ds_linha as linha,
         nr_valor as valor
-from tb_produto;
+from tb_produto
+inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria;
+
+-- (11) Buscar id
+select	
+	id_produto as id,
+    ds_categoria as categoria,
+	ds_parte_corpo as ParteCorpo,
+	nm_produto as nome,
+	ds_linha as linha,
+	ds_produto as descricao,
+	nr_valor as valor,
+	ds_fabricante as fabricante,
+	dt_validade as validade,
+	nr_quantidade as quantidade,
+	nr_volume as volume,
+    img_produto as imagem
+from tb_produto
+inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo
+where id_produto = 3;
         
+-- Complemento Produtos
+-- (01). FiltrarProdutos -- categoria
+select id_categoria,
+		ds_categoria
+from tb_categoria
+where ds_categoria = 'Banhos';
+
+select id_produto as id,
+		ds_fabricante as fabricante,
+        ds_categoria as categoria,
+		img_produto as imagem,
+		nm_produto as nome,
+        nr_volume as volume,
+        ds_linha as linha,
+        nr_valor as valor
+from tb_produto
+inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+where ds_categoria like "Perfumes";
+
+-- (02) Filtro Produto nome
+select id_produto as id,
+		ds_fabricante as fabricante,
+        ds_categoria as categoria,
+		img_produto as imagem,
+		nm_produto as nome,
+        nr_volume as volume,
+        ds_linha as linha,
+        nr_valor as valor
+from tb_produto
+inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+where nm_produto like "%";
         
 -- Endpoints usuario
 -- 01 login usuario
@@ -171,22 +223,36 @@ from tb_usuario
 where ds_email = 'julio@gmail.com' and
 		ds_senha = 'julio10';
         
-select * from tb_produto;
+-- (02) Buscar info usuario
+select id_usuario as id,
+		nm_usuario as nome,
+        ds_email as email,
+        ds_cpf as cpf,
+        dt_nascimento as nascimento,
+        ds_telefone as telefone
+from tb_usuario
+	where id_usuario = 1;
+    
 
-select	
-                        id_produto as id,
-                        id_categoria as categoria,
-                        id_parte_corpo as ParteCorpo,
-                        nm_produto as nome,
-                        ds_linha as linha,
-                        ds_produto as descricao,
-                        nr_valor as valor,
-                        ds_fabricante as fabricante,
-                        dt_validade as validade,
-                        nr_quantidade as quantidade,
-                        nr_volume as volume
-                    from tb_produto
-                    where id_produto = 5;
+-- (03)Cadastrar endereco    
+insert into tb_endereco_usuario(id_usuario, ds_cep, ds_endereco,ds_pt_referencia, ds_bairro, ds_estado, ds_cidade, nr_casa)
+		values(1, 04854840, 'Rua Aggenor Klaussner', 'Mercadinho do almeão', 'Chacará Cocaia', 'São Paulo', 'São Paulo', 1);
+    
+-- (04)Cadastrar cartão
+insert into tb_cartao(id_compra, ds_bandeira, nr_cartao, dt_vencimento,nm_titular_cartao, nr_cod_seguranca, nr_parcelas)
+			values();
 
+-- (05) Ver Depoimentos
+select 	id_depoimento,
+        nm_usuario,
+        vl_depoimento,
+        ds_email,
+        ds_comentario 
+from tb_depoimento
+inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario;
 
-        
+-- (06) Mandar depoimentos
+insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario)
+		values(3, 'Positiva', 'Bons produtos');
+
+select * from tb_endereco_usuario;

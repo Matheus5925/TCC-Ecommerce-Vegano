@@ -260,12 +260,10 @@
   }
 
   .Titulo-Depoimentos {
+    padding-top: 2em;
     text-align: center;
-    margin: 40px;
     font-size: x-large;
     background-color: #ffff;
-    height: 90vh;
-
   }
 
   .Linha2 {
@@ -274,14 +272,16 @@
 
   .Imagens {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 4em;
+    height: 25em;
   }
 
   .depoimentos{
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 5em;
+    justify-content: center;
   }
 
   .enfase{
@@ -296,8 +296,7 @@
   }
 
   .BT{
-    margin-top: 6em;
-    align-items: center;
+    text-align: center;
   }
 
   .B{
@@ -306,6 +305,11 @@
     border-radius: 50px;
     height: 30px;
     width: 180px;
+  }
+
+  .B:hover{
+    cursor: pointer;
+    transform: scale(1.2);
   }
 
 
@@ -324,5 +328,13 @@
     flex-direction: row;
     position: relative;
     align-items: center;
+  }
+
+  .card-depoimentos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2em;
+    height: 14em;
   }
 }

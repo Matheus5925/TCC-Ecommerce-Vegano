@@ -7,10 +7,15 @@ import { useEffect, useState } from 'react';
 import storage from 'local-storage';
 import { BuscaUsuarioId } from '../../../api/UsuarioAPI';
 import InicioInfoUser from '../../../components/infoUser/Inicio';
+import TelaCartao from '../../../components/infoUser/cartoes';
+import TelaEndereco from '../../../components/infoUser/endereco';
 
 export default function InfoUsuario() {
     const [usuario, setUsuario] = useState({id: 0, nome:'', email:'', cpf:'', nascimento:'', telefone:''});
-    const [home, setHome] = useState(false);
+    const [home, setHome] = useState(true);
+    const [endereco, setEndereco] = useState(false);
+    const [cartoes, setCartoes] = useState(false);
+    const [historicoCompras, seHistoricoCompras] = useState(false);
 
     const ListarInfoUser = async  id =>{
         const r = await BuscaUsuarioId(id);
@@ -26,8 +31,13 @@ export default function InfoUsuario() {
 
     return (
         <section className='box-1'>
-            <CabecalhoLateral/>
-            <div>
+            <CabecalhoLateral
+                home={setHome}
+                cartao={setCartoes}
+                endereco={setEndereco}
+                historicoCompras={seHistoricoCompras}
+            />
+            <div className='Telas'>
                 {home === true && <InicioInfoUser
                     key={usuario.id}
                     nome={usuario.nome}
@@ -36,6 +46,8 @@ export default function InfoUsuario() {
                     cpf={usuario.cpf}
                     nascimento={usuario.nascimento.substring(0, 10)}
                 />}
+                {cartoes === true && <TelaCartao/>}
+                {endereco === true && <TelaEndereco/>}
            </div>
         </section>
     )

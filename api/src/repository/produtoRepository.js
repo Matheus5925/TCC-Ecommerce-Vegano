@@ -55,6 +55,7 @@ export async function BuscaEstoqueNome(nome) {
                             nm_produto as nome,
                             ds_fabricante as fabricante,
                             nr_valor as preco,
+                            img_produto as imagem,
                             nr_quantidade as quantidade
                         from tb_produto 
                         where nm_produto like ?`;
@@ -96,7 +97,7 @@ export async function BuscarId(id) {
 export async function MostrarProdutos() {
     const comando = `select id_produto as id,
                         ds_categoria as categoria,
-                        ds_fabricante as frabricante,
+                        ds_fabricante as fabricante,
                         img_produto as imagem,
                         nm_produto as nome,
                         nr_volume as volume,
@@ -110,7 +111,7 @@ export async function MostrarProdutos() {
 
 export async function FiltrarPorCategoria(categoria) {
     const comando = `select id_produto as id,
-                        ds_fabricante as frabricante,
+                        ds_fabricante as fabricante,
                         ds_categoria as categoria,
                         img_produto as imagem,
                         nm_produto as nome,
@@ -127,7 +128,7 @@ export async function FiltrarPorCategoria(categoria) {
 
 export const FiltrarPorNome = async function(nome) {
     const comando = `select id_produto as id,
-                        ds_fabricante as frabricante,
+                        ds_fabricante as fabricante,
                         ds_categoria as categoria,
                         img_produto as imagem,
                         nm_produto as nome,

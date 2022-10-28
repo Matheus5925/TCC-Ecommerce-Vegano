@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
+import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ComentarUmDepoimento, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
 
 import { CadastroUsuario } from "../repository/repositoryUsuario.js";
 
@@ -92,8 +92,8 @@ server.post('/endereco/usuario/:idUsuario', async (req,resp) =>{
 
 server.get('/endereco/usuario/:idUsuario' , async(req, resp) => {
     try {
-        const id = req.params.idUsuario;
-        const r = await listarEndereco(id);
+        const {idUsuario} = req.params;
+        const r = await listarEndereco(idUsuario);
 
         resp.send(r);
     } 
@@ -130,5 +130,25 @@ server.get('/depoimentos', async (req,resp)=>{
         })
     }
 });
+
+server.post('/usuario/depoimento/', async (req, resp) =>{
+    try{
+        const dados = req.body;
+
+        if(!dados.comentario)
+            throw new Error('Comentário não informado');
+
+        if(!dados.avaliacao)
+            throw new Error('Avaliacao não informado');
+
+        const r = await ComentarUmDepoimento(dados);
+
+        resp.send(r);
+    }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 export default server;

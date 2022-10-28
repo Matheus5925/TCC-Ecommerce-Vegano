@@ -28,9 +28,7 @@ export default function TelaProdutos() {
      const resposta = await FiltrarPorCategoria(titulo);
 
      if(titulo === 'Selecione uma categoria' || !titulo)
-
-     if(!titulo)
-        ListarCards();
+        ListarCards()
 
      setCard(resposta);
   };
@@ -73,7 +71,7 @@ export default function TelaProdutos() {
               </div>
               
               <select value={titulo} onChange={e => setTitulo(e.target.value)}>
-                <option> Selecione uma categoria </option>
+                <option>Selecione uma categoria</option>
                 {produtosFiltro.map(item => <option value={item.categoria} key={item.id}>{item.categoria}</option>)}
               </select>
           </div>

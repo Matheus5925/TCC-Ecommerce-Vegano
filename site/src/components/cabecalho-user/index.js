@@ -104,7 +104,7 @@ export default function CabecalhoUser(props) {
           </div>
           <div className='Direcionamentos'>
             <Link to='/'>Home</Link>
-            <Link>Quem somos</Link>
+            <Link to='/quemSomos'>Quem somos</Link>
             <Link to='/telaprodutos' onMouseEnter={aparecerFiltroProduto} onMouseOut={aparecerFiltroProduto}>Produto</Link>
             <Link>Ofertas</Link>
             <a onClick={VerificarEntrar}>Entrar</a>

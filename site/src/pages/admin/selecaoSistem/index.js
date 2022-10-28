@@ -4,6 +4,10 @@ import storage from 'local-storage';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import CabecalhoAdmin from '../../../components/cabecalho-admin';
+import NovoProduto from '../../../assets/images/image33.png';
+import Pedido from '../../../assets/images/image40.png';
+import Depoimento from '../../../assets/images/image39.png';
+import Estoque from '../../../assets/images/image38.png';
 
 export const PageSelection = () => {
 
@@ -13,37 +17,37 @@ export const PageSelection = () => {
             id: 1,
             nome: "Cadastrar um novo produto",
             link: "/cadastrarprodutos",
-            image: "/assets/images/img2.png"
+            image: NovoProduto
         },
         {
             id: 2,
             nome: "Ver Pedidos",
             link: "/pedidospedents",
-            image: "image/image 33.png"
+            image: Pedido
         },
         {
             id: 3,
             nome: "Depoimentos",
-            link: "/",
-            image: "image/image 33.png"
+            link: "/listadedepoimentos",
+            image: Depoimento
         },
         {
             id: 4,
             nome: "Estoque",
             link: "/estoque",
-            image: "image/image 33.png"
+            image: Estoque
         },
         {
             id: 5,
             nome: "Adicionar Ofertas",
             link: "/",
-            image: "image/image 33.png"
+            image: "image 33.png"
         },
         {
             id: 6,
             nome: "Histórico de compras",
             link: "/historicocompras",
-            image: "./image/image33.png"
+            image: "image33.png"
         }
     ]
 

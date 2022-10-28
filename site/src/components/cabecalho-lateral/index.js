@@ -10,37 +10,59 @@ import PortaSair from '../../assets/images/porta-saida.png'
 
 import {Link} from 'react-router-dom'
 
-export default function cabecalhoLateral() {
+export default function cabecalhoLateral(props) {
+
+    class AcionarInformacoes{
+
+        AcionarIncio(){
+            props.home(true);
+            props.cartao(false);
+            props.endereco(false);
+        };
+
+        AcionarCartao(){
+            props.home(false);
+            props.cartao(true);
+            props.endereco(false);
+        };
+
+        AcionarEndereco(){
+            props.endereco(true);
+            props.home(false);
+            props.cartao(false);
+        };
+
+        AcionarHistoricoCompras(){
+            props.historicoCompras(true)
+            props.endereco(false);
+            props.home(false);
+            props.cartao(false);
+        }
+    }
 
     return(
         <section>
             <div className='principal'>
-                <div>
-                <img src={LogoTipo} alt='logo' /> 
-                </div>
+                <Link to='/' className='logo-saida'>
+                    <img src={LogoTipo} alt='logo' />
+                </Link>
                     <div className='texto'>
-                        <Link className='tex'>
+                        <Link onClick={AcionarInformacoes.prototype.AcionarIncio} className='tex'>
                             <img src={iconeUsuario} alt='usuario'/> 
                             <p>Inicio</p>
                         </Link>
-                        <Link className='tex'>
+                        <Link onClick={AcionarInformacoes.prototype.AcionarEndereco} className='tex'>
                             <img src={IconeCasa} alt='casa'/> 
                             <p>Endereços</p>
                         </Link>
-                        <Link className='tex'>
+                        <Link onClick={AcionarInformacoes.prototype.AcionarCartao} className='tex'>
                             <img src={IconeCartoes} alt='cartoes'/>
                             <p> Cartões</p>
                         </Link>
-                        <Link className='tex'>
+                        <Link onClick={AcionarInformacoes.prototype.AcionarHistoricoCompras} className='tex'>
                             <img src={IconeSacola} alt='sacola'/>
                             <p>Historicos de compras</p>
                         </Link>
-                        <div>
-                            <Link to='/' className='tex Saida'>
-                                <img className='porta-saida' src={PortaSair} alt="" />
-                                <p>Home</p>
-                            </Link>
-                        </div>
                 </div>
             </div>
         </section>

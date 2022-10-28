@@ -17,6 +17,9 @@ create table tb_endereco_usuario(
     ds_cep varchar(10),
     ds_endereco varchar(100) not null,
     ds_pt_referencia varchar(100) not null,
+    ds_bairro varchar(100) not null,
+    ds_estado varchar(100) not null,
+    ds_cidade varchar(100) not null,
     nr_casa int not null,
     foreign key (id_usuario) references  tb_usuario (id_usuario)
 );
@@ -58,6 +61,7 @@ create table tb_ofertas(
 create table tb_depoimento(
 	id_depoimento	int primary key auto_increment,
     id_usuario		int,
+    vl_depoimento varchar(20),
     ds_comentario varchar(500),
     foreign key (id_usuario) references tb_usuario (id_usuario)
 );
@@ -98,6 +102,7 @@ create table tb_cartao(
     dt_vencimento varchar(5),
     nm_titular_cartao varchar(100),
     nr_cod_seguranca varchar(3),
+    nr_parcelas int,
     foreign key (id_compra) references tb_compra (id_compra)
 );
 
@@ -106,6 +111,7 @@ create table tb_compra_itens(
     id_compra int,
     id_produto int,
     nr_quantidade int,
+    vl_produto decimal(15,2),
     foreign key (id_compra) references tb_compra (id_compra),
 	foreign key (id_produto) references tb_produto (id_produto)
 );

@@ -16,6 +16,7 @@ import { PegarDepoimento } from '../../api/UsuarioAPI.js';
 
 
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
+import { Link } from 'react-router-dom';
 
 
 export default function LadinPage() {
@@ -28,7 +29,7 @@ export default function LadinPage() {
 
   useEffect(()=>{
     MostrarDepoimentos();
-  },[])
+  },[]);
 
   return (
     <div className='Principal'>
@@ -97,23 +98,27 @@ export default function LadinPage() {
             <div className='Linha2'>
               <hr />
             </div>
-            < div className='Imagens'>
-              {
-                depoimentos.map((item, quantidadeDepoimentos)=>
+          </div>
+            <div className='Imagens'>
+              <div className='card-depoimentos'>
+                {
+                  depoimentos.map((item, quantidadeDepoimentos)=>
                 
-                quantidadeDepoimentos < 4 &&
-                 
-                   <main key={item.id} className='depoimentos'>
-                   <img src={icone} alt=''/>
-                   <h1 className='enfase'>{item.nome}</h1>
-                   <h4 className='enfase'>{item.email}</h4>
-                   <p className='avaliacao'>{item.comentario}</p>
-                </main>
-               )}
-            </div>
-            <div className='BT'>
-                <button className='B'> Faça o seu Depoimento</button>
-            </div>
+                  quantidadeDepoimentos < 4 &&
+                
+                     <main key={item.id} className='depoimentos'>
+                     <img src={icone} alt=''/>
+                     <h1 className='enfase'>{item.nome}</h1>
+                     <p className='enfase'>{item.avaliacao}</p>
+                     <h4 className='enfase'>{item.email}</h4>
+                     <p className='avaliacao'>{item.comentario}</p>
+                  </main>
+                 )}
+              </div>
+              <Link to='/depoimentos' className='BT'>
+                  <button className='B'> Faça o seu Depoimento</button>
+              </Link>
+            
           </div>
         </div>
       </div>

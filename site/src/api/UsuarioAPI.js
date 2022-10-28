@@ -32,4 +32,16 @@ export const ListarDepoimentos = async ()=>{
     const r = await api.get('/depoimentos');
 
     return r.data;
+};
+
+export const ListarEnderecos = async id =>{
+    const r = await api.get(`/endereco/usuario/${id}`);
+
+    return r.data;
+};
+
+export const ComentarUmDepoimento = async (idUsuario, avaliacao, comentario) =>{
+    const r = await api.post('/usuario/depoimento/', {idUsuario, avaliacao, comentario});
+
+    return r.data;
 }
