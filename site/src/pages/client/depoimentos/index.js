@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react'
 import Storage from 'local-storage';
 import { ComentarUmDepoimento } from '../../../api/UsuarioAPI';
 import { toast, ToastContainer } from 'react-toastify';
+import {confirmAlert } from 'react-confirm-alert';
+import { useNavigate } from 'react-router-dom';
 
 export default function Depoimentos () {
     const [Usuario, setUsuario] = useState({id: 0, nome:''});
@@ -12,6 +14,8 @@ export default function Depoimentos () {
     const [negativa, setNegativa] = useState(false);
     const [avaliacao, setAvaliacao] = useState('');
     const [comentario, setComentario] = useState('');
+
+        const navigate = useNavigate();
 
         const BuscarStorage = _ =>{
             if(Storage('usuario-logado')){
@@ -30,16 +34,48 @@ export default function Depoimentos () {
                 setAvaliacao('Positiva');
             else if(negativa === true)
                 setAvaliacao('Negativa');
+        };
+
+        const NovoComentario = _ =>{
+            setPositiva(false);
+            setNegativa(false);
+            setAvaliacao('');
+            setComentario('');
         }
 
         async function Comentar(){
             try {
                 const r = await ComentarUmDepoimento(Usuario.id, avaliacao, comentario);
-                toast.success('Depoimento cadastrado com sucesso')
+                toast.success('Depoimento cadastrado com sucesso');
+
+                setTimeout(()=>{
+                    ConfirmarServico();
+                },2000 )
             } catch (err) {
                 if (err.response.status === 400)
                     toast.error(`❌ ${err.response.data.erro}`);
             }
+        }
+
+        async function ConfirmarServico() {
+            confirmAlert({
+                title: 'Cadastrar Depoimento',
+                message: `Você deseja inserir um novo comentario? ${Usuario.nome}?`,
+                buttons: [
+                    {
+                        label: 'Sim',
+                        onClick: async () => {
+                           NovoComentario();
+                        }
+                    },
+                    {
+                        label: 'Não',
+                        onClick: _ =>{
+                            navigate('/infousuario')
+                        }
+                    }
+                ]
+            })
         }
 
     useEffect(()=>{
