@@ -1,0 +1,32 @@
+.Principal-card-endereco{
+    width: 15em;
+    height: 7.2em;
+    border: 1px solid black;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 0.5em;
+  
+
+    .container-endereco{
+        height: 40px;
+        width: 40px;
+    }
+
+    .img-endereco{
+        height: 40px;
+    }
+
+    .nome-endereco{
+        height: 90%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .nome-endereco > h3{
+        font-size: 14px;
+    }
+}

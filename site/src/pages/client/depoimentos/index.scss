@@ -17,6 +17,7 @@
     margin-bottom: 2em;
     background-color: #D9D9D9;
     padding: 1em;
+    border-style: none;
 }
 
 .escrita{
@@ -32,17 +33,8 @@
     flex-direction: row;
     margin-bottom: 2em;
     margin-right: 2em;
-    padding: 1em;
-
-}
-
-.A label{
-    margin-left: 5px;
-}
-
-.A input{
-    margin-left: 2em;
-
+    padding-top: 1em;
+    gap: 2em;
 }
 
 .Dep{
@@ -53,6 +45,7 @@
     height: 8em;
     width: 96vw;
     background: #D9D9D9;
+    border-style: none;
 }
 
 .Bt{
@@ -66,4 +59,39 @@
     width: 10em;
     border-radius: 50px;
     background-color:  #D8C8B9;
+    border-style: none;
+}
+
+.botD:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .3em;
+}
+
+.check input{
+    display: none;
+}
+
+.check span {
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.check input:checked + span {
+    background-color: #6CA475;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 1em;
 }

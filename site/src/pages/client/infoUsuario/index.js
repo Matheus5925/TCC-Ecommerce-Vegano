@@ -1,14 +1,21 @@
 
 import CabecalhoLateral from '../../../components/cabecalho-lateral'
-import iconeUsuario from '../../../assets/images/icone-usuario.png'
+
 
 import './index.scss'
 import { useEffect, useState } from 'react';
 import storage from 'local-storage';
 import { BuscaUsuarioId } from '../../../api/UsuarioAPI';
+import InicioInfoUser from '../../../components/infoUser/Inicio';
+import TelaCartao from '../../../components/infoUser/cartoes';
+import TelaEndereco from '../../../components/infoUser/endereco';
 
 export default function InfoUsuario() {
     const [usuario, setUsuario] = useState({id: 0, nome:'', email:'', cpf:'', nascimento:'', telefone:''});
+    const [home, setHome] = useState(true);
+    const [endereco, setEndereco] = useState(false);
+    const [cartoes, setCartoes] = useState(false);
+    const [historicoCompras, seHistoricoCompras] = useState(false);
 
     const ListarInfoUser = async  id =>{
         const r = await BuscaUsuarioId(id);
@@ -24,39 +31,24 @@ export default function InfoUsuario() {
 
     return (
         <section className='box-1'>
-            < CabecalhoLateral />
-            <div className='ajuste'>
-                <div className='caixa-principal'>
-                    <img src={iconeUsuario} />
-                    <div className='titulo-nome'>
-                        <h1>{usuario.nome ? usuario.nome : 'Seja bem-vindo!'}</h1>
-                    </div>
-                    <hr/>
-                    <div className='caixa-3'>
-                        <div className='caixa-2' >
-                            <label> E-mail: </label>
-                            <div type="texto" className='inpu' >
-                                <p>{usuario.email}</p>
-                            </div>
-                            <label> Telefone: </label>
-                            <div className='inpu'>
-                                <p>{usuario.telefone}</p>
-                            </div>
-                        </div>
-                        <div className='caixa-2'>
-                            <label> CPF: </label>
-                            <div className='inpu'>
-                                <p>{usuario.cpf}</p>
-                            </div>
-                            <label> Data de nacimento: </label>
-                            <div type="texto" className='inpu'>
-                                <p>{usuario.nascimento.substring(0,10)}</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+            <CabecalhoLateral
+                home={setHome}
+                cartao={setCartoes}
+                endereco={setEndereco}
+                historicoCompras={seHistoricoCompras}
+            />
+            <div className='Telas'>
+                {home === true && <InicioInfoUser
+                    key={usuario.id}
+                    nome={usuario.nome}
+                    email={usuario.email}
+                    telefone={usuario.telefone}
+                    cpf={usuario.cpf}
+                    nascimento={usuario.nascimento.substring(0, 10)}
+                />}
+                {cartoes === true && <TelaCartao/>}
+                {endereco === true && <TelaEndereco/>}
+           </div>
         </section>
     )
 }

@@ -49,8 +49,14 @@
         height: 30px;
     }
 
+    .logo-saida{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
     .Saida{
-        margin-top: 17em;
         width: 150px;
     }
 }

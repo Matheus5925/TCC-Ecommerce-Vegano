@@ -9,8 +9,27 @@ import Storage from 'local-storage';
 export default function Crrinho(){
     const [itensCarrinho, setItensCarrinho] = useState([]);
 
+    const  CalcularValorTotal = _ =>{
+        var total = 0;
+        
+        for(let item of itensCarrinho){
+            total = total +  item.id.valor * item.qtd;
+        }
+        return total;
+    };
+
+    function RemoverItem(id){
+        let carrinho = Storage('carrinho');
+        carrinho = carrinho.filter(item => item.id != id);
+
+        Storage('carrinho', carrinho);
+        CarregarCarrinho();
+    }
+
     const CarregarCarrinho = async _ =>{
         const carrinho = Storage('carrinho');
+
+      
 
         if(carrinho){
 
@@ -25,12 +44,14 @@ export default function Crrinho(){
                 })
             }
             setItensCarrinho(temp);
-            console.log(itensCarrinho);
         }
+
+        if(!carrinho.id.nome)
+        RemoverItem();
     };
 
     useEffect(()=>{
-        CarregarCarrinho()
+        CarregarCarrinho();
     }, [])
 
     return(
@@ -40,6 +61,9 @@ export default function Crrinho(){
                <div className='title'>
                     <h1>Meu Carrinho</h1>
                     <hr/>
+               </div>
+               <div id='teste'>
+
                </div>
                <div className='indentificador'>
                     <div className='indentificador-pt1'>
@@ -53,6 +77,9 @@ export default function Crrinho(){
                </div>
                 <div className='Cards-produtos'>
                     {itensCarrinho.map(item =><CardCarrinho
+                        CarregarCarrinho={CarregarCarrinho}
+                        removerItem={RemoverItem}
+                        key={item.id}
                         item={item}
                     />)}
                 </div>
@@ -64,7 +91,7 @@ export default function Crrinho(){
                         </div>
                         <div className='posicionamento'>
                             <p>Total:</p>
-                            <p>R$ 139,90</p>
+                            <p>R$ {CalcularValorTotal()}</p>
                         </div>
                     </div>
                 </div>

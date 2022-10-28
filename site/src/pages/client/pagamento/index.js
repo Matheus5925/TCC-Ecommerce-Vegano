@@ -1,26 +1,25 @@
+
 import './index.scss'
 import CabecalhoUser from '../../../components/cabecalho-user';
-import CardParametos from '../../../components/card-pagamento';
-
-export default function Pagamento(){
 
 
+export default function TelaPagamento() {
     return(
-        <section>
-            <CabecalhoUser/>
+        <div className='Principal-Pagamento'>
+    <CabecalhoUser/>
+     <h1>PRINCIPAL PAGAMENTOS</h1>  
+     <hr className='Linha'/>
+     <div className='Container-Row'>
+        <div className='Container-1'>
+        <div className='Container-2'>
+</div>
 
-            <div>
-                <p>Escolha metodo de pagamento</p>
-                <hr/>
-                <div>
-                    <div>
-                        <CardParametos/>
-                    </div>
-                    <div>
 
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+        </div>
+     </div>
+   
+    </div>
+
+        )
 }
+   

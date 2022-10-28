@@ -1,32 +1,45 @@
 
 import './index.scss'
-import CabecalhoAdmin from '../../../components/cabecalho-admin'
+import CabecalhoAdmin from '../../../components/cabecalho-admin';
+import Depoimentos from '../../../assets/images/depoimentos.png';
+import { ListarDepoimentos } from '../../../api/UsuarioAPI';
+import { useState, useEffect } from 'react';
 
 export default function ListadeDepoimentos() {
+    const [depoimentos, setDepoimentos] = useState([]);
+
+    const MostrarDepoimentos = async  _ =>{
+        const resposta = await ListarDepoimentos();
+        setDepoimentos(resposta);
+    }
+  
+    useEffect(()=>{
+      MostrarDepoimentos();
+    },[]);
+
     return(
         <div className='Principal-Depoimentos'>
             <CabecalhoAdmin/>
-            <h1>Depoimentos dos Clientes</h1>
-               <div className='Principal-Faixa'>
-                <div className='Faixa-Depoimentos'>
-              
-                <div className='bl-1'>
-                    <div className='bl-2'>
-                    <div className='bl-3'>
-                            <p className='Nome-Luz'>HELLOISE LUZ</p>  <p>Positivo
-Produtos incríveis, alta performance e melhor de tudo: rendem horroooores!</p>
-                        </div>
-                        <div className='bl-4'>
-                            <button className='bl-5'>Publicar</button>
-                        </div>
-         
+            <div className='title-depoimento'>
+                    <h1>Depoimentos dos Clientes</h1>
+                </div>
+            <section className='ajustes'>
+                {depoimentos.map(item => <div className='card-depoimentos'>
+                    <div className='img-nome'>
+                        <img className='img-cliente' src={Depoimentos} alt="" />
+                        <p className='nome-cliente'>{item.nome}</p>
                     </div>
-
-                </div>
-                </div>
-
-
-               </div>
+                    <div className='avaliacao-depoimento'>
+                        <p className='Avaliacao-cliente'>{item.avalicao}</p>
+                        <div className='barra-depoimento'>
+                            <p className='depoimento-cliente'>{item.comentario}</p>
+                        </div>
+                    </div>
+                    <div className='btn'>
+                        <button> Excluir </button>
+                    </div>
+                </div>)}
+            </section>
         </div>
     )
 }

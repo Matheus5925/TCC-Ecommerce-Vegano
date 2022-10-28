@@ -41,6 +41,7 @@
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
+        gap: 0.2em;
     }
 
     ::-webkit-scrollbar-track {
@@ -142,8 +143,8 @@
     .botao-2{
         width: 80em;
         display: flex;
-        justify-content: right;  
-
+        justify-content: right;
+        height: 3em;
     }
 
     .ajustar-botao2:hover{

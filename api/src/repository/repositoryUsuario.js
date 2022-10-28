@@ -42,13 +42,46 @@ export const BuscaUsuarioId = async id =>{
     return linhas[0];
 };
 
+
+export async function listarEndereco(idUsuario) {
+    const comando = `
+                select id_usuario as iduser,
+                ds_cep as cep,
+                ds_endereco as endereco,
+                ds_pt_referencia as pontoReferencia,
+                ds_bairro as bairro,
+                ds_estado as estado,
+                ds_cidade as cidade,
+                nr_casa as casa
+            from tb_endereco_usuario 
+            where id_usuario = ?`
+    const [registros] = await (await con).query(comando, [idUsuario]);
+    return registros;
+}
+
+export async function salvarEndereco(idusuario ,cep ,endereco ,casa , referencia){
+    const comando = `
+    insert into tb_endereco_usuario (id_usuario, ds_cep, ds_endereco, nr_casa, ds_pt_referencia)
+						value (?, ?, ?, ?, ?)
+    `
+}
+
 export const ListarDepoimentos = async ()=> { 
     const comando = `select id_depoimento as id,
                         nm_usuario as nome,
                         ds_comentario as comentario,
+                        vl_depoimento as avaliacao,
                         ds_email as email
-                    from tb_depoimento
-                    inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario`;
+                        from tb_depoimento
+                        inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario`;
     const [linhas] = await (await con).query(comando);
     return linhas;
-}
+};
+
+export const ComentarUmDepoimento = async (dados) =>{
+    const comando = `insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario)
+                                    values(?, ?, ?)`;
+    const [linhas] = await (await con).query(comando, [dados.idUsuario, dados.avaliacao, dados.comentario]);
+    dados.idDepoimento = linhas.insertId;
+    return linhas;
+};

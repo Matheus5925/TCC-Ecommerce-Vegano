@@ -4,7 +4,6 @@ import Img5 from '../../assets/images/image 5.png';
 
 import Rodape from '../../components/rodape';
 import CabecalhoUser from '../../components/cabecalho-user';
-
 import ofertas3 from '../../assets/images/oferta3.png'
 import marca1 from '../../assets/images/marca1.png'
 import marca2 from '../../assets/images/marca2.png'
@@ -12,7 +11,12 @@ import marca3 from '../../assets/images/marca3.png'
 import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
+import { PegarDepoimento } from '../../api/UsuarioAPI.js';
+
+
+
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
+import { Link } from 'react-router-dom';
 
 
 export default function LadinPage() {
@@ -25,7 +29,7 @@ export default function LadinPage() {
 
   useEffect(()=>{
     MostrarDepoimentos();
-  },[])
+  },[]);
 
   return (
     <div className='Principal'>
@@ -56,9 +60,9 @@ export default function LadinPage() {
             <p>Ofertas do Dia</p>
             <div className='Containers'>
               <div className='Container1'>
-                <img className='imgP1'src={Img5} alt='imagem do produto'/>
+                <img className='imgP2'src={Img5} alt='imagem do produto'/>
                 <p className='tit3'>KIT ROTINA DIÁRIA</p> 
-                <p className='tit'>Gala vegano</p>
+                <p className='tit1'>Gala vegano</p>
                 <p className='valor1'>R$240,00</p>
                 <h1 className='valorOferta1'>R$200,00</h1>
               </div>
@@ -94,23 +98,27 @@ export default function LadinPage() {
             <div className='Linha2'>
               <hr />
             </div>
-            < div className='Imagens'>
-              {
-                depoimentos.map((item, quantidadeDepoimentos)=>
+          </div>
+            <div className='Imagens'>
+              <div className='card-depoimentos'>
+                {
+                  depoimentos.map((item, quantidadeDepoimentos)=>
                 
-                quantidadeDepoimentos < 4 &&
-                 
-                   <main key={item.id} className='depoimentos'>
-                   <img src={icone} alt=''/>
-                   <h1 className='enfase'>{item.nome}</h1>
-                   <h4 className='enfase'>{item.email}</h4>
-                   <p className='avaliacao'>{item.comentario}</p>
-                </main>
-               )}
-            </div>
-            <div className='BT'>
-                <button className='B'> mais depoimentos</button>
-            </div>
+                  quantidadeDepoimentos < 4 &&
+                
+                     <main key={item.id} className='depoimentos'>
+                     <img src={icone} alt=''/>
+                     <h1 className='enfase'>{item.nome}</h1>
+                     <p className='enfase'>{item.avaliacao}</p>
+                     <h4 className='enfase'>{item.email}</h4>
+                     <p className='avaliacao'>{item.comentario}</p>
+                  </main>
+                 )}
+              </div>
+              <Link to='/depoimentos' className='BT'>
+                  <button className='B'> Faça o seu Depoimento</button>
+              </Link>
+            
           </div>
         </div>
       </div>

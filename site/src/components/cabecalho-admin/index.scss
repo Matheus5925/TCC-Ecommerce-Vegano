@@ -1,4 +1,4 @@
-.Faixa-Principal {
+.Faixa-Principal-admin {
 
     display: flex;
     flex-direction: column;
@@ -15,23 +15,25 @@
         position: relative;
     }
 
-    .cabecalho {
+    .cabecalho-admin {
         background-color: #D8C8B9;
         height: 80px;
         width: 100%;
         display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
         justify-content: space-between;
     }
 
-    .Dados-Usuario {
+    .Dados-admin {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
     }
 
-    .Dados-Usuario:hover {
+    .Dados-admin:hover {
         cursor: pointer;
     }
 
@@ -47,7 +49,7 @@
         background-color: #ffffff;
     }
 
-    .user-name-email {
+    .admin-name-email {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -55,12 +57,15 @@
 
     }
 
-    .user-name-email > p {
+    .admin-name-email > p {
         font-family: Arial, Helvetica, sans-serif;
     }
 
-    .Usuario {
+    .Admininstrador {
         height: 50%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
     .sair {

@@ -36,17 +36,17 @@ export default function CabecalhoAdmin() {
     }
 
   return (
-      <main className='Faixa-Principal'>
-        <header className='cabecalho'>
+      <main className='Faixa-Principal-admin'>
+        <header className='cabecalho-admin'>
             <img src={LogoTipo} alt='logo' />
-            <div onClick={aparecerTela} className='Dados-Usuario'>
-              <h1 className='Nome-Usuario'>{nome.split(' ')[0]} </h1>
+            <div onClick={aparecerTela} className='Dados-admin'>
+              <h1 className='Nome-admin'>{nome.split(' ')[0]} </h1>
               <img src={IconeUsuario} alt='Icone' />
             </div>
         </header>
         {aparecer === true && <div className='tela-click-cabecalho-admin'>
-                    <section className='Usuario'>
-                        <div className='user-name-email'>
+                    <section className='Admininstrador'>
+                        <div className='admin-name-email'>
                             <img className='icon-user' src={IconeUsuario} alt="" />
                             <p>{nome}</p>
                         </div>

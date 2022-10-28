@@ -1,5 +1,7 @@
 import { Router } from "express";
-import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ListarDepoimentos } from "../repository/repositoryUsuario.js";
+
+import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ComentarUmDepoimento, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
+
 import { CadastroUsuario } from "../repository/repositoryUsuario.js";
 
 
@@ -88,6 +90,21 @@ server.post('/endereco/usuario/:idUsuario', async (req,resp) =>{
 
 });
 
+server.get('/endereco/usuario/:idUsuario' , async(req, resp) => {
+    try {
+        const {idUsuario} = req.params;
+        const r = await listarEndereco(idUsuario);
+
+        resp.send(r);
+    } 
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+
+})
+
 server.get('/usuario/:id', async (req, resp) =>{
     try {
         const { id } = req.params;
@@ -102,13 +119,32 @@ server.get('/usuario/:id', async (req, resp) =>{
     }
 });
 
-server.get('/depoimentos', async (req,resp) =>{
-    try {
+server.get('/depoimentos', async (req,resp)=>{
+    try{
         const r = await ListarDepoimentos();
+        
+        resp.send(r);
+    }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
+
+server.post('/usuario/depoimento/', async (req, resp) =>{
+    try{
+        const dados = req.body;
+
+        if(!dados.comentario)
+            throw new Error('Comentário não informado');
+
+        if(!dados.avaliacao)
+            throw new Error('Avaliacao não informado');
+
+        const r = await ComentarUmDepoimento(dados);
 
         resp.send(r);
-        
-    } catch (err) {
+    }catch (err) {
         resp.status(400).send({
             erro: err.message
         })

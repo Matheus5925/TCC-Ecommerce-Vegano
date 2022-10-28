@@ -24,27 +24,24 @@ const CardProdutosUsuario = props =>{
     }
 
     const AdicionarCarrinho = () =>{
-        let carrinho = []
-        if(Storage('carrinho')){
+        let carrinho = [];
+        if(Storage('carrinho'))
             carrinho = Storage('carrinho');
-        }
-
         if(!carrinho.find(item => item.id === props.item.id)){
-           carrinho.push({
+            carrinho.push({
                 id: props.item.id,
-                qtd: 1
-           })
-           Storage('carrinho', carrinho);
+                quantidade: props.item.quantidade
+            })
         }
-            toast.success('Produto adicionado com sucesso');
-    }
+        Storage('carrinho', carrinho);
+        toast.success('Adicionado com sucesso');
+    };
 
 
 
     return(
         <div className='Card-Produto-Usuario'>
             <ToastContainer/>
-            
             <div onClick={DetalhesProdutoDirecionar} className='Titulo-Produto'>
                 <h1>{props.item.fabricante}</h1>
             </div>
@@ -61,6 +58,6 @@ const CardProdutosUsuario = props =>{
                 </div>
         </div>
     );
-}
+};
 
 export default CardProdutosUsuario;

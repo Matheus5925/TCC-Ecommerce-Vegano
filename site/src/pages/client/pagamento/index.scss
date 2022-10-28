@@ -1,0 +1,44 @@
+.Principal-Pagamento{
+
+
+   .Linha{
+      margin: 3vh;
+      width: 200vh;
+       }
+   
+ .Container-Row{
+box-sizing: border-box;
+position: absolute;
+width: 506px;
+height: 499px;
+left: 58px;
+top: 324px;
+border: 1px solid rgba(0, 0, 0, 0.24);
+filter: blur(2px);
+margin: -7vh;
+ }
+
+ .Container-1{
+box-sizing: border-box;
+position: absolute;
+width: 420px;
+height: 98px;
+left: 83px;
+top: 377px;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.24);
+margin: -20em -40px;
+ }
+
+ .Container-2{
+   box-sizing: border-box;
+   position: absolute;
+   width: 420px;
+   height: 98px;
+   left: 83px;
+   top: 377px;
+   background: #FFFFFF;
+   border: 1px solid rgba(0, 0, 0, 0.24);
+   margin: -15em -10vh; 
+ }
+}
