@@ -40,7 +40,7 @@ export const PageSelection = () => {
         {
             id: 5,
             nome: "Adicionar Ofertas",
-            link: "/",
+            link: "/adicionarofertas",
             image: "image 33.png"
         },
         {

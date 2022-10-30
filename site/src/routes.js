@@ -48,7 +48,7 @@ const Rotas = () => {
                 <Route path='/telaOfertas' element={<TelaOfertas/>}/>
                 <Route  path='/teste' element={<TelaEndereco/>}/>
                 <Route path='/listadedepoimentos' element={<ListadeDepoimentos/>}/>
-                <Route path='/adicionarofertas' element={<AdicionarOfertas/>}/>
+                <Route path='/adicionarofertas/:idProdutos' element={<AdicionarOfertas/>}/>
                 <Route path='/meusPedidos' element={<MeusPedidos/>}/>
                 <Route path='/depoimentos' element={<Depoimentos/>}/>
                 <Route path='/quemSomos' element={<QuemSomos/>}/>

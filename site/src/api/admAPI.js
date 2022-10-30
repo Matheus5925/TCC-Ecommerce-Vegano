@@ -12,3 +12,15 @@ export async function LogiAdm(email, senha) {
     });
     return r.data
 };
+
+export async function ExcluirDepoimentos(id) {
+    const r = await api.delete(`/excluir/depoimento/id?id=${id}`);
+
+    return r.data;
+};
+
+export async function CadastrarOfertas(idProduto, NovoValor) {
+    const r = await api.post('/adicionar/oferta', {idProduto, NovoValor});
+
+    return r.data;
+};

@@ -2,6 +2,7 @@ import './index.scss'
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import storage from 'local-storage';
+import { Link } from 'react-router-dom';
 
 import LogoTipo from '../../assets/images/logo.png'
 import IconeUsuario from '../../assets/images/icone-usuario.png'
@@ -38,7 +39,7 @@ export default function CabecalhoAdmin() {
   return (
       <main className='Faixa-Principal-admin'>
         <header className='cabecalho-admin'>
-            <img src={LogoTipo} alt='logo' />
+            <Link to='/paginaselecao'><img src={LogoTipo} alt='logo' /></Link>
             <div onClick={aparecerTela} className='Dados-admin'>
               <h1 className='Nome-admin'>{nome.split(' ')[0]} </h1>
               <img src={IconeUsuario} alt='Icone' />

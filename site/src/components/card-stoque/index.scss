@@ -5,7 +5,8 @@
     align-items: center;
     border: 1px solid #5e5e5e;
 	box-shadow: 5px 6px 10px rgba(50, 50, 50, 0.77);
-    height: 18em;
+    height: auto;
+    padding: .5em;
     width: 13em;
 
     .card-stoque:hover{
@@ -82,6 +83,26 @@
 
     input[type=number]::-webkit-inner-spin-button {
         -webkit-appearance: none;
+    }
+
+    .botao {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        padding-top: 1em;
+    }
+
+    button {
+        border: none;
+        width: 10em;
+        height: 30px;
+        background: #D8C8B9;
+        border-radius: 50px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        transform: scale(1.2);
     }
 
 }

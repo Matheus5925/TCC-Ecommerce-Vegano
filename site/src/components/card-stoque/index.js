@@ -18,6 +18,10 @@ const CardEstoque = props => {
         navigate(`/cadastrarprodutos/alterar/${props.id}`);
     }
 
+    const AdicionarOferta = ()=>{
+        navigate(`/adicionarofertas/${props.id}`)
+    };
+
 
     async function removerServico(id, nome) {
         confirmAlert({
@@ -65,10 +69,11 @@ const CardEstoque = props => {
             <div className='quantidade'>
                 <label>QTD:</label>
                 <div className='input-quantidade'>
-                    <p>+</p>
-                        <input type="number" value={quantidade} onChange={e => setQuantidade(e.target.value)}/>
-                    <p>-</p>
+                    <input type="number" value={quantidade} onChange={e => setQuantidade(e.target.value)}/>
                 </div>
+            </div>
+            <div className='botao'>
+                <button onClick={AdicionarOferta}>Adicionar Oferta</button>
             </div>
         </div>
     );

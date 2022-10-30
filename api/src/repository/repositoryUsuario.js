@@ -71,7 +71,8 @@ export const ListarDepoimentos = async ()=> {
                         nm_usuario as nome,
                         ds_comentario as comentario,
                         vl_depoimento as avaliacao,
-                        ds_email as email
+                        ds_email as email,
+                        dt_comentario as data
                         from tb_depoimento
                         inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario`;
     const [linhas] = await (await con).query(comando);
@@ -79,9 +80,10 @@ export const ListarDepoimentos = async ()=> {
 };
 
 export const ComentarUmDepoimento = async (dados) =>{
-    const comando = `insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario)
-                                    values(?, ?, ?)`;
-    const [linhas] = await (await con).query(comando, [dados.idUsuario, dados.avaliacao, dados.comentario]);
+    const comando = `insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario, dt_comentario)
+                                    values(?, ?, ?, ?)`;
+    const DataAtual = new Date();
+    const [linhas] = await (await con).query(comando, [dados.idUsuario, dados.avaliacao, dados.comentario, DataAtual]);
     dados.idDepoimento = linhas.insertId;
     return linhas;
 };
