@@ -79,17 +79,6 @@ select nm_produto,
 	from tb_produto
     inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
     inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo;
-    
-select  id_endereco_usuario		id,
-		ds_cep					cep,
-        ds_endereco				endereco,
-        nr_casa					casa,
-        ds_pt_referencia		referencia
-	from tb_endereco_usuario
-where id_usuario = 1;
-
-insert into tb_endereco_usuario (id_usuario, ds_cep, ds_endereco, nr_casa, ds_pt_referencia)
-						value (1, '13245-123', 'Rua Manuel Canalhes', '51', 'apartamento');
 
 
 
@@ -192,6 +181,13 @@ from tb_produto
 inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
 inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo
 where id_produto = 3;
+
+-- (12) Excluir depoimento
+delete from tb_depoimento where id_depoimento = 1;
+
+-- (13) Adicionar Oferta 
+insert into tb_ofertas(id_produto, ds_preco_novo)
+					values(3, 130.20);
         
 -- Complemento Produtos
 -- (01). FiltrarProdutos -- categoria
@@ -247,8 +243,10 @@ from tb_usuario
 
 -- (03)Cadastrar endereco    
 insert into tb_endereco_usuario(id_usuario, ds_cep, ds_endereco,ds_pt_referencia, ds_bairro, ds_estado, ds_cidade, nr_casa)
-		values(1, 04854840, 'Rua Aggenor Klaussner', 'Mercadinho do almeão', 'Chacará Cocaia', 'São Paulo', 'São Paulo', 1);
-    
+		values(1, 04854540, 'Estrada do schmidt', 'Mercadinho do almeão', 'Chacará do Sol', 'São Paulo', 'SP', 48);
+        
+
+
 -- (04)Cadastrar cartão
 insert into tb_cartao(id_compra, ds_bandeira, nr_cartao, dt_vencimento,nm_titular_cartao, nr_cod_seguranca, nr_parcelas)
 			values();
@@ -258,13 +256,25 @@ select 	id_depoimento,
         nm_usuario,
         vl_depoimento,
         ds_email,
-        ds_comentario 
+        ds_comentario,
+        dt_comentario
 from tb_depoimento
 inner join tb_usuario on tb_depoimento.id_usuario = tb_usuario.id_usuario;
 
-
 -- (06) Mandar depoimentos
-insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario)
-		values(3, 'Positiva', 'Bons produtos');
+insert into tb_depoimento(id_usuario, vl_depoimento, ds_comentario, dt_comentario)
+		values(2, 'Negativa', 'teste', '2022-10-30');
+        
+-- (07) Buscar Endereço
+select id_usuario as iduser,
+		ds_cep as cep,
+        ds_endereco as endereco,
+        ds_pt_referencia as pontoReferencia,
+        ds_bairro as bairro,
+        ds_estado as estado,
+        ds_cidade as cidade,
+        nr_casa as casa
+from tb_endereco_usuario 
+where id_usuario = 1;
 
-select * from tb_endereco_usuario;
+select * from tb_ofertas;
