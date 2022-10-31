@@ -6,6 +6,7 @@ import { BuscarId } from '../../../api/ProdutoAPI';
 import { useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
 import { toast, ToastContainer } from 'react-toastify';
+import Storage from 'local-storage'
 
 const DetalhesProduto = props =>{
     const [produtos, setProdutos] = useState({id: 0, nome: '',categoria: '', linha: '',  descricao: '', valor: '', fabricante: '', validade:'', volume:'', imagem: ''});
@@ -34,7 +35,8 @@ const DetalhesProduto = props =>{
             carrinho = Storage('carrinho');
         }
 
-        if(!carrinho.find(item => item.idParams === idParams)){
+
+        if(!carrinho.find(item => item.idParams == idParams)){
            carrinho.push({
                 id: idParams,
                 qtd: 1

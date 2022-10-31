@@ -2,11 +2,18 @@ import './index.scss'
 import {API_URL} from '../../api/config.js';
 import { useState} from 'react'
 import Storage from 'local-storage';
-
+import { useNavigate } from 'react-router-dom';
 
 
 export default function CardCarrinho(props) {
     const [QtdCarrinho, setQtdCarrinho] = useState(props.item.qtd);
+
+
+    const navigate = useNavigate();
+
+    const DetalhesProdutoDirecionar = () =>{
+        navigate(`/detalhes/produto/${props.item.id.id}`);
+    }
 
     function Remover(){
         props.removerItem(props.item.id.id);
@@ -40,10 +47,10 @@ export default function CardCarrinho(props) {
 
     return(
         <div className='CARD'>
-            <img className='imagem-carrinho' src={ExibirImagem(props.item.id.imagem)} alt="produto"/>
-            <p>{`${props.item.id.nome} ${props.item.id.volume}  ${props.item.id.fabricante}`}</p>
+            <img onClick={DetalhesProdutoDirecionar} className='imagem-carrinho cursor' src={ExibirImagem(props.item.id.imagem)} alt="produto"/>
+            <p onClick={DetalhesProdutoDirecionar} className='cursor'>{`${props.item.id.nome} ${props.item.id.volume}  ${props.item.id.fabricante}`}</p>
             <div className='info-carrinho'>
-                <p>R$ {Number(props.item.id.valor)}</p>
+                <p className='cursor' onClick={DetalhesProdutoDirecionar}>R$ {Number(props.item.id.valor)}</p>
                 <div className='QNT'>
                     {/* <p className='editar'>+</p> */}
                     <select value={QtdCarrinho} onChange={e => AlterarQuantidade(e.target.value)}>
