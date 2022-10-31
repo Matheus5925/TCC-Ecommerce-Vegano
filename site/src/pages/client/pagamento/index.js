@@ -11,11 +11,11 @@ export default function TelaPagamento() {
         <div className='Principal-Pagamento'>
             <CabecalhoUser/>
             <div>
-               <h2>FINALIZAR </h2>
+               <h2>FINALIZAR PAGAMENTO </h2>
             </div>
             <hr/>
           <div className='Principal'>
-            <div className='Bloco1'>
+            <div className='maria'>
 
               <div className='input2'>
                   <img src={imgProduto}/>
@@ -69,6 +69,23 @@ export default function TelaPagamento() {
             <button className='valor1'>Concluir</button>
 
 
+            </div>
+
+            <div>
+                <div className='Bloco3'>
+                <div className='input3-1'>
+                
+               
+                <div className='input3-2'>
+                <button className='Endereco'>Cadastrar Endereço</button>
+
+
+                 
+                </div>
+                </div>
+              
+
+                </div>
             </div>
         </div>
      

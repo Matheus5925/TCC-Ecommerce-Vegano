@@ -1,5 +1,6 @@
 .Principal {
-
+display: flex;
+flex-direction: column;
   @import url('https://fonts.googleapis.com/css2?family=Roboto1:wght@100&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Roboto3:wght@100;700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Roboto2:wght@100;400;700&display=swap');
@@ -20,7 +21,7 @@
   
   .text {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   
   .escrita{
