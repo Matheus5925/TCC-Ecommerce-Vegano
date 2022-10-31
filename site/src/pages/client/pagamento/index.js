@@ -1,38 +1,77 @@
 
 import './index.scss'
+import imgProduto from '../../../assets/images/image 30.png'
 import CabecalhoUser from '../../../components/cabecalho-user';
+import CardPix from '../../../assets/images/cards.png'
+import Boleto from '../../../assets/images/boleto.png'
+import Pix from '../../../assets/images/imagePix.png'
 
 export default function TelaPagamento() {
     return(
         <div className='Principal-Pagamento'>
             <CabecalhoUser/>
-            <h1> Pedidos  Finalizar</h1>
+            <div>
+               <h2>FINALIZAR </h2>
+            </div>
             <hr/>
-          <div className='BLOCO'>
-          
+          <div className='Principal'>
+            <div className='Bloco1'>
 
-            <div className='BLOCO2'>
-            <div className='BLOCO2'>
+              <div className='input2'>
+                  <img src={imgProduto}/>
+                 <p>serum facial </p>
+                 <h2>R$ 150,00</h2>
 
+                </div>
+
+              <div>
+              <div className='input2'>
+              <img src={imgProduto}/>
+                <p>serum facial  </p>
+                <h2>R$ 150,00</h2>
+               
+              </div>
+
+             </div>
             </div>
-         </div>
+
             
-           <div className='BLOCO3'>
-            <div className='BLOCO3-1'>
-            <div className='BLOCO3-2'>
-            <div className='BLOCO3-2'>
-                
-</div>
-</div>
- </div>
 
+            <div className='Principal2'>
+               <div className='Bloco2'>
+                  <div className='input-1'>
+                  <img src = {Pix}/>
+                  </div>
+                  <div className='input-2'>
+                  <img src ={CardPix}/>
+                  </div>
+                  <div className='input-3'>
+                  <img src ={Boleto}/>
+
+                  </div>
+                  <div className='Button'>
+                  <button className='buttonA'>Ver cartões Cadastrados</button>
+                  <button className='buttonB'>Cadastrar um novo Cartão</button>
+                  </div>
+                  
+               </div>
+               <div></div>
+            </div>
+         
             </div>
 
- 
+            <div>
+            <h4>TOTAL DA COMPRA</h4>
+            <div className='B'>
+            <button className='valor'>R$ 170,00</button>
            
-           
-          </div>
+            </div>
+            <button className='valor1'>Concluir</button>
 
+
+            </div>
+        </div>
+     
 
 
 
@@ -45,7 +84,7 @@ export default function TelaPagamento() {
           
             
             
-        </div>
+
 
 
         

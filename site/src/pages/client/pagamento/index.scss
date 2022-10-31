@@ -1,72 +1,123 @@
-.Principal-Pagamento{
 
-  .BLOCO{
-    background-image:url('../../../assets/images/Rectangle\ 207.png');
-    box-sizing: border-box;
-        position: absolute;
-        width: 70vh;
-        height: 70vh;
-        left: 42px;
-        top: 217px;
-        background: #FFFFFF;
-        border: 1px solid #000000;
-  }
 
-  .BLOCO2{
 
-    background-image:url('../../../assets/images/Rectangle\ 207.png');
-    box-sizing: border-box;
-        position: absolute;
-        width: 60vh;
-        height: 10vh;
-        top: 217px;
-        margin: -15vh 0vh  0vh  0vh;
-        margin-right: 20em;
-        background: #FFFFFF;
-        border: 1px solid #000000;
 
-  }
-
-  .BLOCO3{
-box-sizing: border-box;
-position: absolute;
-width: 748px;
-height: 435px;
-left: 621px;
-top: 324px;
-background: #FFFFFF;
-border: 1px solid rgba(0, 0, 0, 0.24);
-filter: blur(2px);
-margin: -40vh  30vh;
-  }
-
-  .BLOCO3-1{
-  margin: 3vh;
- box-sizing: border-box;
-position: absolute;
-width: 693px;
-height: 81px;
-background: #F6F6F6;
-border: 1px solid #000000;
-
-  }
-
-  .BLOCO3-2{
-    box-sizing: border-box;
-    margin: -40vh;
-    position: absolute;
-    width: 693px;
-    height: 81px;
-    left: 20em;
-    top: 442px;
-    background: #F6F6F6;
-    border: 1px solid #000000;
-  }
-
- 
- 
   
+ .Principal{
+      display: flex;
+      justify-content:space-between;
+      height: 50vh;
+ 
+    
+ }
+ .Button{
+    display: flex;
+    justify-content: space-evenly;
+ }
+ .Button button{
+  background-color: #D8C8B9;
+  height: 40px;
+  width: 27vh;
+   border-style: none;
+   border-radius: 3px;
+ }
    
+ .Bloco1{
+  margin: 1vh;
+  width: 20%;
+  height: 40vh;
+  border: solid;
+  border-color: rgb(245, 233, 233);
+ }
+
+ 
+ .input2{
+  
+  background-repeat: no-repeat;
+  margin: 1vh;
+  width: 34vh;
+  height: 10vh;
+  border: 1px solid;
+  display: flex;
+  flex-direction:row ;
+  justify-content: space-around;
+  align-items: center;
+ }
+ .input2 img {
+  width: 7vh;
+ }
+
+ .Principal2{
+margin: 65vh;
+margin-top: -2em;
+
+ }
+
+ .Bloco2{
+  margin: 5vh;
+  width: 90%;
+  height: 60vh;
+  border: solid;
+  border-color: rgb(245, 233, 233);
+ }
+
+ .input-1{
+  margin: 3vh;
+  width: 49vh;
+  height: 7vh;
+  border: 1px solid;
+  
+ }
+
+ .input-2{
+  margin: 3vh;
+  width: 49vh;
+  height: 7vh;
+  border: 1px solid;
+ 
+ }
+
+ .input-3{
+  margin: 3vh;
+  width: 49vh;
+  height: 7vh;
+  border: 1px solid;
+ }
+
+ .Button{
+  margin: 3vh;
+ }
+
+ .buttonA{
+  margin: 1vh;
+ }
+
+ .buttonB{
+  margin: 1vh;
+ }
+
+ .B{
+  margin: 1vh;
+ }
+ .valor1{
+  background-color: #D8C8B9;
+  height: 40px;
+  width: 27vh;
+   border-style: none;
+   border-radius: 3px;
+ }
+
+ .valor{
+  background-color:D9D9D9;
+  height: 40px;
+  width: 27vh;
+  margin-right: 5vh;
+   border-style: none;
+   border-radius: 3px;
+ }
+
+
+ 
+
   
   
-}
