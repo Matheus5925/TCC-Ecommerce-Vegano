@@ -46,7 +46,9 @@ export default function InfoUsuario() {
                     cpf={usuario.cpf}
                     nascimento={usuario.nascimento.substring(0, 10)}
                 />}
-                {cartoes === true && <TelaCartao/>}
+                {cartoes === true && 
+                    <TelaCartao/>
+                }
                 {endereco === true && <TelaEndereco/>}
            </div>
         </section>
