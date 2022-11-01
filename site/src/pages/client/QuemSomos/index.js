@@ -34,9 +34,7 @@ export default function QuemSomos () {
                     <p>Promover saúde, beleza e bem-estar dos nossos clientes, fornecendo cosméticos com ativos naturais e veganos de alta performance, eficazes e sustentáveis, respeitando o meio-ambiente e os animais.</p>
                 </div>
             </label>
-         
         </main>
-        
     )
 
 }

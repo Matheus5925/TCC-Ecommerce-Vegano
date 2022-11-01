@@ -1,32 +1,33 @@
+.Quem-Somos{
+    .IMG1{
+        background-image: url(../../../assets/images/IMG.png);
+        background-repeat: no-repeat;
+        height: 60vh;
+        min-width: 100vh;
+    }
+    .quadro1{
+        display: flex;
+        flex-direction: row;
+    }
 
-.IMG1{
-    background-image: url(../../../assets/images/IMG.png);
-    background-repeat: no-repeat;
-    height: 50vh;
-    width: 98vw;
-}
-.quadro1{
-    display: flex;
-    flex-direction: row;
-}
+    .quadro1 img {
+        margin-top: 3em;
+        height: 80px;
+        width: 80px;
+    }
 
-.quadro1 img {
-    margin-top: 3em;
-    height: 80px;
-    width: 80px;
-}
+    .sub-quadro{
+        margin-left: 5em;
+        margin-top: 3em;
+        margin-bottom: 5em;
+    }
 
-.sub-quadro{
-    margin-left: 5em;
-    margin-top: 3em;
-    margin-bottom: 5em;
-}
+    .sub-quadro h1{
+        font-size: 20px;
+    }
 
-.sub-quadro h1{
-    font-size: 20px;
-}
-
-.sub-quadro p{
-    font-size: 1em;
-    color: rgb(61, 57, 57);
+    .sub-quadro p{
+        font-size: 1em;
+        color: rgb(61, 57, 57);
+    }
 }
