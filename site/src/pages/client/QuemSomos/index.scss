@@ -1,8 +1,9 @@
 
 .IMG1{
     background-image: url(../../../assets/images/IMG.png);
-    height: 30em;
-    width: 100%;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 98vw;
 }
 .quadro1{
     display: flex;
@@ -18,9 +19,14 @@
 .sub-quadro{
     margin-left: 5em;
     margin-top: 3em;
-    margin-bottom: 3em;
+    margin-bottom: 5em;
 }
 
 .sub-quadro h1{
     font-size: 20px;
+}
+
+.sub-quadro p{
+    font-size: 1em;
+    color: rgb(61, 57, 57);
 }

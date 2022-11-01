@@ -10,15 +10,15 @@ flex-direction: column;
 
 
   .ImgFundo {
-    background-image: url('../../assets/images/image1.png');
+    background-image:url('../../../src/assets/images/image1.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 40em;
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 100vw;
   }
-  
+
   .text {
     display: flex;
     flex-direction: column;
@@ -155,7 +155,7 @@ flex-direction: column;
     display: flex;
   }
 
-  .valor1{
+  .vl{
     font-size: medium;
     text-decoration:line-through;
     margin-left: 10px;

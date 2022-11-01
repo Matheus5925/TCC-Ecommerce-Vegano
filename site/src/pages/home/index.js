@@ -63,7 +63,7 @@ export default function LadinPage() {
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
                 <p className='tit3'>KIT ROTINA DIÁRIA</p> 
                 <p className='tit1'>Gala vegano</p>
-                <p className='valor1'>R$240,00</p>
+                <p className='vl'>R$240,00</p>
                 <h1 className='valorOferta1'>R$200,00</h1>
               </div>
               <div className='Container2'>
