@@ -13,10 +13,10 @@ flex-direction: column;
     background-image:url('../../../src/assets/images/image1.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 70vh;
+    min-height: 38em;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    min-width: 100%;
   }
 
   .text {
