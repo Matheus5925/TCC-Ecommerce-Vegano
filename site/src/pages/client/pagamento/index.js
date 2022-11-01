@@ -15,7 +15,7 @@ export default function TelaPagamento() {
             </div>
             <hr/>
           <div className='Principal'>
-            <div className='maria'>
+            <div className='Container-Finalizar'>
 
               <div className='input2'>
                   <img src={imgProduto}/>
@@ -63,10 +63,10 @@ export default function TelaPagamento() {
             <div>
             <h4>TOTAL DA COMPRA</h4>
             <div className='B'>
-            <button className='valor'>R$ 170,00</button>
+            <button className='valor-1'>R$ 170,00</button>
            
             </div>
-            <button className='valor1'>Concluir</button>
+            <button className='valor'>Concluir</button>
 
 
             </div>
@@ -74,9 +74,11 @@ export default function TelaPagamento() {
             <div>
                 <div className='Bloco3'>
                 <div className='input3-1'>
-                
+                <p>Rua Rosa Gomes de Siqueira, Recanto Ana Maria, São Paulo - SP - CEP 04864070.</p>
+
                
                 <div className='input3-2'>
+                <p>Rua Hans Georg Eggert, Jardim Icaraí, São Paulo - SP - CEP 04844250</p> 
                 <button className='Endereco'>Cadastrar Endereço</button>
 
 
@@ -89,23 +91,6 @@ export default function TelaPagamento() {
             </div>
         </div>
      
-
-
-
-         
-
-           
-
-            
-
-          
-            
-            
-
-
-
-        
-     
     )
+
 }
-   
