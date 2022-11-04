@@ -248,11 +248,19 @@ flex-direction: column;
     font-size: x-large;
     height: 90vh;
     width: 300em;
+    padding: 2em;
   }
+
 
   .M1{
     height: 8em;
     width: 8em;
+    
+  }
+
+  .M1:hover{
+    margin-top: 2em;
+
   }
 
   .Depoimentos {
