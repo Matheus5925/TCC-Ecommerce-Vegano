@@ -87,7 +87,7 @@ export default function LadinPage() {
 
         <div className='Container1-3'>
           <div className='Marcas'>
-          <img className='M1'src={marca1} alt='img da logo da gaia'/>
+            <img className='M1'src={marca1} alt='img da logo da gaia'/>
             <img className='M1' src={marca2} alt='img da logo principia'/>
             <img className='M1'src={marca3} alt='img da logo almanati'/>
           </div>
