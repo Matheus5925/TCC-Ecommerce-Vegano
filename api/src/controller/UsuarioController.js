@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import LoginUsuario, { BuscaUsuarioId, CadastroEnderecoUsuario, ComentarUmDepoimento, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
+import LoginUsuario, { BuscaUsuarioId, CadastrarCartao, CadastroEnderecoUsuario, ComentarUmDepoimento, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
 
 import { CadastroUsuario } from "../repository/repositoryUsuario.js";
 
@@ -150,5 +150,35 @@ server.post('/usuario/depoimento/', async (req, resp) =>{
         })
     }
 })
+
+server.post('/cadastroCartao', async (req, resp)=>{
+    try {
+        const dados = req.body;
+        
+        if(!dados.bandeira)
+            throw new Error('Informe uma bandeira para seu cartão');
+        if(!dados.numeroCartao)
+            throw new Error('Informe o número de identificação de cartão');
+        if(dados.numeroCartao.lenght > 20)
+            throw new Error('Número de identificação do cartão inválido');
+        if(!dados.vencimentoCartao)
+            throw new Error('Informe a data de vencimento do seu cartão');
+        if(dados.vencimentoCartao.lenght > 5)
+            throw new Error('Número de vencimento inválido');
+        if(!dados.titularCartao)
+            throw new Error('Informe uma bandeira para seu cartão');
+        if(!dados.codSecure)
+            throw new Error('Informe uma bandeira para seu cartão');
+        
+        const resposta = await CadastrarCartao(dados);
+
+        resp.send(resposta);
+    }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    } 
+})
+
 
 export default server;
