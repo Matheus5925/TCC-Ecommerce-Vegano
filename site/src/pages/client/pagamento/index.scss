@@ -1,9 +1,14 @@
 .Principal {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 50vh;
+}
+
+.posicionamento-b{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 hr {
@@ -30,10 +35,13 @@ h2 {
 }
 
 .Container-Finalizar {
-  margin: 20px;
   width: 40vh;
+  height: 25em;
   border: solid;
   border-color: rgb(245, 233, 233);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -55,11 +63,12 @@ h2 {
 
 .principal-b {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content:space-around;
   align-items: center;
 
 }
+
 
 .Bloco2 {
     width: 55vh;

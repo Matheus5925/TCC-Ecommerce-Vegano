@@ -14,7 +14,9 @@ export default function TelaPagamento() {
         <h2>FINALIZAR PAGAMENTO </h2>
       </div>
       <hr />
+      <div className='posicionamento-b'>
       <div className='Principal'>
+
         <div className='Container-Finalizar'>
 
           <div className='input2'>
@@ -35,30 +37,6 @@ export default function TelaPagamento() {
           </div>
         </div>
 
-
-
-        <div className='Principal2'>
-          <div className='Bloco2'>
-            <div className='input-1'>
-              <img src={Pix} />
-            </div>
-            <div className='input-2'>
-              <img src={CardPix} />
-            </div>
-            <div className='input-3'>
-              <img src={Boleto} />
-
-            </div>
-            <div className='Button'>
-              <button className='buttonA'>Ver cartões Cadastrados</button>
-              <button className='buttonB'>Cadastrar um novo Cartão</button>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-      <div className='principal-b'>
         <div className='total'>
           <h4>TOTAL DA COMPRA</h4>
           <div className='B'>
@@ -70,22 +48,42 @@ export default function TelaPagamento() {
 
         </div>
 
-        <div>
-          <div className='Bloco3'>
-            <div className='input3-1'>
-              <p>Rua Rosa Gomes de Siqueira, Recanto Ana Maria, São Paulo - SP - CEP 04864070.</p>
 
 
-              <div className='input3-2'>
-                <p>Rua Hans Georg Eggert, Jardim Icaraí, São Paulo - SP - CEP 04844250</p>
-                <button className='Endereco'>Cadastrar Endereço</button>
+
+      </div>
+      <div className='principal-b'>
+
+        <div className='Bloco3'>
+          <div className='input3-1'>
+            <p>Rua Rosa Gomes de Siqueira, Recanto Ana Maria, São Paulo - SP - CEP 04864070.</p>
 
 
+            <div className='input3-2'>
+              <p>Rua Hans Georg Eggert, Jardim Icaraí, São Paulo - SP - CEP 04844250</p>
+              <button className='Endereco'>Cadastrar Endereço</button>
+            </div>
+          </div>
+        </div>
+
+          <div className='Principal2'>
+            <div className='Bloco2'>
+              <div className='input-1'>
+                <img src={Pix} />
+              </div>
+              <div className='input-2'>
+                <img src={CardPix} />
+              </div>
+              <div className='input-3'>
+                <img src={Boleto} />
 
               </div>
+              <div className='Button'>
+                <button className='buttonA'>Ver cartões Cadastrados</button>
+                <button className='buttonB'>Cadastrar um novo Cartão</button>
+              </div>
+
             </div>
-
-
           </div>
         </div>
       </div>
