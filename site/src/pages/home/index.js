@@ -32,7 +32,7 @@ export default function LadinPage() {
   },[]);
 
   return (
-    <div className='Principal'>
+    <div className='Principal-div-home'>
       <CabecalhoUser />
       <div className='ImgFundo'>
         <div className='escrita'>

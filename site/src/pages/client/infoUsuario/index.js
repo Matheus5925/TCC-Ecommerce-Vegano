@@ -17,7 +17,7 @@ export default function InfoUsuario() {
     const [cartoes, setCartoes] = useState(false);
     const [historicoCompras, seHistoricoCompras] = useState(false);
 
-    const ListarInfoUser = async  id =>{
+    const ListarInfoUser = async id =>{
         const r = await BuscaUsuarioId(id);
         setUsuario({id:r.id, nome:r.nome, email:r.email, cpf:r.cpf, nascimento: r.nascimento, cpf:r.cpf, telefone: r.telefone});
     }

@@ -20,7 +20,6 @@ export default function AdicionarOfertas() {
     const CarregarProduto = async _ =>{
         const r = await BuscarId(idProdutos);
         setProduto({id: r.id, categoria: r.categoria,parteCorpo:r.ParteCorpo, nome:r.nome, linha: r.linha, descricao: r.descricao, valor: r.valor, fabricante: r.fabricante, validade: r.validade, quantidade: r.quantidade, volume: r.volume, imagem: r.imagem});
-        console.log(produto);
     };
 
     const ExibirImagem = imagem =>{
@@ -38,7 +37,6 @@ export default function AdicionarOfertas() {
 
             toast.success('Oferta Cadastrada com sucesso');
 
-            setTimeout(navigate('/paginaselecao', 1500))
         } catch (err) {
             toast(err.response.data.erro);
         }
