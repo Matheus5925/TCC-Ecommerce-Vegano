@@ -23,5 +23,5 @@ export async function AdicionarOfertas(dados) {
                             values(?, ?)`;
     const [linhas] = await (await con).query(comando, [dados.idUsuario, dados.NovoPreco]);
     dados.idOfertas = linhas.insertId;
-    return linhas[0];
+    return linhas;
 };

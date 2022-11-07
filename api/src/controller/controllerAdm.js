@@ -35,11 +35,10 @@ server.post('/adicionar/oferta', async (req, resp) =>{
     try{
         const dados = req.body;
 
-        if(!dados.NovoValor)
+        if(!dados.NovoPreco)
             throw new Error('Novo valor não informado');
 
         const r = await AdicionarOfertas(dados);
-
         resp.send(r);
     }catch (err) {
         resp.status(400).send({
