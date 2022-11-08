@@ -19,8 +19,8 @@ export async function ExcluirDepoimentos(id) {
     return r.data;
 };
 
-export async function CadastrarOfertas(idProduto, NovoValor) {
-    const r = await api.post('/adicionar/oferta', {idProduto, NovoValor});
+export async function CadastrarOfertas(idProduto, NovoPreco) {
+    const r = await api.post('/adicionar/oferta', {idProduto, NovoPreco});
 
     return r.data;
 };
