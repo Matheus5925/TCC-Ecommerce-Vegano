@@ -4,6 +4,7 @@ import storage from 'local-storage';
 import LoadingBar from 'react-top-loading-bar';
 import { useNavigate } from 'react-router-dom';
 import './index.scss'
+import { LogiAdm } from '../../../api/admAPI.js';
 
 export default function LoginCliente() {
     const [email, setEmail] = useState('');
@@ -33,7 +34,6 @@ export default function LoginCliente() {
             setTimeout(() => {
                 navigate('/');
             }, 3000);
-
         } catch (err) {
             ref.current.complete();
             setCarregamento(false);
@@ -49,7 +49,7 @@ export default function LoginCliente() {
 
 
     return (
-        <main className='Principal'>
+        <main className='Principal-login-cliente'>
             <LoadingBar color='#f11946' ref={ref} />
             <div className='imgFundo'>
                 <div className='Fundo-Cliente'>

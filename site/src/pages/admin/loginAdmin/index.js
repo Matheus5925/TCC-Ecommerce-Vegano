@@ -22,7 +22,7 @@ export default function AdminLogin() {
    useEffect(() => {
       if (storage('admin-logado'))
          navigate('/');
-   }, [])
+   }, []);
 
    const Login = async _ => {
       ref.current.continuousStart();

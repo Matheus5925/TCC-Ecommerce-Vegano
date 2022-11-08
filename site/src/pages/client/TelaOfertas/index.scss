@@ -13,6 +13,17 @@
         padding-bottom: 2em;
     }
 
+    .Buscas-filtro > select{
+        height: 2em;
+        width: auto;
+        text-decoration: none;
+        text-align: center;
+        border: none;
+        border-radius: 3px;
+        background-color: #D9D9D9;
+        outline: none;
+    }
+
     
     .imagem-usuario-oferta{
         background-image: url(../../../assets/images/image21.png);

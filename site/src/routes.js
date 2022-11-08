@@ -50,7 +50,7 @@ const Rotas = () => {
                 <Route path='/listadedepoimentos' element={<ListadeDepoimentos/>}/>
                 <Route path='/adicionarofertas/:idProdutos' element={<AdicionarOfertas/>}/>
                 <Route path='/meusPedidos' element={<MeusPedidos/>}/>
-                <Route path='/' element={<Depoimentos/>}/>
+                <Route path='/depoimentos' element={<Depoimentos/>}/>
                 <Route path='/quemSomos' element={<QuemSomos/>}/>
                 <Route path='/pagamento' element={<Pagamento/>}></Route>
             </Routes>

@@ -7,7 +7,7 @@ import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria } from '../../../a
 import LupaPesquisa from '../../../assets/images/search.png'
 
 
-export default function TelaProdutos() {
+export default function TelaOfertas() {
     const [card, setCard] = useState([]);
     const [produtosFiltro, setProdutoFiltro] = useState([]);
     const [titulo, setTitulo] = useState('');
@@ -20,12 +20,16 @@ export default function TelaProdutos() {
     
     const FiltroCategoria = async _ =>{
       const resposta = await FiltrarPorCategoria(titulo);
+
+      if(titulo === 'Selecione uma categoria' || !titulo)
+        ListarCards();
+      
       setCard(resposta);
    }
 
    useEffect(() =>{
     FiltroCategoria();
-}, [titulo]);
+  }, [titulo]);
 
     const ListarCards = async () =>{
       const r = await MostrarProdutos();
@@ -35,6 +39,7 @@ export default function TelaProdutos() {
   
     useEffect(()=>{
       ListarCards();
+      CategoriasAparecer();
     },[]);
 
     return(
@@ -43,12 +48,7 @@ export default function TelaProdutos() {
           <section className='imagem-usuario-oferta'></section>
 
           <div className='Buscas-filtro'>
-              <div className='caixa-pesquisa-produtos'>
-                <input type="text" className='nome-produto' placeholder='Pesquisar...'/>
-                <a className='procura-botao' href="#">
-                  <img className='Lupa' src={LupaPesquisa} alt="" />
-                </a>
-              </div>
+  
               
               <select value={titulo} onChange={e => setTitulo(e.target.value)}>
                 <option>Selecione uma categoria </option>
