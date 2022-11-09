@@ -3,7 +3,7 @@ import './index.scss';
 import Rodape from '../../../components/rodape'
 import { useEffect, useState } from 'react';
 import { BuscarId } from '../../../api/ProdutoAPI';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { API_URL } from '../../../api/config';
 import { toast, ToastContainer } from 'react-toastify';
 import Storage from 'local-storage'
@@ -80,7 +80,10 @@ const DetalhesProduto = props =>{
                             </div>
                         </div>
                         <div className='buttons-detalhes'>
-                            <button>Compre</button>
+                            
+                            <button>
+                            <Link to='/pagamento'>Compre</Link>
+                            </button>
                             <button onClick={AdicionarCarrinho}>Adicionar</button>
                         </div>
                     </div>
