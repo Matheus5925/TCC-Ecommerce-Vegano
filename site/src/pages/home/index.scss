@@ -12,6 +12,9 @@
     .ImgFundo {
       background-image:url('../../../src/assets/images/image1.png');
       background-repeat: no-repeat;
+      position: relative;
+      background-attachment: fixed;
+      background-position: center;
       background-size: cover;
       min-height: 38em;
       display: flex;
@@ -240,14 +243,11 @@
     }
   
     .Marcas {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      background-repeat: no-repeat;
-      margin: 20px;
-      font-size: x-large;
-      height: 90vh;
-      width: 300em;
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    height: 2em;
+   
     }
   
     .M1{
@@ -600,8 +600,9 @@ flex-direction: column;
   }
 
   .M1:hover{
-    margin-top: 2em;
-
+    -webkit-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        transform: scale(1.1);
   }
 
   .Depoimentos {

@@ -12,6 +12,7 @@ import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
 import { PegarDepoimento } from '../../api/UsuarioAPI.js';
+import Jump from "react-reveal";
 
 
 
@@ -48,6 +49,7 @@ export default function LadinPage() {
           <div className='Linha2'>
             <hr />
           </div>
+            <Jump>
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -58,6 +60,7 @@ export default function LadinPage() {
           </div>
           <div className='Container1-2'>
             <p>Ofertas do Dia</p>
+
             <div className='Containers'>
               <div className='Container1'>
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
@@ -83,11 +86,12 @@ export default function LadinPage() {
               </div>
             </div>
           </div>
+            </Jump>
         </div>
 
         <div className='Container1-3'>
           <div className='Marcas'>
-          <img className='M1'src={marca1} alt='img da logo da gaia'/>
+            <img className='M1'src={marca1} alt='img da logo da gaia'/>
             <img className='M1' src={marca2} alt='img da logo principia'/>
             <img className='M1'src={marca3} alt='img da logo almanati'/>
           </div>
