@@ -12,8 +12,7 @@ import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
 import { PegarDepoimento } from '../../api/UsuarioAPI.js';
-import Jump from "react-reveal";
-import Jumpp from 'react-reveal/Jump';
+
 
 
 
@@ -51,7 +50,7 @@ export default function LadinPage() {
           <div className='Linha2'>
             <hr />
           </div>
-            <Jump>
+          
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -60,12 +59,12 @@ export default function LadinPage() {
                 Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
               </p>
           </div>
-            </Jump>
+          
           <div className='Container1-2'>
-          <Jumpp botton>
+          
             <p>Ofertas do Dia</p>
-          </Jumpp>
-          <Jump>
+          
+          
 
           <div className='Containers'>
               <div className='Container1'>
@@ -92,7 +91,7 @@ export default function LadinPage() {
               </div>
             
             </div>
-          </Jump>
+         
           </div>
         </div>
 
