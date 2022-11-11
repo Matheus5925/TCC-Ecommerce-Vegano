@@ -49,7 +49,7 @@ export default function LadinPage() {
           <div className='Linha2'>
             <hr />
           </div>
-            
+
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -58,9 +58,16 @@ export default function LadinPage() {
                 Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
               </p>
           </div>
+
             
           <div className='Container1-2'>
             <p>Ofertas do Dia</p>
+
+          
+          <div className='Container1-2'>
+          
+            <p>Ofertas do Dia</p>
+          
           <div className='Containers'>
               <div className='Container1'>
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
@@ -86,6 +93,7 @@ export default function LadinPage() {
               </div>
             
             </div>
+
           
           </div>
         </div>
@@ -128,6 +136,7 @@ export default function LadinPage() {
         </div>
       </div>
       <Rodape/>
+    </div>
     </div>
   )
 }
