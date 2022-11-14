@@ -5,6 +5,7 @@ import Carrinho from '../../../assets/images/carrinho.png';
 import { useEffect, useState } from 'react';
 import {BuscarId} from '../../../api/ProdutoAPI.js'
 import Storage from 'local-storage';
+import { Link } from 'react-router-dom';
 
 export default function Crrinho(){
     const [itensCarrinho, setItensCarrinho] = useState([]);
@@ -99,7 +100,12 @@ export default function Crrinho(){
                 <button className='ajustar-botao'>Escolher mais produtos</button>
                 </div>
                 <div className='botao-2'>
-                    <button className='ajustar-botao2'> <img src={Carrinho}/> <h3> Fechar pedido </h3> </button>
+                        <Link to='/pagamento'>
+                        <button className='ajustar-botao2'> 
+                                <img src={Carrinho}/> 
+                                <h3> Fechar pedido </h3> 
+                        </button>
+                        </Link>
                 </div>
 
             </div>

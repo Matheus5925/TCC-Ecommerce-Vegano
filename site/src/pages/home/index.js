@@ -15,6 +15,7 @@ import { PegarDepoimento } from '../../api/UsuarioAPI.js';
 
 
 
+
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
 import { Link } from 'react-router-dom';
 
@@ -33,7 +34,7 @@ export default function LadinPage() {
 
   return (
     <div className='Principal-div-home'>
-      <CabecalhoUser />
+        <CabecalhoUser />
       <div className='ImgFundo'>
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
@@ -48,6 +49,7 @@ export default function LadinPage() {
           <div className='Linha2'>
             <hr />
           </div>
+
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -56,9 +58,17 @@ export default function LadinPage() {
                 Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
               </p>
           </div>
+
+            
           <div className='Container1-2'>
             <p>Ofertas do Dia</p>
-            <div className='Containers'>
+
+          
+          <div className='Container1-2'>
+          
+            <p>Ofertas do Dia</p>
+          
+          <div className='Containers'>
               <div className='Container1'>
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
                 <p className='tit3'>KIT ROTINA DIÁRIA</p> 
@@ -81,13 +91,16 @@ export default function LadinPage() {
                 <p className='valor2'>R$100,00</p>
                 <h1 className='valorOferta2'>R$40,00</h1>
               </div>
+            
             </div>
+
+          
           </div>
         </div>
 
         <div className='Container1-3'>
           <div className='Marcas'>
-          <img className='M1'src={marca1} alt='img da logo da gaia'/>
+            <img className='M1'src={marca1} alt='img da logo da gaia'/>
             <img className='M1' src={marca2} alt='img da logo principia'/>
             <img className='M1'src={marca3} alt='img da logo almanati'/>
           </div>
@@ -103,7 +116,7 @@ export default function LadinPage() {
               <div className='card-depoimentos'>
                 {
                   depoimentos.map((item, quantidadeDepoimentos)=>
-                
+                  
                   quantidadeDepoimentos < 4 &&
                 
                      <main key={item.id} className='depoimentos'>
@@ -123,6 +136,7 @@ export default function LadinPage() {
         </div>
       </div>
       <Rodape/>
+    </div>
     </div>
   )
 }

@@ -5,12 +5,13 @@ import CabecalhoUser from '../../../components/cabecalho-user';
 import CardPix from '../../../assets/images/cards.png'
 import Boleto from '../../../assets/images/boleto.png'
 import Pix from '../../../assets/images/imagePix.png'
+import { Link } from 'react-router-dom';
 
 export default function TelaPagamento() {
   return (
     <div className='Principal-Pagamento'>
       <CabecalhoUser />
-      <div>
+      <div className='titulo-pg'>
         <h2>FINALIZAR PAGAMENTO </h2>
       </div>
       <hr />
@@ -61,7 +62,9 @@ export default function TelaPagamento() {
 
             <div className='input3-2'>
               <p>Rua Hans Georg Eggert, Jardim Icaraí, São Paulo - SP - CEP 04844250</p>
+              <Link to='/cadastroindereco'>
               <button className='Endereco'>Cadastrar Endereço</button>
+              </Link>
             </div>
           </div>
         </div>
@@ -79,8 +82,12 @@ export default function TelaPagamento() {
 
               </div>
               <div className='Button'>
-                <button className='buttonA'>Ver cartões Cadastrados</button>
+                <Link to='/infousuario'>
+                <button className='buttonB'>Ver cartões Cadastrados</button>
+                </Link>
+                <Link to='/cadastrarCartao'>
                 <button className='buttonB'>Cadastrar um novo Cartão</button>
+                </Link>
               </div>
 
             </div>
