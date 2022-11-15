@@ -45,3 +45,9 @@ export const ComentarUmDepoimento = async (idUsuario, avaliacao, comentario) =>{
 
     return r.data;
 }
+
+export const EndCadastroCartao = async (idUsuario, bandeira,  numeroCartao, vencimentoCartao, titularCartao, cvv) =>{
+    const r = await api.post('/cadastroCartao', {idUsuario, bandeira, numeroCartao, vencimentoCartao, titularCartao, cvv});
+
+    return r.data;
+}

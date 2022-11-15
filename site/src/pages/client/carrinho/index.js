@@ -16,7 +16,7 @@ export default function Crrinho(){
         for(let item of itensCarrinho){
             total = total +  item.id.valor * item.qtd;
         }
-        return total;
+        return total.toFixed(2);
     };
 
     function RemoverItem(id){

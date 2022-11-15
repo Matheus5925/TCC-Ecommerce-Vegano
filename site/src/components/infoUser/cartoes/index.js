@@ -2,6 +2,7 @@ import './index.scss';
 import {useEffect, useState} from 'react';
 import CardCartao from './card';
 import AdicionarCartao from '../../../assets/images/adicionar-user.png'
+import {Link} from 'react-router-dom'
 
 const TelaCartao = props =>{
     const [cardCartao, setCardCartao] = useState([]);
@@ -18,9 +19,9 @@ const TelaCartao = props =>{
                             <CardCartao/>
                         </div>
                     </div>
-                    <div className='button-add'>
+                    <Link to='/cadastrarCartao' className='button-add'>
                         <img className='adicionar-cartao' src={AdicionarCartao} alt="" />
-                    </div>
+                    </Link>
                 </div>
         </section>
     );
