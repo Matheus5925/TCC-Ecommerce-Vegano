@@ -29,14 +29,12 @@
     
     .escrita{
       display: flex;
-      flex-direction: column;
       justify-content: center;
       font-family: Arial, Helvetica, sans-serif;
       margin-top: 15em;
       width: 95%;
       align-items: center;
       gap: .5em;
-      position: absolute;
     }
   
     .t1{
@@ -48,7 +46,6 @@
       border: 20px;
       border-radius: 10px;
       height: 4em;
-      width: 19em;
       padding-left: .9em;
     }
   
