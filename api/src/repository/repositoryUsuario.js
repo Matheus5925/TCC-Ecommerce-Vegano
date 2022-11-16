@@ -96,3 +96,16 @@ export const CadastrarCartao = async (dados)=>{
     dados.IdCartao = linhas.insertId;
     return linhas;
 };
+
+export const BuscarCartaoUsuario = async (idUsuario) =>{
+    const comando = `select id_usuario,
+                        ds_bandeira as bandeira,
+                        nr_cartao as numeroCartao,
+                        dt_vencimento as vencimento,
+                        nm_titular_cartao as titular,
+                        nr_cod_seguranca as cvv
+                    from tb_cartao
+                    where id_usuario = ?`;
+    const [linhas] = await (await con).query(comando, [idUsuario]);
+    return linhas;
+}

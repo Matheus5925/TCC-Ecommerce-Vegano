@@ -10,20 +10,27 @@ export default function CadastrarCartao () {
     const [titular, setTitular] = useState('');
     const [numeroCartao, setNumeroCartao] = useState('');
     const [vencimento, setVencimento] = useState('');
-    const [cvv, setCvv] = useState('');
-    const [bandeira, setBandeira] = useState('');
+    const [codSecure, setCodSecure] = useState('');
+    const [bandeira, setBandeira] = useState();
 
     
     const CartaoCadastro = async  () =>{
-        try {
-                
-            const Usuario = storage('usuario-logado').id
-
-            const r = await EndCadastroCartao(Usuario, bandeira, numeroCartao, vencimento, titular, cvv);
-            toast.success('Cartão cadastrado com sucesso')
+        try {   
+            const Usuario = storage('usuario-logado').id;
+            const r = await EndCadastroCartao(Usuario, bandeira, numeroCartao, vencimento, titular, codSecure);
+            toast.success('Cartão cadastrado com sucesso');
+            ZerarCampos();
         } catch (err) {
-            console.log(err.response.data.erro);
+            toast.error(err.response.data.erro);
         }
+    }
+
+    const ZerarCampos = _ =>{
+        setBandeira('');
+        setCodSecure('');
+        setTitular('');
+        setNumeroCartao('');
+        setVencimento('');
     }
 
     return(
@@ -48,7 +55,7 @@ export default function CadastrarCartao () {
                         
                         <div className='bloco-2'>
                             <label>CVV Numero:</label>
-                            <input type="text" value={cvv} onChange={e => setCvv(e.target.value)} className='caixa-text2' />
+                            <input type="text" value={codSecure} onChange={e => setCodSecure(e.target.value)} className='caixa-text2' />
                         </div>
                         <div className='bloco-2'>
                             <select value={bandeira} onChange={e => setBandeira(e.target.value)} className='caixa-text2'>
