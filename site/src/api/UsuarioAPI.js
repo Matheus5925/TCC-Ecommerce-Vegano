@@ -45,3 +45,15 @@ export const ComentarUmDepoimento = async (idUsuario, avaliacao, comentario) =>{
 
     return r.data;
 }
+
+export const EndCadastroCartao = async (idUsuario, bandeira,  numeroCartao, vencimentoCartao, titularCartao, codSecure) =>{
+    const r = await api.post('/cadastroCartao', {idUsuario, bandeira, numeroCartao, vencimentoCartao, titularCartao, codSecure});
+
+    return r.data;
+}
+
+export const PegarCartoesUsuario = async (idUsuario) =>{
+    const r = await api.get(`/BuscarCartaoUsuario/${idUsuario}`);
+
+    return r.data;
+}

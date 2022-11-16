@@ -7,7 +7,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-   
+    
     min-width: 100vh;
     .ImgFundo {
       background-image:url('../../../src/assets/images/image1.png');
@@ -21,6 +21,7 @@
       flex-direction: column;
       min-width: 100vh;
     }
+
   
     .text {
       display: flex;
@@ -104,6 +105,8 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+      max-height: 20em;
+      gap: 3em;
     }
   
     .img1 {
@@ -134,10 +137,9 @@
       justify-content: center;
       background-repeat: no-repeat;
       background-color: #CDE1CF;
-      margin: 30px;
-      height: 68vh;
-      width: 300px;
       
+      max-height: 20em;
+      width: 300px;
     }
     .imgP1{
       margin: 2em 10px;
@@ -236,20 +238,24 @@
       display: flex;
       flex-direction: row;
       background-color: #D9D9D9;
-      height: 35vh;
+      justify-content: space-around;
+      min-width: 100vh;
+      margin-top: 5em;
+      height: 13em;
+      align-items: center;
     }
   
     .Marcas {
-    display: flex;
-    flex-direction: row;
-    font-size: x-large;
-    height: 2em;
-   
+      display: flex;
+      flex-direction: row;
+      font-size: x-large;
+      justify-content: space-around;
+      min-width: 100%;
     }
   
     .M1{
-      height: 8em;
-      width: 8em;
+      height: 7em;
+      width: 7em;
     }
   
     .Depoimentos {
@@ -336,353 +342,3 @@
       height: 14em;
     }
   }
-.Principal-div-home{
-display: flex;
-flex-direction: column;
-  @import url('https://fonts.googleapis.com/css2?family=Roboto1:wght@100&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Roboto3:wght@100;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Roboto2:wght@100;400;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-
-
-  .ImgFundo {
-    background-image:url('../../../src/assets/images/image1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 38em;
-    display: flex;
-    flex-direction: column;
-    min-width: 100%;
-  }
-
-  .text {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .escrita{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 15em;
-    width: 100%;
-    align-items: center;
-    gap: .5em;
-    position: absolute;
-  }
-
-  .t1{
-    font-size: 3em;
-  }
-
-  .bloco{
-    background-color: rgba($color: #fff, $alpha: 0.7);;
-    border: 20px;
-    border-radius: 10px;
-    height: 4em;
-    width: 19em;
-    padding-left: .9em;
-  }
-
-
-  .Caixa-Texto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Caixa-Texto1 {
-    align-items: center;
-    border-radius: 50px;
-    margin-bottom: 0.5em;
-    border-radius: 50px;
-    border-style: none;
-    padding: 2px;
-    height: 40px;
-    width: 140px;
-  }
-
-
-  .Segunda-Parte {
-    background-color: #ffff;
-  }
-
-  .Segunda-Parte {
-    display: flex;
-    flex-direction: column;
-  }
-
-
-  .Linha2 {
-    margin-top: 50px;
-  }
-
-  .Titulo {
-    margin-top: 3em;
-    text-align: center;
-    font-size: x-large;
-  }
-
-  .Container {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5em;
-    background-color: #99D89F;
-    margin: 50px;
-    height: 400px;
-  }
-
-  .Containers{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .img1 {
-    height: 280px;
-    width: 500px;
-
-  }
-
-  .texto-faixa-verde{
-    font-size: 16px;
-    width: 25em;
-    line-height: 20px;
-    padding-right: 1.5em;
-  }
-  .Container1-2 {
-    margin: 20px;
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffff;
-    height: 90vh;
-
-
-  }
-
-
-  .Container1 {
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-color: #CDE1CF;
-    margin: 30px;
-    height: 58vh;
-    width: 300px;
-    
-  }
-  .imgP1{
-    margin: 2em 10px;
-    align-items: center;
-    width: 220px;
-    height: 200px;
-  }
-  .tit3{
-    font-size: 20px;
-    margin-top: -40px;
-    
-  }
-  .tit{
-    font-size: 18px;
-    display: flex;
-  }
-
-  .vl{
-    font-size: medium;
-    text-decoration:line-through;
-    margin-left: 10px;
-  }
-
-  .valorOferta1{
-    display: flex;
-    justify-content: flex-start;
-    align-content: flex-start;
-    margin-left: 40px;
-    font-size: 0.9em;
-
-  }
-  .Container1 p{ 
-    display: flex;
-    justify-content: flex-start;
-    align-content: flex-start;
-    margin-left: 2em;
-  }
-
-
-
-  .Container2 {
-    background-color:#CDE1CF;
-    align-items: center;
-    margin: 30px;
-    height: 58vh;
-    width: 300px;
-  }
-  .imgP2{
-    margin: 2em 10px;
-    align-items: center;
-    width: 220px;
-    height: 200px;
-  }
-
-  .tit4{
-    font-size: 20px;
-    margin-top: -40px;
-    margin-left: 1em;
-  }
-
-  .tit1{
-    font-size: 18px;
-  }
-
-  .valor2{
-    font-size: medium;
-    text-decoration:line-through;
-
-  }
-
-  .valorOferta2{
-    font-size: 0.9em;
-  }
-
-  .container2 p{
-    display: flex;
-    justify-content: flex-start;
-    
-  }
-
-  .Container3 {
-    background-color: #CDE1CF;
-    margin: 30px;
-    height: 58vh;
-    width: 300px;
-  }
-
-  .tit5{
-    font-size: 20px;
-    margin-top: -40px;
-    margin-left: 1em;
-  }
-
-
-  .Container1-3 {
-    display: flex;
-    flex-direction: row;
-    background-color: #D9D9D9;
-    height: 35vh;
-  }
-
-  .Marcas {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-repeat: no-repeat;
-    margin: 20px;
-    font-size: x-large;
-    height: 90vh;
-    width: 300em;
-    padding: 2em;
-  }
-
-
-  .M1{
-    height: 8em;
-    width: 8em;
-    
-  }
-
-  .M1:hover{
-    -webkit-transform: scale(1.0);
-        -ms-transform: scale(1.0);
-        transform: scale(1.1);
-  }
-
-  .Depoimentos {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .Titulo-Depoimentos {
-    padding-top: 2em;
-    text-align: center;
-    font-size: x-large;
-    background-color: #ffff;
-  }
-
-  .Linha2 {
-    margin-top: 43px;
-  }
-
-  .Imagens {
-    display: flex;
-    flex-direction: column;
-    gap: 4em;
-    height: 25em;
-  }
-
-  .depoimentos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .enfase{
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .avaliacao{
-    font-size: 15px;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .BT{
-    text-align: center;
-  }
-
-  .B{
-    background-color: #D9D9D9;
-    border: 50px;
-    border-radius: 50px;
-    height: 30px;
-    width: 180px;
-  }
-
-  .B:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-  }
-
-
-  .Dentro-do-Container {
-    display: flex;
-    flex-direction: row;
-    margin: 50px 50px 100px 100px;
-  }
-
-  .img {
-    margin: 100px;
-  }
-
-  .Menu {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    align-items: center;
-  }
-
-  .card-depoimentos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 2em;
-    height: 14em;
-  }
-}

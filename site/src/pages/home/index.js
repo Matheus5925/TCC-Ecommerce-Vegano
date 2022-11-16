@@ -12,8 +12,6 @@ import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
 import { PegarDepoimento } from '../../api/UsuarioAPI.js';
-import Jump from "react-reveal";
-import Jumpp from 'react-reveal/Jump';
 
 
 
@@ -36,7 +34,7 @@ export default function LadinPage() {
 
   return (
     <div className='Principal-div-home'>
-      <CabecalhoUser />
+        <CabecalhoUser />
       <div className='ImgFundo'>
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
@@ -51,7 +49,7 @@ export default function LadinPage() {
           <div className='Linha2'>
             <hr />
           </div>
-            <Jump>
+
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -60,13 +58,13 @@ export default function LadinPage() {
                 Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
               </p>
           </div>
-            </Jump>
-          <div className='Container1-2'>
-          <Jumpp botton>
-            <p>Ofertas do Dia</p>
-          </Jumpp>
-          <Jump>
 
+            
+          <div className='Container1-2'>
+            <p>Ofertas do Dia</p>
+
+          
+          
           <div className='Containers'>
               <div className='Container1'>
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
@@ -75,32 +73,39 @@ export default function LadinPage() {
                 <p className='vl'>R$240,00</p>
                 <h1 className='valorOferta1'>R$200,00</h1>
               </div>
-              <div className='Container2'>
+              <div className='Container1'>
                 <img className='imgP2'src={ofertas2} alt='imagem do produto'/>
-                <p className='tit4'>Shampoo Natural Hidratação</p>
+                <p className='tit3'>Shampoo Natural Hidratação</p>
                 <p className='tit1'>Suave Argan</p>
                 <p className='valor2'>R$100,00</p>
                 <h1 className='valorOferta2'>R$40,00</h1>
               </div>
               
-              <div className='Container3'>
+              <div className='Container1'>
                 <img className='imgP2'src={ofertas3} alt='imagem do produto'/>
-                <p className='tit5'>Protetor Solar Facial Natural e 
+                <p className='tit3'>Protetor Solar Facial Natural e 
                 Vegano FPS 30</p>
                 <p className='valor2'>R$100,00</p>
                 <h1 className='valorOferta2'>R$40,00</h1>
               </div>
             
             </div>
-          </Jump>
+
+          
           </div>
         </div>
 
         <div className='Container1-3'>
           <div className='Marcas'>
-            <img className='M1'src={marca1} alt='img da logo da gaia'/>
-            <img className='M1' src={marca2} alt='img da logo principia'/>
-            <img className='M1'src={marca3} alt='img da logo almanati'/>
+            <div>
+              <img className='M1'src={marca1} alt='img da logo da gaia'/>
+            </div>
+            <div>
+              <img className='M1' src={marca2} alt='img da logo principia'/>
+            </div>
+            <div>
+              <img className='M1'src={marca3} alt='img da logo almanati'/>
+            </div>
           </div>
         </div>
         <div className='Depoimentos'>

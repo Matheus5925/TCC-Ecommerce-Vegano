@@ -30,7 +30,7 @@ export default function CardCarrinho(props) {
     function SubTotal() {
         let sub = QtdCarrinho * props.item.id.valor;
 
-        return sub;
+        return sub.toFixed(2);
     }
 
     function AlterarQuantidade(novaQuantidade) {

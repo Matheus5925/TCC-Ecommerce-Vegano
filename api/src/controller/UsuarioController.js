@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import LoginUsuario, { BuscaUsuarioId, CadastrarCartao, CadastroEnderecoUsuario, ComentarUmDepoimento, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
+import LoginUsuario, { BuscarCartaoUsuario, BuscaUsuarioId, CadastrarCartao, CadastroEnderecoUsuario, ComentarUmDepoimento, ListarDepoimentos, listarEndereco } from "../repository/repositoryUsuario.js";
 
 import { CadastroUsuario } from "../repository/repositoryUsuario.js";
 
@@ -159,7 +159,9 @@ server.post('/cadastroCartao', async (req, resp)=>{
             throw new Error('Informe uma bandeira para seu cartão');
         if(!dados.numeroCartao)
             throw new Error('Informe o número de identificação de cartão');
-        if(dados.numeroCartao.lenght > 20)
+        if(dados.numeroCartao.lenght > 16)
+            throw new Error('Número de identificação do cartão inválido');
+        if(dados.numeroCartao.lenght < 13)
             throw new Error('Número de identificação do cartão inválido');
         if(!dados.vencimentoCartao)
             throw new Error('Informe a data de vencimento do seu cartão');
@@ -173,6 +175,21 @@ server.post('/cadastroCartao', async (req, resp)=>{
         const resposta = await CadastrarCartao(dados);
 
         resp.send(resposta);
+    }catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    } 
+});
+
+
+server.get('/BuscarCartaoUsuario/:idUsuario', async (req, resp)=>{
+    try{
+        const {idUsuario} = req.params;
+
+        const r = await BuscarCartaoUsuario(idUsuario);
+        resp.send(r);
+        
     }catch (err) {
         resp.status(400).send({
             erro: err.message
