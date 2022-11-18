@@ -18,7 +18,6 @@ import Fade from 'react-reveal/Fade';
 
 
 
-
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
 import { Link } from 'react-router-dom';
 
@@ -37,7 +36,7 @@ export default function LadinPage() {
 
   return (
     <div className='Principal-div-home'>
-      <CabecalhoUser />
+        <CabecalhoUser />
       <div className='ImgFundo'>
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
@@ -52,7 +51,9 @@ export default function LadinPage() {
           <div className='Linha2'>
             <hr />
           </div>
+
             <Jump>
+
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -61,13 +62,20 @@ export default function LadinPage() {
                 Os produtos veganos são aqueles que não envolvam qualquer tipo de exploração animal, desde a matéria-prima utilizada, formulação até a execução dos processos de fabricação, podendo ser produtos cosméticos, alimentícios, vestuário ou até produções culturais.
               </p>
           </div>
+
             </Jump>
+
+
           <div className='Container1-2'>
           <Jumpp botton>
             <p>Ofertas do Dia</p>
+
           </Jumpp>
 
           <Fade bottom>
+
+          
+
           <div className='Containers'>
               <div className='Container1'>
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
@@ -93,9 +101,13 @@ export default function LadinPage() {
               </div>
             
             </div>
+
           </Fade>
+
+          
+
           </div>
-        </div>
+       
 
         <div className='Container1-3'>
           <div className='Marcas'>
@@ -135,6 +147,7 @@ export default function LadinPage() {
         </div>
       </div>
       <Rodape/>
+    </div>
     </div>
   )
 }
