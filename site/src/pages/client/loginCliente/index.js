@@ -47,10 +47,6 @@ export default function LoginCliente() {
         navigate('/cadastrousuario')
     }
 
-    const direcionarAdm = _ =>{
-        navigate('/loginAdm')
-    }
-
 
     return (
         <main className='Principal-login-cliente'>
@@ -77,8 +73,10 @@ export default function LoginCliente() {
                             <button className='Botao1' onClick={LoginCliente}>ENTRAR</button>
                         </div>
                     </div>
-                     <p className='adm' onClick={direcionarAdm}>
-                     Entrar como adiministrador</p>
+                     
+                    <Link to='/loginAdm'><p className='adm'>
+                     Entrar como adiministrador</p></Link>
+                    
                 </div>
             </div>
         </main>

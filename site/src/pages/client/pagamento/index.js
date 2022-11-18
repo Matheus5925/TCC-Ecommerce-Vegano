@@ -83,7 +83,7 @@ export default function TelaPagamento() {
 
         <div className='Container-Finalizar'>
 
-          <div className='input2'>
+          <div>
             {itensCarrinho.map(item => <CardPagamento 
                         CarregarCarrinho={CarregarCarrinho}
                         removerItem={RemoverItem}

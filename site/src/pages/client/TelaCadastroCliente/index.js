@@ -86,7 +86,6 @@ export default function TelaCadastroCliente() {
                      </div>
                   </div>
                   <button onClick={SalvarUsuario} className='botao'> Cadastrar </button>
-                  <p className='name'>cadastrar endereço</p>
                </div>
             </div>
          </div>
