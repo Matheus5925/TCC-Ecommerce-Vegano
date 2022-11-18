@@ -53,7 +53,7 @@ export default function ListadeDepoimentos() {
                     <div className='img-nome'>
                         <img className='img-cliente' src={Depoimentos} alt="" />
                         <p className='nome-cliente'>{item.nome}</p>
-                        <p>{item.data.substring(0,10)}</p>
+                        <p>{String(item.data).substring(0,10)}</p>
                     </div>
                     <div className='avaliacao-depoimento'>
                         <p className='Avaliacao-cliente'>{item.avalicao}</p>
