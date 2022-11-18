@@ -1,6 +1,7 @@
 create database tcc_vegano_cometique;
 use tcc_vegano_cometique;
 
+
 create table tb_usuario(
 	id_usuario int primary key auto_increment,
     nm_usuario varchar(100) not null,
@@ -63,6 +64,7 @@ create table tb_depoimento(
     id_usuario		int,
     vl_depoimento varchar(20),
     ds_comentario varchar(500),
+    dt_comentario datetime,
     foreign key (id_usuario) references tb_usuario (id_usuario)
 );
 
@@ -97,13 +99,15 @@ create table tb_boleto(
 create table tb_cartao(
 	id_cartao int primary key auto_increment,
     id_compra int,
+    id_usuario int,
     ds_bandeira varchar(20),
     nr_cartao varchar(20),
     dt_vencimento varchar(5),
     nm_titular_cartao varchar(100),
     nr_cod_seguranca varchar(3),
     nr_parcelas int,
-    foreign key (id_compra) references tb_compra (id_compra)
+    foreign key (id_compra) references tb_compra (id_compra),
+    foreign key (id_usuario) references tb_usuario(id_usuario)
 );
 
 create table tb_compra_itens(

@@ -96,9 +96,9 @@ export default function CabecalhoUser(props) {
 
 
   return (
-    <main className='Faixa-Principal'>
+    <main className='Faixa-Principal-cabecalho-user'>
       <ToastContainer/>
-        <div className='Principal'>
+        <div className='Principal-User-cabecalho'>
           <div className='logo'>
             <img src={LogoTipo} alt='logo'/>
           </div>
