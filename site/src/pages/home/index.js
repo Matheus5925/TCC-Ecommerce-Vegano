@@ -75,11 +75,7 @@ export default function LadinPage() {
           <Fade bottom>
 
           
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> d1a44142f7081de464e64e2c16819a4193171bb4
           <div className='Containers'>
               <div className='Container1'>
                 <img className='imgP2'src={Img5} alt='imagem do produto'/>
@@ -88,17 +84,17 @@ export default function LadinPage() {
                 <p className='vl'>R$240,00</p>
                 <h1 className='valorOferta1'>R$200,00</h1>
               </div>
-              <div className='Container1'>
+              <div className='Container2'>
                 <img className='imgP2'src={ofertas2} alt='imagem do produto'/>
-                <p className='tit3'>Shampoo Natural Hidratação</p>
+                <p className='tit4'>Shampoo Natural Hidratação</p>
                 <p className='tit1'>Suave Argan</p>
                 <p className='valor2'>R$100,00</p>
                 <h1 className='valorOferta2'>R$40,00</h1>
               </div>
               
-              <div className='Container1'>
+              <div className='Container3'>
                 <img className='imgP2'src={ofertas3} alt='imagem do produto'/>
-                <p className='tit3'>Protetor Solar Facial Natural e 
+                <p className='tit5'>Protetor Solar Facial Natural e 
                 Vegano FPS 30</p>
                 <p className='valor2'>R$100,00</p>
                 <h1 className='valorOferta2'>R$40,00</h1>
@@ -115,15 +111,9 @@ export default function LadinPage() {
 
         <div className='Container1-3'>
           <div className='Marcas'>
-            <div>
-              <img className='M1'src={marca1} alt='img da logo da gaia'/>
-            </div>
-            <div>
-              <img className='M1' src={marca2} alt='img da logo principia'/>
-            </div>
-            <div>
-              <img className='M1'src={marca3} alt='img da logo almanati'/>
-            </div>
+            <img className='M1'src={marca1} alt='img da logo da gaia'/>
+            <img className='M1' src={marca2} alt='img da logo principia'/>
+            <img className='M1'src={marca3} alt='img da logo almanati'/>
           </div>
         </div>
         <div className='Depoimentos'>
@@ -157,6 +147,7 @@ export default function LadinPage() {
         </div>
       </div>
       <Rodape/>
+    </div>
     </div>
   )
 }

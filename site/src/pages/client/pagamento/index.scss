@@ -1,210 +1,236 @@
-.Principal {
+.Principal-Pagamento {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 37em;
-}
-
-.posicionamento-b{
-  display: flex;
-  margin-top: 2em;
-  flex-direction: row;
-  justify-content: space-around;
-}
 
 
-.titulo-pg{
-  margin: 1em 1em 1em 2em;
-}
-
-
-.Button {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.Button button {
-  background-color: #D8C8B9;
-  height: 40px;
-  width: 20vh;
-  border-style: none;
-  border-radius: 3px;
-}
-
-.Container-Finalizar {
-  width: 40vh;
-  height: 25em;
-  border: solid;
-  border-color: rgb(245, 233, 233);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.input2 {
-  background-repeat: no-repeat;
-  margin: 1vh;
-  width: 34vh;
-  height: 5vh;
-  border: 1px solid;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.input2 img {
-  width: 4vh;
-}
-
-.principal-b {
+  .posicionamento-b{
     display: flex;
-    flex-direction: column;
-    height: 45em;
-    justify-content: space-between;
-    align-items: center;
-
-}
+    margin-top: 2em;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
 
-.Bloco2 {
-    width: 55vh;
+  .titulo-pg{
+    margin: 1em 1em 1em 2em;
+  }
+
+
+  .Button {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 40vh;
+    justify-content: space-evenly;
+  }
+
+  .Button button {
+    background-color: #D8C8B9;
+    height: 40px;
+    width: 20vh;
+    border-style: none;
+    border-radius: 3px;
+  }
+
+  .Container-Finalizar {
+    width: 40vh;
+    height: 25em;
     border: solid;
     border-color: rgb(245, 233, 233);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .input2 {
+    background-repeat: no-repeat;
+    margin: 1vh;
+    width: 34vh;
+    height: 5vh;
+    border: 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .input2 img {
+    width: 4vh;
+  }
+
+  .principal-b {
+      display: flex;
+      flex-direction: column;
+      height: 45em;
+      justify-content: space-between;
+      align-items: center;
+
+  }
+
+
+  .Bloco2 {
+      width: 55vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 40vh;
+      border: solid;
+      border-color: rgb(245, 233, 233);
+  }
+
+  .input-1 {
+    margin: 2vh;
+    width: 39vh;
+    height: 5vh;
+    border: 1px solid;
+
+  }
+
+  .input-2 {
+    margin: 2vh;
+    width: 39vh;
+    height: 5.5vh;
+    border: 1px solid;
+
+  }
+
+  .input-3 {
+    margin: 2vh;
+    width: 39vh;
+    height: 5.5vh;
+    border: 1px solid;
+  }
+
+  .Button {
+    margin: 2vh;
+  }
+
+  .buttonA {
+    margin: 1vh;
+  }
+
+  .buttonA:hover {
+    cursor: pointer;
+    transform: scale(1.0);
+  }
+
+  .buttonB {
+    margin: 1vh;
+    width: 100vh;
+  }
+
+  .total{
+    
+  }
+
+  .buttonB:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  .B {
+    margin: 1vh;
+  }
+
+  .valor-1 {
+    background-color: #D9D9D9;
+    ;
+    height: 40px;
+    width: 20vh;
+    border-style: none;
+  }
+
+  .valor {
+    background-color: #D8C8B9; 
+    height: 40px;
+    width: 20vh;
+    margin: 1vh;
+    margin-right: 5vh;
+    border-style: none;
+    border-radius: 10vh;
+  }
+
+  .valor:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+
+  .Bloco3 {
+    
+    height: 35vh;
+    border: solid;
+    border-color: rgb(245, 233, 233);
+
+  }
+
+  .input3-1 {
+    margin: 6vh;
+    width: 42vh;
+    height: 6vh;
+    border: 1px solid;
+    border-radius: 20vh;
+  }
+
+  p {
+    align-items: center;
+    margin: 1vh;
+  }
+
+  .input3-2 {
+    margin: 10vh;
+    margin-top: 2vw;
+    margin-left: -0vh;
+    width: 42vh;
+    height: 6vh;
+    border: 1px solid;
+    border-radius: 20vh;
+  }
+
+  .Endereco {
+    margin: 5vh;
+    margin-top: 5vh;
+    background-color: #D8C8B9;
+    height: 40px;
+    width: 27vh;
+    border-style: none;
+    border-radius: 3px;
+
+  }
+
+  .Endereco:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+
+  h4 {
+    margin: 1vh;
+  }
+
+  .rolagem-endereco{
+    height: 60%;
+    overflow-y: scroll;
+    margin: 1em;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(96, 96, 96, 1);
+    border-radius: 5em;
+}
+::-webkit-scrollbar {
+    border-radius: 5em;
+    width: 6px;
+    background: rgba(74, 74, 65, 1);
+    
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(203, 203, 203, 1);
+    border-radius: 5em;
 }
 
-.input-1 {
-  margin: 2vh;
-  width: 39vh;
-  height: 5vh;
-  border: 1px solid;
-
+.adicionar-endereco:hover{
+    cursor: pointer;
 }
-
-.input-2 {
-  margin: 2vh;
-  width: 39vh;
-  height: 5.5vh;
-  border: 1px solid;
-
-}
-
-.input-3 {
-  margin: 2vh;
-  width: 39vh;
-  height: 5.5vh;
-  border: 1px solid;
-}
-
-.Button {
-  margin: 2vh;
-}
-
-.buttonA {
-  margin: 1vh;
-}
-
-.buttonA:hover {
-  cursor: pointer;
-  transform: scale(1.0);
-}
-
-.buttonB {
-  margin: 1vh;
-  width: 100vh;
-}
-
-.total{
-  
-}
-
-.buttonB:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-.B {
-  margin: 1vh;
-}
-
-.valor-1 {
-  background-color: #D9D9D9;
-  ;
-  height: 40px;
-  width: 20vh;
-  border-style: none;
-}
-
-.valor {
-  background-color: #D8C8B9; 
-  height: 40px;
-  width: 20vh;
-  margin: 1vh;
-  margin-right: 5vh;
-  border-style: none;
-  border-radius: 10vh;
-}
-
-.valor:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
-
-
-.Bloco3 {
-  
-  height: 35vh;
-  border: solid;
-  border-color: rgb(245, 233, 233);
-
-}
-
-.input3-1 {
-  margin: 6vh;
-  width: 42vh;
-  height: 6vh;
-  border: 1px solid;
-  border-radius: 20vh;
-}
-
-p {
-  align-items: center;
-  margin: 1vh;
-}
-
-.input3-2 {
-  margin: 10vh;
-  margin-top: 2vw;
-  margin-left: -0vh;
-  width: 42vh;
-  height: 6vh;
-  border: 1px solid;
-  border-radius: 20vh;
-}
-
-.Endereco {
-  margin: 5vh;
-  margin-top: 5vh;
-  background-color: #D8C8B9;
-  height: 40px;
-  width: 27vh;
-  border-style: none;
-  border-radius: 3px;
-
-}
-
-.Endereco:hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
-
-
-h4 {
-  margin: 1vh;
 }

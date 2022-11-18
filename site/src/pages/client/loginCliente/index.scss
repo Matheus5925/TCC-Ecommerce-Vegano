@@ -101,30 +101,19 @@
 
    }
 
-   .Botao {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      margin: 3em;
-      align-items: center;
-      height: 50px;
-   }
 
    .botoes {
       display: flex;
       flex-direction: row;
+      justify-content: space-around;
+      width: 27em;
+      margin-top: 2em;
       align-items: center;
    }
 
-   .Botao2 {
-      align-items: center;
-      border-radius: 50px;
-      margin-bottom: 0.5em;
-      border-radius: 50px;
-      border-style: none;
-      padding: 2px;
-      height: 40px;
-      width: 140px;
+   .adm {
+      margin-top: 2em;
+      cursor:pointer;
    }
 
    .Botao2:hover {
@@ -134,8 +123,6 @@
 
    .Botao1 {
       align-items: center;
-      border-radius: 50px;
-      margin-bottom: 0.5em;
       border-radius: 50px;
       border-style: none;
       padding: 2px;

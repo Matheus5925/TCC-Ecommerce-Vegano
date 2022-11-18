@@ -73,7 +73,7 @@ export async function DeletarProduto(id) {
 
 export async function BuscarId(id) {
     const comando = `
-                        select	
+                    select	
                         id_produto as id,
                         ds_categoria as categoria,
                         ds_parte_corpo as ParteCorpo,
