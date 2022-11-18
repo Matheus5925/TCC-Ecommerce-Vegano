@@ -2,7 +2,7 @@ import { LoginUsuario } from '../../../api/UsuarioAPI.js';
 import { useState, useEffect, useRef } from 'react'
 import storage from 'local-storage';
 import LoadingBar from 'react-top-loading-bar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './index.scss'
 import { LogiAdm } from '../../../api/admAPI.js';
 
@@ -73,6 +73,8 @@ export default function LoginCliente() {
                             <button className='Botao1' onClick={LoginCliente}>ENTRAR</button>
                         </div>
                     </div>
+                     <p className='adm'>
+                     Entrar como adiministrador</p>
                 </div>
             </div>
         </main>
