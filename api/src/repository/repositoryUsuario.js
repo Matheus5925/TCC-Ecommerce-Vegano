@@ -91,8 +91,21 @@ export const ComentarUmDepoimento = async (dados) =>{
 export const CadastrarCartao = async (dados)=>{
     const comando = `
                 insert into tb_cartao(id_usuario,ds_bandeira, nr_cartao, dt_vencimento, nm_titular_cartao, nr_cod_seguranca)
-                        values(?,?, ?, ? ,? , ?)`;
-    const [linhas] = await (await con).query(comando, [dados.idUsuario,dados.bandeira, dados.numeroCartao, dados.vencimentoCartao, dados.titularCartao, dados.codSecure])
+                        values(? ,? ,? ,? ,? ,? )`;
+    const [linhas] = await (await con).query(comando, [dados.idUsuario, dados.bandeira, dados.numeroCartao, dados.vencimentoCartao, dados.titularCartao, dados.codSecure])
     dados.IdCartao = linhas.insertId;
     return linhas;
 };
+
+export const BuscarCartaoUsuario = async (idUsuario) =>{
+    const comando = `select id_usuario,
+                        ds_bandeira as bandeira,
+                        nr_cartao as numeroCartao,
+                        dt_vencimento as vencimento,
+                        nm_titular_cartao as titular,
+                        nr_cod_seguranca as cvv
+                    from tb_cartao
+                    where id_usuario = ?`;
+    const [linhas] = await (await con).query(comando, [idUsuario]);
+    return linhas;
+}
