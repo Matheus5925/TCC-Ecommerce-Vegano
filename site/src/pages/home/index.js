@@ -15,6 +15,12 @@ import { PegarDepoimento } from '../../api/UsuarioAPI.js';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../api/config';
 
+import Jump from 'react-reveal';
+import Jumpp from 'react-reveal';
+import Fade from 'react-reveal/Fade';
+
+
+
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
 import { Link } from 'react-router-dom';
 import { BuscarOfertaAPI } from '../../api/ProdutoAPI';
@@ -70,6 +76,8 @@ export default function LadinPage() {
             <hr />
           </div>
 
+            <Jump>
+
           <div className='Container'>
                 <img className='img1' src={segundaFaixa} alt="" />
               <p className='texto-faixa-verde'>
@@ -79,25 +87,33 @@ export default function LadinPage() {
               </p>
           </div>
 
-            
+            </Jump>
+
+
           <div className='Container1-2'>
+          <Jumpp botton>
             <p>Ofertas do Dia</p>
 
-          
-          
+          </Jumpp>
+
+          <Fade bottom>
+
           <div className='Containers'>
-             {ofertas.map((item, index) => index < 3 && <div className='Container1'>
+             {ofertas.map((item, index) => index < 4 && <div className='Container1'>
                                           <img onClick={DetalhesProdutoDirecionar} className='imgP2'src={ExibirImagem(item.imagem)} alt='imagem do produto'/>
                                           <p className='tit3'>{item.categoria}</p> 
                                           <p className='tit1'>{item.nome}</p>
-                                          <p className='vl'>R${item.precoNovo.replace('.', ',')}</p>
-                                          <h1 className='valorOferta1'>R${item.valor.replace('.', ',')}</h1>
+                                          <p className='vl'>R${item.valor.replace('.', ',')}</p>
+                                          <h1 className='valorOferta1'>R${item.precoNovo.replace('.', ',')}</h1>
                                         </div>)}
             </div>
 
+          </Fade>
+
           
+
           </div>
-        </div>
+       
 
         <div className='Container1-3'>
           <div className='Marcas'>
@@ -143,6 +159,7 @@ export default function LadinPage() {
         </div>
       </div>
       <Rodape/>
+      </div>
     </div>
   )
 }
