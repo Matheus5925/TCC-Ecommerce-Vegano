@@ -142,3 +142,45 @@ export const FiltrarPorNome = async function(nome) {
     return linhas;
 }
 
+export const BuscarOfertas = async () =>{
+    const comando = `select 	id_ofertas as idofertas,
+                        ds_preco_novo as precoNovo,
+                        tb_produto.id_produto as id,
+                        ds_categoria as categoria,
+                        ds_parte_corpo as parteCorpo,
+                        nm_produto as nome,
+                        nr_valor as valor,
+                        ds_fabricante as fabricante,
+                        dt_validade as validade,
+                        nr_volume as volume,
+                        ds_linha as linha,
+                        img_produto as imagem
+                    from tb_ofertas
+                    inner join tb_produto on tb_ofertas.id_produto = tb_produto.id_produto
+                    inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+                    inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo`;
+    const [linhas] = await (await con).query(comando);
+    return linhas;   
+}
+
+export const BuscarOfertasPorCategoria = async (categoria) =>{
+    const comando = `select 	id_ofertas as idofertas,
+                            ds_preco_novo as precoNovo,
+                            tb_produto.id_produto as idProduto,
+                            ds_categoria as categoria,
+                            ds_parte_corpo as parteCorpo,
+                            nm_produto as nome,
+                            nr_valor as valor,
+                            ds_fabricante as fabricante,
+                            dt_validade as validade,
+                            nr_volume as volume,
+                            ds_linha as linha,
+                            img_produto
+                        from tb_ofertas
+                        inner join tb_produto on tb_ofertas.id_produto = tb_produto.id_produto
+                        inner join tb_categoria on tb_produto.id_categoria = tb_categoria.id_categoria
+                        inner join tb_parte_corpo on tb_produto.id_parte_corpo = tb_parte_corpo.id_parte_corpo
+                        where ds_categoria = ?`;
+    const [linhas] = await (await con).query(comando, [categoria]);
+    return linhas;
+};

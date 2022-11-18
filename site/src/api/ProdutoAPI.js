@@ -23,7 +23,6 @@ export const CadastrarProduto = async (idCategoria, idParteCorpo, nome, descrica
     return r.data
 }
 
-
 export const EnviarImagem = async (id, imagem) => {
     const formData = new FormData();
     formData.append('produtoCapa', imagem);
@@ -87,6 +86,18 @@ export const FiltrarPorCategoria = async (categoria) =>{
 
 export const FiltrarProdutosNome = async nome =>{
     const r = await api.get(`/filtro/produto/nome/?nome=${nome}`);
+
+    return r.data;
+}
+
+export const BuscarOfertaAPI = async () =>{
+    const r = await api.get('/ofertas');
+
+    return r.data;
+}
+
+export const BuscarCategoriaOfertas = async (categoria) =>{
+    const r = await api.get(`/ofertas/?categoria=${categoria}`);
 
     return r.data;
 }
