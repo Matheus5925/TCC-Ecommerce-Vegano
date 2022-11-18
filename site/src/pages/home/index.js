@@ -12,24 +12,44 @@ import icone from '../../assets/images/iconeDep.png'
 import segundaFaixa from '../../assets/images/img4.png';
 import ofertas2 from '../../assets/images/oferta2.png'
 import { PegarDepoimento } from '../../api/UsuarioAPI.js';
-
-
-
+import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../api/config';
 
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
 import { Link } from 'react-router-dom';
+import { BuscarOfertaAPI } from '../../api/ProdutoAPI';
 
 
 export default function LadinPage() {
   const [depoimentos, setDepoimentos] = useState([]);
+  const [ofertas, setOfertas] = useState([]);
 
   const MostrarDepoimentos = async  _ =>{
       const resposta = await ListarDepoimentos();
       setDepoimentos(resposta);
   }
 
+  const MostrarOfertas = async  _ =>{
+    const resposta = await BuscarOfertaAPI();
+    setOfertas(resposta);
+  }
+
+  const navigate = useNavigate();
+
+  const DetalhesProdutoDirecionar = (id) =>{
+      navigate(`/detalhes/produto/${id}`);
+  }
+
+  const ExibirImagem = imagem =>{
+      if(!imagem)
+          return 'https://cdn-icons-png.flaticon.com/512/1178/1178428.png';
+      else
+          return `${API_URL}/${imagem}`;
+  }
+
   useEffect(()=>{
     MostrarDepoimentos();
+    MostrarOfertas();
   },[]);
 
   return (
@@ -66,29 +86,13 @@ export default function LadinPage() {
           
           
           <div className='Containers'>
-              <div className='Container1'>
-                <img className='imgP2'src={Img5} alt='imagem do produto'/>
-                <p className='tit3'>KIT ROTINA DIÁRIA</p> 
-                <p className='tit1'>Gala vegano</p>
-                <p className='vl'>R$240,00</p>
-                <h1 className='valorOferta1'>R$200,00</h1>
-              </div>
-              <div className='Container1'>
-                <img className='imgP2'src={ofertas2} alt='imagem do produto'/>
-                <p className='tit3'>Shampoo Natural Hidratação</p>
-                <p className='tit1'>Suave Argan</p>
-                <p className='valor2'>R$100,00</p>
-                <h1 className='valorOferta2'>R$40,00</h1>
-              </div>
-              
-              <div className='Container1'>
-                <img className='imgP2'src={ofertas3} alt='imagem do produto'/>
-                <p className='tit3'>Protetor Solar Facial Natural e 
-                Vegano FPS 30</p>
-                <p className='valor2'>R$100,00</p>
-                <h1 className='valorOferta2'>R$40,00</h1>
-              </div>
-            
+             {ofertas.map((item, index) => index < 3 && <div className='Container1'>
+                                          <img onClick={DetalhesProdutoDirecionar} className='imgP2'src={ExibirImagem(item.imagem)} alt='imagem do produto'/>
+                                          <p className='tit3'>{item.categoria}</p> 
+                                          <p className='tit1'>{item.nome}</p>
+                                          <p className='vl'>R${item.precoNovo.replace('.', ',')}</p>
+                                          <h1 className='valorOferta1'>R${item.valor.replace('.', ',')}</h1>
+                                        </div>)}
             </div>
 
           
