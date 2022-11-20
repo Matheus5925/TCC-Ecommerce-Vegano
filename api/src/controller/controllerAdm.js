@@ -36,7 +36,9 @@ server.post('/adicionar/oferta', async (req, resp) =>{
         const dados = req.body;
 
         if(!dados.NovoPreco)
-            throw new Error('Novo valor não informado');
+            throw new Error('Novo valor não informado!');
+        if(!dados.idProduto)
+            throw new Error('iD do produto não informado!');
         
 
         const r = await AdicionarOfertas(dados);

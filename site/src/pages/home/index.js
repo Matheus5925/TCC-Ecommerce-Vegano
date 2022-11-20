@@ -101,7 +101,7 @@ export default function LadinPage() {
 
           <div className='Containers'>
               {ofertas.map((item, index) => index < 4 && <div className='Container1'>
-                                          <img onClick={DetalhesProdutoDirecionar} className='imgP2'src={ExibirImagem(item.imagem)} alt='imagem do produto'/>
+                                          <img onClick={() => DetalhesProdutoDirecionar(item.id)} className='imgP2'src={ExibirImagem(item.imagem)} alt='imagem do produto'/>
                                           <p className='tit3'>{item.categoria}</p> 
                                           <p className='tit1'>{item.nome}</p>
                                           <p className='vl'>R${item.valor.replace('.', ',')}</p>
