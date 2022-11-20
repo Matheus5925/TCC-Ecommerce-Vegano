@@ -23,16 +23,31 @@ import Fade from 'react-reveal/Fade';
 
 import { ListarDepoimentos } from '../../api/UsuarioAPI';
 import { Link } from 'react-router-dom';
-import { BuscarOfertaAPI } from '../../api/ProdutoAPI';
+import { BuscarOfertaAPI, FiltrarProdutosNome, MostrarProdutos } from '../../api/ProdutoAPI';
+import { set } from 'local-storage';
 
 
 export default function LadinPage() {
   const [depoimentos, setDepoimentos] = useState([]);
   const [ofertas, setOfertas] = useState([]);
+  const [nomeProduto, setNomeProduto] = useState('');
+  const [produto, setProduto] = useState([]);
+  const [render, setRender] = useState(false);
 
   const MostrarDepoimentos = async  _ =>{
       const resposta = await ListarDepoimentos();
       setDepoimentos(resposta);
+  }
+
+  const PesquisarProduto = async () =>{
+    if(!nomeProduto){
+      setRender(false)
+    }
+    if(nomeProduto){
+      const r = await FiltrarProdutosNome(nomeProduto);
+      setProduto(r);
+      setRender(true)
+    }
   }
 
   const MostrarOfertas = async  _ =>{
@@ -58,6 +73,12 @@ export default function LadinPage() {
     MostrarOfertas();
   },[]);
 
+  useEffect(() =>{
+     setTimeout(()=>{
+       PesquisarProduto();
+     }, 1000)
+  }, [nomeProduto]);
+
   return (
     <div className='Principal-div-home'>
         <CabecalhoUser />
@@ -65,7 +86,13 @@ export default function LadinPage() {
         <div className='escrita'>
           <p className='t1'> Bem-vindo a <br/>
           nossa loja</p>
-          <input className='bloco'type="text" placeholder ="o que você procura?"/>
+          <input value={nomeProduto} onChange={e => setNomeProduto(e.target.value)} className='bloco'type="text" placeholder ="o que você procura?"/>
+         { render === true &&
+         produto.map((item, index) => index < 5 && <div onClick={() => DetalhesProdutoDirecionar(item.id)} className='pesquisa-basica hover'>
+         <img src={ExibirImagem(item.imagem)} alt="" />
+         <p>{item.nome}</p>
+         <p>{item.volume}</p>
+       </div>)}
         </div>
       </div>
       
@@ -100,7 +127,7 @@ export default function LadinPage() {
           
 
           <div className='Containers'>
-              {ofertas.map((item, index) => index < 4 && <div className='Container1'>
+              {ofertas.map((item, index) => index < 4 && <div key={item.id} className='Container1 hover'>
                                           <img onClick={() => DetalhesProdutoDirecionar(item.id)} className='imgP2'src={ExibirImagem(item.imagem)} alt='imagem do produto'/>
                                           <p className='tit3'>{item.categoria}</p> 
                                           <p className='tit1'>{item.nome}</p>
