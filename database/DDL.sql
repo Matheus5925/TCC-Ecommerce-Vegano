@@ -1,7 +1,6 @@
 create database tcc_vegano_cometique;
 use tcc_vegano_cometique;
 
-
 create table tb_usuario(
 	id_usuario int primary key auto_increment,
     nm_usuario varchar(100) not null,
@@ -107,7 +106,7 @@ create table tb_cartao(
     nr_cod_seguranca varchar(3),
     nr_parcelas int,
     foreign key (id_compra) references tb_compra (id_compra),
-    foreign key (id_usuario) references tb_usuario(id_usuario)
+	foreign key (id_usuario) references tb_usuario (id_usuario)
 );
 
 create table tb_compra_itens(
