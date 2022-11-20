@@ -14,8 +14,9 @@ export default function Crrinho(){
         var total = 0;
         
         for(let item of itensCarrinho){
-            total = total + (item.id.valor * item.id.quantidade);
+            total = total + (item.id.valor * item.qtd);
         }
+
         return total.toFixed(2);
     };
 
@@ -30,19 +31,17 @@ export default function Crrinho(){
     const CarregarCarrinho = async _ =>{
         const carrinho = Storage('carrinho');
 
-      
-
         if(carrinho){
-
             let temp = [];
 
             for(let produto of carrinho){
                 let r = await BuscarId(produto.id);
-
+               
                 temp.push({
                     id: r,
                     qtd: produto.qtd
-                })
+                });
+
             }
             setItensCarrinho(temp);
         }
@@ -79,7 +78,8 @@ export default function Crrinho(){
                     </div>
                </div>
                 <div className='Cards-produtos'>
-                    {itensCarrinho.map(item =><CardCarrinho
+                    {itensCarrinho.map(item =>
+                    <CardCarrinho
                         CarregarCarrinho={CarregarCarrinho}
                         removerItem={RemoverItem}
                         key={item.id}
@@ -103,10 +103,10 @@ export default function Crrinho(){
                 </div>
                 <div className='botao-2'>
                         <Link to='/pagamento'>
-                        <button className='ajustar-botao2'> 
-                                <img src={Carrinho}/> 
-                                <h3> Fechar pedido </h3> 
-                        </button>
+                            <button className='ajustar-botao2'> 
+                                    <img src={Carrinho} alt="imagem botão"/> 
+                                    <h3> Fechar pedido </h3> 
+                            </button>
                         </Link>
                 </div>
 

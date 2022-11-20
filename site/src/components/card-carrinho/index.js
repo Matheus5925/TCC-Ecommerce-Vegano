@@ -6,8 +6,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function CardCarrinho(props) {
-    const [QtdCarrinho, setQtdCarrinho] = useState(props.item.id.quantidade);
-
+    
+    const [QtdCarrinho, setQtdCarrinho] = useState(props.item.qtd);
 
     const navigate = useNavigate();
 
@@ -29,6 +29,7 @@ export default function CardCarrinho(props) {
 
     function SubTotal() {
         let sub = QtdCarrinho * props.item.id.valor;
+        console.log("VALOR: " + props.item.id.valor);
 
         return sub.toFixed(2);
     }

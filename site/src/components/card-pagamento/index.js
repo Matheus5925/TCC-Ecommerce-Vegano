@@ -6,13 +6,15 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function CardPagamento(props) {
+
+    console.log(props);
     const [QtdCarrinho, setQtdCarrinho] = useState(props.item.qtd);
 
 
     const navigate = useNavigate();
 
     const DetalhesProdutoDirecionar = () =>{
-        navigate(`/detalhes/produto/carrinho/${props.item.id.id}`);
+        navigate(`/detalhes/produto/${props.item.id.id}`);
     }
 
     function Remover(){
@@ -27,6 +29,11 @@ export default function CardPagamento(props) {
             return API_URL + '/' + imagem;
     }
 
+    function SubTotal() {
+        let sub = QtdCarrinho * props.item.id.valor;
+
+        return sub.toFixed(2);
+    }
 
     function AlterarQuantidade(novaQuantidade) {
         setQtdCarrinho(novaQuantidade);
