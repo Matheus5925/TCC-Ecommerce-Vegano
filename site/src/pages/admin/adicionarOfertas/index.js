@@ -11,7 +11,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 export default function AdicionarOfertas() {
     const [produto, setProduto] = useState({id: 0, categoria: '',parteCorpo: '', nome: '', linha:'', descricao: '', valor: '', fabricante: '', validade: '', quantidade: 0, volume: '', imagem: ''});
-    const [novoValor, setNovoValor] = useState('');
+    const [NovoPreco, setNovoPreco] = useState('');
     const [erro, setErro] = useState('');
 
     const {idProdutos} = useParams();
@@ -31,10 +31,9 @@ export default function AdicionarOfertas() {
 
     const CadastrarOferta = async ()=>{
         try {
-            let preco = Number(novoValor.replace(',', '.'));
+            let preco = Number(NovoPreco.replace(',', '.'));
 
             const r = await CadastrarOfertas(produto.id, preco);
-
             toast.success('Oferta Cadastrada com sucesso');
 
         } catch (err) {
@@ -51,7 +50,7 @@ export default function AdicionarOfertas() {
     <div className='Adicionar-Ofertas'>
         <ToastContainer/>
         <CabecalhoAdmin/>
-        <h1 className='Titulo-Adicionar'> ADICIONAR OFERTAS:</h1>
+        <h1 className='Titulo-Adicionar'> ADICIONAR OFERTAS</h1>
         <div className='Linha-Principal'>
             <label className='Titulo-Caixa-Texto'>Nome do Produto</label>
             <input value={produto.nome} placeholder='Mascará de....'  className='Caixa-Texto' type="text" />
@@ -80,17 +79,16 @@ export default function AdicionarOfertas() {
 
                 <div className='label'>
                     <label className='Titulo-Caixa-Texto'> Valor antigo:</label>
-                    <input value={produto.valor} className='Caixa-Texto1' type="text" />
+                    <input value={produto.valor.replace('.', ',')} className='Caixa-Texto1' type="text" />
                 </div>
 
                 <div className='label'>
                     <label className='Titulo-Caixa-Texto'> Valor Atual:</label>
-                    <input value={novoValor} onChange={e => setNovoValor(e.target.value)} className='Caixa-Texto1' type="text" />               
+                    <input value={NovoPreco} onChange={e => setNovoPreco(e.target.value)} className='Caixa-Texto1' type="text" />               
                 </div>
             </div>
 
             <div className='Img'>
-                <label className='Titulo-Caixa-Texto-Adicione'>Adicione uma foto</label>
 
                 {
                     <img className='img-produto' src={ExibirImagem(produto.imagem)}/>
@@ -99,9 +97,6 @@ export default function AdicionarOfertas() {
 
             <button onClick={CadastrarOferta} className='Adicionar'>ADICIONAR OFERTA</button>
                             
-            <div className='Voltar-1'>
-                <button className='button'>Voltar</button>
-            </div>
         </div>               
     </div>
     )

@@ -21,7 +21,7 @@ export async function ExcluirDepoimentos(id) {
 export async function AdicionarOfertas(dados) {
     const comando = `insert into tb_ofertas(id_produto, ds_preco_novo)
                             values(?, ?)`;
-    const [linhas] = await (await con).query(comando, [dados.idUsuario, dados.NovoPreco]);
+    const [linhas] = await (await con).query(comando, [dados.idProduto, dados.NovoPreco]);
     dados.idOfertas = linhas.insertId;
     return linhas;
 };
