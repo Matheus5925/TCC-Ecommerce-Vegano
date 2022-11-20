@@ -14,7 +14,7 @@ export default function Crrinho(){
         var total = 0;
         
         for(let item of itensCarrinho){
-            total = total +  item.id.valor * item.qtd;
+            total = total + (item.id.valor * item.id.quantidade);
         }
         return total.toFixed(2);
     };
@@ -48,7 +48,7 @@ export default function Crrinho(){
         }
 
         if(!carrinho.id.nome)
-        RemoverItem();
+            RemoverItem();
     };
 
     

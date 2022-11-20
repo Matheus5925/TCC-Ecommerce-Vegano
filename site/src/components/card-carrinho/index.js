@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function CardCarrinho(props) {
-    const [QtdCarrinho, setQtdCarrinho] = useState(props.item.qtd);
+    const [QtdCarrinho, setQtdCarrinho] = useState(props.item.id.quantidade);
 
 
     const navigate = useNavigate();

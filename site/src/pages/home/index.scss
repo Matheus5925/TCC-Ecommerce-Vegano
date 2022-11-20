@@ -256,7 +256,13 @@
       height: 7em;
       width: 7em;
     }
-  
+    
+    .M1:hover{
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+      
+
     .Depoimentos {
       display: flex;
       flex-direction: column;

@@ -4,7 +4,6 @@ import CabecalhoUser from '../../../components/cabecalho-user';
 import CardPix from '../../../assets/images/cards.png'
 import Boleto from '../../../assets/images/boleto.png'
 import Pix from '../../../assets/images/imagePix.png'
-import cardPagamento from '../../../components/card-pagamento';
 import { Link } from 'react-router-dom';
 import CardEndereco from '../../../components/infoUser/endereco/card';
 import { useState, useEffect } from 'react';
@@ -16,6 +15,7 @@ import { BuscarId } from '../../../api/ProdutoAPI';
 export default function TelaPagamento() {
   const [enderecos, setEnderecos] = useState([]);
   const [itensCarrinho, setItensCarrinho] = useState([]);
+
 
     const  CalcularValorTotal = _ =>{
         var total = 0;
@@ -35,7 +35,8 @@ export default function TelaPagamento() {
     }
 
     const CarregarCarrinho = async _ =>{
-        const carrinho = Storage('carrinho');
+        const carrinho= Storage('carrinho');
+         console.log(carrinho);
 
       
 
@@ -56,6 +57,7 @@ export default function TelaPagamento() {
 
         if(!carrinho.id.nome)
         RemoverItem();
+       
     };
 
     
@@ -69,6 +71,7 @@ export default function TelaPagamento() {
    
     useEffect(()=>{
        MostrarEnderecos();
+      CarregarCarrinho();
     },[]);
 
   return (
@@ -85,17 +88,18 @@ export default function TelaPagamento() {
 
           <div>
             {itensCarrinho.map(item => <CardPagamento 
-                        CarregarCarrinho={CarregarCarrinho}
-                        removerItem={RemoverItem}
-                        key={item.id}
-                        item={item}/>)}
+                          CarregarCarrinho={CarregarCarrinho}
+                          removerItem={RemoverItem}
+                          key={item.id}
+                          item={item}
+                      />)}
           </div>
         </div>
 
         <div className='total'>
           <h4>TOTAL DA COMPRA</h4>
           <div className='B'>
-            <button className='valor-1'>R$ 170,00</button>
+            <button className='valor-1'>R$ {CalcularValorTotal()}</button>
 
           </div>
           <button className='valor'>Concluir</button>
@@ -114,7 +118,11 @@ export default function TelaPagamento() {
             {enderecos.map(item => <CardEndereco item={item}/>)}
           </div>
 
-            <button className='Endereco'>Cadastrar Endereço</button>
+            <button className='Endereco'>
+              <Link to= '/cadastroindereco'>
+              Cadastrar Endereço</Link>
+              </button>
+              
         </div>
 
           <div className='Principal2'>
