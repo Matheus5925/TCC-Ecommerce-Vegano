@@ -10,18 +10,19 @@ import Storage from 'local-storage';
 import { ListarEnderecos } from '../../../api/UsuarioAPI';
 import CardPagamento from '../../../components/card-pagamento';
 import { BuscarId } from '../../../api/ProdutoAPI';
+import Rodape from '../../../components/rodape';
 
 export default function TelaPagamento() {
 
   const [enderecos, setEnderecos] = useState([]);
   const [itensCarrinho, setItensCarrinho] = useState([]);
-  
+
   const CalcularValorTotal = _ => {
     var total = 0;
     console.log("timao");
     for (let item of itensCarrinho) {
       total = total + (item.id.valor * item.qtd);
-      
+
     }
     return total.toFixed(2);
   };
@@ -36,7 +37,7 @@ export default function TelaPagamento() {
 
   const CarregarCarrinho = async _ => {
     const carrinho = Storage('carrinho');
-    
+
     if (carrinho) {
 
       let temp = [];
@@ -64,6 +65,7 @@ export default function TelaPagamento() {
       setEnderecos(r);
     }
   }
+ 
 
   useEffect(() => {
     MostrarEnderecos();
@@ -71,24 +73,25 @@ export default function TelaPagamento() {
   }, []);
 
   return (
+    <div>
     <div className='Principal-Pagamento'>
       <CabecalhoUser />
       <div className='titulo-pg'>
         <h2>FINALIZAR PAGAMENTO </h2>
       </div>
-      <hr />
+      <div className='linha'> <hr></hr> </div>
       <div className='posicionamento-b'>
-        <div className='Principal'>
+        <div className='principal-pagamaento'>
 
           <div className='Container-Finalizar'>
-            <div>
-              {itensCarrinho.map(item => 
-              <CardPagamento
+            <div className='rolagem-pg'>
+              {itensCarrinho.map(item =>
+                <CardPagamento
                   CarregarCarrinho={CarregarCarrinho}
                   removerItem={RemoverItem}
                   key={item.id}
-                  item={item} 
-              />)}
+                  item={item}
+                />)}
             </div>
           </div>
 
@@ -103,9 +106,6 @@ export default function TelaPagamento() {
 
           </div>
 
-
-
-
         </div>
         <div className='principal-b'>
 
@@ -114,30 +114,24 @@ export default function TelaPagamento() {
               {enderecos.map(item => <CardEndereco item={item} />)}
             </div>
 
+            <Link to='/cadastroindereco'>    
             <button className='Endereco'>Cadastrar Endereço</button>
+            </Link>
           </div>
 
-          <div className='Principal2'>
+          <div className='cartoes-pagamento'>
             <div className='Bloco2'>
-              <div className='input-1'>
-                <div>
-                  <img src={Pix} />
-                  <input type="radio" name="pix"></input>
-                </div> 
-                
+              <div className='input-pg'>
+                <img src={Pix} className='imagem-pagamento' />
+                <input type="checkbox" name="pix" className='imput-radio'></input>
               </div>
-              <div className='input-2'>
-                <div>
-                  <img src={CardPix} />
-                  <input type="radio" name="cardPix"></input>
-                </div>
+              <div className='input-pg'>
+                <img src={CardPix} className='imagem-pagamento-3' />
+                <input type="checkbox" name="cardPix" className='imput-radio'></input>
               </div>
-              <div className='input-3'>
-                <div>
-                  <img src={Boleto} />
-                  <input type="radio" name="Boleto"></input>
-                </div>
-
+              <div className='input-pg'>
+                <img src={Boleto} className='imagem-pagamento' />
+                <input type="checkbox" name="Boleto" className='imput-radio'></input>
               </div>
               <div className='Button'>
                 <Link to='/infousuario'>
@@ -147,13 +141,15 @@ export default function TelaPagamento() {
                   <button className='buttonB'>Cadastrar um novo Cartão</button>
                 </Link>
               </div>
-
             </div>
+
           </div>
         </div>
       </div>
+      
     </div>
-
+  <Rodape/>
+</div>
   )
 
 }

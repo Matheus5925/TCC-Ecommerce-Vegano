@@ -3,7 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 37em;
+  
+
+  .principal-pagamaento{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 40em;
+  }
 
 
   .posicionamento-b{
@@ -11,12 +19,20 @@
     margin-top: 2em;
     flex-direction: row;
     justify-content: space-around;
+    width: 70em;
   }
 
 
   .titulo-pg{
-    margin: 1em 1em 1em 2em;
+    margin: 3em 1em 1em 1em;
   }
+
+  .linha {
+    display: block;
+    width: 100%;
+    margin-bottom: 2em;
+
+}
 
 
   .Button {
@@ -33,11 +49,12 @@
   }
 
   .Container-Finalizar {
-    width: 40vh;
+    width: 65vh;
     height: 25em;
     border: solid;
     border-color: rgb(245, 233, 233);
     display: flex;
+
     flex-direction: column;
     align-items: center;
   }
@@ -59,9 +76,16 @@
     width: 4vh;
   }
 
+  .rolagem-pg{
+    height: 70%;
+    overflow-y: scroll;
+    margin: 1em;
+  }
+
   .principal-b {
       display: flex;
       flex-direction: column;
+      margin-bottom: 5em;
       height: 45em;
       justify-content: space-between;
       align-items: center;
@@ -74,32 +98,40 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 40vh;
+      height: 45vh;
       border: solid;
       border-color: rgb(245, 233, 233);
+      margin-bottom: 1em;
   }
 
-  .input-1 {
-    margin: 2vh;
-    width: 39vh;
-    height: 5vh;
-    border: 1px solid;
+  .input-pg {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+
+    margin: 0.6em;
+    width: 50vh;
+    height: 3em;
+    border: 0.5px solid;
 
   }
 
-  .input-2 {
-    margin: 2vh;
-    width: 39vh;
-    height: 5.5vh;
-    border: 1px solid;
+  .imagem-pagamento{
+    height: 2em;
+    width: 4em;
 
+    margin-left: 1em;
   }
 
-  .input-3 {
-    margin: 2vh;
-    width: 39vh;
-    height: 5.5vh;
-    border: 1px solid;
+  .imput-radio{
+    margin-right: 1em;
+  }
+
+  .imagem-pagamento-3{
+    height: 4em;
+    width: 9em;
+    margin-left: 1em;
   }
 
   .Button {
@@ -117,11 +149,8 @@
 
   .buttonB {
     margin: 1vh;
+    margin-top: 3em;
     width: 100vh;
-  }
-
-  .total{
-    
   }
 
   .buttonB:hover {
@@ -159,7 +188,11 @@
 
   .Bloco3 {
     
-    height: 35vh;
+    height: 20em;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     border: solid;
     border-color: rgb(245, 233, 233);
 
@@ -212,6 +245,10 @@
   .rolagem-endereco{
     height: 60%;
     overflow-y: scroll;
+    width: 17em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
     margin: 1em;
   }
 

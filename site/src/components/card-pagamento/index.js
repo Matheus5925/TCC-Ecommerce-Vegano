@@ -66,22 +66,13 @@ export default function CardPagamento(props) {
     return(
         <section className='card-pagamento'>
             <div className='posicionamento-p'>
-            <img onClick={DetalhesProdutoDirecionar} className='imagem-carrinho cursor' src={ExibirImagem(props.item.id.imagem)} alt="produto"/>
+            <img onClick={DetalhesProdutoDirecionar} className='imagem-pagamento' src={ExibirImagem(props.item.id.imagem)} alt="produto"/>
             <p onClick={DetalhesProdutoDirecionar} className='cursor'>{`${props.item.id.nome} ${props.item.id.volume}  ${props.item.id.fabricante}`}</p>
-            <div className='info-carrinho'>
-                <p className='cursor' onClick={DetalhesProdutoDirecionar}>R$ {Number(props.item.id.valor)}</p>
-                <div className='QNT'>
-                    <select value={QtdCarrinho} onChange={e => AlterarQuantidade(e.target.value)}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
+            <div className='info-card-pagamento'>
+                <p className='preco-pg' onClick={DetalhesProdutoDirecionar}>R$ {Number(props.item.id.valor)}</p>
             </div> 
             </div>
-            <div className='preco-excluir'>
+            <div className='preco-excluir-pagamento'>
                 <div className='excluir'>
                     <button onClick={Remover}>Excluir</button>
                 </div>

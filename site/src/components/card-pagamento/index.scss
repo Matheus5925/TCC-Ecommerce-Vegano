@@ -1,14 +1,70 @@
 .card-pagamento{
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 0.1px solid #7a7a7a;
+    font-size: 16px;
+    margin-right: 1em;
+    width: 25em;
+    margin-top: 0.5em;
+    height: 5em;
+    font-family: Arial, Helvetica, sans-serif;
 
     .posicionamento-p{
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         align-items: center;
         margin: 10px solid #000;
     }
 
-    .posicionamento-p img{
-        width: 60px;
+    .preco-pg{
+        display: flex;
+        flex-direction: row;
+        width: 4em;
+    }
+
+    .QNT-2{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        width: 5em;
+        align-items: center;
+    }
+    
+    .info-card-pagamento{
+        display: flex;
+        flex-direction: row;
+        gap: 0.1em;
+        margin-left: 1em;
+    }
+
+    .preco-excluir-pagamento{
+        display: flex;
+        flex-direction: row;
+        gap: 5em;
+        justify-content: space-between;
+    }
+
+    .excluir > button {
+        border: none;
+        background: none;
+        outline: none;
+
+        font-size: 16px;
+    }
+
+    .excluir > button:hover{
+        cursor: pointer;
+
+        transform: scale(1.2);
+    }
+    
+
+    .imagem-pagamento{
+        height: 3em;
+        width: auto;
+        margin-left: 0.3em;
     }
 }

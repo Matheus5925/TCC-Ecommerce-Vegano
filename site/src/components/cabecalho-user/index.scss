@@ -5,6 +5,7 @@
     width: 100%;
 
 
+
     .tela-click-cabecalho {
         border: 0.5px solid rgb(36, 35, 35);
         height: 8em;
@@ -97,7 +98,8 @@
         display: flex;
         flex-direction: row;
         text-align: center;
-        gap: 0.5em;
+        gap: 1em;
+        font-size: 0.5em;
 
     }
 
