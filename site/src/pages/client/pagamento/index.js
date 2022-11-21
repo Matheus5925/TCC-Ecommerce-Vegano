@@ -10,20 +10,23 @@ import Rodape from '../../../components/rodape';
 
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { ListarEnderecos } from '../../../api/UsuarioAPI';
+import { ListarEnderecos, PegarCartoesUsuario } from '../../../api/UsuarioAPI';
 import { BuscarId } from '../../../api/ProdutoAPI';
 import { Navigate } from 'react-router-dom'
 import {confirmAlert} from 'react-confirm-alert';
 import {toast, ToastContainer} from 'react-toastify'
+import CardCartao from '../../../components/infoUser/cartoes/card';
 
 export default function TelaPagamento() {
 
   const [enderecos, setEnderecos] = useState([]);
   const [itensCarrinho, setItensCarrinho] = useState([]);
+  const [cartoes, setCartoes] = useState([]);
+  const [renderCartao, setRenderCartao] = useState(false);
+  const [renderPix, setRenderPix] = useState(false);
 
   const CalcularValorTotal = _ => {
     var total = 0;
-    console.log("timao");
     for (let item of itensCarrinho) {
       total = total + (item.id.valor * item.qtd);
 
@@ -71,6 +74,16 @@ export default function TelaPagamento() {
     }
   }
 
+  const BuscarCartoes = async ()=>{
+    if (Storage('usuario-logado')) {
+      let idUsuario = Storage('usuario-logado').id;
+      const r = await PegarCartoesUsuario(idUsuario);
+      setCartoes(r);
+    }
+  }
+
+
+
 
   const Finalizarcompra = async function () {
     confirmAlert({
@@ -89,11 +102,40 @@ export default function TelaPagamento() {
         ]
     })
 }
- 
 
+    var letra_num = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+ 
+  
+    function BuscarNumero(cont) {
+        let randomNum = Math.round(Math.random() * cont);
+        return randomNum;
+    }
+
+    
+
+    function seqNumLetra() {
+      let letra1 = letra_num[BuscarNumero(letra_num.length)]; 
+      let letra2 = letra_num[BuscarNumero(letra_num.length)]; 
+      let letra3 = letra_num[BuscarNumero(letra_num.length)]; 
+      let letra4 = letra_num[BuscarNumero(letra_num.length)]; 
+      let letra5 = letra_num[BuscarNumero(letra_num.length)];
+      let letra6 = letra_num[BuscarNumero(letra_num.length)];
+      let letra7 = letra_num[BuscarNumero(letra_num.length)];
+      let letra8 = letra_num[BuscarNumero(letra_num.length)];
+      let letra9 = letra_num[BuscarNumero(letra_num.length)];
+      let letra10 = letra_num[BuscarNumero(letra_num.length)];
+      let letra11 = letra_num[BuscarNumero(letra_num.length)];
+      let letra12 = letra_num[BuscarNumero(letra_num.length)];
+
+      let seq = letra1.concat(letra1, letra2, letra3, letra5, letra4, letra8, letra6, letra7, letra9, letra12, letra10, letra11);
+
+      return seq;
+  }
   useEffect(() => {
     MostrarEnderecos();
     CarregarCarrinho();
+    BuscarCartoes();
+    console.log(BuscarNumero(letra_num.length));
   }, []);
 
   return (
@@ -147,12 +189,16 @@ export default function TelaPagamento() {
             <div className='Bloco2'>
               <div className='input-pg'>
                 <img src={Pix} className='imagem-pagamento' />
-                <input type="checkbox" name="pix" className='imput-radio'></input>
+                <input value={renderPix} onChange={e => setRenderPix(e.target.checked)}  type="checkbox" name="pix" className='imput-radio'></input>
               </div>
+                  {renderPix === true  && <p>{seqNumLetra()}</p>}
               <div className='input-pg'>
                 <img src={CardPix} className='imagem-pagamento-3' />
-                <input type="checkbox" name="cardPix" className='imput-radio'></input>
+                <input value={renderCartao} onChange={e => setRenderCartao(e.target.checked)} type="checkbox" name="cardPix" className='imput-radio'></input>
               </div>
+              {renderCartao === true &&  <div className='cartao-cadastrados'>
+                  <div>{cartoes.map(item => <CardCartao item={item}/>)}</div>
+              </div>}
               <div className='input-pg'>
                 <img src={Boleto} className='imagem-pagamento' />
                 <input type="checkbox" name="Boleto" className='imput-radio'></input>
@@ -170,6 +216,8 @@ export default function TelaPagamento() {
           </div>
         </div>
       </div>
+
+    
       
     </div>
   <Rodape/>

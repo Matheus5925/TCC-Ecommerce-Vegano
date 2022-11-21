@@ -98,7 +98,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 45vh;
+      height: auto;
       border: solid;
       border-color: rgb(245, 233, 233);
       margin-bottom: 1em;
@@ -265,5 +265,15 @@
 
 .adicionar-endereco:hover{
     cursor: pointer;
+}
+
+.cartao-cadastrados{
+  overflow-y: scroll;
+  height: 10em;
+  padding: 1em;
+  width: 17em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }
 }
