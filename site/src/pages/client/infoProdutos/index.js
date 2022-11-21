@@ -81,7 +81,7 @@ const DetalhesProduto = props =>{
                         </div>
                         <div className='buttons-detalhes'>
                             
-                            <button>
+                            <button >
                             <Link to='/pagamento'>Compre</Link>
                             </button>
                             <button onClick={AdicionarCarrinho}>Adicionar</button>

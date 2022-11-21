@@ -39,16 +39,9 @@ export const PageSelection = () => {
         },
         {
             id: 5,
-            nome: "Adicionar Ofertas",
-            link: "/adicionarofertas",
-            image: "image 33.png"
+            nome: "Voltar para o inicio",
+            link: "/",
         },
-        {
-            id: 6,
-            nome: "Histórico de compras",
-            link: "/historicocompras",
-            image: "image33.png"
-        }
     ]
 
 

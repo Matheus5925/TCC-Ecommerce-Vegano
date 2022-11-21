@@ -6,6 +6,7 @@ import CardProdutosUsuario from '../../../components/card-usuario-produto';
 import { useEffect, useState } from 'react';
 import { MostrarProdutos, BuscaCategoria, FiltrarPorCategoria, FiltrarProdutosNome } from '../../../api/ProdutoAPI';
 import LupaPesquisa from '../../../assets/images/search.png'
+import Rodape from '../../../components/rodape';
 
 export default function TelaProdutos() {
   const [card, setCard] = useState([]);
@@ -89,7 +90,7 @@ export default function TelaProdutos() {
             {card.map(item =>  <CardProdutosUsuario key={item.id} item={item} />)}
 
           </section>
-          
+            <Rodape/>
         </div>
     )
 }

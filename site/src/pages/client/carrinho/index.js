@@ -98,18 +98,19 @@ export default function Crrinho(){
                         </div>
                     </div>
                 </div>
+                <Link to='/telaprodutos'>
                 <div className='botao-1'> 
                 <button className='ajustar-botao'>Escolher mais produtos</button>
                 </div>
-                <div className='botao-2'>
-                        <Link to='/pagamento'>
+                </Link>
+                <Link to='/pagamento'>
+                <div className='botao-2'>    
                             <button className='ajustar-botao2'> 
                                     <img src={Carrinho} alt="imagem botão"/> 
                                     <h3> Fechar pedido </h3> 
-                            </button>
-                        </Link>
+                            </button>     
                 </div>
-
+                </Link>
             </div>
         </main>
     )

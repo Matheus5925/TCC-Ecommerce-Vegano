@@ -100,6 +100,8 @@
       margin: 50px;
       height: 400px;
     }
+
+
   
     .Containers{
       display: flex;
@@ -250,14 +252,14 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
-      width: 15em;
-      background-color: rgb(165, 165, 165);
+      width: 25em;
+      background-color: rgba(255, 255, 255, 0.618);
       border-radius: 1em;
       height: 4em;
     }
 
     .pesquisa-basica > img{
-      height: 50px;
+      height: 45px;
       width: 60px;
       border-radius: 1em;
       border: 1px solid black;

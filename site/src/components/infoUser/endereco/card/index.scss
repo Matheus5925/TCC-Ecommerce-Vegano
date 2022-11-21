@@ -8,13 +8,17 @@
     align-items: center;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 1em;
     gap: 0.5em;
     padding-left: .5em;
+    cursor: pointer;
+
 
     .container-endereco{
         height: 40px;
         width: 40px;
     }
+
 
     .img-endereco{
         height: 40px;

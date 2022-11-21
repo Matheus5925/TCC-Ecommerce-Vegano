@@ -3,14 +3,18 @@ import CabecalhoUser from '../../../components/cabecalho-user';
 import CardPix from '../../../assets/images/cards.png'
 import Boleto from '../../../assets/images/boleto.png'
 import Pix from '../../../assets/images/imagePix.png'
-import { Link } from 'react-router-dom';
 import CardEndereco from '../../../components/infoUser/endereco/card';
-import { useState, useEffect } from 'react';
 import Storage from 'local-storage';
-import { ListarEnderecos } from '../../../api/UsuarioAPI';
 import CardPagamento from '../../../components/card-pagamento';
-import { BuscarId } from '../../../api/ProdutoAPI';
 import Rodape from '../../../components/rodape';
+
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { ListarEnderecos } from '../../../api/UsuarioAPI';
+import { BuscarId } from '../../../api/ProdutoAPI';
+import { Navigate } from 'react-router-dom'
+import {confirmAlert} from 'react-confirm-alert';
+import {toast, ToastContainer} from 'react-toastify'
 
 export default function TelaPagamento() {
 
@@ -37,6 +41,7 @@ export default function TelaPagamento() {
 
   const CarregarCarrinho = async _ => {
     const carrinho = Storage('carrinho');
+
 
     if (carrinho) {
 
@@ -65,6 +70,25 @@ export default function TelaPagamento() {
       setEnderecos(r);
     }
   }
+
+
+  const Finalizarcompra = async function () {
+    confirmAlert({
+        title: 'Finalizar compra ',
+        message: `Deseja mesmo finalizar compra?`,
+        buttons: [
+            {
+                label: 'Sim',
+                onClick: async () => { 
+                    toast.dark('Compra finalizada✅');
+                }
+            },
+            {
+                label: 'Não'
+            }
+        ]
+    })
+}
  
 
   useEffect(() => {
@@ -101,7 +125,7 @@ export default function TelaPagamento() {
               <button className='valor-1'>R$ {CalcularValorTotal()}</button>
 
             </div>
-            <button className='valor'>Concluir</button>
+            <button className='valor' onClick={Finalizarcompra}>Concluir</button>
 
 
           </div>
@@ -111,7 +135,7 @@ export default function TelaPagamento() {
 
           <div className='Bloco3'>
             <div className='rolagem-endereco'>
-              {enderecos.map(item => <CardEndereco item={item} />)}
+              {enderecos.map(item => <CardEndereco item={item}/>)}
             </div>
 
             <Link to='/cadastroindereco'>    
